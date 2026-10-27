@@ -1,0 +1,96 @@
+az_get_options	az-theme-child/footer.php:5	az-theme/inc/helpers/options.php	$az_footer_options = az_get_options()['footer'] ?? array();
+az_child_enqueue_assets	az-theme-child/functions.php:48	az-theme/inc/admin/templates/child-theme/functions.php	function az_child_enqueue_assets() {
+az_child_migrate_parent_theme_mods	az-theme-child/functions.php:29	az-theme/inc/admin/templates/child-theme/functions.php	function az_child_migrate_parent_theme_mods() {
+az_get_logo_id	az-theme-child/header.php:6	az-theme/inc/helpers/options.php	$az_header_logo = az_get_logo_id();
+az_contact_assets	az-theme-child/inc/floating-contact.php:43	az-theme/inc/floating-contact.php	if ( 'social_expand' !== az_get_option( 'social.contact_style', 'icons' ) ) { az_contact_assets(); return; }
+az_contact_icon	az-theme-child/inc/floating-contact.php:37	az-theme/inc/floating-contact.php	$items[] = array( 'network' => 'phone', 'label' => 'Hotline ' . $phone, 'url' => 'tel:' . $dial, 'svg' => az_contact_icon( 'phone-solid' ) );
+az_contact_icon	az-theme-child/inc/floating-contact.php:64	az-theme/inc/floating-contact.php	<span class="az-social-contact-open" aria-hidden="true"><?php echo az_contact_icon( 'chat' ); ?></span>
+az_get_option	az-theme-child/inc/floating-contact.php:23	az-theme/inc/helpers/options.php	if ( ! az_get_option( 'social.contact_enabled', 0 ) ) { return array(); }
+az_get_option	az-theme-child/inc/floating-contact.php:33	az-theme/inc/helpers/options.php	$raw_phone = az_get_option( 'social.contact_phone', '' );
+az_get_option	az-theme-child/inc/floating-contact.php:43	az-theme/inc/helpers/options.php	if ( 'social_expand' !== az_get_option( 'social.contact_style', 'icons' ) ) { az_contact_assets(); return; }
+az_get_option	az-theme-child/inc/floating-contact.php:53	az-theme/inc/helpers/options.php	if ( 'social_expand' !== az_get_option( 'social.contact_style', 'icons' ) ) { az_render_contact(); return; }
+az_get_social_links	az-theme-child/inc/floating-contact.php:25	az-theme/inc/helpers/options.php	$links = az_get_social_links();
+AZ_Options_Registry	az-theme-child/inc/floating-contact.php:8	az-theme/inc/options/class-registry.php	$section = AZ_Options_Registry::get( 'social' );
+AZ_Options_Registry	az-theme-child/inc/floating-contact.php:18	az-theme/inc/options/class-registry.php	AZ_Options_Registry::add_section( 'social', $section['title'], $section['fields'] );
+az_render_contact	az-theme-child/inc/floating-contact.php:53	az-theme/inc/floating-contact.php	if ( 'social_expand' !== az_get_option( 'social.contact_style', 'icons' ) ) { az_render_contact(); return; }
+az_get_contact_items	az-theme-child/inc/footer-storefront.php:60	az-theme/inc/helpers/options.php	'addresses' => az_get_contact_items( 'address' ),
+az_get_contact_items	az-theme-child/inc/footer-storefront.php:61	az-theme/inc/helpers/options.php	'phones' => az_get_contact_items( 'phone' ),
+az_get_contact_items	az-theme-child/inc/footer-storefront.php:62	az-theme/inc/helpers/options.php	'emails' => az_get_contact_items( 'email' ),
+az_get_options	az-theme-child/inc/footer-storefront.php:55	az-theme/inc/helpers/options.php	$options = az_get_options();
+az_get_social_links	az-theme-child/inc/footer-storefront.php:57	az-theme/inc/helpers/options.php	$social = az_get_social_links();
+AZ_Options_Registry	az-theme-child/inc/footer-storefront.php:20	az-theme/inc/options/class-registry.php	$section = AZ_Options_Registry::get( 'general' );
+AZ_Options_Registry	az-theme-child/inc/footer-storefront.php:36	az-theme/inc/options/class-registry.php	if ( ! in_array( $field['id'], $existing, true ) ) { AZ_Options_Registry::add_field( 'general', $field ); }
+AZ_Options_Registry	az-theme-child/inc/footer-storefront.php:38	az-theme/inc/options/class-registry.php	$section = AZ_Options_Registry::get( 'general' );
+AZ_Options_Registry	az-theme-child/inc/footer-storefront.php:44	az-theme/inc/options/class-registry.php	AZ_Options_Registry::add_section( 'general', $section['title'], $section['fields'] );
+az_get_option	az-theme-child/inc/header-colors.php:44	az-theme/inc/helpers/options.php	$saved = az_get_option( 'colors.' . $key, '' );
+AZ_Options_Registry	az-theme-child/inc/header-colors.php:22	az-theme/inc/options/class-registry.php	$section = AZ_Options_Registry::get( 'colors' );
+AZ_Options_Registry	az-theme-child/inc/header-colors.php:27	az-theme/inc/options/class-registry.php	AZ_Options_Registry::add_field( 'colors', array(
+az_get_logo_id	az-theme-child/inc/header-storefront.php:94	az-theme/inc/helpers/options.php	<?php az_render_header_logo( array( 'class' => 'az-sticky-header__logo', 'logo_id' => az_get_logo_id( 'sticky' ) ?: az_get_logo_id() ) ); ?>
+az_get_logo_id	az-theme-child/inc/header-storefront.php:114	az-theme/inc/helpers/options.php	$logo = az_get_logo_id( 'mobile' ) ?: az_get_logo_id();
+az_get_option	az-theme-child/inc/header-storefront.php:40	az-theme/inc/helpers/options.php	$saved = az_get_option( 'header', array() );
+az_get_phone	az-theme-child/inc/header-storefront.php:22	az-theme/inc/helpers/options.php	array( 'id' => 'hotline', 'type' => 'text', 'title' => 'Số hotline trên Header', 'description' => 'Dùng chung trên tất cả trang. Khi chưa lưu, lấy hotline đầu tiên từ General; để trống và lưu để ẩn số.', 'default' => az_get_phone(), 'group' => 'header_main', 'width' => 'half' ),
+az_get_phone	az-theme-child/inc/header-storefront.php:38	az-theme/inc/helpers/options.php	$options = wp_parse_args( az_header_options(), array( 'show_hotline' => 1, 'hotline' => az_get_phone(), 'hotline_label' => 'Hotline tư vấn và đặt hàng' ) );
+az_header_menu_id	az-theme-child/inc/header-storefront.php:88	az-theme/inc/helpers/header-components.php	&& ( az_header_menu_id( 'sticky', $options ) || has_nav_menu( 'primary' ) );
+az_header_options	az-theme-child/inc/header-storefront.php:38	az-theme/inc/helpers/header-components.php	$options = wp_parse_args( az_header_options(), array( 'show_hotline' => 1, 'hotline' => az_get_phone(), 'hotline_label' => 'Hotline tư vấn và đặt hàng' ) );
+az_is_woocommerce_active	az-theme-child/inc/header-storefront.php:52	az-theme/inc/helpers/utilities.php	return az_is_woocommerce_active() && ! empty( $options['show_cart'] )
+az_is_woocommerce_active	az-theme-child/inc/header-storefront.php:64	az-theme/inc/helpers/utilities.php	<?php if ( ! empty( $options['show_account'] ) ) { az_render_header_action( 'account', array( 'label' => $options['account_label'], 'url' => az_is_woocommerce_active() ? wc_get_page_permalink( 'myaccount' ) : home_url( '/tai-khoan/' ) ) ); } ?>
+az_is_woocommerce_active	az-theme-child/inc/header-storefront.php:76	az-theme/inc/helpers/utilities.php	<?php if ( az_is_woocommerce_active() && 'products' === ( $options['child_search_scope'] ?? 'products' ) ) : ?><input type="hidden" name="post_type" value="product"><?php endif; ?>
+az_mobile_menu_markup	az-theme-child/inc/header-storefront.php:111	az-theme/inc/core/mobile-menu.php	$menu = az_mobile_menu_markup();
+az_mobile_menu_style	az-theme-child/inc/header-storefront.php:107	az-theme/inc/core/mobile-menu.php	$style = az_mobile_menu_style();
+AZ_Options_Registry	az-theme-child/inc/header-storefront.php:7	az-theme/inc/options/class-registry.php	$section = AZ_Options_Registry::get( 'header' );
+AZ_Options_Registry	az-theme-child/inc/header-storefront.php:18	az-theme/inc/options/class-registry.php	AZ_Options_Registry::add_section( 'header', $section['title'], $section['fields'] );
+AZ_Options_Registry	az-theme-child/inc/header-storefront.php:25	az-theme/inc/options/class-registry.php	if ( ! in_array( $field['id'], $ids, true ) ) { AZ_Options_Registry::add_field( 'header', $field ); }
+az_render_header_action	az-theme-child/inc/header-storefront.php:64	az-theme/inc/helpers/header-components.php	<?php if ( ! empty( $options['show_account'] ) ) { az_render_header_action( 'account', array( 'label' => $options['account_label'], 'url' => az_is_woocommerce_active() ? wc_get_page_permalink( 'myaccount' ) : home_url( '/tai-khoan/' ) ) ); } ?>
+az_render_header_action	az-theme-child/inc/header-storefront.php:65	az-theme/inc/helpers/header-components.php	<?php if ( $cart ) { az_render_header_action( 'cart', array( 'label' => $options['cart_label'] ) ); } ?>
+az_render_header_action	az-theme-child/inc/header-storefront.php:66	az-theme/inc/helpers/header-components.php	<?php if ( $cta ) { az_render_header_action( 'cta', array( 'label' => $options['cta_text'], 'url' => $options['cta_url'] ) ); } ?>
+az_render_header_logo	az-theme-child/inc/header-storefront.php:94	az-theme/inc/helpers/header-components.php	<?php az_render_header_logo( array( 'class' => 'az-sticky-header__logo', 'logo_id' => az_get_logo_id( 'sticky' ) ?: az_get_logo_id() ) ); ?>
+az_render_mobile_menu	az-theme-child/inc/header-storefront.php:108	az-theme/inc/core/mobile-menu.php	if ( ! in_array( $style, array( 'brand_right', 'brand_dropdown' ), true ) ) { az_render_mobile_menu(); return; }
+az_storefront_show_purchase_actions	az-theme-child/inc/header-storefront.php:53	az-theme/inc/functions/home-products.php	&& ( ! function_exists( 'az_storefront_show_purchase_actions' ) || az_storefront_show_purchase_actions() );
+AZ_Options_Registry	az-theme-child/inc/header-typography.php:7	az-theme/inc/options/class-registry.php	$section = AZ_Options_Registry::get( 'typography' );
+AZ_Options_Registry	az-theme-child/inc/header-typography.php:19	az-theme/inc/options/class-registry.php	AZ_Options_Registry::add_section( 'typography', $section['title'], $section['fields'] );
+az_product_extra_info_meta_box_html	az-theme-child/inc/product-admin.php:16	az-theme/inc/functions/product-fields.php	function az_product_extra_info_meta_box_html( $post ) {
+az_get_option	az-theme-child/inc/product-display.php:56	az-theme/inc/helpers/options.php	$mode = az_get_option( 'woocommerce.gallery_image_ratio', 'square' );
+az_get_option	az-theme-child/inc/product-display.php:61	az-theme/inc/helpers/options.php	$value = az_get_option( 'woocommerce.gallery_ratio_' . $key, $default );
+az_get_option	az-theme-child/inc/product-display.php:102	az-theme/inc/helpers/options.php	$value = az_get_option( 'woocommerce.' . $key, 5 );
+AZ_Options_Registry	az-theme-child/inc/product-display.php:7	az-theme/inc/options/class-registry.php	$section = AZ_Options_Registry::get( 'woocommerce' );
+AZ_Options_Registry	az-theme-child/inc/product-display.php:15	az-theme/inc/options/class-registry.php	AZ_Options_Registry::add_field( 'woocommerce', array(
+AZ_Options_Registry	az-theme-child/inc/product-display.php:33	az-theme/inc/options/class-registry.php	$section = AZ_Options_Registry::get( 'woocommerce' );
+AZ_Options_Registry	az-theme-child/inc/product-display.php:49	az-theme/inc/options/class-registry.php	if ( ! in_array( $field['id'], $ids, true ) ) { AZ_Options_Registry::add_field( 'woocommerce', $field ); }
+az_track_recently_viewed_product	az-theme-child/inc/product-display.php:108	az-theme/inc/functions/woocommerce.php	function az_track_recently_viewed_product() {
+az_get_logo_id	az-theme-child/inc/soviban-home.php:161	az-theme/inc/helpers/options.php	$id = az_get_logo_id();
+az_get_option	az-theme-child/inc/soviban-home.php:162	az-theme/inc/helpers/options.php	$branding = az_get_option( 'branding', array() );
+az_get_option	az-theme-child/inc/soviban-home.php:191	az-theme/inc/helpers/options.php	$accent = az_get_option( 'colors.primary', '#ef1429' );
+az_get_option	az-theme-child/inc/soviban-home.php:192	az-theme/inc/helpers/options.php	$heading = az_get_option( 'colors.heading', '#4e6275' );
+az_get_option	az-theme-child/inc/soviban-home.php:195	az-theme/inc/helpers/options.php	$text = az_get_option( 'colors.muted', '#67798b' );
+az_get_option	az-theme-child/inc/soviban-home.php:197	az-theme/inc/helpers/options.php	$width = min( 600, max( 40, absint( az_get_option( 'branding.logo_width', 200 ) ) ) );
+az_get_option	az-theme-child/inc/soviban-home.php:198	az-theme/inc/helpers/options.php	$mobile_width = min( 400, max( 32, absint( az_get_option( 'branding.logo_width_mobile', 140 ) ) ) );
+az_get_option	az-theme-child/inc/soviban-home.php:199	az-theme/inc/helpers/options.php	$weight = az_get_option( 'typography.navigation_weight', 400 );
+AZ_Options_Registry	az-theme-child/inc/soviban-home.php:208	az-theme/inc/options/class-registry.php	$section = AZ_Options_Registry::get( 'header' );
+AZ_Options_Registry	az-theme-child/inc/soviban-home.php:215	az-theme/inc/options/class-registry.php	AZ_Options_Registry::add_section( 'header', $section['title'], $section['fields'] );
+AZ_Options_Registry	az-theme-child/inc/soviban-home.php:224	az-theme/inc/options/class-registry.php	$section = AZ_Options_Registry::get( $id );
+AZ_Options_Registry	az-theme-child/inc/soviban-home.php:230	az-theme/inc/options/class-registry.php	AZ_Options_Registry::add_section( $id, $section['title'], $section['fields'] );
+az_render_header_logo	az-theme-child/inc/soviban-home.php:164	az-theme/inc/helpers/header-components.php	az_render_header_logo( array( 'logo_id' => $id, 'class' => 'az-logo' ) );
+az_shared_banner_get	az-theme-child/inc/soviban-home.php:172	az-theme/inc/core/shared-banner.php	$data = az_shared_banner_get( $post_id );
+AZ_Theme_Options	az-theme-child/inc/soviban-home.php:221	az-theme/inc/options/class-options.php	if ( ! in_array( $field['id'], $ids, true ) ) { AZ_Theme_Options::add_field( 'header', $field ); }
+az_get_option	az-theme-child/inc/steel-storefront.php:155	az-theme/inc/helpers/options.php	$options = $options ?? array_merge( array( 'show_primary_menu' => az_get_option( 'header.show_primary_menu', 1 ) ), az_header_options() );
+az_get_social_links	az-theme-child/inc/steel-storefront.php:122	az-theme/inc/helpers/options.php	$links = az_get_social_links();
+az_header_options	az-theme-child/inc/steel-storefront.php:17	az-theme/inc/helpers/header-components.php	$options = $options ?? az_header_options();
+az_header_options	az-theme-child/inc/steel-storefront.php:136	az-theme/inc/helpers/header-components.php	$options = $options ?? az_header_options();
+az_header_options	az-theme-child/inc/steel-storefront.php:155	az-theme/inc/helpers/header-components.php	$options = $options ?? array_merge( array( 'show_primary_menu' => az_get_option( 'header.show_primary_menu', 1 ) ), az_header_options() );
+az_product_category_menu_id	az-theme-child/inc/steel-storefront.php:22	az-theme/inc/helpers/header-components.php	$menus = array_unique( array_filter( array( absint( $options['category_menu'] ?? 0 ), az_product_category_menu_id() ) ) );
+az_get_options	az-theme-child/single-product.php:21	az-theme/inc/helpers/options.php	$az_woo_options = function_exists( 'az_get_options' ) && is_array( az_get_options()['woocommerce'] ?? null ) ? az_get_options()['woocommerce'] : array();
+az_get_product_video_urls	az-theme-child/single-product.php:480	az-theme/inc/functions/product-videos.php	$product_video_urls = function_exists( 'az_get_product_video_urls' ) ? az_get_product_video_urls( get_the_ID() ) : array();
+az_product_youtube_embed_url	az-theme-child/single-product.php:483	az-theme/inc/functions/product-videos.php	$embed_url = function_exists( 'az_product_youtube_embed_url' ) ? az_product_youtube_embed_url( $video_url ) : '';
+az_product_youtube_id_from_value	az-theme-child/single-product.php:484	az-theme/inc/functions/product-videos.php	$video_id  = function_exists( 'az_product_youtube_id_from_value' ) ? az_product_youtube_id_from_value( $video_url ) : '';
+az_render_product_card	az-theme-child/single-product.php:551	az-theme/inc/functions/home-products.php	az_render_product_card(
+az_render_product_card	az-theme-child/single-product.php:589	az-theme/inc/functions/home-products.php	az_render_product_card(
+az_storefront_contact_phone	az-theme-child/single-product.php:163	az-theme/inc/functions/home-products.php	$az_product_contact_phone = function_exists( 'az_storefront_contact_phone' ) ? az_storefront_contact_phone() : trim( get_option( 'az_contact_phone', get_theme_mod( 'az_contact_phone', '' ) ) );
+az_storefront_product_price_html	az-theme-child/single-product.php:139	az-theme/inc/functions/home-products.php	<?php $az_product_price_html = function_exists( 'az_storefront_product_price_html' ) ? az_storefront_product_price_html( $product ) : $product->get_price_html(); ?>
+az_footer_options	az-theme-child/template-parts/footer-soviban.php:5	az-theme/inc/helpers/footer-components.php	$az_child_footer_options = az_footer_options();
+az_get_option	az-theme-child/template-parts/footer-soviban.php:26	az-theme/inc/helpers/options.php	<?php $az_child_general = az_get_option( 'general', array() ); if ( ! empty( $az_child_footer_options['show_top_links'] ) && is_array( $az_child_general ) && array_key_exists( 'footer_policies', $az_child_general ) && $az_footer_data['policies'] ) : ?>
+az_shared_banner_get	az-theme-child/template-parts/home-steel.php:7	az-theme/inc/core/shared-banner.php	$az_steel_banner = az_shared_banner_get( get_queried_object_id() );
+az_get_home_h1	az-theme-child/template-parts/home-storefront.php:13	az-theme/inc/helpers/options.php	<?php if ( ! is_front_page() ) : ?><h1 class="az-sr-only"><?php echo esc_html( az_get_home_h1() ); ?></h1><?php endif; ?>
+az_render_header_logo	az-theme-child/template-parts/mobile-header.php:6	az-theme/inc/helpers/header-components.php	<?php az_render_header_logo( array( 'logo_id' => $logo, 'class' => 'az-mobile-header__logo' ) ); ?>
+az_render_header_logo	az-theme-child/template-parts/mobile-header.php:12	az-theme/inc/helpers/header-components.php	<div class="az-mobile-menu__heading"><?php az_render_header_logo( array( 'logo_id' => $logo, 'class' => 'az-mobile-menu__brand' ) ); ?><button class="az-mobile-menu__close" type="button" aria-label="<?php echo esc_attr__( 'Đóng menu', 'az-ai-theme' ); ?>"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div>
+az_is_woocommerce_active	az-theme-child/template-parts/soviban-home-extras.php:7	az-theme/inc/helpers/utilities.php	<?php if ( ! empty( $az_child_extras['products']['enabled'] ) && az_is_woocommerce_active() ) : foreach ( $az_child_extras['products']['sections'] as $az_child_section ) : ?>
+az_render_product_card	az-theme-child/template-parts/soviban-home-extras.php:9	az-theme/inc/functions/home-products.php	<?php foreach ( az_child_steel_products( $az_child_section['category_ids'] ?? array( $az_child_section['category_id'] ?? 0 ), false, 4 ) as $az_child_product ) { az_render_product_card( $az_child_product, array( 'context' => 'child-home' ) ); } ?>

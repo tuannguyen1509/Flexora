@@ -1,0 +1,622 @@
+az-theme/archive-product.php:48 function az_render_product_cat_options( $terms, $selected_slug, $parent = 0, $depth = 0 ) {
+az-theme/archive-product.php:66 function az_render_product_cat_tree( $terms, $selected_slug, $open_term_ids = array(), $parent = 0, $depth = 0 ) {
+az-theme/archive-product.php:115 function az_shop_term_filter_url( $base_url, $taxonomy, $term_slug, $kind = 'attribute' ) {
+az-theme/archive-product.php:156 function az_shop_clear_filter_url( $base_url ) {
+az-theme/assets/admin/js/az-advanced.js:15 function updateAttributeFilterStatus(input) {
+az-theme/assets/admin/js/az-advanced.js:93 function toggleFields() {
+az-theme/assets/admin/js/az-advanced-tabs.js:21 function activate(id) {
+az-theme/assets/admin/js/az-banner-editor.js:31 function decorate() {
+az-theme/assets/admin/js/az-repeater-sort.js:4 function renumber(box) {
+az-theme/assets/admin/js/az-repeater-sort.js:11 function bind(box) {
+az-theme/comments.php:231 function az_comment_cb( $comment, $args, $depth ) {
+az-theme/css/container-sync.css:86 /* WooCommerce templates do not require a legacy body class to use the shared container. */
+az-theme/css/page.css:5 - Class custom dung prefix az-.
+az-theme/front-page.php:31 function az_home_banner_slot( $slot, $fallback_img, $fallback_alt = '', $fallback_link = '' ) {
+az-theme/front-page.php:68 function az_home_product_card( $post_id, $compact = false ) {
+az-theme/front-page.php:81 function az_home_term_banner_url( $term, $fallback_url ) {
+az-theme/front-page.php:98 function az_home_render_product_panel( $panel_id, $term_id, $products_per_page, $active = false ) {
+az-theme/inc/admin/class-admin.php:3 class AZ_Admin {
+az-theme/inc/admin/class-admin.php:4 public function __construct() { add_action( 'admin_menu', array( $this, 'menu' ) ); }
+az-theme/inc/admin/class-admin.php:5 public function menu() {
+az-theme/inc/admin/class-admin-assets.php:3 class AZ_Admin_Assets {
+az-theme/inc/admin/class-admin-assets.php:4 public function __construct() { add_action( 'admin_enqueue_scripts', array( $this, 'enqueue' ) ); }
+az-theme/inc/admin/class-admin-assets.php:5 public function enqueue( $hook ) {
+az-theme/inc/admin/class-advanced.php:4 class AZ_Advanced {
+az-theme/inc/admin/class-advanced.php:7 public function __construct() {
+az-theme/inc/admin/class-advanced.php:15 private function register() {
+az-theme/inc/admin/class-advanced.php:22 private function authorize( $action, $field ) {
+az-theme/inc/admin/class-advanced.php:27 private function redirect( $section, $status ) {
+az-theme/inc/admin/class-advanced.php:32 public function render() {
+az-theme/inc/admin/class-advanced.php:78 public function save() {
+az-theme/inc/admin/class-advanced.php:104 public function reset() {
+az-theme/inc/admin/class-child-theme-installer.php:5 class AZ_Child_Theme_Installer {
+az-theme/inc/admin/class-child-theme-installer.php:9 public function __construct() {
+az-theme/inc/admin/class-child-theme-installer.php:18 public static function is_parent_active() {
+az-theme/inc/admin/class-child-theme-installer.php:22 public static function child_theme_path() {
+az-theme/inc/admin/class-child-theme-installer.php:26 public static function child_theme_exists() {
+az-theme/inc/admin/class-child-theme-installer.php:32 public function install_after_parent_activation() {
+az-theme/inc/admin/class-child-theme-installer.php:43 public function install_child_theme() {
+az-theme/inc/admin/class-child-theme-installer.php:109 private function filesystem_error() {
+az-theme/inc/admin/class-child-theme-installer.php:113 public function render_activation_prompt() {
+az-theme/inc/admin/class-child-theme-installer.php:155 public function create_child_theme() {
+az-theme/inc/admin/class-child-theme-installer.php:167 public function dismiss_prompt() {
+az-theme/inc/admin/class-child-theme-installer.php:177 private function redirect( $status ) {
+az-theme/inc/admin/class-dashboard.php:3 class AZ_Dashboard {
+az-theme/inc/admin/class-dashboard.php:4 private static function shortcut( $label, $url, $icon = 'dashicons-admin-page', $primary = false ) {
+az-theme/inc/admin/class-dashboard.php:7 public static function render() {
+az-theme/inc/admin/templates/child-theme/functions.php:13 function az_child_migrate_parent_theme_mods() {
+az-theme/inc/admin/templates/child-theme/functions.php:45 function az_child_enqueue_assets() {
+az-theme/inc/bootstrap.php:4 function az_theme_legacy_includes() {
+az-theme/inc/core/auth-rate-limit.php:4 function az_auth_rate_allowed( $scope, $identity, $limit, $window ) {
+az-theme/inc/core/auth-rate-limit.php:12 function az_auth_client_identity() {
+az-theme/inc/core/blog-image-description.php:5 function az_blog_image_description( $id, $post, $update, $post_before = null ) {
+az-theme/inc/core/blog-image-description.php:32 function az_blog_content_image_descriptions( $content ) {
+az-theme/inc/core/blog-image-description.php:40 function az_blog_fill_image_attributes( $content, $title ) {
+az-theme/inc/core/blog-image-description.php:65 function az_blog_insert_image_title( $html ) {
+az-theme/inc/core/blog-image-description.php:77 function az_blog_save_image_titles( $data, $postarr ) {
+az-theme/inc/core/branding-seo.php:6 function az_home_meta_description_context() {
+az-theme/inc/core/branding-seo.php:10 function az_get_home_meta_description() {
+az-theme/inc/core/branding-seo.php:20 function az_filter_home_meta_description( $description ) {
+az-theme/inc/core/branding-seo.php:27 function az_render_home_meta_description() {
+az-theme/inc/core/class-blog.php:3 class AZ_Blog {
+az-theme/inc/core/class-blog.php:4 public function __construct() { add_action( 'pre_get_posts', array( $this, 'query' ), 20 ); }
+az-theme/inc/core/class-blog.php:5 public function query( $query ) { if ( is_admin() || ! $query->is_main_query() || ( ! $query->is_home() && ! $query->is_archive() ) || ( function_exists( 'is_shop' ) && is_shop() ) || ( function_exists( 'is_product_category' ) && is_product_category() ) ) { return; } $query->set( 'posts_per_page', max( 1, min( 100, absint( az_get_option( 'blog.posts_per_page', 10 ) ) ) ) ); }
+az-theme/inc/core/class-blog.php:8 function az_blog_show( $field, $default = 1 ) { $all = az_get_options(); $blog = isset( $all['blog'] ) && is_array( $all['blog'] ) ? $all['blog'] : array(); return array_key_exists( $field, $blog ) ? (bool) $blog[ $field ] : (bool) $default; }
+az-theme/inc/core/class-custom-code.php:3 class AZ_Custom_Code {
+az-theme/inc/core/class-custom-code.php:7 private static function values( $key, $options = null ) {
+az-theme/inc/core/class-custom-code.php:19 public static function editor_values( $options ) {
+az-theme/inc/core/class-custom-code.php:28 public static function needs_review( $options ) {
+az-theme/inc/core/class-custom-code.php:39 public static function trusted_markup( $value ) {
+az-theme/inc/core/class-custom-code.php:52 public function __construct() {
+az-theme/inc/core/class-custom-code.php:58 private function render( $key ) {
+az-theme/inc/core/class-custom-code.php:70 public function head() {
+az-theme/inc/core/class-custom-code.php:79 public function body() { $this->render( 'body_open_code' ); }
+az-theme/inc/core/class-custom-code.php:80 public function footer() { $this->render( 'footer_code' ); }
+az-theme/inc/core/class-dynamic-css.php:4 class AZ_Dynamic_CSS {
+az-theme/inc/core/class-dynamic-css.php:5 public function __construct() {
+az-theme/inc/core/class-dynamic-css.php:9 public function render() {
+az-theme/inc/core/class-performance.php:3 class AZ_Performance {
+az-theme/inc/core/class-performance.php:4 public function __construct() { add_action( 'init', array( $this, 'configure' ), 20 ); add_action( 'wp_enqueue_scripts', array( $this, 'assets' ), 100 ); add_filter( 'wp_lazy_loading_enabled', array( $this, 'lazy_loading' ), 10, 3 ); add_action( 'wp_enqueue_scripts', array( $this, 'preload_script' ), 20 ); }
+az-theme/inc/core/class-performance.php:5 public function configure() {
+az-theme/inc/core/class-performance.php:10 private function disable_asset( $registry, $handle ) {
+az-theme/inc/core/class-performance.php:14 public function assets() { if ( az_get_option( 'performance.disable_theme_style', 0 ) ) { $this->disable_asset( wp_styles(), 'az-ai-theme-style' ); } if ( az_get_option( 'performance.disable_block_css', 0 ) ) { $this->disable_asset( wp_styles(), 'wp-block-library' ); $this->disable_asset( wp_styles(), 'wp-block-library-theme' ); $this->disable_asset( wp_styles(), 'global-styles' ); } if ( az_get_option( 'performance.disable_mediaelement', 0 ) ) { $this->disable_asset( wp_scripts(), 'mediaelement' ); $this->disable_asset( wp_scripts(), 'wp-mediaelement' ); $this->disable_asset( wp_styles(), 'mediaelement' ); $this->disable_asset( wp_styles(), 'wp-mediaelement' ); } if ( az_get_option( 'performance.disable_jquery_migrate', 0 ) ) { foreach ( wp_scripts()->registered as $script ) { $script->deps = array_values( array_diff( $script->deps, array( 'jquery-migrate' ) ) ); } $this->disable_asset( wp_scripts(), 'jquery-migrate' ); } if ( ! is_user_logged_in() && ! ( is_singular( 'post' ) || is_home() || is_category() || is_tag() || is_author() || is_date() ) && az_get_option( 'performance.disable_dashicons_guests', 0 ) ) { $this->disable_asset( wp_styles(), 'dashicons' );  } }
+az-theme/inc/core/class-performance.php:15 public function lazy_loading( $default, $tag_name, $context ) { return 'img' === $tag_name && ! az_get_option( 'performance.lazy_load_images', 1 ) ? false : $default; }
+az-theme/inc/core/class-performance.php:16 public function preload_script() {
+az-theme/inc/core/class-site-effects.php:10 class AZ_Site_Effects {
+az-theme/inc/core/class-site-effects.php:11 public function __construct() {
+az-theme/inc/core/class-site-effects.php:18 public function enqueue_assets() {
+az-theme/inc/core/class-site-effects.php:33 public function render_preloader() {
+az-theme/inc/core/class-site-effects.php:41 public function render_back_to_top() {
+az-theme/inc/core/class-site-effects.php:50 private function back_to_top_enabled() {
+az-theme/inc/core/class-site-effects.php:55 public function render_breadcrumb() {
+az-theme/inc/core/class-site-effects.php:80 private function is_woocommerce_screen() {
+az-theme/inc/core/class-site-effects.php:91 private function breadcrumb_items() {
+az-theme/inc/core/editor.php:5 function az_theme_use_block_editor( $use_block_editor, $post_type ) {
+az-theme/inc/core/editor.php:14 function az_theme_use_block_editor_for_post( $use_block_editor, $post ) {
+az-theme/inc/core/google-login.php:3 function az_google_ready() {
+az-theme/inc/core/google-login.php:6 function az_google_button() {
+az-theme/inc/core/google-login.php:13 function az_google_cookie( $value, $expiry ) {
+az-theme/inc/core/google-login.php:16 function az_google_start() {
+az-theme/inc/core/google-login.php:26 function az_google_valid_identity( $data ) {
+az-theme/inc/core/google-login.php:29 function az_google_callback() {
+az-theme/inc/core/google-login.php:67 function az_google_captcha_ready() {
+az-theme/inc/core/google-login.php:76 function az_google_verify_captcha( $user, $password ) {
+az-theme/inc/core/html-minify.php:4 function az_minify_html_output( $html ) {
+az-theme/inc/core/media-tools.php:5 function az_missing_local_image( $id ) {
+az-theme/inc/core/media-tools.php:24 function az_missing_media_admin_title() {
+az-theme/inc/core/media-tools.php:27 function az_missing_media_page() {
+az-theme/inc/core/mobile-menu.php:5 function az_mobile_menu_style() {
+az-theme/inc/core/mobile-menu.php:9 function az_mobile_menu_markup() {
+az-theme/inc/core/mobile-menu.php:14 function az_render_mobile_menu() {
+az-theme/inc/core/mobile-menu.php:23 function az_render_mobile_brand_menu( $menu, $style = 'brand_right' ) {
+az-theme/inc/core/neutral-page.php:5 function az_neutral_page_assets() {
+az-theme/inc/core/performance-security.php:5 function az_performance_security_enabled( $feature ) {
+az-theme/inc/core/performance-security.php:71 function az_security_image_mimes() {
+az-theme/inc/core/performance-security.php:77 function az_security_validate_image_upload( $file ) {
+az-theme/inc/core/performance-security.php:92 function az_security_asset_version( $src ) {
+az-theme/inc/core/performance-tools.php:5 function az_should_redirect_404_home() {
+az-theme/inc/core/shared-banner.php:5 function az_shared_banner_defaults() {
+az-theme/inc/core/shared-banner.php:9 function az_shared_banner_layouts() {
+az-theme/inc/core/shared-banner.php:13 function az_shared_banner_get( $id, $term = false ) {
+az-theme/inc/core/shared-banner.php:32 function az_shared_banner_context() {
+az-theme/inc/core/shared-banner.php:48 function az_shared_banner_active() {
+az-theme/inc/core/shared-banner.php:60 function az_shared_banner_fields( $data ) {
+az-theme/inc/core/shared-banner.php:89 function az_shared_banner_sanitize( $input ) {
+az-theme/inc/core/shared-banner.php:106 function az_shared_banner_submission() {
+az-theme/inc/core/shared-banner.php:138 function az_shared_breadcrumb() {
+az-theme/inc/core/upload-limits.php:5 function az_upload_file_limit_bytes() {
+az-theme/inc/core/upload-limits.php:15 function az_upload_size_limit( $size ) {
+az-theme/inc/core/upload-limits.php:21 function az_validate_upload_file_size( $file ) {
+az-theme/inc/core/user-options.php:3 function az_user_feature( $key ) {
+az-theme/inc/core/user-options.php:19 function az_user_should_hide_admin_bar() {
+az-theme/inc/core/user-options.php:41 function az_user_restrict_content() {
+az-theme/inc/core/user-options.php:72 function az_user_profile_fields( $user ) {
+az-theme/inc/core/user-options.php:85 function az_save_profile_avatar( $errors, $update, $user ) {
+az-theme/inc/floating-contact.php:5 function az_contact_icon( $name ) {
+az-theme/inc/floating-contact.php:21 function az_contact_data() {
+az-theme/inc/floating-contact.php:36 function az_contact_assets() {
+az-theme/inc/floating-contact.php:43 function az_render_contact() {
+az-theme/inc/functions/admin-settings.php:12 function wpc_url_login(){
+az-theme/inc/functions/admin-settings.php:54 // Custom sanitize function for iframe embed code
+az-theme/inc/functions/admin-settings.php:55 function az_sanitize_iframe( $input ) {
+az-theme/inc/functions/admin-settings.php:76 function az_sanitize_email_list( $input ) {
+az-theme/inc/functions/admin-settings.php:84 function az_sanitize_smtp_encryption( $input ) {
+az-theme/inc/functions/admin-settings.php:90 function az_lead_table_name() {
+az-theme/inc/functions/admin-settings.php:96 function az_create_lead_table() {
+az-theme/inc/functions/admin-settings.php:124 function az_contact_lead_manager_data( $lead ) {
+az-theme/inc/functions/admin-settings.php:141 function az_insert_contact_lead( $lead ) {
+az-theme/inc/functions/admin-settings.php:157 function az_get_lead_notify_emails() {
+az-theme/inc/functions/admin-settings.php:171 function az_send_lead_notification_email( $lead ) {
+az-theme/inc/functions/admin-settings.php:257 function az_contact_leads_page() {
+az-theme/inc/functions/admin-settings.php:444 function wv_about_default_content() {
+az-theme/inc/functions/admin-settings.php:473 function wv_seed_about_template_content() {
+az-theme/inc/functions/admin-settings.php:510 function az_catalogue_default_lines() {
+az-theme/inc/functions/admin-settings.php:514 function az_catalogue_items() {
+az-theme/inc/functions/category-images.php:17 function cp_cat_image_add_field() {
+az-theme/inc/functions/category-images.php:37 function cp_cat_image_edit_field( $term ) {
+az-theme/inc/functions/category-images.php:63 function cp_cat_image_admin_script() {
+az-theme/inc/functions/category-images.php:106 function cp_cat_image_save( $term_id ) {
+az-theme/inc/functions/category-images.php:120 function cp_get_cat_image_url( $term_id, $size = 'medium' ) {
+az-theme/inc/functions/contact-form.php:9 function az_contact_generate_captcha_code() {
+az-theme/inc/functions/contact-form.php:20 function az_contact_create_captcha() {
+az-theme/inc/functions/contact-form.php:32 function az_contact_verify_captcha( $token, $answer ) {
+az-theme/inc/functions/contact-form.php:50 function az_contact_refresh_captcha() {
+az-theme/inc/functions/contact-form.php:60 function az_handle_contact_form() {
+az-theme/inc/functions/content-media.php:9 function az_is_local_image_url( $url ) {
+az-theme/inc/functions/content-media.php:18 function az_sideload_remote_image_url( $url, $post_id = 0 ) {
+az-theme/inc/functions/content-media.php:47 function az_localize_remote_images_in_html( $html, $post_id = 0 ) {
+az-theme/inc/functions/content-media.php:70 function az_localize_remote_images_on_save( $post_id, $post, $update ) {
+az-theme/inc/functions/content-media.php:114 function az_strip_tinymce_selection_markers( $content ) {
+az-theme/inc/functions/content-media.php:126 function az_group_consecutive_content_images( $content ) {
+az-theme/inc/functions/content-media.php:150 function az_tinymce_emoji_content_style( $settings ) {
+az-theme/inc/functions/home-products.php:10 function az_home_category_sections_config() {
+az-theme/inc/functions/home-products.php:60 function az_home_category_has_products( $term_id ) {
+az-theme/inc/functions/home-products.php:98 function az_home_all_products_term() {
+az-theme/inc/functions/home-products.php:108 function az_home_selected_category_ids() {
+az-theme/inc/functions/home-products.php:149 function az_home_section_config_for_term( $term_id ) {
+az-theme/inc/functions/home-products.php:161 function az_home_term_image( $term, $size = 'medium' ) {
+az-theme/inc/functions/home-products.php:183 function az_storefront_show_prices() {
+az-theme/inc/functions/home-products.php:189 function az_storefront_show_purchase_actions() {
+az-theme/inc/functions/home-products.php:195 function az_storefront_contact_phone() {
+az-theme/inc/functions/home-products.php:203 function az_storefront_contact_price_html() {
+az-theme/inc/functions/home-products.php:209 function az_storefront_product_price_html( $product ) {
+az-theme/inc/functions/home-products.php:229 function az_storefront_product_discount_percentage( $product ) {
+az-theme/inc/functions/home-products.php:265 function az_storefront_render_product_card_actions( $product ) {
+az-theme/inc/functions/home-products.php:297 function az_storefront_shop_products_per_page() {
+az-theme/inc/functions/home-products.php:304 function az_storefront_limit_shop_archive_query( $query ) {
+az-theme/inc/functions/home-products.php:324 function az_render_product_card( $product, $args = array() ) {
+az-theme/inc/functions/home-products.php:381 function az_storefront_home_product_card( $post_id ) {
+az-theme/inc/functions/home-products.php:387 function az_home_category_section( $category, $products_per_category ) {
+az-theme/inc/functions/home-products.php:496 function az_home_load_categories_ajax() {
+az-theme/inc/functions/integrations-access.php:14 function az_enqueue_login_assets() {
+az-theme/inc/functions/integrations-access.php:38 function az_auto_expire_licenses() {
+az-theme/inc/functions/integrations-access.php:83 function az_enqueue_pricing_redirect_js() {
+az-theme/inc/functions/integrations-access.php:95 function az_hide_admin_bar_for_non_admins() {
+az-theme/inc/functions/integrations-access.php:107 function az_remove_admin_bar_css() {
+az-theme/inc/functions/integrations-access.php:118 function az_disable_admin_bar_profile_option() {
+az-theme/inc/functions/integrations-access.php:129 function az_redirect_non_admin_from_dashboard() {
+az-theme/inc/functions/integrations-access.php:147 function az_handle_plugin_download() {
+az-theme/inc/functions/licenses.php:11 function az_register_license_post_type() {
+az-theme/inc/functions/licenses.php:49 function az_add_license_meta_boxes() {
+az-theme/inc/functions/licenses.php:65 function az_license_columns( $columns ) {
+az-theme/inc/functions/licenses.php:80 function az_license_column_content( $column, $post_id ) {
+az-theme/inc/functions/licenses.php:162 function az_license_details_callback( $post ) {
+az-theme/inc/functions/licenses.php:266 function az_save_license_details( $post_id ) {
+az-theme/inc/functions/menu-icons.php:14 function cp_menu_item_custom_fields( $item_id, $item, $depth, $args ) {
+az-theme/inc/functions/menu-icons.php:62 function cp_save_menu_item_custom_fields( $menu_id, $menu_item_db_id, $args ) {
+az-theme/inc/functions/menu-icons.php:86 function cp_menu_icon_picker_js() { ?>
+az-theme/inc/functions/menu-icons.php:130 function cp_menu_item_add_icon( $title, $item, $args, $depth ) {
+az-theme/inc/functions/pricing.php:11 function az_ai_register_pricing_cpt() {
+az-theme/inc/functions/pricing.php:103 function az_ai_add_pricing_meta_boxes() {
+az-theme/inc/functions/pricing.php:115 function az_ai_pricing_meta_box_callback( $post ) {
+az-theme/inc/functions/pricing.php:195 function az_ai_save_pricing_meta( $post_id ) {
+az-theme/inc/functions/pricing.php:264 function az_ai_add_testimonial_meta_boxes() {
+az-theme/inc/functions/pricing.php:276 function az_ai_testimonial_meta_box_callback( $post ) {
+az-theme/inc/functions/pricing.php:304 function az_ai_save_testimonial_meta( $post_id ) {
+az-theme/inc/functions/product-attributes-pricing.php:15 function az_wc_attribute_type_selector( $types ) {
+az-theme/inc/functions/product-attributes-pricing.php:23 function az_wc_checkbox_attribute_taxonomies() {
+az-theme/inc/functions/product-attributes-pricing.php:68 function az_wc_checkbox_attribute_admin_js() {
+az-theme/inc/functions/product-attributes-pricing.php:72 function getAttributeTaxonomy($attribute){
+az-theme/inc/functions/product-attributes-pricing.php:80 function syncCheckboxes($box, $select){
+az-theme/inc/functions/product-attributes-pricing.php:88 function buildCheckboxList($attribute){
+az-theme/inc/functions/product-attributes-pricing.php:131 function refreshCheckboxAttributes(){
+az-theme/inc/functions/product-attributes-pricing.php:153 function az_wc_checkbox_attribute_admin_css() {
+az-theme/inc/functions/product-attributes-pricing.php:166 function az_product_cat_rate_field_add() {
+az-theme/inc/functions/product-attributes-pricing.php:179 function az_product_cat_rate_field_edit( $term ) {
+az-theme/inc/functions/product-attributes-pricing.php:195 function az_save_product_cat_price_rate( $term_id ) {
+az-theme/inc/functions/product-attributes-pricing.php:214 function az_clear_product_cat_rate_price_cache( $term_id ) {
+az-theme/inc/functions/product-attributes-pricing.php:243 function az_get_product_category_price_rate( $product_id ) {
+az-theme/inc/functions/product-attributes-pricing.php:270 function az_apply_product_category_price_rate( $price, $product ) {
+az-theme/inc/functions/product-attributes-pricing.php:298 function az_product_cat_rate_variation_prices_hash( $hash, $product, $for_display ) {
+az-theme/inc/functions/product-attributes-pricing.php:308 function az_product_cat_rate_admin_column( $columns ) {
+az-theme/inc/functions/product-attributes-pricing.php:316 function az_product_cat_rate_admin_column_content( $content, $column_name, $term_id ) {
+az-theme/inc/functions/product-fields.php:9 function az_product_extra_info_meta_box() {
+az-theme/inc/functions/product-fields.php:23 function az_product_extra_info_meta_box_html( $post ) {
+az-theme/inc/functions/product-fields.php:76 function az_save_product_extra_info_meta( $post_id ) {
+az-theme/inc/functions/product-videos.php:9 function az_product_youtube_id_from_value( $value ) {
+az-theme/inc/functions/product-videos.php:52 function az_product_youtube_watch_url( $value ) {
+az-theme/inc/functions/product-videos.php:59 function az_product_youtube_embed_url( $value ) {
+az-theme/inc/functions/product-videos.php:66 function az_get_product_video_urls( $post_id ) {
+az-theme/inc/functions/product-videos.php:101 function az_add_product_video_metabox() {
+az-theme/inc/functions/product-videos.php:115 function az_render_product_video_metabox( $post ) {
+az-theme/inc/functions/product-videos.php:145 function refresh(){
+az-theme/inc/functions/product-videos.php:175 function az_save_product_video_urls( $post_id ) {
+az-theme/inc/functions/term-language.php:15 function az_category_en_field( $term ) {
+az-theme/inc/functions/term-language.php:35 function az_category_en_add_field() {
+az-theme/inc/functions/term-language.php:49 function az_save_category_en_field( $term_id ) {
+az-theme/inc/functions/theme-setup.php:11 class AZ_AI_Nav_Walker extends Walker_Nav_Menu {
+az-theme/inc/functions/theme-setup.php:13 function start_lvl( &$output, $depth = 0, $args = null ) {
+az-theme/inc/functions/theme-setup.php:18 function end_lvl( &$output, $depth = 0, $args = null ) {
+az-theme/inc/functions/theme-setup.php:22 function start_el( &$output, $item, $depth = 0, $args = null, $id = 0 ) {
+az-theme/inc/functions/theme-setup.php:64 function end_el( &$output, $item, $depth = 0, $args = null ) {
+az-theme/inc/functions/theme-setup.php:76 function az_ai_theme_setup() {
+az-theme/inc/functions/theme-setup.php:107 function az_register_product_warehouse_taxonomy() {
+az-theme/inc/functions/theme-setup.php:145 function az_get_current_language() {
+az-theme/inc/functions/theme-setup.php:160 function az_t( $vi_text, $en_text ) {
+az-theme/inc/functions/theme-setup.php:171 function az_bilingual( $vi_text, $en_text, $tag = 'span', $class = '' ) {
+az-theme/inc/functions/theme-setup.php:182 function az_theme_mod( $key, $default_vi = '', $default_en = '' ) {
+az-theme/inc/functions/theme-setup.php:195 function az_ai_theme_scripts() {
+az-theme/inc/functions/theme-setup.php:325 function az_find_font_family_in_settings( $settings, $target_slug = '' ) {
+az-theme/inc/functions/theme-setup.php:355 function az_normalize_core_font_family( $font_family, $font_settings = array() ) {
+az-theme/inc/functions/theme-setup.php:371 function az_site_font_stack() {
+az-theme/inc/functions/theme-setup.php:379 class AZ_AI_Header_Nav_Walker extends Walker_Nav_Menu {
+az-theme/inc/functions/theme-setup.php:381 public function start_lvl( &$output, $depth = 0, $args = null ) {
+az-theme/inc/functions/theme-setup.php:387 public function end_lvl( &$output, $depth = 0, $args = null ) {
+az-theme/inc/functions/theme-setup.php:392 public function start_el( &$output, $item, $depth = 0, $args = null, $id = 0 ) {
+az-theme/inc/functions/theme-setup.php:411 public function end_el( &$output, $item, $depth = 0, $args = null ) {
+az-theme/inc/functions/theme-setup.php:419 class AZ_AI_Mobile_Nav_Walker extends Walker_Nav_Menu {
+az-theme/inc/functions/theme-setup.php:421 function start_lvl( &$output, $depth = 0, $args = null ) {
+az-theme/inc/functions/theme-setup.php:424 function end_lvl( &$output, $depth = 0, $args = null ) {
+az-theme/inc/functions/theme-setup.php:427 function start_el( &$output, $item, $depth = 0, $args = null, $id = 0 ) {
+az-theme/inc/functions/theme-setup.php:450 function end_el( &$output, $item, $depth = 0, $args = null ) {
+az-theme/inc/functions/theme-setup.php:547 function azMobileToggle(id, btn) {
+az-theme/inc/functions/translation.php:12 function az_google_translate( $text, $source = 'auto', $target = 'en', $is_html = false ) {
+az-theme/inc/functions/translation.php:21 function az_translate_chunk( $text, $source, $target ) {
+az-theme/inc/functions/translation.php:48 function az_translate_html( $text, $source, $target ) {
+az-theme/inc/functions/translation.php:72 function az_translate_html_blocks( $html, $source, $target ) {
+az-theme/inc/functions/translation.php:141 function az_translate_block_element( $block_html, $source, $target ) {
+az-theme/inc/functions/translation.php:174 function az_translate_inner_html( $html, $source, $target ) {
+az-theme/inc/functions/translation.php:221 function az_translate_html_fallback( $html, $source, $target ) {
+az-theme/inc/functions/translation.php:242 function az_call_google_translate( $text, $source, $target ) {
+az-theme/inc/functions/woocommerce.php:10 function az_storefront_filter_label( $label, $taxonomy = '', $kind = '' ) {
+az-theme/inc/functions/woocommerce.php:46 function az_storefront_filter_definitions() {
+az-theme/inc/functions/woocommerce.php:100 function az_storefront_apply_taxonomy_filters( $query ) {
+az-theme/inc/functions/woocommerce.php:149 function az_get_header_cart_html() {
+az-theme/inc/functions/woocommerce.php:176 function az_woocommerce_purchase_actions_enabled() {
+az-theme/inc/functions/woocommerce.php:182 function az_woocommerce_loop_add_to_cart_link( $html ) {
+az-theme/inc/functions/woocommerce.php:189 function az_woocommerce_loop_button_args( $args ) {
+az-theme/inc/functions/woocommerce.php:205 function az_header_cart_fragments( $fragments ) {
+az-theme/inc/functions/woocommerce.php:213 function az_woocommerce_vietnamese_text( $translated, $text, $domain ) {
+az-theme/inc/functions/woocommerce.php:364 function az_woocommerce_is_vietnamese() {
+az-theme/inc/functions/woocommerce.php:370 function az_woocommerce_notice_text( $message ) {
+az-theme/inc/functions/woocommerce.php:390 function az_translate_stored_woocommerce_notices() {
+az-theme/inc/functions/woocommerce.php:426 function az_woocommerce_vietnamese_plural_text( $translation, $single, $plural, $number, $domain ) {
+az-theme/inc/functions/woocommerce.php:453 function az_translate_payment_gateway_text( $text, $gateway_id = '' ) {
+az-theme/inc/functions/woocommerce.php:472 function az_woocommerce_loop_add_to_cart_text( $text, $product = null ) {
+az-theme/inc/functions/woocommerce.php:498 function az_translate_added_to_cart_message( $message, $products, $show_qty ) {
+az-theme/inc/functions/woocommerce.php:536 function az_track_recently_viewed_product() {
+az-theme/inc/functions/woocommerce.php:570 function az_translate_color_attribute_label( $label, $name = '', $product = null ) {
+az-theme/inc/functions/woocommerce.php:593 function chooseFirstVariationDefaults($form){
+az-theme/inc/functions/woocommerce.php:624 function buildVariationLabels($form){
+az-theme/inc/functions/woocommerce.php:638 function syncVariationLabels(){
+az-theme/inc/functions/woocommerce.php:713 function az_ensure_woocommerce_pages() {
+az-theme/inc/functions/woocommerce.php:828 function az_is_woocommerce_system_page() {
+az-theme/inc/functions/woocommerce.php:850 function az_filter_woocommerce_products_query( $query ) {
+az-theme/inc/helpers/contact-maps.php:5 function az_get_google_maps() {
+az-theme/inc/helpers/contact-maps.php:24 function az_get_location_field( $field ) {
+az-theme/inc/helpers/contact-maps.php:38 function az_google_map_assets() {
+az-theme/inc/helpers/contact-maps.php:46 function az_google_map_shortcode( $atts = array() ) {
+az-theme/inc/helpers/footer-components.php:11 function az_footer_default_options() {
+az-theme/inc/helpers/footer-components.php:21 function az_footer_options() {
+az-theme/inc/helpers/header-components.php:8 function az_header_default_options() {
+az-theme/inc/helpers/header-components.php:38 function az_header_options() {
+az-theme/inc/helpers/header-components.php:46 function az_product_category_menu_id( $fallback_menu_id = 0 ) {
+az-theme/inc/helpers/header-components.php:55 function az_render_header_menu( $menu_id = 0, $location = 'primary', $class = 'az-primary-menu' ) {
+az-theme/inc/helpers/header-components.php:71 function az_header_menu_id( $slot, $options = array() ) {
+az-theme/inc/helpers/header-components.php:81 function az_render_header_logo( $args = array() ) {
+az-theme/inc/helpers/header-components.php:90 function az_render_header_search( $options = array(), $class = 'az-search' ) {
+az-theme/inc/helpers/header-components.php:99 function az_render_sticky_header( $options = array() ) {
+az-theme/inc/helpers/header-components.php:142 function az_render_header_action( $type, $args = array() ) {
+az-theme/inc/helpers/options.php:3 function az_get_options() { $options = get_option( 'az_theme_options', array() ); return is_array( $options ) ? $options : array(); }
+az-theme/inc/helpers/options.php:4 function az_array_get( $array, $path, $default = null ) { $value = $array; foreach ( explode( '.', (string) $path ) as $segment ) { if ( ! is_array( $value ) || ! array_key_exists( $segment, $value ) ) { return $default; } $value = $value[ $segment ]; } return $value; }
+az-theme/inc/helpers/options.php:5 function az_get_option( $path, $default = null ) { return az_array_get( az_get_options(), $path, $default ); }
+az-theme/inc/helpers/options.php:9 function az_default_font_family() {
+az-theme/inc/helpers/options.php:13 function az_is_bundled_font_family( $family ) {
+az-theme/inc/helpers/options.php:19 function az_enqueue_bundled_font_fallback() {
+az-theme/inc/helpers/options.php:28 function az_get_company_name() { $all = az_get_options(); return array_key_exists( 'company_name', $all['general'] ?? array() ) ? $all['general']['company_name'] : get_option( 'az_contact_company', get_bloginfo( 'name' ) ); }
+az-theme/inc/helpers/options.php:29 function az_get_contact_items( $type = 'phone' ) { $key = 'address' === $type ? 'addresses' : ( 'email' === $type ? 'emails' : 'phones' ); $all = az_get_options(); $general = isset( $all['general'] ) && is_array( $all['general'] ) ? $all['general'] : array(); if ( ! empty( $general[ $key ] ) && is_array( $general[ $key ] ) ) { $items = array(); foreach ( $general[ $key ] as $row ) { if ( is_array( $row ) && ! empty( $row['value'] ) && is_scalar( $row['value'] ) ) { $items[] = array( 'label' => sanitize_text_field( $row['label'] ?? ( 'phone' === $type ? 'Hotline' : ( 'email' === $type ? 'Email' : 'Địa chỉ' ) ) ), 'value' => 'address' === $type ? sanitize_textarea_field( $row['value'] ) : ( 'email' === $type ? sanitize_email( $row['value'] ) : sanitize_text_field( $row['value'] ) ) ); } } return $items; } if ( 'address' === $type ) { return array(); } $legacy_keys = 'email' === $type ? array( 'email', 'sales_email', 'support_email' ) : array( 'phone' ); $items = array(); foreach ( $legacy_keys as $legacy_key ) { $raw = array_key_exists( $legacy_key, $general ) ? $general[ $legacy_key ] : get_option( 'email' === $type ? ( 'email' === $legacy_key ? 'az_contact_email' : ( 'sales_email' === $legacy_key ? 'az_contact_sales_email' : 'az_contact_support_email' ) ) : 'az_contact_phone', '' ); if ( '' !== trim( (string) $raw ) ) { $items[] = array( 'label' => 'phone' === $type ? 'Hotline' : ( 'email' === $type ? ucwords( str_replace( '_', ' ', $legacy_key ) ) : 'Địa chỉ' ), 'value' => 'email' === $type ? sanitize_email( $raw ) : trim( $raw ) ); } } return $items; }
+az-theme/inc/helpers/options.php:30 function az_get_phone() { $items = az_get_contact_items( 'phone' ); return $items[0]['value'] ?? get_option( 'az_contact_phone', '' ); }
+az-theme/inc/helpers/options.php:31 function az_get_email() { $all = az_get_options(); return array_key_exists( 'email', $all['general'] ?? array() ) ? $all['general']['email'] : get_option( 'az_contact_email', get_option( 'admin_email' ) ); }
+az-theme/inc/helpers/options.php:32 function az_get_address() { $items = az_get_contact_items( 'address' ); return $items[0]['value'] ?? ''; }
+az-theme/inc/helpers/options.php:33 function az_contact_shortcode( $atts ) { $atts = shortcode_atts( array( 'type' => 'phone', 'format' => 'list' ), $atts, 'az_contact' ); if ( 'map' === $atts['type'] ) { return az_google_map_shortcode(); } $type = in_array( $atts['type'], array( 'address', 'email' ), true ) ? $atts['type'] : 'phone'; $items = az_get_contact_items( $type ); if ( ! $items ) { return ''; } $html = '<div class="az-contact-list az-contact-list--' . esc_attr( $type ) . '">'; foreach ( $items as $item ) { $value = esc_html( $item['value'] ); if ( 'phone' === $type ) { $href = preg_replace( '/[^0-9+]/', '', $item['value'] ); $value = '<a href="tel:' . esc_attr( $href ) . '">' . $value . '</a>'; } elseif ( 'email' === $type ) { $value = '<a href="mailto:' . esc_attr( $item['value'] ) . '">' . $value . '</a>'; } $html .= '<div class="az-contact-item"><span class="az-contact-item__label">' . esc_html( $item['label'] ) . '</span><span class="az-contact-item__value">' . $value . '</span></div>'; } return $html . '</div>'; }
+az-theme/inc/helpers/options.php:35 function az_general_shortcode( $atts ) { $atts = shortcode_atts( array( 'field' => '' ), $atts, 'az_general' ); $allowed = array( 'company_name', 'brand_name', 'tax_code', 'representative', 'business_registration', 'website', 'contact_person', 'phone', 'phone_secondary', 'email', 'sales_email', 'support_email', 'fax', 'working_hours', 'address', 'address_secondary', 'google_maps_url', 'google_maps_embed', 'copyright' ); $field = sanitize_key( $atts['field'] ); if ( ! in_array( $field, $allowed, true ) ) { return ''; } if ( 'google_maps_embed' === $field ) { return az_google_map_shortcode(); } if ( in_array( $field, array( 'address', 'address_secondary', 'google_maps_url' ), true ) ) { return esc_html( az_get_location_field( $field ) ); } $value = az_get_option( 'general.' . $field, null ); if ( null === $value || '' === $value ) { $legacy = array( 'company_name' => 'az_contact_company', 'brand_name' => 'az_contact_brand', 'tax_code' => 'az_contact_tax_code', 'representative' => 'az_contact_representative', 'business_registration' => 'az_contact_registration', 'website' => 'az_contact_website', 'contact_person' => 'az_contact_person', 'phone' => 'az_contact_phone', 'phone_secondary' => 'az_contact_phone_2', 'email' => 'az_contact_email', 'sales_email' => 'az_contact_sales_email', 'support_email' => 'az_contact_support_email', 'fax' => 'az_contact_fax', 'working_hours' => 'az_contact_hours', 'copyright' => '' ); $value = $legacy[ $field ] ? get_option( $legacy[ $field ], '' ) : ''; } return esc_html( $value ); }
+az-theme/inc/helpers/options.php:38 function az_ministry_of_trade_badge() {
+az-theme/inc/helpers/options.php:44 function az_get_social_links() { $map = array( 'facebook' => 'az_footer_social_facebook', 'youtube' => 'az_footer_social_youtube', 'tiktok' => 'az_footer_social_tiktok', 'instagram' => '', 'linkedin' => 'az_footer_social_linkedin', 'pinterest' => '', 'x' => '', 'zalo' => 'az_contact_zalo_url', 'messenger' => 'az_contact_messenger_url', 'whatsapp' => '' ); $all = az_get_options(); $social = isset( $all['social'] ) && is_array( $all['social'] ) ? $all['social'] : array(); $links = array(); foreach ( $map as $key => $legacy ) { if ( array_key_exists( $key, $social ) ) { $value = $social[ $key ]; } elseif ( $legacy ) { $value = get_option( $legacy, '' ); } else { $value = ''; } if ( $value ) { $links[ $key ] = esc_url( $value ); } } return $links; }
+az-theme/inc/helpers/options.php:45 function az_get_logo_id( $variant = 'desktop' ) { $keys = array( 'desktop' => 'logo', 'mobile' => 'logo_mobile', 'sticky' => 'logo_sticky', 'light' => 'logo_light', 'dark' => 'logo_dark' ); $key = $keys[ $variant ] ?? 'logo'; $all = az_get_options(); if ( isset( $all['branding'][ $key ] ) && $all['branding'][ $key ] ) { return absint( $all['branding'][ $key ] ); } return 'desktop' === $variant ? absint( get_theme_mod( 'custom_logo', 0 ) ) : 0; }
+az-theme/inc/helpers/options.php:46 function az_get_logo_url( $variant = 'desktop' ) { $id = az_get_logo_id( $variant ); return $id ? wp_get_attachment_image_url( $id, 'full' ) : ''; }
+az-theme/inc/helpers/options.php:47 function az_get_homepage_mode() { return az_get_option( 'homepage.mode', 'shop' ); }
+az-theme/inc/helpers/options.php:48 function az_get_home_h1() {
+az-theme/inc/helpers/options.php:77 function az_render_home_seo_h1() {
+az-theme/inc/helpers/options.php:97 function az_get_font_library_families() {
+az-theme/inc/helpers/options.php:137 function az_collect_global_font_options() {
+az-theme/inc/helpers/options.php:161 function az_get_font_options() {
+az-theme/inc/helpers/options.php:186 function az_print_selected_font_library_faces() {
+az-theme/inc/helpers/utilities.php:3 function az_is_woocommerce_active() { return class_exists( 'WooCommerce' ); }
+az-theme/inc/helpers/utilities.php:4 function az_get_theme_version() { $theme = wp_get_theme(); return (string) $theme->get( 'Version' ); }
+az-theme/inc/license-api.php:22 function az_get_license_by_key( $license_key ) {
+az-theme/inc/license-api.php:44 function az_get_plan_features( $plan_slug ) {
+az-theme/inc/license-api.php:57 function az_get_post_limit( $plan_slug ) {
+az-theme/inc/license-api.php:58 // Use the helper function from vietqr-payment.php if available
+az-theme/inc/license-api.php:77 function az_register_license_api_endpoints() {
+az-theme/inc/license-api.php:113 function az_api_verify_license( WP_REST_Request $request ) {
+az-theme/inc/license-api.php:255 function az_api_activate_license( WP_REST_Request $request ) {
+az-theme/inc/license-api.php:314 function az_api_update_usage( WP_REST_Request $request ) {
+az-theme/inc/license-api.php:355 function az_api_update_tokens( WP_REST_Request $request ) {
+az-theme/inc/license-api.php:395 function az_auto_sync_license_to_plugin( $user_login, $user ) {
+az-theme/inc/modules/analytics/class-analytics.php:3 class AZ_Analytics {
+az-theme/inc/modules/analytics/class-analytics.php:5 public function __construct() { add_action( 'template_redirect', array( $this, 'track_view' ), 20 ); add_action( 'wp_ajax_az_track_click', array( $this, 'track_click' ) ); add_action( 'wp_ajax_nopriv_az_track_click', array( $this, 'track_click' ) ); add_action( 'wp_footer', array( $this, 'script' ), 30 ); add_action( 'wp_enqueue_scripts', array( $this, 'assets' ) ); }
+az-theme/inc/modules/analytics/class-analytics.php:6 public function assets() { wp_enqueue_style( 'az-analytics', get_template_directory_uri() . '/assets/admin/css/az-analytics.css', array(), az_get_theme_version() ); }
+az-theme/inc/modules/analytics/class-analytics.php:7 private function allowed_request() { return ! is_admin() && ! wp_doing_ajax() && ! ( defined( 'REST_REQUEST' ) && REST_REQUEST ) && ! ( defined( 'DOING_CRON' ) && DOING_CRON ) && ! $this->is_bot(); }
+az-theme/inc/modules/analytics/class-analytics.php:8 private function is_bot() { $agent = strtolower( $_SERVER['HTTP_USER_AGENT'] ?? '' ); return $agent && (bool) preg_match( '/bot|crawler|spider|slurp|bingpreview|headless/i', $agent ); }
+az-theme/inc/modules/analytics/class-analytics.php:9 private function data() { $data = get_option( self::OPTION, array() ); return is_array( $data ) ? $data : array(); }
+az-theme/inc/modules/analytics/class-analytics.php:10 private function save( $data ) { update_option( self::OPTION, $data, false ); }
+az-theme/inc/modules/analytics/class-analytics.php:11 public function track_view() { if ( ! $this->allowed_request() || is_feed() ) { return; } $data = $this->data(); $day = current_time( 'Y-m-d' ); $data['views_total'] = absint( $data['views_total'] ?? 0 ) + 1; $data['views_daily'][ $day ] = absint( $data['views_daily'][ $day ] ?? 0 ) + 1; $this->save( $data ); }
+az-theme/inc/modules/analytics/class-analytics.php:12 public function track_click() { check_ajax_referer( 'az_analytics', 'nonce' ); $event = sanitize_key( wp_unslash( $_POST['event'] ?? '' ) ); if ( ! $event || strlen( $event ) > 40 ) { wp_send_json_error(); } $data = $this->data(); $data['clicks_total'] = absint( $data['clicks_total'] ?? 0 ) + 1; $data['clicks'][ $event ] = absint( $data['clicks'][ $event ] ?? 0 ) + 1; $this->save( $data ); wp_send_json_success(); }
+az-theme/inc/modules/analytics/class-analytics.php:13 public function script() { if ( ! $this->allowed_request() ) { return; } echo '<script>document.addEventListener("click",function(e){var el=e.target.closest("a,button");if(!el||!navigator.sendBeacon)return;var eventName=el.getAttribute("data-az-track")||el.getAttribute("href")||el.textContent.trim().slice(0,40)||"unknown";var data=new FormData();data.append("action","az_track_click");data.append("event",eventName);data.append("nonce","' . esc_js( wp_create_nonce( 'az_analytics' ) ) . '");navigator.sendBeacon("' . esc_url( admin_url( 'admin-ajax.php' ) ) . '",data);});</script>'; }
+az-theme/inc/modules/analytics/class-analytics.php:16 function az_get_analytics_summary() { $data = get_option( AZ_Analytics::OPTION, array() ); $daily = is_array( $data['views_daily'] ?? null ) ? $data['views_daily'] : array(); $today = current_time( 'Y-m-d' ); $recent = 0; $month = 0; foreach ( $daily as $day => $count ) { $age = (int) floor( ( current_time( 'timestamp' ) - strtotime( $day . ' 00:00:00' ) ) / DAY_IN_SECONDS ); if ( $age >= 0 && $age < 7 ) { $recent += absint( $count ); } if ( $age >= 0 && $age < 30 ) { $month += absint( $count ); } } $online = absint( apply_filters( 'az_analytics_online_count', 5 ) ); return array( 'online' => min( 9999, $online ), 'views_total' => absint( $data['views_total'] ?? 0 ), 'views_today' => absint( $daily[ $today ] ?? 0 ), 'views_7_days' => $recent, 'views_30_days' => $month, 'clicks_total' => absint( $data['clicks_total'] ?? 0 ), 'clicks' => is_array( $data['clicks'] ?? null ) ? $data['clicks'] : array() ); }
+az-theme/inc/modules/analytics/class-analytics.php:17 function az_analytics_shortcode( $atts ) { $atts = shortcode_atts( array( 'class' => '', 'show' => 'online,today,30_days,total' ), $atts, 'az_stats' ); $summary = az_get_analytics_summary(); $labels = array( 'online' => 'Đang online', 'today' => 'Hôm nay', '30_days' => '30 ngày', 'total' => 'Tổng lượt xem' ); $values = array( 'online' => $summary['online'], 'today' => $summary['views_today'], '30_days' => $summary['views_30_days'], 'total' => $summary['views_total'] ); $html = '<div class="az-analytics-bar ' . esc_attr( $atts['class'] ) . '">'; foreach ( array_map( 'trim', explode( ',', $atts['show'] ) ) as $key ) { if ( isset( $labels[ $key ] ) ) { $html .= '<div class="az-analytics-bar__item"><span class="az-analytics-bar__label">' . esc_html( $labels[ $key ] ) . '</span><strong class="az-analytics-bar__value">' . esc_html( number_format_i18n( $values[ $key ] ) ) . '</strong></div>'; } } return $html . '</div>'; }
+az-theme/inc/modules/content-duplicate.php:9 function az_content_duplicate_enabled() {
+az-theme/inc/modules/content-duplicate.php:13 function az_content_duplicate_supported( $post ) {
+az-theme/inc/modules/content-duplicate.php:20 function az_content_duplicate_can_create( $post ) {
+az-theme/inc/modules/content-duplicate.php:27 function az_content_duplicate_row_action( $actions, $post ) {
+az-theme/inc/modules/content-duplicate.php:42 function az_content_duplicate_copy_terms( $source_id, $duplicate_id, $post_type ) {
+az-theme/inc/modules/content-duplicate.php:51 function az_content_duplicate_copy_meta( $source_id, $duplicate_id ) {
+az-theme/inc/modules/content-duplicate.php:61 function az_content_duplicate_handle() {
+az-theme/inc/modules/content-duplicate.php:96 function az_content_duplicate_notice() {
+az-theme/inc/modules/flatsome-compat/migrations/class-settings-importer.php:11 class AZ_Flatsome_Settings_Importer {
+az-theme/inc/modules/flatsome-compat/migrations/class-settings-importer.php:21 public static function import( $preview_rows, $selected_ids, $backup_callback, $current_settings = array() ) {
+az-theme/inc/modules/flatsome-compat/migrations/class-settings-importer.php:66 private static function array_set( &$array, $path, $value ) {
+az-theme/inc/modules/flatsome-compat/migrations/class-settings-map.php:11 class AZ_Flatsome_Settings_Map {
+az-theme/inc/modules/flatsome-compat/migrations/class-settings-map.php:19 public static function normalize( $entries ) {
+az-theme/inc/modules/flatsome-compat/migrations/class-settings-map.php:57 public static function preview( $entries, $az_values ) {
+az-theme/inc/modules/flatsome-compat/migrations/class-settings-map.php:79 private static function array_get( $array, $path, $default = null ) {
+az-theme/inc/modules/flatsome-compat/shortcodes.php:9 function az_flatsome_compat_enabled() {
+az-theme/inc/modules/flatsome-compat/shortcodes.php:13 function az_flatsome_compat_classes( $value ) {
+az-theme/inc/modules/flatsome-compat/shortcodes.php:18 function az_flatsome_compat_box_value( $value ) {
+az-theme/inc/modules/flatsome-compat/shortcodes.php:27 function az_flatsome_compat_section_shortcode( $attributes, $content = '' ) {
+az-theme/inc/modules/flatsome-compat/shortcodes.php:39 function az_flatsome_compat_row_shortcode( $attributes, $content = '' ) {
+az-theme/inc/modules/flatsome-compat/shortcodes.php:45 function az_flatsome_compat_col_shortcode( $attributes, $content = '' ) {
+az-theme/inc/modules/flatsome-compat/shortcodes.php:55 function az_flatsome_compat_filter_base_url() {
+az-theme/inc/modules/flatsome-compat/shortcodes.php:68 function az_flatsome_compat_filter_url( $base_url, $taxonomy, $term_slug, $kind ) {
+az-theme/inc/modules/flatsome-compat/shortcodes.php:92 function az_flatsome_compat_shop_sidebar_fallback( $classes = '' ) {
+az-theme/inc/modules/flatsome-compat/shortcodes.php:148 function az_flatsome_compat_sidebar_shortcode( $attributes ) {
+az-theme/inc/modules/flatsome-compat/shortcodes.php:162 function az_flatsome_compat_products_query_filters( $query_args ) {
+az-theme/inc/modules/flatsome-compat/shortcodes.php:202 function az_flatsome_compat_products_shortcode( $attributes ) {
+az-theme/inc/modules/flatsome-compat/shortcodes.php:219 function az_flatsome_compat_shortcode_truthy( $value ) {
+az-theme/inc/modules/flatsome-compat/shortcodes.php:223 function az_flatsome_compat_blog_image_height( $value ) {
+az-theme/inc/modules/flatsome-compat/shortcodes.php:228 function az_flatsome_compat_blog_posts_shortcode( $attributes ) {
+az-theme/inc/modules/flatsome-compat/shortcodes.php:318 function az_flatsome_compat_register_shortcodes() {
+az-theme/inc/modules/flatsome-compat/shortcodes.php:337 function az_flatsome_compat_assets() {
+az-theme/inc/modules/flatsome-compat/widgets.php:12 function az_flatsome_compat_register_widget_areas() {
+az-theme/inc/modules/homepage/admin.php:4 function az_homepage_admin_menu() {
+az-theme/inc/modules/homepage/admin.php:10 function az_homepage_admin_assets( $hook ) {
+az-theme/inc/modules/homepage/admin.php:16 function az_homepage_admin_page() {
+az-theme/inc/modules/homepage/admin.php:53 function az_homepage_save() {
+az-theme/inc/modules/homepage/module.php:5 function az_homepage_definitions() {
+az-theme/inc/modules/homepage/module.php:19 function az_homepage_options() {
+az-theme/inc/modules/homepage/module.php:25 function az_homepage_normalize( $input, $defaults ) {
+az-theme/inc/modules/homepage/module.php:43 function az_homepage_settings() {
+az-theme/inc/modules/homepage/module.php:65 function az_homepage_enabled( $id ) {
+az-theme/inc/modules/homepage/module.php:71 function az_homepage_ordered_sections() {
+az-theme/inc/modules/homepage/module.php:82 function az_homepage_assets() {
+az-theme/inc/modules/leads/inc/lead-forms.php:9 function az9s_get_lead_forms() {
+az-theme/inc/modules/leads/inc/lead-forms.php:17 function az9s_resolve_lead_form_id( $requested_id, $forms = null ) {
+az-theme/inc/modules/leads/inc/lead-forms.php:31 function az9s_default_lead_form_template() {
+az-theme/inc/modules/leads/inc/lead-forms.php:54 function az9s_normalize_lead_form_lang( $lang ) {
+az-theme/inc/modules/leads/inc/lead-forms.php:62 function az9s_get_lead_form_variant( $form, $lang = '' ) {
+az-theme/inc/modules/leads/inc/lead-forms.php:149 function az9s_lead_forms_admin_page() {
+az-theme/inc/modules/leads/inc/lead-forms.php:312 function az9s_parse_lead_form_tags( $template ) {
+az-theme/inc/modules/leads/inc/lead-forms.php:461 function az9s_form_token_value( $tokens, $key, $default = '' ) {
+az-theme/inc/modules/leads/inc/lead-forms.php:470 function az9s_remove_form_config_tokens( $tokens, $keys ) {
+az-theme/inc/modules/leads/inc/lead-forms.php:481 function az9s_lead_form_assets_once() {
+az-theme/inc/modules/leads/inc/lead-forms.php:525 function az9s_print_shared_form_styles() {
+az-theme/inc/modules/leads/inc/lead-forms.php:852 function prepareForm(form) {
+az-theme/inc/modules/leads/inc/lead-forms.php:867 function validateForm(form) {
+az-theme/inc/modules/leads/inc/lead-forms.php:900 function az9s_dynamic_lead_submit() {
+az-theme/inc/modules/leads/inc/lead-forms.php:1074 function az9s_get_form_field_names_by_type( $template ) {
+az-theme/inc/modules/leads/inc/lead-forms.php:1084 function az9s_get_required_form_fields( $template ) {
+az-theme/inc/modules/leads/inc/leads-manager.php:8 function az9s_create_leads_table() {
+az-theme/inc/modules/leads/inc/leads-manager.php:31 function az9s_upgrade_leads_table() {
+az-theme/inc/modules/leads/inc/leads-manager.php:46 function az9s_format_lead_time( $mysql_time ) {
+az-theme/inc/modules/leads/inc/leads-manager.php:51 function az9s_send_lead_notification_email( $lead ) {
+az-theme/inc/modules/leads/inc/leads-manager.php:144 function az9s_handle_lead_submit() {
+az-theme/inc/modules/leads/inc/leads-manager.php:256 function az9s_leads_admin_page() {
+az-theme/inc/modules/leads/inc/leads-manager.php:599 function closeLeadModal() { leadModal.hidden = true; }
+az-theme/inc/modules/leads/inc/leads-manager.php:742 function az9s_leads_smtp_admin_page() {
+az-theme/inc/modules/leads/module.php:20 function az9s_leads_plugin_load() {
+az-theme/inc/modules/leads/module.php:31 function az9s_leads_activate() {
+az-theme/inc/modules/leads/module.php:47 function az9s_leads_deactivate() {
+az-theme/inc/modules/leads/module.php:52 function az9s_leads_maybe_upgrade() {
+az-theme/inc/modules/leads/module.php:65 function az9s_get_notification_email() {
+az-theme/inc/modules/leads/module.php:76 function az9s_get_smtp_settings() {
+az-theme/inc/options/class-options.php:3 class AZ_Theme_Options {
+az-theme/inc/options/class-options.php:4 public static function add_section( $id, $title, $fields = array() ) { AZ_Options_Registry::add_section( $id, $title, $fields ); }
+az-theme/inc/options/class-options.php:5 public static function add_field( $section, $field ) { AZ_Options_Registry::add_field( $section, $field ); }
+az-theme/inc/options/class-options.php:6 public static function get() { return AZ_Options_Registry::all(); }
+az-theme/inc/options/class-registry.php:3 class AZ_Options_Registry {
+az-theme/inc/options/class-registry.php:5 public static function add_section( $id, $title, $fields = array() ) { self::$sections[ sanitize_key( $id ) ] = array( 'id' => sanitize_key( $id ), 'title' => sanitize_text_field( $title ), 'fields' => $fields ); }
+az-theme/inc/options/class-registry.php:6 public static function add_field( $section, $field ) { if ( isset( self::$sections[ $section ] ) ) { self::$sections[ $section ]['fields'][] = $field; } }
+az-theme/inc/options/class-registry.php:7 public static function all() { return self::$sections; }
+az-theme/inc/options/class-registry.php:8 public static function get( $id ) { return self::$sections[ sanitize_key( $id ) ] ?? null; }
+az-theme/inc/options/class-renderer.php:3 class AZ_Options_Renderer {
+az-theme/inc/options/class-renderer.php:4 public static function field( $section, $field, $values ) {
+az-theme/inc/options/class-renderer.php:41 private static function attribute_filter_list( $name, $value ) {
+az-theme/inc/options/class-renderer.php:81 private static function repeater_row( $name, $field, $row, $index ) { $row_class = 'az-advanced__repeater-row'; if ( false !== strpos( $name, '[addresses]' ) ) { $row_class .= ' az-advanced__repeater-row--addresses'; } echo '<div class="' . esc_attr( $row_class ) . '" data-repeater-row><button type="button" class="button az-advanced__repeater-action az-advanced__repeater-drag" data-repeater-drag draggable="true" aria-label="Giữ và kéo để sắp xếp mục này" title="Giữ và kéo để sắp xếp"><span class="dashicons dashicons-move" aria-hidden="true"></span></button>'; foreach ( $field['fields'] ?? array() as $subfield ) { $id = sanitize_key( $subfield['id'] ); $type = in_array( $subfield['type'], array( 'textarea', 'map_embed' ), true ) ? 'textarea' : ( 'email' === $subfield['type'] ? 'email' : ( 'url' === $subfield['type'] ? 'url' : 'text' ) ); $field_name = $name . '[' . $index . '][' . $id . ']'; echo '<label class="az-advanced__repeater-field"><span>' . esc_html( $subfield['title'] ) . '</span>'; if ( 'textarea' === $type ) { echo '<textarea name="' . esc_attr( $field_name ) . '" rows="3">' . esc_textarea( $row[ $id ] ?? '' ) . '</textarea>'; } else { echo '<input type="' . esc_attr( $type ) . '" name="' . esc_attr( $field_name ) . '" value="' . esc_attr( $row[ $id ] ?? '' ) . '">'; } echo '</label>'; } echo '<div class="az-advanced__repeater-actions"><button type="button" class="button az-advanced__repeater-action az-advanced__repeater-remove" data-repeater-remove aria-label="Xóa mục này" title="Xóa mục này"><span class="dashicons dashicons-trash" aria-hidden="true"></span></button></div></div>'; }
+az-theme/inc/options/class-sanitizer.php:3 class AZ_Options_Sanitizer {
+az-theme/inc/options/class-sanitizer.php:4 public static function code_source( $value ) {
+az-theme/inc/options/class-sanitizer.php:8 public static function sanitize( $value, $type, $field = array() ) {
+az-theme/js/az-flatsome-compat.js:4 function prepareLegacyContent(root) {
+az-theme/js/az-flatsome-compat.js:17 function toggle() {
+az-theme/js/az-language.js:14 function getLang() {
+az-theme/js/az-language.js:22 function setLang(lang) {
+az-theme/js/az-language.js:34 function applyLang(lang) {
+az-theme/js/az-language.js:139 function init() {
+az-theme/js/az-language.js:194 function triggerPriceUpdate() {
+az-theme/js/az-logo-variants.js:6 function selectLogo(header) {
+az-theme/js/az-logo-variants.js:14 function refreshLogo(header) {
+az-theme/js/az-logo-variants.js:37 function refreshAll() {
+az-theme/js/az-product-variation.js:4 function hasContent(node) {
+az-theme/js/az-product-variation.js:10 function syncPanel(panel) {
+az-theme/js/az-product-variation.js:27 function init() {
+az-theme/js/az-site-effects.js:4 function init() {
+az-theme/js/az-site-effects.js:25 function updateVisibility() {
+az-theme/js/az-sticky-header.js:4 function syncStickyHeader() {
+az-theme/js/floating-contact.js:7 function setOpen(open, restoreFocus) {
+az-theme/js/shared-banner.js:18 function show(next) {
+az-theme/js/shared-banner.js:25 function schedule() {
+az-theme/page-gallery.php:133 function open(idx) {
+az-theme/page-gallery.php:147 function close() {
+az-theme/single-product.php:229 function setGalleryImage(gallery, thumb) {
+az-theme/single-product.php:261 function moveGallery(gallery, direction) {
+az-theme/single-product.php:269 function openLightbox(gallery) {
+az-theme/single-product.php:414 function azPrepareProductPane(pane) {
+az-theme/style.css:19 - Tat ca class custom dung prefix az-.
+az-theme-child/functions.php:29 function az_child_migrate_parent_theme_mods() {
+az-theme-child/functions.php:48 function az_child_enqueue_assets() {
+az-theme-child/functions.php:61 function az_child_steel_assets() {
+az-theme-child/functions.php:78 function az_child_catalog_sidebar_assets() {
+az-theme-child/functions.php:87 function az_child_commerce_button_assets() {
+az-theme-child/functions.php:97 function remove_admin_bar_links() {
+az-theme-child/functions.php:111 function remove_wp_dashboard_widgets() {
+az-theme-child/functions.php:117 function remove_welcome_panel() {
+az-theme-child/functions.php:123 function hk_remove_dashboard_widgets() {
+az-theme-child/functions.php:144 function hide_welcome_panel() {
+az-theme-child/inc/customizer.php:11 function az_child_remove_woocommerce_customizer() {
+az-theme-child/inc/floating-contact.php:6 function az_child_register_social_contact_style() {
+az-theme-child/inc/floating-contact.php:22 function az_child_social_contact_items() {
+az-theme-child/inc/floating-contact.php:42 function az_child_contact_assets() {
+az-theme-child/inc/floating-contact.php:52 function az_child_render_contact() {
+az-theme-child/inc/footer-storefront.php:5 function az_child_footer_policy_defaults() {
+az-theme-child/inc/footer-storefront.php:18 function az_child_footer_register_general_fields() {
+az-theme-child/inc/footer-storefront.php:49 function az_child_footer_value( $general, $key, $legacy = '', $fallback = '' ) {
+az-theme-child/inc/footer-storefront.php:54 function az_child_footer_data() {
+az-theme-child/inc/footer-storefront.php:94 function az_child_footer_profile_data( $general ) {
+az-theme-child/inc/footer-storefront.php:105 function az_child_footer_icon( $name ) {
+az-theme-child/inc/footer-storefront.php:117 function az_child_footer_contact_row( $icon, $label, $value, $href = '' ) {
+az-theme-child/inc/footer-storefront.php:126 function az_child_footer_locations( $general ) {
+az-theme-child/inc/footer-storefront.php:140 function az_child_footer_location_url( $location ) {
+az-theme-child/inc/footer-storefront.php:144 function az_child_footer_location_icon( $index ) {
+az-theme-child/inc/footer-storefront.php:151 function az_child_footer_location_actions( $location ) {
+az-theme-child/inc/header-colors.php:5 function az_child_menu_color_definitions() {
+az-theme-child/inc/header-colors.php:20 function az_child_register_menu_colors() {
+az-theme-child/inc/header-colors.php:41 function az_child_menu_colors_css() {
+az-theme-child/inc/header-mega-menu.php:6 function az_child_mega_menu_term( $item ) {
+az-theme-child/inc/header-mega-menu.php:28 function az_child_mega_menu_image( $item ) {
+az-theme-child/inc/header-mega-menu.php:39 class AZ_Child_Mega_Menu_Walker extends Walker_Nav_Menu {
+az-theme-child/inc/header-mega-menu.php:43 public function __construct() {
+az-theme-child/inc/header-mega-menu.php:48 public function start_el( &$output, $data_object, $depth = 0, $args = null, $current_object_id = 0 ) {
+az-theme-child/inc/header-mega-menu.php:63 public function start_lvl( &$output, $depth = 0, $args = null ) {
+az-theme-child/inc/header-mega-menu.php:70 public function end_lvl( &$output, $depth = 0, $args = null ) {
+az-theme-child/inc/header-mega-menu.php:80 function az_child_header_mega_menu_args( $args ) {
+az-theme-child/inc/header-mega-menu.php:88 function az_child_header_mega_menu_assets() {
+az-theme-child/inc/header-storefront.php:5 function az_child_header_register_fields() {
+az-theme-child/inc/header-storefront.php:30 function az_child_header_admin_assets() {
+az-theme-child/inc/header-storefront.php:37 function az_child_header_options() {
+az-theme-child/inc/header-storefront.php:51 function az_child_header_show_cart( $options ) {
+az-theme-child/inc/header-storefront.php:56 function az_child_render_header_utilities( $options, $class = 'az-shared-utilities' ) {
+az-theme-child/inc/header-storefront.php:71 function az_child_render_header_search( $options, $class = 'az-steel-search', $id = 'az-shared-search' ) {
+az-theme-child/inc/header-storefront.php:83 function az_child_render_sticky_header( $options ) {
+az-theme-child/inc/header-storefront.php:106 function az_child_render_mobile_menu( $options ) {
+az-theme-child/inc/header-typography.php:5 function az_child_register_menu_typography() {
+az-theme-child/inc/home-partners.php:5 function az_child_home_partners_data( $post_id = 0 ) {
+az-theme-child/inc/home-partners.php:26 function az_child_home_partners_render( $config = null ) {
+az-theme-child/inc/home-partners.php:32 function az_child_home_partner_admin_logo( $item = array() ) {
+az-theme-child/inc/home-partners.php:45 function az_child_home_partners_admin( $post_id ) {
+az-theme-child/inc/home-partners.php:66 function az_child_home_partners_save( $post_id, $post ) {
+az-theme-child/inc/home-storefront.php:5 function az_child_home_menu( $class = 'az-steel-menu' ) {
+az-theme-child/inc/home-storefront.php:9 function az_child_home_shop_url() {
+az-theme-child/inc/home-storefront.php:13 function az_child_home_collection_url( $ids ) {
+az-theme-child/inc/home-storefront.php:22 function az_child_home_heading( $title, $url ) {
+az-theme-child/inc/home-storefront.php:28 function az_child_home_product( $product ) {
+az-theme-child/inc/home-storefront.php:56 function az_child_home_articles( $config, $limit ) {
+az-theme-child/inc/home-storefront.php:65 function az_child_home_archive_url( $config, $fallback = '/tin-tuc/' ) {
+az-theme-child/inc/home-storefront.php:73 function az_child_home_post_image( $article, $size = 'medium_large' ) {
+az-theme-child/inc/modules/homepage/page-fields.php:5 function az_home_term_id( $slug, $fallback = 0 ) {
+az-theme-child/inc/modules/homepage/page-fields.php:10 function az_home_page_default_data() {
+az-theme-child/inc/modules/homepage/page-fields.php:61 function az_home_page_get_data( $post_id = 0 ) {
+az-theme-child/inc/modules/homepage/page-fields.php:76 function az_home_page_is_template( $post ) {
+az-theme-child/inc/modules/homepage/page-fields.php:83 function az_home_page_clean_url( $value ) {
+az-theme-child/inc/modules/homepage/page-fields.php:88 function az_home_page_asset_url( $value ) {
+az-theme-child/inc/modules/homepage/page-fields.php:95 function az_home_youtube_embed_url( $url ) {
+az-theme-child/inc/modules/homepage/page-fields.php:111 function az_home_page_category_options( $taxonomy, $selected, $multiple = false ) {
+az-theme-child/inc/modules/homepage/page-fields.php:121 function az_home_page_media_field( $label, $name, $value ) {
+az-theme-child/inc/modules/homepage/page-fields.php:127 function az_home_page_product_admin_row( $section, $index ) {
+az-theme-child/inc/modules/homepage/page-fields.php:142 function az_home_page_video_admin_row( $url, $index ) {
+az-theme-child/inc/modules/homepage/page-fields.php:151 function az_home_page_meta_box( $post ) {
+az-theme-child/inc/modules/homepage/page-fields.php:206 <script>(function(){var root=document.getElementById('az-home-admin');if(!root)return;function enhance(scope){if(!window.jQuery||!jQuery.fn.selectWoo)return;jQuery(scope||root).find('.az-home-category-select').not('.select2-hidden-accessible').selectWoo({width:'100%',placeholder:'Chọn một hoặc nhiều danh mục',allowClear:true})}function renumber(){root.querySelectorAll('[data-home-product-row]').forEach(function(row,index){var title=row.querySelector('.az-home-card-head h4');var select=row.querySelector('.az-home-category-select');if(title)title.textContent='Khối sản phẩm '+(index+1);if(select)select.name='az_home_product_category['+index+'][]'});root.querySelectorAll('[data-home-video-row]').forEach(function(row,index){var title=row.querySelector('.az-home-card-head h4');if(title)title.textContent='Video '+(index+1)})}root.addEventListener('click',function(e){var addVideo=e.target.closest('.az-home-video-add');var removeVideo=e.target.closest('.az-home-video-remove');var add=e.target.closest('.az-home-product-add');var remove=e.target.closest('.az-home-product-remove');var pick=e.target.closest('.az-home-pick');var clear=e.target.closest('.az-home-clear');if(addVideo){var videoList=root.querySelector('[data-home-video-list]');var videoTmpl=document.getElementById('tmpl-az-home-video');if(videoList&&videoTmpl&&videoList.children.length<12){videoList.insertAdjacentHTML('beforeend',videoTmpl.innerHTML);renumber()}return}if(removeVideo){var videoRow=removeVideo.closest('[data-home-video-row]');if(videoRow){videoRow.remove();renumber()}return}if(add){var list=root.querySelector('[data-home-product-list]');var tmpl=document.getElementById('tmpl-az-home-product');if(list&&tmpl&&list.children.length<12){list.insertAdjacentHTML('beforeend',tmpl.innerHTML);renumber();enhance(list.lastElementChild)}return}if(remove){var row=remove.closest('[data-home-product-row]');if(row){row.remove();renumber()}return}if(clear){var media=clear.closest('.az-home-media');media.querySelector('input').value='';media.querySelector('.az-home-preview').innerHTML='';return}if(!pick||!window.wp||!wp.media)return;var media=pick.closest('.az-home-media');var input=media.querySelector('input');var preview=media.querySelector('.az-home-preview');var frame=wp.media({title:'Chọn ảnh',button:{text:'Dùng ảnh này'},multiple:false,library:{type:'image'}});frame.on('select',function(){var image=frame.state().get('selection').first().toJSON();input.value=image.url||'';preview.innerHTML=image.url?'<img src="'+image.url+'" alt="">':''});frame.open()});renumber();if(window.jQuery){jQuery(function(){enhance(root)})}else{window.addEventListener('load',function(){enhance(root)})}})();</script>
+az-theme-child/inc/product-admin.php:5 function az_child_product_admin_assets( $hook ) {
+az-theme-child/inc/product-admin.php:16 function az_product_extra_info_meta_box_html( $post ) {
+az-theme-child/inc/product-display.php:5 function az_child_register_product_limits() {
+az-theme-child/inc/product-display.php:31 function az_child_register_product_image_fields() {
+az-theme-child/inc/product-display.php:55 function az_child_product_image_ratio() {
+az-theme-child/inc/product-display.php:67 function az_child_is_product_catalogue() {
+az-theme-child/inc/product-display.php:73 function az_child_product_image_css() {
+az-theme-child/inc/product-display.php:79 function az_child_product_image_assets() {
+az-theme-child/inc/product-display.php:92 function az_child_catalogue_product_image( $image, $product, $size, $attr ) {
+az-theme-child/inc/product-display.php:101 function az_child_product_section_count( $key ) {
+az-theme-child/inc/product-display.php:108 function az_track_recently_viewed_product() {
+az-theme-child/inc/product-permalinks.php:5 function az_child_product_pretty_urls_enabled() {
+az-theme-child/inc/product-permalinks.php:10 function az_child_product_category_path( $term ) {
+az-theme-child/inc/product-permalinks.php:23 function az_child_product_path_reserved( $path ) {
+az-theme-child/inc/product-permalinks.php:37 function az_child_product_category_link( $url, $term, $taxonomy ) {
+az-theme-child/inc/product-permalinks.php:45 function az_child_product_permalink_category( $post ) {
+az-theme-child/inc/product-permalinks.php:64 function az_child_product_permalink( $url, $post, $leavename, $sample ) {
+az-theme-child/inc/product-permalinks.php:83 function az_child_product_permalink_rules( $rules ) {
+az-theme-child/inc/product-permalinks.php:123 function az_child_product_permalink_page_request( $vars ) {
+az-theme-child/inc/product-permalinks.php:134 function az_child_product_permalink_invalidate() { delete_option( 'az_child_product_rewrite_version' ); }
+az-theme-child/inc/product-permalinks.php:138 function az_child_product_permalink_refresh() {
+az-theme-child/inc/product-permalinks.php:147 function az_child_product_permalink_redirect_url( $request_uri ) {
+az-theme-child/inc/product-permalinks.php:177 function az_child_product_permalink_redirect() {
+az-theme-child/inc/soviban-home.php:5 function az_child_soviban_asset( $name ) {
+az-theme-child/inc/soviban-home.php:9 function az_child_soviban_defaults() {
+az-theme-child/inc/soviban-home.php:43 function az_child_soviban_data( $post_id = 0 ) {
+az-theme-child/inc/soviban-home.php:70 function az_child_soviban_url( $value ) {
+az-theme-child/inc/soviban-home.php:77 function az_child_soviban_skyline_feature( $data ) {
+az-theme-child/inc/soviban-home.php:90 function az_child_soviban_linked_feature( $url ) {
+az-theme-child/inc/soviban-home.php:109 function az_child_soviban_skyline_features( $data, $slides ) {
+az-theme-child/inc/soviban-home.php:134 function az_child_soviban_promos( $post_id ) {
+az-theme-child/inc/soviban-home.php:147 function az_child_soviban_partner_defaults() {
+az-theme-child/inc/soviban-home.php:155 function az_child_soviban_header_defaults() {
+az-theme-child/inc/soviban-home.php:160 function az_child_soviban_logo() {
+az-theme-child/inc/soviban-home.php:171 function az_child_soviban_banner( $post_id ) {
+az-theme-child/inc/soviban-home.php:186 function az_child_soviban_assets() {
+az-theme-child/inc/soviban-home.php:206 function az_child_soviban_register_fields() {
+az-theme-child/inc/soviban-home.php:235 function az_child_soviban_admin_row( $item, $type ) {
+az-theme-child/inc/soviban-home.php:255 function az_child_soviban_admin( $post_id ) {
+az-theme-child/inc/soviban-home.php:296 function az_child_soviban_admin_list( $data, $type ) {
+az-theme-child/inc/soviban-home.php:307 function az_child_soviban_save( $post_id, $post ) {
+az-theme-child/inc/soviban-home.php:352 function az_child_soviban_admin_assets( $hook ) {
+az-theme-child/inc/steel-storefront.php:5 function az_child_is_steel_home() {
+az-theme-child/inc/steel-storefront.php:9 function az_child_steel_categories() {
+az-theme-child/inc/steel-storefront.php:16 function az_child_steel_category_links( $homepage = false, $options = null ) {
+az-theme-child/inc/steel-storefront.php:46 function az_child_steel_products( $category_ids = array(), $featured = false, $limit = 4 ) {
+az-theme-child/inc/steel-storefront.php:69 function az_child_steel_card( $product, $compact = false ) {
+az-theme-child/inc/steel-storefront.php:82 function az_child_steel_news() {
+az-theme-child/inc/steel-storefront.php:92 function az_child_steel_icon( $name ) {
+az-theme-child/inc/steel-storefront.php:105 function az_child_steel_social_icons() {
+az-theme-child/inc/steel-storefront.php:121 function az_child_steel_social_links() {
+az-theme-child/inc/steel-storefront.php:135 function az_child_steel_top_menu( $options = null ) {
+az-theme-child/inc/steel-storefront.php:154 function az_child_steel_main_menu( $class = 'az-steel-menu', $options = null, $slot = 'primary' ) {
+az-theme-child/js/header-mega-menu.js:10 function position() {
+az-theme-child/js/header-mega-menu.js:16 function close() {
+az-theme-child/js/header-mega-menu.js:20 function open() {
+az-theme-child/js/home-partners-admin.js:9 function refresh() {
+az-theme-child/js/home-partners-admin.js:15 function append(image) {
+az-theme-child/js/social-contact.js:7 function setOpen(open, restoreFocus) {
+az-theme-child/js/steel-storefront.js:8 function syncMenu() {
+az-theme-child/js/steel-storefront.js:40 function show(next) {
+az-theme-child/js/steel-storefront.js:55 function restart() {
+az-theme-child/single-product.php:227 function setGalleryImage(gallery, thumb) {
+az-theme-child/single-product.php:259 function moveGallery(gallery, direction) {
+az-theme-child/single-product.php:267 function openLightbox(gallery) {
+az-theme-child/single-product.php:412 function azPrepareProductPane(pane) {

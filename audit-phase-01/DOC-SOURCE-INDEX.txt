@@ -1,0 +1,472 @@
+FILE az-theme/assets/fonts/be-vietnam-pro/README.md
+# Be Vietnam Pro
+FILE az-theme/css/README.md
+# Quy ước CSS của AZ Theme
+## Typography dùng chung
+## CSS riêng cho từng website
+## Không dùng `!important`
+## Tránh CSS dư thừa
+## Component và modifier là bắt buộc
+FILE az-theme/docs/ANALYTICS-SHORTCODE.md
+# Analytics Shortcode
+FILE az-theme/docs/ARCHITECTURE.md
+# Architecture
+## Hiện tại
+## Parent và child theme
+## Assets và admin
+## CSS architecture
+## Kiến trúc đích (chưa triển khai)
+## STEP 16 — Homepage
+## Cập nhật 2026-10-05
+Đã gỡ Prompt Execution API và các endpoint `az-prompt/v1` khỏi theme. License API khác được giữ nguyên. Thư mục `audit/` là snapshot lịch sử, không phản ánh code hiện tại.
+FILE az-theme/docs/audit/CALLSITES.md
+# API callsites (generated)
+## get_option (107)
+## update_option (4)
+## add_option (0)
+## delete_option (0)
+## get_theme_mod (12)
+## set_theme_mod (1)
+## remove_theme_mod (0)
+## register_setting (57)
+## add_action (91)
+## add_filter (38)
+## remove_action (3)
+## remove_filter (2)
+## do_action (10)
+## apply_filters (17)
+## register_rest_route (6)
+## register_post_type (2)
+## register_taxonomy (1)
+## add_shortcode (0)
+## do_shortcode (0)
+## wp_schedule_event (1)
+## wp_schedule_single_event (0)
+## wp_next_scheduled (1)
+## wp_clear_scheduled_hook (0)
+## add_menu_page (1)
+## add_submenu_page (2)
+## add_meta_box (6)
+## get_post_meta (76)
+| [inc/functions/licenses.php:123](../../inc/functions/licenses.php#L123) | $post_id | '_license_status' |
+| [inc/functions/licenses.php:125](../../inc/functions/licenses.php#L125) | $post_id | '_status' |
+| [inc/functions/licenses.php:167](../../inc/functions/licenses.php#L167) | $post->ID | '_license_status' |
+| [inc/license-api.php:135](../../inc/license-api.php#L135) | $license->ID | '_status' |
+## update_post_meta (43)
+| [inc/functions/integrations-access.php:49](../../inc/functions/integrations-access.php#L49) | $license->ID | '_status' |
+| [inc/functions/integrations-access.php:50](../../inc/functions/integrations-access.php#L50) | $license->ID | '_license_status' |
+| [inc/functions/licenses.php:297](../../inc/functions/licenses.php#L297) | $post_id | '_status' |
+| [inc/license-api.php:166](../../inc/license-api.php#L166) | $license->ID | '_status' |
+| [inc/license-api.php:167](../../inc/license-api.php#L167) | $license->ID | '_license_status' |
+| [inc/license-api.php:288](../../inc/license-api.php#L288) | $license->ID | '_status' |
+## get_term_meta (11)
+## update_term_meta (3)
+## set_transient (1)
+## get_transient (1)
+## delete_transient (1)
+## wp_enqueue_style (6)
+## wp_enqueue_script (4)
+## wp_add_inline_style (0)
+## wp_add_inline_script (2)
+## get_template_part (2)
+## az_theme_mod (1)
+## add_setting (3)
+FILE az-theme/docs/audit/FILES-AND-PREFIXES.md
+# Source inventory (generated)
+## Files
+## Includes / requires (source candidates)
+## PHP declarations (includes embedded-language candidates)
+## Identifier prefixes (all textual occurrences)
+- status_: 3
+## CSS class / selector candidates
+## CSS variable candidates
+FILE az-theme/docs/AZ-POST-CARD.md
+# AZ Post Card
+## Shared Rules
+FILE az-theme/docs/AZ-THEME-ARCHITECTURE.md
+# AZ Theme — Kiến trúc và quy chuẩn phát triển parent/child
+## Cách đọc và phạm vi bằng chứng
+Một số tài liệu như `ARCHITECTURE.md`, `CURRENT-AUDIT.md`, `OPTIONS-SCHEMA.md` và `audit/` chứa mô tả STEP 00 đã lỗi thời. Chúng không phải bằng chứng rằng bootstrap/options/Flatsome chưa tồn tại. **Thứ tự căn cứ: source hiện tại → tài liệu này sau khi đối chiếu → tài liệu chuyên đề đã xác minh → snapshot lịch sử.**
+## Mục lục
+**[Hiện trạng — cập nhật 13/10/2026, riêng mẫu trang trung tính]** `page-neutral.php` hiện cung cấp thẻ nội dung một cột, ảnh đại diện lớn và typography `.az-content`, thay bố cục hero cũ; không lặp tiêu đề Page bên dưới breadcrumb. Module `inc/core/neutral-page.php` được nạp từ bootstrap, đăng ký `az_neutral_page_assets()` trên `wp_enqueue_scripts` priority 60; handle `az-neutral-page` chỉ phụ thuộc `az-content` / `az-page-style`. CSS dùng `get_theme_file_path/uri()` để hỗ trợ override child. Child SOVIBAN đã gỡ template/module/CSS trùng; các Page giữ cùng filename và dữ liệu. `page-about.php` hiện gọi `get_template_part('page-neutral')` và lấy nội dung editor WordPress; module form `inc/gioi-thieu-page-fields.php` đã xóa, các getter/save callbacks cũ không còn là API hiện hữu. `_az_gioi_thieu_data` được giữ trong database nhưng không còn dùng bởi template parent. Xem [contracts, quản trị và kiểm tra](NEUTRAL-PAGE.md). Những inventory/baseline khác trong tài liệu vẫn là snapshot ngày đã ghi, không được suy ra là source hiện tại.
+## 1. Tổng quan kiến trúc
+## 2. Mục tiêu và nguyên tắc thiết kế
+## 3. Sơ đồ quan hệ và vòng đời
+## 4. Cấu trúc thư mục và trách nhiệm
+### 4.1. Parent
+### 4.2. Child thực tế và bộ mẫu
+### 4.3. Đăng ký tính năng WordPress và widget areas
+## 5. Danh mục API và cấu hình hiện có
+### 5.1. Mức phụ thuộc được phép
+### 5.2. API dữ liệu, cấu hình và nội dung
+### 5.3. Renderers và options registry
+### 5.4. Extension hooks đã xác minh
+### 5.5. Shortcodes và integrations
+### 5.6. Nguồn dữ liệu và quyền sở hữu
+| License/pricing CPT/meta | `license`, `pricing`, `_license_key`, `_status`, `_plan_slug`, counters/expiry và metadata pricing | Nghiệp vụ legacy; không làm config branding hoặc generic child API |
+### 5.7. Thứ tự ưu tiên thực tế và quy chuẩn mới
+### 5.8. Schema Advanced hiện tại
+#### Schema `blog`
+#### Schema `branding`
+#### Schema `colors`
+#### Schema `compatibility`
+#### Schema `custom_code`
+#### Schema `footer`
+#### Schema `general`
+#### Schema `google`
+#### Schema `header`
+#### Schema `layout`
+#### Schema `performance`
+#### Schema `social`
+#### Schema `typography`
+#### Schema `user`
+#### Schema `woocommerce`
+### 5.9. Cấu hình child và metadata ngoài Advanced
+## 6. Quy tắc kế thừa và mở rộng
+## 7. Design System và Components
+### 7.1. Design tokens hiện tại
+| Text/surface/status | heading #222222, text #424242, muted #777777, border #e5e5e5, surface #ffffff, page #f4f6f8, success #2e7d32, warning #ed6c02, error #d32f2f, info #0288d1 | Prefix `--az-color-*`; `colors.page_background` map `--az-color-page` |
+### 7.2. Responsive
+### 7.3. Components đã có
+### 7.4. Hợp đồng giao diện trang chủ và khung giao diện dùng chung
+#### Bảo toàn giao diện chỉnh sửa và frontend
+#### Hợp đồng Banner trang trên trang chủ
+#### Header/footer đồng nhất giữa các trang
+## 8. Quy chuẩn PHP, CSS và JavaScript
+### 8.1. PHP
+### 8.2. CSS và assets
+### 8.3. JavaScript
+| [shared-banner.js](../js/shared-banner.js) | `.az-shared-banner`, `[data-slide]`, `.az-shared-banner__controls`, `[data-direction]`, `[data-pause]`, `[data-slide-status]`; `data-autoplay`, `data-loop`, `data-overlay-header` | Một root; controls phải tồn tại khi có ≥2 slides. Child homepage dùng hệ slider riêng |
+### 8.4. Assets đang được tải
+## 9. Templates và template overrides
+## 10. Bảo mật, hiệu năng và tương thích
+### 10.1. Những cơ chế bảo vệ hiện có
+### 10.2. Hiệu năng
+### 10.3. Compatibility
+## 11. Quy trình phát triển bằng Codex
+2. Kiểm tra Git status; đọc file parent/child, entrypoint, definition/callsite, lifecycle và consumers liên quan yêu cầu.
+3. Tìm API/components/settings có thể dùng bằng `rg`; không suy ra chức năng từ filename hoặc docs snapshot.
+## 12. Kiểm tra và cập nhật theme chính
+### 12.1. Chuẩn bị và triển khai
+2. Rà parent diff/changelog, đặc biệt bootstrap order, schema/default/fallback, hooks signatures/priorities, removed handles, templates và Woo versions. Docs cũ thiếu cập nhật phải đối chiếu source.
+### 12.2. Ma trận kiểm tra cần dùng
+## 13. Vấn đề hiện tại cần khắc phục
+| Docs/scanner còn baseline STEP 00 ([ARCHITECTURE](ARCHITECTURE.md), [scanner](tools/audit-source.cjs)) | Codex có thể xây lại bootstrap/options hoặc nhận sai integrations | Cập nhật docs chuyên đề/scanner với snapshot rõ; giữ source là căn cứ |
+| Field chưa có consumer: favicon/og_image/site_layout/section_spacing; homepage.mode chỉ getter | UI/hiểu biết hứa chức năng chưa chạy | Hoàn thiện consumer hoặc làm rõ field status; không tạo API tưởng tượng trong child |
+## 14. Đề xuất cải tiến tương lai
+## 15. Checklist hoàn thành nhiệm vụ
+- [ ] Đã đọc tài liệu này và instructions hiện có; xác minh source/callsite liên quan thay vì tin snapshot lịch sử.
+### Kiểm tra chất lượng của chính tài liệu này
+Đã kiểm tra tĩnh khi tạo tài liệu: đủ 15 mục và mục lục; links đến source file/dòng và anchors hợp lệ; 231 field schema có path/default không trùng; bốn snippets PHP qua `php -l`; API/hooks/handles/DOM được đối chiếu definition/callsite; không còn placeholder. Đối chiếu SHA-256 của 286 file văn bản có trước xác nhận source hai theme không đổi; Git status chỉ có tài liệu Markdown mới. `git diff --check` và kiểm tra whitespace file mới bằng diff so với `/dev/null` không báo lỗi. Những kiểm tra này không chạy PHP snippets, website, migration hoặc database và không chứng minh hành vi trình duyệt/khả năng tương thích runtime. Khi code thay đổi, cập nhật source references và bảng contracts tương ứng trong tài liệu này.
+FILE az-theme/docs/BRANDING-SEO.md
+# H1 và Meta description trang chủ
+## Cấu hình dùng chung
+## Kế thừa trong theme child
+## Plugin SEO
+## Kiểm tra
+FILE az-theme/docs/CHANGELOG.md
+# Changelog
+## 2026-10-14 — Retire the old Header & Footer feature
+- Removed its admin screen, Settings API registration, form, sanitizer and separate output helper. Old administrator bookmarks redirect to AZ Theme → Advanced → Custom Code.
+## 2026-10-06 — Contact page saves to shared Leads manager
+- Contact-page submissions now write to `az9s_leads`, which supplies `page=az9s-leads`, rather than the legacy contact table. Name, phone, email, topic, message and form source remain available; historical rows stay in the legacy table.
+## 2026-10-06 — Shared homepage Branding SEO
+- Removed duplicate child metadata registration/output, documented child inheritance and added standalone-parent/current-child regressions for theme, Rank Math and Yoast ownership. SEO plugin renderers are simulated; live WordPress/database validation remains pending.
+## 2026-10-05 — Remove duplicate Settings menu entries
+- Removed Header & Footer and Lead liên hệ from the WordPress Settings submenu. Legacy pages remain registered for direct administrator access; saved code, lead records and SMTP settings are preserved.
+## 2026-10-05 — Back-to-top visibility repair
+## 2026-10-05 — Footer back-to-top controls
+## 2026-10-05 — Style 5 layout and asset loading fix
+## 2026-10-05 — Coffee mobile dropdown menu
+## 2026-10-05 — Branded mobile header menu
+- Added isolated settings/render and interaction checks; browser preview could not run because localhost access was denied.
+## 2026-10-05 — Upload file size limit
+## 2026-10-05 — Automatic child theme creation
+## 2026-09-17 — Advanced Homepage Scope
+- Removed the duplicate Homepage section from Advanced navigation; Homepage Manager remains the single owner of homepage sections and ordering.
+## 2026-09-17 — Font Library Typography
+## 2026-09-17 — Site Analytics
+## 2026-09-17 — Admin Dashboard Cleanup
+- Removed unimplemented Quick Setup, Modules, Import / Export, Tools and System Status submenus.
+## 2026-09-17 — Social + Performance
+## 2026-09-17 — Advanced Theme Options
+## 2026-09-17 — CSS architecture migration
+## 2026-09-17 — STEP 16: Homepage Framework
+## 2026-09-16 — STEP 00: Audit + Documentation Baseline
+- Tests: static scan, Node syntax, docs/source integrity checks. PHP/WordPress/Woo OFF runtime tests not run.
+## Trước STEP 00 — trạng thái kế thừa
+FILE az-theme/docs/CHILD-THEME.md
+# Tự tạo AZ Theme Child
+## Cài lên website mới
+## Các file sinh ra
+## Giữ dữ liệu và giao diện
+## Hosting và multisite
+Thông báo kết quả lưu trong transient `az_child_theme_install_status` tối đa một tuần, chỉ hiển thị khi parent đang active cho người có quyền đổi theme. Đóng thông báo cần nonce. Ghi file thất bại sẽ xóa các file vừa tạo và thư mục mới nếu trống để lần thử tiếp theo không gặp child dở dang. Bộ mẫu được đọc đầy đủ trước khi ghi; `style.css` ghi sau cùng để theme chỉ được WordPress phát hiện khi đã đủ file.
+## Kiểm tra
+FILE az-theme/docs/CLEANUP.md
+# Dọn mã nguồn ngày 2026-10-03
+## File đã xoá
+## Code đã dọn
+## Kiểm tra
+Chưa kiểm tra render/save bằng WordPress đang chạy; kiểm tra source không xác nhận được các URL asset được lưu thủ công trong database hoặc trong code bên ngoài workspace. Tài liệu audit STEP 00 cũ là snapshot lịch sử, không dùng để kết luận file hiện tại còn tồn tại.
+FILE az-theme/docs/CODING-STANDARDS.md
+# Coding Standards
+## Hợp đồng phát triển
+## CSS/admin
+### CSS architecture
+## Security/performance
+## Hoàn tất STEP
+FILE az-theme/docs/COMPATIBILITY.md
+# Compatibility baseline
+STEP 16: homepage fallback contracts and default rendering are documented in [module README](../inc/modules/homepage/README.md). Legacy PHP functions/options remain, templates moved without redesign. Product sections have explicit Woo guards; live Woo ON/OFF and visual regression tests still not run. The audit inventories are STEP 00 snapshots; their file hashes/line references are not current after STEP 16 edits.
+## Hợp đồng giữ nguyên
+## WooCommerce OFF
+## Phụ thuộc và khoảng trống
+## Frontend/assets
+## Cập nhật 2026-10-05
+Đã gỡ Prompt Execution API và các endpoint `az-prompt/v1` khỏi theme. License API khác được giữ nguyên. Thư mục `audit/` là snapshot lịch sử, không phản ánh code hiện tại.
+FILE az-theme/docs/CONTACT-MAPS.md
+# Địa chỉ và Google Maps
+FILE az-theme/docs/CONTACT-SHORTCODES.md
+# Contact Shortcodes
+## General fields
+## Shortcodes
+## Typography
+FILE az-theme/docs/CSS-ARCHITECTURE.md
+# CSS Architecture
+## Naming convention
+## Root wrapper
+## Component class
+## Mandatory reuse rule
+### Shared button API
+## Page class
+## CSS variables
+## Specificity rules
+## Legacy migration
+## Forbidden patterns
+FILE az-theme/docs/CURRENT-AUDIT.md
+# AZ Theme Current Source Audit
+## Scope
+## Source inventory
+## Prefix audit
+### AZ contracts
+### Legacy contracts
+## CSS audit
+## WordPress options and theme mods
+## Hooks and integrations
+## Legacy storefront dependency map
+## Risks and follow-up
+## Audit commands
+## Status
+FILE az-theme/docs/CUSTOM-HEADER-FOOTER.md
+# Custom Header and Footer
+FILE az-theme/docs/DATABASE.md
+# Database baseline
+## Custom table
+## WordPress data
+- wp_posts/wp_postmeta: pricing, license; license keys/status/expiry/usage/token metadata; product extra info/video; page about structured JSON `_az_gioi_thieu_data`.
+## Transient / cookie / cron
+## Ghi dữ liệu nền hiện có
+FILE az-theme/docs/FEATURE-TEMPLATE.md
+# Feature / Module README Template
+## Overview
+## Scope
+## Files
+## Dependencies
+## Option Keys
+## Hooks
+## AJAX / REST
+## Security
+## Performance
+## Compatibility
+## Test Cases
+## Migration
+## Rollback
+## Changelog / Version
+FILE az-theme/docs/FOOTER-BACK-TO-TOP.md
+# Nút lên đầu trang
+FILE az-theme/docs/HEADER-ARCHITECTURE.md
+# Header Architecture
+AZ Theme uses one Universal Header markup for the current implementation. Header options control real behavior such as top bar, search, cart, CTA, sticky state and colors. The previous layout selector was removed because it changed only a class and did not provide separate HTML templates. Desktop and mobile share the same navigation source; mobile keeps a lightweight toggle behavior with minimal variation.
+## Mobile — Kiểu 1: Logo + menu trượt phải
+## Mobile — Kiểu 2: Logo + menu xổ xuống nâu/kem
+FILE az-theme/docs/MIGRATION-MAP.md
+# Flatsome Settings Migration Map
+## Status
+## Mapping contract
+| Legacy value | AZ target | Status |
+## Preview
+## Import safety
+## Files
+FILE az-theme/docs/MODULES.md
+# Modules: current inventory
+## STEP 16 bổ sung
+## AJAX / admin-post
+## REST
+## CPT / taxonomy / shortcode / cron
+## Planned manager
+## Cập nhật 2026-10-05
+Đã gỡ Prompt Execution API và các endpoint `az-prompt/v1` khỏi theme. License API khác được giữ nguyên. Thư mục `audit/` là snapshot lịch sử, không phản ánh code hiện tại.
+FILE az-theme/docs/NEUTRAL-PAGE.md
+# Trang Nội Dung Trung Tính — mẫu dùng chung của AZ Theme
+## Quản trị
+## Trang Giới Thiệu dùng nội dung WordPress
+## Thiết lập và contracts
+## Source và mở rộng
+## Kiểm tra và giới hạn
+## Bỏ tiêu đề lặp dưới breadcrumb
+## Kiểm tra lần chuyển Trang Giới Thiệu sang editor
+FILE az-theme/docs/OPTIONS-SCHEMA.md
+# Options schema: current source baseline
+## Child theme installation (2026-10-05)
+| transient | `az_child_theme_install_status` | Installation result code, TTL one week; cleared by nonce-protected dismissal. Does not control the active theme. |
+## Status
+The contact screen reads option -> theme_mod -> default and mirrors submitted values to theme_mod. Home settings UI was removed earlier but frontend reads remain. Missing UI does not mean a key is unused.
+## Literal keys and schema-defined keys
+| Store | Key | Status | Source evidence |
+## Dynamic keys: do not treat as missing
+## Planned nested storage
+FILE az-theme/docs/PERFORMANCE-SETTINGS.md
+# Performance Settings
+## Giới hạn tải file
+FILE az-theme/docs/README.md
+# AZ Theme Documentation
+Update 2026-09-17: [Homepage Framework STEP 16](../inc/modules/homepage/README.md) implemented independently. STEP 01–15 remain planned. Audit JSON/callsites below are historical STEP 00 snapshots, not current source hashes; do not regenerate OPTIONS-SCHEMA automatically without preserving the STEP 16 schema section.
+## Trạng thái
+## Đọc tài liệu
+## Bằng chứng đầy đủ
+FILE az-theme/docs/REUSABLE-THEME.md
+# Chuẩn hoá parent theme
+## Tự tạo child cho website mới
+## Tài nguyên frontend và Custom Code
+## Giai đoạn tương thích tiếp theo
+FILE az-theme/docs/ROADMAP.md
+# Roadmap
+## 2026-10-05 — Tự tạo child theme
+Advanced Theme Options implementation is complete for the current step. Live WordPress/PHP verification remains pending because the current environment has no PHP runtime or running WordPress server.
+## Trước STEP 01
+FILE az-theme/docs/SECURITY.md
+# Security baseline
+STEP 16 homepage save requires manage_options and nonce, accepts only allowed section fields, sanitizes text/bounds numbers and merges only homepage values. Template includes use definition IDs, not request paths. No new AJAX/REST route. Runtime permissions/invalid-input tests remain pending staging; see module README.
+## Phát hiện cần ưu tiên
+## Điểm đã thấy có bảo vệ
+## Tiêu chí STEP sau
+## Cập nhật 2026-10-05
+Đã gỡ Prompt Execution API và các endpoint `az-prompt/v1` khỏi theme. License API khác được giữ nguyên. Thư mục `audit/` là snapshot lịch sử, không phản ánh code hiện tại.
+FILE az-theme/docs/TESTING.md
+# Testing baseline
+## 2026-10-05 — Back-to-top visibility repair
+## 2026-10-05 — Footer back-to-top controls
+## 2026-10-05 — Style 5 layout repair
+## 2026-10-05 — Mobile menu style 5
+## 2026-10-05 — Mobile menu style 4
+## 2026-10-05 — Upload file size limit
+## 2026-10-05 — Child theme installer
+## STEP 16
+JavaScript syntax, module template allowlist/completeness, duplicate new symbols and whitespace checks run. Original banner/tab JS and original product helper bodies compared with pre-change source. No PHP executable or installed browser test runner identified; PHP lint, live WordPress save/render and Woo ON/OFF tests not run. Explicitly test stable order, false/0/empty overrides, missing/malformed options, merge preserving other branches, disabled queries, custom page content/password and desktop/mobile grids on staging. Historical hash checks below apply only to STEP 00.
+## Đã thực hiện trong STEP 00
+## Chưa thực hiện
+## Chạy lại audit
+## Ma trận staging trước các STEP chức năng
+| Bootstrap | Parent/child theme, PHP supported, includes order, duplicate symbols | Not run |
+| Woo OFF | No plugin và deactivate; home/page/blog/search/header/footer/admin/AJAX | Not run |
+| Woo ON | Archive/taxonomy/detail/cart/checkout, fragments, price multiplier, variation cache | Not run |
+| Contact admin | Existing values, option/mod fallback, missing fields, nonce/quyền, email/URL lỗi, media/accordion/mobile | Not run |
+| Contact public | CAPTCHA expiry/reuse, save lead, SMTP error/success, limits | Not run |
+| API/license | Verify/activate/counters auth, missing external helpers, cron expiry | Not run |
+| Content/admin | Pricing/license/about/product metabox saves, autosave/revision, term/menu fields | Not run |
+| Frontend | VI/EN, menus, responsive screenshots, CSS old/new selectors | Not run |
+FILE az-theme/docs/visual-reference-brief.md
+# Brief khi code giao diện từ ảnh
+## Profile Piano hiện tại
+FILE az-theme/inc/admin/README.md
+# AZ Admin
+## Overview
+## Scope
+## Files
+## Dependencies
+## Options
+## Hooks
+## Security
+## Performance
+## Migration
+## Rollback
+## Testing
+## Version
+FILE az-theme/inc/admin/templates/child-theme/README.md
+# AZ Theme Child
+FILE az-theme/inc/modules/analytics/README.md
+# AZ Analytics
+## Scope
+## Tracking
+## Storage
+## Privacy and safety
+FILE az-theme/inc/modules/flatsome-compat/README.md
+# Tương thích Flatsome cũ
+FILE az-theme/inc/modules/homepage/README.md
+# Homepage Framework — STEP 16
+## Overview
+## Scope
+## Files
+## Dependencies
+## Option Keys
+## Legacy fallback
+## Hooks
+## AJAX / REST
+## Security
+## Performance
+## Compatibility
+## Test Cases
+## Migration
+## Rollback
+## Changelog / Version
+FILE az-theme/inc/modules/leads/README.md
+# AZ9S Leads tích hợp
+FILE az-theme/inc/options/README.md
+# AZ Options
+## Overview
+## Scope
+## Files
+## Dependencies
+## Options
+## Security
+## Performance
+## Migration
+## Rollback
+## Testing
+## Version
+FILE az-theme/tests/shared-banner.md
+# Shared banner verification
+Defaults: no banner, plain template heading, breadcrumb below header. Existing sample page/term metadata is read when the new settings are absent. On a static front page, enabling the shared banner replaces the homepage hero section. Custom HTML headings inside page content are not removed.
+FILE az-theme-child/docs/NEUTRAL-PAGE.md
+# Trang Nội Dung Trung Tính — kế thừa parent
+FILE az-theme-child/docs/SOVIBAN-HOMEPAGE.md
+# Trang chủ SOVIBAN — bàn giao 13/10/2026
+## Quản trị nội dung
+## Dọn nhóm quản trị Nội dung Trang chủ
+## Hành vi và bảo toàn dữ liệu
+## Nội dung động theo từng slide thành phố
+## Đồng bộ container header với Advanced → Layout
+## Cụm search và hotline trong menu mobile
+## API/components parent đã tái sử dụng
+## File thay đổi
+## Kiểm tra và giới hạn
+FILE az-theme-child/README.md
+# AZ Theme Child
+## Mẫu Trang Nội Dung Trung Tính
+## Trang chủ SOVIBAN hiện tại
+## Header đồng bộ toàn website
+## Cỡ chữ thanh menu
+## Menu con hai cột và ảnh danh mục
+## Màu thanh menu
+## Footer theo ảnh tham chiếu
+## Sidebar danh mục cửa hàng
+## Cấu hình WooCommerce
+## Tỷ lệ ảnh sản phẩm
+## Số lượng sản phẩm liên quan và đã xem
+## Khối thông tin công ty trong trình sửa sản phẩm
+## H1 và Meta description trang chủ
+## Ghi chú kiểm tra bố cục cũ
+## All in One Contact — Kiểu 1 và Kiểu 2
+### Cấu hình ảnh hồ sơ trong General
+## Đường dẫn danh mục và sản phẩm

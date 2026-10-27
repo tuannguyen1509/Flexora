@@ -1,0 +1,414 @@
+az-theme/archive.php:22 $posts_page_id = absint( get_option( 'page_for_posts' ) );
+az-theme/archive-product.php:298 $az_child_thumbnail_id = absint( get_term_meta( $az_child_category->term_id, 'thumbnail_id', true ) );
+az-theme/comments.php:193 <?php if ( get_comment_pages_count() > 1 && get_option('page_comments') ) : ?>
+az-theme/comments.php:201 <?php if ( get_comment_pages_count() > 1 && get_option('page_comments') ) : ?>
+az-theme/front-page.php:19 $az_phone     = function_exists( 'az_storefront_contact_phone' ) ? az_storefront_contact_phone() : get_option( 'az_contact_phone', '0823.73.76.79' );
+az-theme/front-page.php:34 $img = get_option( 'az_home_' . $slot . '_banner_img', $fallback_img ) ?: $fallback_img;
+az-theme/front-page.php:35 $slides_raw = get_option( 'az_home_' . $slot . '_banner_slides', '' );
+az-theme/front-page.php:52 'alt'    => get_option( 'az_home_' . $slot . '_banner_alt', $fallback_alt ),
+az-theme/front-page.php:53 'link'   => get_option( 'az_home_' . $slot . '_banner_link', $fallback_link ),
+az-theme/front-page.php:86 $image_id = (int) get_term_meta( $term->term_id, 'thumbnail_id', true );
+az-theme/front-page.php:88 $image_id = (int) get_term_meta( $term->term_id, 'cp_cat_image_id', true );
+az-theme/front-page.php:165 $az_weekly_cat_id  = absint( get_option( 'az_home_weekly_category_id', 0 ) );
+az-theme/front-page.php:166 $az_weekly_orderby = get_option( 'az_home_weekly_orderby', 'date' );
+az-theme/front-page.php:195 $az_suggested_cat_id  = absint( get_option( 'az_home_suggested_category_id', 0 ) );
+az-theme/front-page.php:196 $az_suggested_orderby = get_option( 'az_home_suggested_orderby', 'rand' );
+az-theme/header.php:13 $az_logo_id        = function_exists( 'az_get_logo_id' ) ? az_get_logo_id() : ( absint( az_get_option( 'branding.logo', 0 ) ) ?: absint( get_theme_mod( 'custom_logo' ) ) );
+az-theme/inc/admin/class-advanced.php:100 update_option( 'az_theme_options', $all, false );
+az-theme/inc/admin/class-advanced.php:107 if ( $fields ) { foreach ( $fields['fields'] as $field ) { if ( 'link' === $field['type'] ) { continue; } $current[ $field['id'] ] = AZ_Options_Sanitizer::sanitize( $field['default'] ?? 0, $field['type'], $field ); } $all[ $section ] = $current; update_option( 'az_theme_options', $all, false ); }
+az-theme/inc/admin/class-child-theme-installer.php:38 set_transient( self::NOTICE_KEY, is_wp_error( $result ) ? $result->get_error_code() : $result, WEEK_IN_SECONDS );
+az-theme/inc/admin/class-child-theme-installer.php:39 delete_transient( 'az_child_theme_install_prompt' );
+az-theme/inc/admin/class-child-theme-installer.php:117 $status = get_transient( self::NOTICE_KEY );
+az-theme/inc/admin/class-child-theme-installer.php:162 set_transient( self::NOTICE_KEY, $status, WEEK_IN_SECONDS );
+az-theme/inc/admin/class-child-theme-installer.php:163 delete_transient( 'az_child_theme_install_prompt' );
+az-theme/inc/admin/class-child-theme-installer.php:172 delete_transient( self::NOTICE_KEY );
+az-theme/inc/admin/class-child-theme-installer.php:173 delete_transient( 'az_child_theme_install_prompt' );
+az-theme/inc/admin/templates/child-theme/functions.php:14 if ( 'az-theme-child' !== get_stylesheet() || get_option( 'az_child_parent_mods_migrated', false ) ) {
+az-theme/inc/admin/templates/child-theme/functions.php:18 $parent_mods = get_option( 'theme_mods_az-theme', array() );
+az-theme/inc/admin/templates/child-theme/functions.php:19 $child_mods  = get_theme_mods();
+az-theme/inc/admin/templates/child-theme/functions.php:25 set_theme_mod( $name, $value );
+az-theme/inc/admin/templates/child-theme/functions.php:39 update_option( 'az_child_parent_mods_migrated', 1, false );
+az-theme/inc/core/auth-rate-limit.php:6 $record = get_transient( $key );
+az-theme/inc/core/auth-rate-limit.php:10 return (bool) set_transient( $key, $record, max( 1, $record['until'] - time() ) );
+az-theme/inc/core/blog-image-description.php:15 if ( '' === (string) get_post_meta( $id, '_wp_attachment_image_alt', true ) ) {
+az-theme/inc/core/blog-image-description.php:16 update_post_meta( $id, '_wp_attachment_image_alt', wp_slash( $title ) );
+az-theme/inc/core/blog-image-description.php:51 $custom_alt = (string) get_post_meta( (int) $matches[1], '_wp_attachment_image_alt', true );
+az-theme/inc/core/class-custom-code.php:16 return array_map( static function( $option ) { return get_option( $option, '' ); }, $legacy[ $key ] ?? array() );
+az-theme/inc/core/class-site-effects.php:109 } elseif ( is_home() && ( $posts_page = absint( get_option( 'page_for_posts' ) ) ) ) {
+az-theme/inc/core/google-login.php:21 set_transient( 'az_google_' . hash( 'sha256', $state ), $verifier, 600 );
+az-theme/inc/core/google-login.php:36 $key = 'az_google_' . hash( 'sha256', $state ); $verifier = get_transient( $key );
+az-theme/inc/core/google-login.php:37 delete_transient( $key ); az_google_cookie( '', time() - 3600 );
+az-theme/inc/core/google-login.php:56 update_user_meta( $id, 'az_google_sub', $identity['sub'] ); $user = get_user_by( 'id', $id );
+az-theme/inc/core/media-tools.php:7 $relative = get_post_meta( $id, '_wp_attached_file', true );
+az-theme/inc/core/media-tools.php:46 echo '<li><label><input type="checkbox" name="media_ids[]" value="' . esc_attr( $post->ID ) . '"> #' . esc_html( $post->ID ) . ' — ' . esc_html( $post->post_title ) . ' — ' . esc_html( get_post_meta( $post->ID, '_wp_attached_file', true ) ) . '</label></li>';
+az-theme/inc/core/shared-banner.php:14 $saved = $term ? get_term_meta( $id, '_az_shared_banner', true ) : get_post_meta( $id, '_az_shared_banner', true );
+az-theme/inc/core/shared-banner.php:19 $legacy = get_post_meta( $id, '_az_page_banner_layout', true );
+az-theme/inc/core/shared-banner.php:22 $saved = array( 'layout' => $layouts[ $legacy ], 'images' => get_post_meta( $id, '_az_page_banner_images', true ), 'text' => get_post_meta( $id, '_az_page_banner_custom_text', true ), 'height' => get_post_meta( $id, '_az_page_banner_height', true ) ?: 450 );
+az-theme/inc/core/shared-banner.php:25 $legacy = absint( get_term_meta( $id, '_az_category_banner_image', true ) );
+az-theme/inc/core/shared-banner.php:114 if ( false !== $data ) { update_post_meta( $id, '_az_shared_banner', $data ); }
+az-theme/inc/core/shared-banner.php:124 if ( false !== $data ) { update_term_meta( $id, '_az_shared_banner', $data ); }
+az-theme/inc/core/user-options.php:87 if ( ! empty( $_POST['az_remove_avatar'] ) ) { delete_user_meta( $user->ID, 'az_avatar_id' ); }
+az-theme/inc/core/user-options.php:101 update_user_meta( $user->ID, 'az_avatar_id', $id );
+az-theme/inc/core/user-options.php:112 $url = wp_get_attachment_image_url( (int) get_user_meta( $user->ID, 'az_avatar_id', true ), 'thumbnail' );
+az-theme/inc/functions/admin-settings.php:42 register_setting( 'az_lead_smtp_group', 'az_lead_smtp_enabled',      [ 'sanitize_callback' => 'absint' ] );
+az-theme/inc/functions/admin-settings.php:43 register_setting( 'az_lead_smtp_group', 'az_lead_notify_emails',     [ 'sanitize_callback' => 'az_sanitize_email_list' ] );
+az-theme/inc/functions/admin-settings.php:44 register_setting( 'az_lead_smtp_group', 'az_lead_smtp_host',         [ 'sanitize_callback' => 'sanitize_text_field' ] );
+az-theme/inc/functions/admin-settings.php:45 register_setting( 'az_lead_smtp_group', 'az_lead_smtp_port',         [ 'sanitize_callback' => 'absint' ] );
+az-theme/inc/functions/admin-settings.php:46 register_setting( 'az_lead_smtp_group', 'az_lead_smtp_encryption',   [ 'sanitize_callback' => 'az_sanitize_smtp_encryption' ] );
+az-theme/inc/functions/admin-settings.php:47 register_setting( 'az_lead_smtp_group', 'az_lead_smtp_username',     [ 'sanitize_callback' => 'sanitize_text_field' ] );
+az-theme/inc/functions/admin-settings.php:48 register_setting( 'az_lead_smtp_group', 'az_lead_smtp_password',     [ 'sanitize_callback' => 'sanitize_text_field' ] );
+az-theme/inc/functions/admin-settings.php:49 register_setting( 'az_lead_smtp_group', 'az_lead_smtp_from_email',   [ 'sanitize_callback' => 'sanitize_email' ] );
+az-theme/inc/functions/admin-settings.php:50 register_setting( 'az_lead_smtp_group', 'az_lead_smtp_from_name',    [ 'sanitize_callback' => 'sanitize_text_field' ] );
+az-theme/inc/functions/admin-settings.php:51 register_setting( 'az_lead_smtp_group', 'az_lead_smtp_debug',        [ 'sanitize_callback' => 'absint' ] );
+az-theme/inc/functions/admin-settings.php:91 global $wpdb;
+az-theme/inc/functions/admin-settings.php:93 return $wpdb->prefix . 'az_contact_leads';
+az-theme/inc/functions/admin-settings.php:97 global $wpdb;
+az-theme/inc/functions/admin-settings.php:102 $charset_collate = $wpdb->get_charset_collate();
+az-theme/inc/functions/admin-settings.php:105 "CREATE TABLE {$table_name} (
+az-theme/inc/functions/admin-settings.php:142 global $wpdb;
+az-theme/inc/functions/admin-settings.php:147 $inserted = $wpdb->insert( $wpdb->prefix . 'az9s_leads', $data, array_fill( 0, count( $data ), '%s' ) );
+az-theme/inc/functions/admin-settings.php:152 $inserted = $wpdb->insert( $wpdb->prefix . 'az9s_leads', $data, array_fill( 0, count( $data ), '%s' ) );
+az-theme/inc/functions/admin-settings.php:154 return $inserted ? (int) $wpdb->insert_id : 0;
+az-theme/inc/functions/admin-settings.php:158 $emails = az_sanitize_email_list( get_option( 'az_lead_notify_emails', '' ) );
+az-theme/inc/functions/admin-settings.php:161 $emails = sanitize_email( get_option( 'az_contact_email', get_option( 'admin_email' ) ) );
+az-theme/inc/functions/admin-settings.php:165 $emails = sanitize_email( get_option( 'admin_email' ) );
+az-theme/inc/functions/admin-settings.php:214 if ( ! get_option( 'az_lead_smtp_enabled', 0 ) ) {
+az-theme/inc/functions/admin-settings.php:218 $host = trim( (string) get_option( 'az_lead_smtp_host', '' ) );
+az-theme/inc/functions/admin-settings.php:219 $port = (int) get_option( 'az_lead_smtp_port', 587 );
+az-theme/inc/functions/admin-settings.php:220 $user = trim( (string) get_option( 'az_lead_smtp_username', '' ) );
+az-theme/inc/functions/admin-settings.php:221 $pass = (string) get_option( 'az_lead_smtp_password', '' );
+az-theme/inc/functions/admin-settings.php:233 $phpmailer->SMTPDebug  = get_option( 'az_lead_smtp_debug', 0 ) ? 2 : 0;
+az-theme/inc/functions/admin-settings.php:236 $encryption = az_sanitize_smtp_encryption( get_option( 'az_lead_smtp_encryption', 'tls' ) );
+az-theme/inc/functions/admin-settings.php:241 $from_email = sanitize_email( get_option( 'az_lead_smtp_from_email', '' ) );
+az-theme/inc/functions/admin-settings.php:245 $from_name  = sanitize_text_field( get_option( 'az_lead_smtp_from_name', get_bloginfo( 'name' ) ) );
+az-theme/inc/functions/admin-settings.php:262 global $wpdb;
+az-theme/inc/functions/admin-settings.php:274 $deleted = $wpdb->delete( az_lead_table_name(), array( 'id' => $lead_id ), array( '%d' ) );
+az-theme/inc/functions/admin-settings.php:297 $total    = (int) $wpdb->get_var( "SELECT COUNT(*) FROM " . az_lead_table_name() );
+az-theme/inc/functions/admin-settings.php:298 $leads    = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM " . az_lead_table_name() . " ORDER BY created_at DESC, id DESC LIMIT %d OFFSET %d", $per_page, $offset ) );
+az-theme/inc/functions/admin-settings.php:384 <td><input type="hidden" name="az_lead_smtp_enabled" value="0"><label><input type="checkbox" name="az_lead_smtp_enabled" value="1" <?php checked( get_option( 'az_lead_smtp_enabled', 0 ), 1 ); ?>> Dùng SMTP này để gửi email thông báo Lead và các email qua <code>wp_mail()</code>.</label></td>
+az-theme/inc/functions/admin-settings.php:388 <td><textarea id="az_lead_notify_emails" name="az_lead_notify_emails" rows="3" class="large-text"><?php echo esc_textarea( get_option( 'az_lead_notify_emails', get_option( 'az_contact_email', get_option( 'admin_email' ) ) ) ); ?></textarea><p class="description">Có thể nhập một hoặc nhiều email, phân tách bằng dấu phẩy.</p></td>
+az-theme/inc/functions/admin-settings.php:392 <td><input id="az_lead_smtp_host" type="text" name="az_lead_smtp_host" value="<?php echo esc_attr( get_option( 'az_lead_smtp_host', '' ) ); ?>" class="regular-text" placeholder="smtp.gmail.com"></td>
+az-theme/inc/functions/admin-settings.php:396 <td><input id="az_lead_smtp_port" type="number" name="az_lead_smtp_port" value="<?php echo esc_attr( get_option( 'az_lead_smtp_port', 587 ) ); ?>" class="small-text"></td>
+az-theme/inc/functions/admin-settings.php:400 <td><select id="az_lead_smtp_encryption" name="az_lead_smtp_encryption"><option value="tls" <?php selected( get_option( 'az_lead_smtp_encryption', 'tls' ), 'tls' ); ?>>TLS</option><option value="ssl" <?php selected( get_option( 'az_lead_smtp_encryption', 'tls' ), 'ssl' ); ?>>SSL</option><option value="none" <?php selected( get_option( 'az_lead_smtp_encryption', 'tls' ), 'none' ); ?>>None</option></select></td>
+az-theme/inc/functions/admin-settings.php:404 <td><input id="az_lead_smtp_username" type="text" name="az_lead_smtp_username" value="<?php echo esc_attr( get_option( 'az_lead_smtp_username', '' ) ); ?>" class="regular-text"></td>
+az-theme/inc/functions/admin-settings.php:408 <td><input id="az_lead_smtp_password" type="password" name="az_lead_smtp_password" value="<?php echo esc_attr( get_option( 'az_lead_smtp_password', '' ) ); ?>" class="regular-text" autocomplete="new-password"></td>
+az-theme/inc/functions/admin-settings.php:412 <td><input id="az_lead_smtp_from_email" type="email" name="az_lead_smtp_from_email" value="<?php echo esc_attr( get_option( 'az_lead_smtp_from_email', get_option( 'az_contact_email', get_option( 'admin_email' ) ) ) ); ?>" class="regular-text"></td>
+az-theme/inc/functions/admin-settings.php:416 <td><input id="az_lead_smtp_from_name" type="text" name="az_lead_smtp_from_name" value="<?php echo esc_attr( get_option( 'az_lead_smtp_from_name', get_bloginfo( 'name' ) ) ); ?>" class="regular-text"></td>
+az-theme/inc/functions/admin-settings.php:420 <td><input type="hidden" name="az_lead_smtp_debug" value="0"><label><input type="checkbox" name="az_lead_smtp_debug" value="1" <?php checked( get_option( 'az_lead_smtp_debug', 0 ), 1 ); ?>> Ghi log debug SMTP vào error log.</label></td>
+az-theme/inc/functions/admin-settings.php:431 <input type="email" name="az_lead_test_email" value="<?php echo esc_attr( get_option( 'az_contact_email', get_option( 'admin_email' ) ) ); ?>" class="regular-text">
+az-theme/inc/functions/admin-settings.php:493 if ( $page && false === strpos( (string) $page->post_content, 'wv-about-content' ) && ! get_post_meta( $page_id, '_wv_about_seeded', true ) ) {
+az-theme/inc/functions/admin-settings.php:495 update_post_meta( $page_id, '_wv_about_original_content', $page->post_content );
+az-theme/inc/functions/admin-settings.php:504 update_post_meta( $page_id, '_wv_about_seeded', current_time( 'mysql' ) );
+az-theme/inc/functions/admin-settings.php:515 $lines = get_option( 'az_catalogue_lines', az_catalogue_default_lines() );
+az-theme/inc/functions/category-images.php:38 $image_id  = get_term_meta( $term->term_id, 'cp_cat_image_id', true );
+az-theme/inc/functions/category-images.php:110 update_term_meta( $term_id, 'cp_cat_image_id', $image_id );
+az-theme/inc/functions/category-images.php:112 delete_term_meta( $term_id, 'cp_cat_image_id' );
+az-theme/inc/functions/category-images.php:121 $image_id = get_term_meta( $term_id, 'cp_cat_image_id', true );
+az-theme/inc/functions/contact-form.php:24 set_transient( 'az_contact_captcha_' . $token, $code, 20 * MINUTE_IN_SECONDS );
+az-theme/inc/functions/contact-form.php:41 $expected      = get_transient( $transient_key );
+az-theme/inc/functions/contact-form.php:43 delete_transient( $transient_key );
+az-theme/inc/functions/content-media.php:102 $meta_value = get_post_meta( $post_id, $meta_key, true );
+az-theme/inc/functions/content-media.php:105 update_post_meta( $post_id, $meta_key, $new_meta );
+az-theme/inc/functions/customizer.php:17 $logo_size = get_theme_mod( 'az_logo_size', 52 );
+az-theme/inc/functions/customizer.php:18 $logo_text_size = get_theme_mod( 'az_logo_text_size', 16 );
+az-theme/inc/functions/home-products.php:11 $raw_sections = json_decode( (string) get_option( 'az_home_category_sections', '' ), true );
+az-theme/inc/functions/home-products.php:42 $legacy_ids = array_filter( array_map( 'absint', preg_split( '/[\r\n,]+/', (string) get_option( 'az_home_featured_category_ids', '' ) ) ) );
+az-theme/inc/functions/home-products.php:131 $ids = array_filter( array_map( 'absint', preg_split( '/[\r\n,]+/', (string) get_option( 'az_home_featured_category_ids', '' ) ) ) );
+az-theme/inc/functions/home-products.php:162 $image_id = (int) get_term_meta( $term->term_id, 'thumbnail_id', true );
+az-theme/inc/functions/home-products.php:165 $image_id = (int) get_term_meta( $term->term_id, 'cp_cat_image_id', true );
+az-theme/inc/functions/home-products.php:172 $logo_id = (int) get_theme_mod( 'custom_logo' );
+az-theme/inc/functions/home-products.php:196 $phone = trim( (string) get_option( 'az_contact_phone', get_theme_mod( 'az_contact_phone', '' ) ) );
+az-theme/inc/functions/home-products.php:399 $flash_sale_countdown_seconds = max( 1, min( 168, (int) get_option( 'az_flash_sale_countdown_hours', 3 ) ) ) * HOUR_IN_SECONDS;
+az-theme/inc/functions/home-products.php:504 $limit  = max( 1, min( 12, (int) ( $_POST['limit'] ?? get_option( 'az_home_category_batch_size', 3 ) ) ) );
+az-theme/inc/functions/home-products.php:522 $products_per_category = max( 1, min( 30, (int) get_option( 'az_home_products_per_category', 10 ) ) );
+az-theme/inc/functions/integrations-access.php:39 global $wpdb;
+az-theme/inc/functions/integrations-access.php:45 $expired_licenses = $wpdb->get_results($wpdb->prepare(
+az-theme/inc/functions/integrations-access.php:47 FROM {$wpdb->posts} p
+az-theme/inc/functions/integrations-access.php:48 INNER JOIN {$wpdb->postmeta} pm1 ON p.ID = pm1.post_id AND pm1.meta_key = '_expiry_date'
+az-theme/inc/functions/integrations-access.php:49 LEFT JOIN {$wpdb->postmeta} pm2 ON p.ID = pm2.post_id AND pm2.meta_key = '_status'
+az-theme/inc/functions/integrations-access.php:62 update_post_meta($license->ID, '_status', 'expired');
+az-theme/inc/functions/integrations-access.php:63 update_post_meta($license->ID, '_license_status', 'expired');
+az-theme/inc/functions/integrations-access.php:79 wp_schedule_event(time(), 'daily', 'az_check_expired_licenses');
+az-theme/inc/functions/integrations-access.php:120 update_user_meta( get_current_user_id(), 'show_admin_bar_front', 'false' );
+az-theme/inc/functions/licenses.php:83 $license_key = get_post_meta( $post_id, '_license_key', true );
+az-theme/inc/functions/licenses.php:97 $domain = get_post_meta( $post_id, '_license_domain', true );
+az-theme/inc/functions/licenses.php:105 $plan = get_post_meta( $post_id, '_plan_slug', true );
+az-theme/inc/functions/licenses.php:107 $plan = get_post_meta( $post_id, '_plan_type', true );
+az-theme/inc/functions/licenses.php:123 $status = get_post_meta( $post_id, '_license_status', true );
+az-theme/inc/functions/licenses.php:125 $status = get_post_meta( $post_id, '_status', true );
+az-theme/inc/functions/licenses.php:139 $tokens_used = (int) get_post_meta( $post_id, '_tokens_used', true );
+az-theme/inc/functions/licenses.php:140 $tokens_limit = (int) get_post_meta( $post_id, '_tokens_limit', true );
+az-theme/inc/functions/licenses.php:165 $license_key = get_post_meta( $post->ID, '_license_key', true );
+az-theme/inc/functions/licenses.php:166 $domain = get_post_meta( $post->ID, '_license_domain', true );
+az-theme/inc/functions/licenses.php:167 $status = get_post_meta( $post->ID, '_license_status', true );
+az-theme/inc/functions/licenses.php:168 $plan_type = get_post_meta( $post->ID, '_plan_type', true );
+az-theme/inc/functions/licenses.php:169 $plan_slug = get_post_meta( $post->ID, '_plan_slug', true );
+az-theme/inc/functions/licenses.php:170 $tokens_used = get_post_meta( $post->ID, '_tokens_used', true );
+az-theme/inc/functions/licenses.php:171 $tokens_limit = get_post_meta( $post->ID, '_tokens_limit', true );
+az-theme/inc/functions/licenses.php:293 update_post_meta( $post_id, $meta_key, $value );
+az-theme/inc/functions/licenses.php:297 update_post_meta( $post_id, '_status', $value );
+az-theme/inc/functions/menu-icons.php:15 $icon_url = get_post_meta( $item_id, '_menu_item_icon_url', true );
+az-theme/inc/functions/menu-icons.php:16 $icon_id  = get_post_meta( $item_id, '_menu_item_icon_id',  true );
+az-theme/inc/functions/menu-icons.php:17 $icon_w   = get_post_meta( $item_id, '_menu_item_icon_width',  true ) ?: '20';
+az-theme/inc/functions/menu-icons.php:18 $icon_h   = get_post_meta( $item_id, '_menu_item_icon_height', true ) ?: '20';
+az-theme/inc/functions/menu-icons.php:65 if ( $val ) update_post_meta( $menu_item_db_id, '_menu_item_icon_url', $val );
+az-theme/inc/functions/menu-icons.php:66 else        delete_post_meta( $menu_item_db_id, '_menu_item_icon_url' );
+az-theme/inc/functions/menu-icons.php:70 if ( $id ) update_post_meta( $menu_item_db_id, '_menu_item_icon_id', $id );
+az-theme/inc/functions/menu-icons.php:71 else       delete_post_meta( $menu_item_db_id, '_menu_item_icon_id' );
+az-theme/inc/functions/menu-icons.php:74 update_post_meta( $menu_item_db_id, '_menu_item_icon_width',  absint( $_POST['menu-item-icon-width'][$menu_item_db_id] )  ?: 20 );
+az-theme/inc/functions/menu-icons.php:76 update_post_meta( $menu_item_db_id, '_menu_item_icon_height', absint( $_POST['menu-item-icon-height'][$menu_item_db_id] ) ?: 20 );
+az-theme/inc/functions/menu-icons.php:131 $icon_url = get_post_meta( $item->ID, '_menu_item_icon_url', true );
+az-theme/inc/functions/menu-icons.php:133 $w = absint( get_post_meta( $item->ID, '_menu_item_icon_width',  true ) ) ?: 20;
+az-theme/inc/functions/menu-icons.php:134 $h = absint( get_post_meta( $item->ID, '_menu_item_icon_height', true ) ) ?: 20;
+az-theme/inc/functions/pricing.php:118 $price = get_post_meta( $post->ID, '_az_ai_price', true );
+az-theme/inc/functions/pricing.php:119 $period = get_post_meta( $post->ID, '_az_ai_period', true );
+az-theme/inc/functions/pricing.php:120 $featured = get_post_meta( $post->ID, '_az_ai_featured', true );
+az-theme/inc/functions/pricing.php:121 $description = get_post_meta( $post->ID, '_az_ai_description', true );
+az-theme/inc/functions/pricing.php:122 $button_text = get_post_meta( $post->ID, '_az_ai_button_text', true );
+az-theme/inc/functions/pricing.php:123 $button_url = get_post_meta( $post->ID, '_az_ai_button_url', true );
+az-theme/inc/functions/pricing.php:124 $token_limit = get_post_meta( $post->ID, '_az_ai_token_limit', true );
+az-theme/inc/functions/pricing.php:125 $post_limit = get_post_meta( $post->ID, '_az_ai_post_limit', true );
+az-theme/inc/functions/pricing.php:129 <input type="text" id="az_ai_plan_name_en" name="az_ai_plan_name_en" value="<?php echo esc_attr( get_post_meta( $post->ID, '_az_ai_plan_name_en', true ) ); ?>" placeholder="e.g. Free, Pro, Enterprise" style="width: 100%;" />
+az-theme/inc/functions/pricing.php:139 <input type="text" id="az_ai_price_vnd" name="az_ai_price_vnd" value="<?php echo esc_attr( get_post_meta( $post->ID, '_az_ai_price_vnd', true ) ); ?>" style="width: 100%; margin-top:4px;" placeholder="490.000₫" />
+az-theme/inc/functions/pricing.php:151 $description_en = get_post_meta( $post->ID, '_az_ai_description_en', true );
+az-theme/inc/functions/pricing.php:179 <input type="text" id="az_ai_button_text_en" name="az_ai_button_text_en" value="<?php echo esc_attr( get_post_meta( $post->ID, '_az_ai_button_text_en', true ) ); ?>" placeholder="Sign Up" style="width: 100%;" />
+az-theme/inc/functions/pricing.php:189 <textarea id="az_ai_content_en" name="az_ai_content_en" rows="6" style="width:100%; font-family:monospace;" placeholder="Unlimited posts&#10;GPT, Gemini, Claude AI&#10;Premium quality&#10;24/7 Support"><?php echo esc_textarea( get_post_meta( $post->ID, '_az_ai_content_en', true ) ); ?></textarea>
+az-theme/inc/functions/pricing.php:209 update_post_meta( $post_id, '_az_ai_price', sanitize_text_field( $_POST['az_ai_price'] ) );
+az-theme/inc/functions/pricing.php:213 update_post_meta( $post_id, '_az_ai_price_vnd', sanitize_text_field( $_POST['az_ai_price_vnd'] ) );
+az-theme/inc/functions/pricing.php:217 update_post_meta( $post_id, '_az_ai_plan_name_en', sanitize_text_field( $_POST['az_ai_plan_name_en'] ) );
+az-theme/inc/functions/pricing.php:221 update_post_meta( $post_id, '_az_ai_period', sanitize_text_field( $_POST['az_ai_period'] ) );
+az-theme/inc/functions/pricing.php:225 update_post_meta( $post_id, '_az_ai_description', sanitize_text_field( $_POST['az_ai_description'] ) );
+az-theme/inc/functions/pricing.php:229 update_post_meta( $post_id, '_az_ai_token_limit', absint( $_POST['az_ai_token_limit'] ) );
+az-theme/inc/functions/pricing.php:233 update_post_meta( $post_id, '_az_ai_post_limit', absint( $_POST['az_ai_post_limit'] ) );
+az-theme/inc/functions/pricing.php:237 update_post_meta( $post_id, '_az_ai_featured', $featured );
+az-theme/inc/functions/pricing.php:240 update_post_meta( $post_id, '_az_ai_button_text', sanitize_text_field( $_POST['az_ai_button_text'] ) );
+az-theme/inc/functions/pricing.php:244 update_post_meta( $post_id, '_az_ai_button_text_en', sanitize_text_field( $_POST['az_ai_button_text_en'] ) );
+az-theme/inc/functions/pricing.php:248 update_post_meta( $post_id, '_az_ai_description_en', sanitize_text_field( $_POST['az_ai_description_en'] ) );
+az-theme/inc/functions/pricing.php:252 update_post_meta( $post_id, '_az_ai_content_en', sanitize_textarea_field( $_POST['az_ai_content_en'] ) );
+az-theme/inc/functions/pricing.php:256 update_post_meta( $post_id, '_az_ai_button_url', esc_url_raw( $_POST['az_ai_button_url'] ) );
+az-theme/inc/functions/pricing.php:279 $author_name     = get_post_meta( $post->ID, '_az_ai_author_name', true );
+az-theme/inc/functions/pricing.php:280 $author_position = get_post_meta( $post->ID, '_az_ai_author_position', true );
+az-theme/inc/functions/pricing.php:281 $author_position_en = get_post_meta( $post->ID, '_az_ai_author_position_en', true );
+az-theme/inc/functions/pricing.php:282 $content_en      = get_post_meta( $post->ID, '_az_ai_content_en', true );
+az-theme/inc/functions/pricing.php:318 update_post_meta( $post_id, '_az_ai_author_name', sanitize_text_field( $_POST['az_ai_author_name'] ) );
+az-theme/inc/functions/pricing.php:322 update_post_meta( $post_id, '_az_ai_author_position', sanitize_text_field( $_POST['az_ai_author_position'] ) );
+az-theme/inc/functions/pricing.php:326 update_post_meta( $post_id, '_az_ai_author_position_en', sanitize_text_field( $_POST['az_ai_author_position_en'] ) );
+az-theme/inc/functions/pricing.php:330 update_post_meta( $post_id, '_az_ai_content_en', sanitize_textarea_field( $_POST['az_ai_content_en'] ) );
+az-theme/inc/functions/product-attributes-pricing.php:180 $rate = get_term_meta( $term->term_id, 'az_price_rate', true );
+az-theme/inc/functions/product-attributes-pricing.php:202 delete_term_meta( $term_id, 'az_price_rate' );
+az-theme/inc/functions/product-attributes-pricing.php:207 update_term_meta( $term_id, 'az_price_rate', max( 0, (float) $rate ) );
+az-theme/inc/functions/product-attributes-pricing.php:258 $rate = (float) get_term_meta( $related_term_id, 'az_price_rate', true );
+az-theme/inc/functions/product-attributes-pricing.php:321 $rate = (float) get_term_meta( $term_id, 'az_price_rate', true );
+az-theme/inc/functions/product-fields.php:39 <input type="text" class="widefat" id="<?php echo esc_attr( $key ); ?>" name="<?php echo esc_attr( $key ); ?>" value="<?php echo esc_attr( get_post_meta( $post->ID, $key, true ) ); ?>">
+az-theme/inc/functions/product-fields.php:46 get_post_meta( $post->ID, 'az_technical_specs', true ),
+az-theme/inc/functions/product-fields.php:60 get_post_meta( $post->ID, 'az_practical_applications', true ),
+az-theme/inc/functions/product-fields.php:92 '' !== $value ? update_post_meta( $post_id, $key, $value ) : delete_post_meta( $post_id, $key );
+az-theme/inc/functions/product-fields.php:98 '' !== $value ? update_post_meta( $post_id, $key, $value ) : delete_post_meta( $post_id, $key );
+az-theme/inc/functions/product-fields.php:107 '' !== trim( $value ) ? update_post_meta( $post_id, $key, $value ) : delete_post_meta( $post_id, $key );
+az-theme/inc/functions/product-videos.php:67 $urls = get_post_meta( $post_id, '_az_product_video_urls', true );
+az-theme/inc/functions/product-videos.php:70 $legacy_count = absint( get_post_meta( $post_id, 'video', true ) );
+az-theme/inc/functions/product-videos.php:73 $legacy_value = get_post_meta( $post_id, $legacy_key, true );
+az-theme/inc/functions/product-videos.php:82 $single_value = get_post_meta( $post_id, $single_key, true );
+az-theme/inc/functions/product-videos.php:199 delete_post_meta( $post_id, '_az_product_video_urls' );
+az-theme/inc/functions/product-videos.php:203 update_post_meta( $post_id, '_az_product_video_urls', $normalized );
+az-theme/inc/functions/term-language.php:16 $name_en = get_term_meta( $term->term_id, '_category_name_en', true );
+az-theme/inc/functions/term-language.php:53 update_term_meta( $term_id, '_category_name_en', $value );
+az-theme/inc/functions/term-language.php:55 delete_term_meta( $term_id, '_category_name_en' );
+az-theme/inc/functions/theme-setup.php:26 $label_en  = get_post_meta( $item->ID, '_menu_item_label_en', true );
+az-theme/inc/functions/theme-setup.php:184 $en_val = get_theme_mod( $key . '_en', $default_en );
+az-theme/inc/functions/theme-setup.php:187 return get_theme_mod( $key, $default_vi );
+az-theme/inc/functions/theme-setup.php:401 $label_en = get_post_meta( $item->ID, '_menu_item_label_en', true );
+az-theme/inc/functions/theme-setup.php:429 $label_en  = get_post_meta( $item->ID, '_menu_item_label_en', true );
+az-theme/inc/functions/woocommerce.php:747 $page_id = absint( get_option( $option_name ) );
+az-theme/inc/functions/woocommerce.php:811 update_option( $option_name, (int) $page_id );
+az-theme/inc/helpers/options.php:3 function az_get_options() { $options = get_option( 'az_theme_options', array() ); return is_array( $options ) ? $options : array(); }
+az-theme/inc/helpers/options.php:28 function az_get_company_name() { $all = az_get_options(); return array_key_exists( 'company_name', $all['general'] ?? array() ) ? $all['general']['company_name'] : get_option( 'az_contact_company', get_bloginfo( 'name' ) ); }
+az-theme/inc/helpers/options.php:29 function az_get_contact_items( $type = 'phone' ) { $key = 'address' === $type ? 'addresses' : ( 'email' === $type ? 'emails' : 'phones' ); $all = az_get_options(); $general = isset( $all['general'] ) && is_array( $all['general'] ) ? $all['general'] : array(); if ( ! empty( $general[ $key ] ) && is_array( $general[ $key ] ) ) { $items = array(); foreach ( $general[ $key ] as $row ) { if ( is_array( $row ) && ! empty( $row['value'] ) && is_scalar( $row['value'] ) ) { $items[] = array( 'label' => sanitize_text_field( $row['label'] ?? ( 'phone' === $type ? 'Hotline' : ( 'email' === $type ? 'Email' : 'Địa chỉ' ) ) ), 'value' => 'address' === $type ? sanitize_textarea_field( $row['value'] ) : ( 'email' === $type ? sanitize_email( $row['value'] ) : sanitize_text_field( $row['value'] ) ) ); } } return $items; } if ( 'address' === $type ) { return array(); } $legacy_keys = 'email' === $type ? array( 'email', 'sales_email', 'support_email' ) : array( 'phone' ); $items = array(); foreach ( $legacy_keys as $legacy_key ) { $raw = array_key_exists( $legacy_key, $general ) ? $general[ $legacy_key ] : get_option( 'email' === $type ? ( 'email' === $legacy_key ? 'az_contact_email' : ( 'sales_email' === $legacy_key ? 'az_contact_sales_email' : 'az_contact_support_email' ) ) : 'az_contact_phone', '' ); if ( '' !== trim( (string) $raw ) ) { $items[] = array( 'label' => 'phone' === $type ? 'Hotline' : ( 'email' === $type ? ucwords( str_replace( '_', ' ', $legacy_key ) ) : 'Địa chỉ' ), 'value' => 'email' === $type ? sanitize_email( $raw ) : trim( $raw ) ); } } return $items; }
+az-theme/inc/helpers/options.php:30 function az_get_phone() { $items = az_get_contact_items( 'phone' ); return $items[0]['value'] ?? get_option( 'az_contact_phone', '' ); }
+az-theme/inc/helpers/options.php:31 function az_get_email() { $all = az_get_options(); return array_key_exists( 'email', $all['general'] ?? array() ) ? $all['general']['email'] : get_option( 'az_contact_email', get_option( 'admin_email' ) ); }
+az-theme/inc/helpers/options.php:35 function az_general_shortcode( $atts ) { $atts = shortcode_atts( array( 'field' => '' ), $atts, 'az_general' ); $allowed = array( 'company_name', 'brand_name', 'tax_code', 'representative', 'business_registration', 'website', 'contact_person', 'phone', 'phone_secondary', 'email', 'sales_email', 'support_email', 'fax', 'working_hours', 'address', 'address_secondary', 'google_maps_url', 'google_maps_embed', 'copyright' ); $field = sanitize_key( $atts['field'] ); if ( ! in_array( $field, $allowed, true ) ) { return ''; } if ( 'google_maps_embed' === $field ) { return az_google_map_shortcode(); } if ( in_array( $field, array( 'address', 'address_secondary', 'google_maps_url' ), true ) ) { return esc_html( az_get_location_field( $field ) ); } $value = az_get_option( 'general.' . $field, null ); if ( null === $value || '' === $value ) { $legacy = array( 'company_name' => 'az_contact_company', 'brand_name' => 'az_contact_brand', 'tax_code' => 'az_contact_tax_code', 'representative' => 'az_contact_representative', 'business_registration' => 'az_contact_registration', 'website' => 'az_contact_website', 'contact_person' => 'az_contact_person', 'phone' => 'az_contact_phone', 'phone_secondary' => 'az_contact_phone_2', 'email' => 'az_contact_email', 'sales_email' => 'az_contact_sales_email', 'support_email' => 'az_contact_support_email', 'fax' => 'az_contact_fax', 'working_hours' => 'az_contact_hours', 'copyright' => '' ); $value = $legacy[ $field ] ? get_option( $legacy[ $field ], '' ) : ''; } return esc_html( $value ); }
+az-theme/inc/helpers/options.php:44 function az_get_social_links() { $map = array( 'facebook' => 'az_footer_social_facebook', 'youtube' => 'az_footer_social_youtube', 'tiktok' => 'az_footer_social_tiktok', 'instagram' => '', 'linkedin' => 'az_footer_social_linkedin', 'pinterest' => '', 'x' => '', 'zalo' => 'az_contact_zalo_url', 'messenger' => 'az_contact_messenger_url', 'whatsapp' => '' ); $all = az_get_options(); $social = isset( $all['social'] ) && is_array( $all['social'] ) ? $all['social'] : array(); $links = array(); foreach ( $map as $key => $legacy ) { if ( array_key_exists( $key, $social ) ) { $value = $social[ $key ]; } elseif ( $legacy ) { $value = get_option( $legacy, '' ); } else { $value = ''; } if ( $value ) { $links[ $key ] = esc_url( $value ); } } return $links; }
+az-theme/inc/helpers/options.php:45 function az_get_logo_id( $variant = 'desktop' ) { $keys = array( 'desktop' => 'logo', 'mobile' => 'logo_mobile', 'sticky' => 'logo_sticky', 'light' => 'logo_light', 'dark' => 'logo_dark' ); $key = $keys[ $variant ] ?? 'logo'; $all = az_get_options(); if ( isset( $all['branding'][ $key ] ) && $all['branding'][ $key ] ) { return absint( $all['branding'][ $key ] ); } return 'desktop' === $variant ? absint( get_theme_mod( 'custom_logo', 0 ) ) : 0; }
+az-theme/inc/helpers/options.php:64 $az_front_page_id = absint( get_option( 'page_on_front' ) );
+az-theme/inc/license-api.php:135 $status = get_post_meta( $license->ID, '_status', true );
+az-theme/inc/license-api.php:136 $plan_slug = get_post_meta( $license->ID, '_plan_slug', true );
+az-theme/inc/license-api.php:137 $api_calls_used = (int) get_post_meta( $license->ID, '_api_calls_used', true );
+az-theme/inc/license-api.php:138 $api_calls_limit = (int) get_post_meta( $license->ID, '_api_calls_limit', true );
+az-theme/inc/license-api.php:139 $created_at = get_post_meta( $license->ID, '_created_at', true );
+az-theme/inc/license-api.php:140 $expires_at = get_post_meta( $license->ID, '_expires_at', true );
+az-theme/inc/license-api.php:141 $license_domain = get_post_meta( $license->ID, '_license_domain', true );
+az-theme/inc/license-api.php:154 $expiry_date = get_post_meta( $license->ID, '_expiry_date', true );
+az-theme/inc/license-api.php:166 update_post_meta( $license->ID, '_status', 'expired' );
+az-theme/inc/license-api.php:167 update_post_meta( $license->ID, '_license_status', 'expired' );
+az-theme/inc/license-api.php:188 update_post_meta( $license->ID, '_license_domain', $domain );
+az-theme/inc/license-api.php:196 global $wpdb;
+az-theme/inc/license-api.php:197 $plugin_usage_table = $wpdb->prefix . 'iaca_license_usage';
+az-theme/inc/license-api.php:201 if ( $wpdb->get_var( "SHOW TABLES LIKE '$plugin_usage_table'" ) == $plugin_usage_table ) {
+az-theme/inc/license-api.php:202 $usage_data = $wpdb->get_row( $wpdb->prepare(
+az-theme/inc/license-api.php:277 $current_domain = get_post_meta( $license->ID, '_license_domain', true );
+az-theme/inc/license-api.php:287 update_post_meta( $license->ID, '_license_domain', $domain );
+az-theme/inc/license-api.php:288 update_post_meta( $license->ID, '_status', 'active' );
+az-theme/inc/license-api.php:289 update_post_meta( $license->ID, '_activated_at', current_time( 'mysql' ) );
+az-theme/inc/license-api.php:292 $plan_slug = get_post_meta( $license->ID, '_plan_slug', true );
+az-theme/inc/license-api.php:337 update_post_meta( $license->ID, '_api_calls_used', $post_count );
+az-theme/inc/license-api.php:338 update_post_meta( $license->ID, '_last_used_at', current_time( 'mysql' ) );
+az-theme/inc/license-api.php:378 update_post_meta( $license->ID, '_tokens_used', $tokens_used );
+az-theme/inc/license-api.php:379 update_post_meta( $license->ID, '_last_used_at', current_time( 'mysql' ) );
+az-theme/inc/license-api.php:424 $license_key = get_post_meta( $license->ID, '_license_key', true );
+az-theme/inc/license-api.php:427 $iaca_set = get_option( 'iaca_set', array() );
+az-theme/inc/license-api.php:429 update_option( 'iaca_set', $iaca_set );
+az-theme/inc/modules/analytics/class-analytics.php:9 private function data() { $data = get_option( self::OPTION, array() ); return is_array( $data ) ? $data : array(); }
+az-theme/inc/modules/analytics/class-analytics.php:10 private function save( $data ) { update_option( self::OPTION, $data, false ); }
+az-theme/inc/modules/analytics/class-analytics.php:16 function az_get_analytics_summary() { $data = get_option( AZ_Analytics::OPTION, array() ); $daily = is_array( $data['views_daily'] ?? null ) ? $data['views_daily'] : array(); $today = current_time( 'Y-m-d' ); $recent = 0; $month = 0; foreach ( $daily as $day => $count ) { $age = (int) floor( ( current_time( 'timestamp' ) - strtotime( $day . ' 00:00:00' ) ) / DAY_IN_SECONDS ); if ( $age >= 0 && $age < 7 ) { $recent += absint( $count ); } if ( $age >= 0 && $age < 30 ) { $month += absint( $count ); } } $online = absint( apply_filters( 'az_analytics_online_count', 5 ) ); return array( 'online' => min( 9999, $online ), 'views_total' => absint( $data['views_total'] ?? 0 ), 'views_today' => absint( $daily[ $today ] ?? 0 ), 'views_7_days' => $recent, 'views_30_days' => $month, 'clicks_total' => absint( $data['clicks_total'] ?? 0 ), 'clicks' => is_array( $data['clicks'] ?? null ) ? $data['clicks'] : array() ); }
+az-theme/inc/modules/content-duplicate.php:53 foreach ( get_post_meta( $source_id ) as $key => $values ) {
+az-theme/inc/modules/content-duplicate.php:56 add_post_meta( $duplicate_id, $key, maybe_unserialize( $value ) );
+az-theme/inc/modules/flatsome-compat/migrations/class-settings-importer.php:54 $updated = update_option( 'az_theme_options', $settings, false );
+az-theme/inc/modules/flatsome-compat/migrations/class-settings-importer.php:55 if ( ! $updated && get_option( 'az_theme_options', array() ) !== $settings ) {
+az-theme/inc/modules/homepage/admin.php:69 update_option( 'az_theme_options', $options );
+az-theme/inc/modules/homepage/module.php:21 $options = function_exists( 'az_get_options' ) ? az_get_options() : get_option( 'az_theme_options', array() );
+az-theme/inc/modules/homepage/module.php:49 'enabled' => get_option( 'az_home_' . $id . '_enabled', '1' ),
+az-theme/inc/modules/homepage/module.php:50 'title' => get_option( 'az_home_' . $id . '_title', $settings[ $id ]['title'] ) ?: $settings[ $id ]['title'],
+az-theme/inc/modules/homepage/module.php:51 'limit' => max( 1, min( 18, (int) get_option( 'az_home_' . $id . '_count', $settings[ $id ]['limit'] ) ) ),
+az-theme/inc/modules/homepage/module.php:55 $settings['category-products']['limit'] = max( 1, min( 30, (int) get_option( 'az_home_products_per_category', 4 ) ) );
+az-theme/inc/modules/homepage/templates/featured-categories.php:3 $az_featured_ids = array_values( array_unique( array_filter( array_map( 'absint', preg_split( '/[\r\n,]+/', (string) get_option( 'az_home_featured_category_ids', '' ) ) ) ) ) );
+az-theme/inc/modules/homepage/templates/news.php:26 <a href="<?php echo esc_url( get_permalink( get_option( 'page_for_posts' ) ) ?: home_url( '/tin-tuc/' ) ); ?>">Xem thêm</a>
+az-theme/inc/modules/leads/inc/lead-forms.php:10 $forms = get_option( 'az9s_lead_forms', [] );
+az-theme/inc/modules/leads/inc/lead-forms.php:122 update_option( 'az9s_lead_forms', $forms, false );
+az-theme/inc/modules/leads/inc/lead-forms.php:144 update_option( 'az9s_lead_forms', $forms, false );
+az-theme/inc/modules/leads/inc/lead-forms.php:1012 global $wpdb;
+az-theme/inc/modules/leads/inc/lead-forms.php:1020 $inserted = $wpdb->insert( $wpdb->prefix . 'az9s_leads', [
+az-theme/inc/modules/leads/inc/lead-forms.php:1030 // Tương thích an toàn nếu hosting không cho phép ALTER TABLE.
+az-theme/inc/modules/leads/inc/lead-forms.php:1031 $inserted = $wpdb->insert( $wpdb->prefix . 'az9s_leads', [
+az-theme/inc/modules/leads/inc/lead-forms.php:1054 $mail_status = get_option( 'az9s_last_lead_mail_status', [] );
+az-theme/inc/modules/leads/inc/lead-forms.php:1062 $wpdb->update(
+az-theme/inc/modules/leads/inc/lead-forms.php:1063 $wpdb->prefix . 'az9s_leads',
+az-theme/inc/modules/leads/inc/lead-forms.php:1065 [ 'id' => $wpdb->insert_id ],
+az-theme/inc/modules/leads/inc/leads-manager.php:9 global $wpdb;
+az-theme/inc/modules/leads/inc/leads-manager.php:10 $table   = $wpdb->prefix . 'az9s_leads';
+az-theme/inc/modules/leads/inc/leads-manager.php:11 $charset = $wpdb->get_charset_collate();
+az-theme/inc/modules/leads/inc/leads-manager.php:13 $sql = "CREATE TABLE IF NOT EXISTS $table (
+az-theme/inc/modules/leads/inc/leads-manager.php:32 global $wpdb;
+az-theme/inc/modules/leads/inc/leads-manager.php:33 $table = $wpdb->prefix . 'az9s_leads';
+az-theme/inc/modules/leads/inc/leads-manager.php:34 if ( ! $wpdb->get_var( $wpdb->prepare( 'SHOW TABLES LIKE %s', $table ) ) ) {
+az-theme/inc/modules/leads/inc/leads-manager.php:38 if ( ! $wpdb->get_var( "SHOW COLUMNS FROM `{$table}` LIKE 'form_id'" ) ) {
+az-theme/inc/modules/leads/inc/leads-manager.php:39 $wpdb->query( "ALTER TABLE `{$table}` ADD `form_id` VARCHAR(100) NOT NULL DEFAULT '' AFTER `message`" );
+az-theme/inc/modules/leads/inc/leads-manager.php:41 if ( ! $wpdb->get_var( "SHOW COLUMNS FROM `{$table}` LIKE 'form_title'" ) ) {
+az-theme/inc/modules/leads/inc/leads-manager.php:42 $wpdb->query( "ALTER TABLE `{$table}` ADD `form_title` VARCHAR(255) NOT NULL DEFAULT '' AFTER `form_id`" );
+az-theme/inc/modules/leads/inc/leads-manager.php:61 $to = function_exists( 'az9s_get_notification_email' ) ? az9s_get_notification_email() : [ get_option( 'admin_email' ) ];
+az-theme/inc/modules/leads/inc/leads-manager.php:64 update_option( 'az9s_last_lead_mail_status', [
+az-theme/inc/modules/leads/inc/leads-manager.php:105 $smtp_settings = get_option( 'az_smtp_settings', [] );
+az-theme/inc/modules/leads/inc/leads-manager.php:128 update_option( 'az9s_last_lead_mail_status', [
+az-theme/inc/modules/leads/inc/leads-manager.php:156 global $wpdb;
+az-theme/inc/modules/leads/inc/leads-manager.php:157 $wpdb->insert(
+az-theme/inc/modules/leads/inc/leads-manager.php:158 $wpdb->prefix . 'az9s_leads',
+az-theme/inc/modules/leads/inc/leads-manager.php:193 global $wpdb;
+az-theme/inc/modules/leads/inc/leads-manager.php:194 $wpdb->update( $wpdb->prefix . 'az9s_leads', ['status' => $status], ['id' => $id], ['%s'], ['%d'] );
+az-theme/inc/modules/leads/inc/leads-manager.php:204 global $wpdb;
+az-theme/inc/modules/leads/inc/leads-manager.php:205 $wpdb->delete( $wpdb->prefix . 'az9s_leads', ['id' => $id], ['%d'] );
+az-theme/inc/modules/leads/inc/leads-manager.php:215 global $wpdb;
+az-theme/inc/modules/leads/inc/leads-manager.php:216 $table = $wpdb->prefix . 'az9s_leads';
+az-theme/inc/modules/leads/inc/leads-manager.php:217 $wpdb->query( "TRUNCATE TABLE `{$table}`" );
+az-theme/inc/modules/leads/inc/leads-manager.php:269 global $wpdb;
+az-theme/inc/modules/leads/inc/leads-manager.php:270 $table = $wpdb->prefix . 'az9s_leads';
+az-theme/inc/modules/leads/inc/leads-manager.php:287 $like   = '%' . $wpdb->esc_like($search) . '%';
+az-theme/inc/modules/leads/inc/leads-manager.php:292 ? (int) $wpdb->get_var( $wpdb->prepare("SELECT COUNT(*) FROM $table $where", ...$args) )
+az-theme/inc/modules/leads/inc/leads-manager.php:293 : (int) $wpdb->get_var("SELECT COUNT(*) FROM $table $where");
+az-theme/inc/modules/leads/inc/leads-manager.php:297 ? $wpdb->get_results( $wpdb->prepare($query, ...array_merge($args, [$per_page, $offset])) )
+az-theme/inc/modules/leads/inc/leads-manager.php:298 : $wpdb->get_results( $wpdb->prepare($query, $per_page, $offset) );
+az-theme/inc/modules/leads/inc/leads-manager.php:301 $stats = $wpdb->get_results("SELECT status, COUNT(*) as cnt FROM $table GROUP BY status");
+az-theme/inc/modules/leads/inc/leads-manager.php:334 $mail_status = get_option( 'az9s_last_lead_mail_status', [] );
+az-theme/inc/modules/leads/inc/leads-manager.php:691 update_option( 'az9s_lead_notification_emails', implode( ', ', array_unique( $notification_emails ) ), false );
+az-theme/inc/modules/leads/inc/leads-manager.php:694 update_option( 'az_smtp_settings', $settings, false );
+az-theme/inc/modules/leads/inc/leads-manager.php:705 $to = sanitize_email( wp_unslash( $_POST['smtp_test_email'] ?? get_option( 'admin_email' ) ) );
+az-theme/inc/modules/leads/inc/leads-manager.php:731 update_option( 'az9s_last_smtp_test_status', [
+az-theme/inc/modules/leads/inc/leads-manager.php:746 $notification_emails = (string) get_option( 'az9s_lead_notification_emails', get_option( 'admin_email' ) );
+az-theme/inc/modules/leads/inc/leads-manager.php:747 $test_status = get_option( 'az9s_last_smtp_test_status', [] );
+az-theme/inc/modules/leads/inc/leads-manager.php:812 <tr><th scope="row"><label for="smtp_from_email">From Email</label></th><td><input type="email" id="smtp_from_email" name="smtp_from_email" value="<?php echo esc_attr( $settings['from_email'] ?? get_option( 'admin_email' ) ); ?>" class="regular-text"></td></tr>
+az-theme/inc/modules/leads/inc/leads-manager.php:827 <input type="email" name="smtp_test_email" value="<?php echo esc_attr( get_option( 'admin_email' ) ); ?>" class="regular-text">
+az-theme/inc/modules/leads/module.php:41 update_option( 'az9s_leads_db_version', AZ9S_LEADS_DB_VERSION, false );
+az-theme/inc/modules/leads/module.php:42 if ( false === get_option( 'az9s_lead_notification_emails', false ) ) {
+az-theme/inc/modules/leads/module.php:43 update_option( 'az9s_lead_notification_emails', get_option( 'admin_email' ), false );
+az-theme/inc/modules/leads/module.php:48 delete_option( 'az9s_last_lead_mail_status' );
+az-theme/inc/modules/leads/module.php:49 delete_option( 'az9s_last_smtp_test_status' );
+az-theme/inc/modules/leads/module.php:55 if ( get_option( 'az9s_leads_db_version' ) !== AZ9S_LEADS_DB_VERSION ) {
+az-theme/inc/modules/leads/module.php:59 update_option( 'az9s_leads_db_version', AZ9S_LEADS_DB_VERSION, false );
+az-theme/inc/modules/leads/module.php:66 $emails = get_option( 'az9s_lead_notification_emails', '' );
+az-theme/inc/modules/leads/module.php:71 return [ get_option( 'admin_email' ) ];
+az-theme/inc/modules/leads/module.php:85 'from_email' => get_option( 'admin_email' ),
+az-theme/inc/modules/leads/module.php:89 $settings = get_option( 'az_smtp_settings', [] );
+az-theme/inc/options/class-renderer.php:6 if ( ! $has_value && ! empty( $field['legacy'] ) ) { $value = get_option( $field['legacy'], $value ); }
+az-theme/inc/options/class-renderer.php:7 if ( ! $has_value && ! empty( $field['legacy_theme_mod'] ) ) { $value = get_theme_mod( $field['legacy_theme_mod'], $value ); }
+az-theme/page-catalogue.php:19 update_option( 'az_catalogue_lines', sanitize_textarea_field( wp_unslash( $_POST['az_catalogue_lines'] ?? '' ) ) );
+az-theme/page-catalogue.php:40 <textarea name="az_catalogue_lines" rows="5" placeholder="Tên catalogue | Link file PDF"><?php echo esc_textarea( get_option( 'az_catalogue_lines', function_exists( 'az_catalogue_default_lines' ) ? az_catalogue_default_lines() : '' ) ); ?></textarea>
+az-theme/page-contact.php:12 $az_contact_hours    = az_get_option( 'general.working_hours', get_option( 'az_contact_hours', '' ) );
+az-theme/page-gallery.php:9 $gallery_ids = get_option( 'az_moments_gallery', [] );
+az-theme/page-gallery.php:20 'alt'   => get_post_meta( $id, '_wp_attachment_image_alt', true ) ?: '',
+az-theme/single-product.php:50 $manufacturer = get_post_meta( get_the_ID(), 'az_manufacturer', true );
+az-theme/single-product.php:51 $origin       = get_post_meta( get_the_ID(), 'az_origin', true );
+az-theme/single-product.php:52 $warranty     = get_post_meta( get_the_ID(), 'az_warranty', true );
+az-theme/single-product.php:53 $shopee_url   = get_post_meta( get_the_ID(), 'az_shopee_url', true );
+az-theme/single-product.php:54 $sendo_url    = get_post_meta( get_the_ID(), 'az_sendo_url', true );
+az-theme/single-product.php:55 $lazada_url   = get_post_meta( get_the_ID(), 'az_lazada_url', true );
+az-theme/single-product.php:56 $tech_specs   = get_post_meta( get_the_ID(), 'az_technical_specs', true );
+az-theme/single-product.php:57 $practical    = get_post_meta( get_the_ID(), 'az_practical_applications', true );
+az-theme/single-product.php:116 $thumb_alt = get_post_meta( $gallery_id, '_wp_attachment_image_alt', true ) ?: get_the_title();
+az-theme/single-product.php:155 $az_product_contact_title = trim( get_option( 'az_product_contact_title', '' ) );
+az-theme/single-product.php:156 $az_product_contact_desc  = trim( get_option( 'az_product_contact_desc', '' ) );
+az-theme/single-product.php:157 $az_product_contact_name  = trim( get_option( 'az_product_contact_name', '' ) );
+az-theme/single-product.php:158 $az_product_contact_phone = trim( get_option( 'az_product_contact_phone', '' ) );
+az-theme/single-product.php:159 $az_product_contact_zalo  = trim( get_option( 'az_product_contact_zalo', '' ) );
+az-theme/single-product.php:162 $az_product_contact_phone = function_exists( 'az_storefront_contact_phone' ) ? az_storefront_contact_phone() : trim( get_option( 'az_contact_phone', get_theme_mod( 'az_contact_phone', '' ) ) );
+az-theme/single-product.php:165 $az_product_contact_zalo = trim( get_option( 'az_contact_zalo_url', get_theme_mod( 'az_contact_zalo_url', '' ) ) );
+az-theme/template-parts/sidebar-intro.php:16 $cp_intro = get_option( 'cp_intro_text',
+az-theme/template-parts/sidebar-intro.php:21 $intro_imgs_raw     = get_option( 'cp_intro_gallery', '' );
+az-theme/template-parts/sidebar-intro.php:83 <?php echo esc_html( get_option( 'cp_badge_role', 'CEO & Founder CTY GU CÀ PHÊ VIỆT' ) ); ?>
+az-theme/template-parts/sidebar-intro.php:89 <?php echo esc_html( get_option( 'cp_badge_city', 'Sống tại TP. Hồ Chí Minh' ) ); ?>
+az-theme/template-parts/sidebar-intro.php:95 <?php echo esc_html( get_option( 'cp_badge_hometown', 'Đến từ BÌNH ĐỊNH' ) ); ?>
+az-theme/template-parts/sidebar-intro.php:117 <a href="<?php echo esc_url( get_option( 'cp_intro_link', home_url('/gioi-thieu') ) ); ?>"
+az-theme-child/functions.php:30 if ( get_option( 'az_child_parent_mods_migrated', false ) ) { return; }
+az-theme-child/functions.php:32 $parent_mods = get_option( 'theme_mods_az-theme', array() );
+az-theme-child/functions.php:33 $child_mods  = get_theme_mods();
+az-theme-child/functions.php:39 set_theme_mod( $name, $value );
+az-theme-child/functions.php:44 update_option( 'az_child_parent_mods_migrated', 1, false );
+az-theme-child/functions.php:147 if ( 1 == get_user_meta( $user_id, 'show_welcome_panel', true ) )
+az-theme-child/functions.php:148 update_user_meta( $user_id, 'show_welcome_panel', 0 );
+az-theme-child/inc/footer-storefront.php:50 $value = array_key_exists( $key, $general ) ? $general[ $key ] : ( $legacy ? get_option( $legacy, $fallback ) : $fallback );
+az-theme-child/inc/header-mega-menu.php:32 $id = absint( get_term_meta( $term->term_id, $key, true ) );
+az-theme-child/inc/home-partners.php:6 $post_id = $post_id ?: ( get_queried_object_id() ?: absint( get_option( 'page_on_front' ) ) );
+az-theme-child/inc/home-partners.php:7 $data = get_post_meta( $post_id, '_az_home_page_data', true );
+az-theme-child/inc/home-partners.php:89 $data = get_post_meta( $post_id, '_az_home_page_data', true );
+az-theme-child/inc/home-partners.php:96 update_post_meta( $post_id, '_az_home_page_data', $data );
+az-theme-child/inc/modules/homepage/page-fields.php:63 if ( ! $post_id ) { $post_id = absint( get_option( 'page_on_front' ) ); }
+az-theme-child/inc/modules/homepage/page-fields.php:64 $saved = $post_id ? get_post_meta( $post_id, '_az_home_page_data', true ) : array();
+az-theme-child/inc/modules/homepage/page-fields.php:78 return (int) get_option( 'page_on_front' ) === (int) $post->ID
+az-theme-child/inc/modules/homepage/page-fields.php:278 $previous = get_post_meta( $post_id, '_az_home_page_data', true );
+az-theme-child/inc/modules/homepage/page-fields.php:283 update_post_meta( $post_id, '_az_home_page_data', $merged );
+az-theme-child/inc/product-admin.php:47 <input type="<?php echo esc_attr( $field[2] ); ?>" id="<?php echo esc_attr( $key ); ?>" name="<?php echo esc_attr( $key ); ?>" value="<?php echo esc_attr( get_post_meta( $post->ID, $key, true ) ); ?>" placeholder="<?php echo esc_attr( $field[1] ); ?>">
+az-theme-child/inc/product-admin.php:56 <?php wp_editor( get_post_meta( $post->ID, $key, true ), $key, array(
+az-theme-child/inc/product-permalinks.php:6 return taxonomy_exists( 'product_cat' ) && post_type_exists( 'product' ) && get_option( 'permalink_structure' );
+az-theme-child/inc/product-permalinks.php:48 $fallback = get_term( (int) get_option( 'default_product_cat' ), 'product_cat' );
+az-theme-child/inc/product-permalinks.php:134 function az_child_product_permalink_invalidate() { delete_option( 'az_child_product_rewrite_version' ); }
+az-theme-child/inc/product-permalinks.php:139 if ( ! az_child_product_pretty_urls_enabled() || '1' === get_option( 'az_child_product_rewrite_version' ) ) { return; }
+az-theme-child/inc/product-permalinks.php:142 update_option( 'az_child_product_rewrite_version', '1', false );
+az-theme-child/inc/soviban-home.php:44 $post_id = $post_id ? absint( $post_id ) : absint( get_option( 'page_on_front' ) );
+az-theme-child/inc/soviban-home.php:46 $raw = get_post_meta( $post_id, '_az_home_page_data', true );
+az-theme-child/inc/soviban-home.php:135 $raw = get_post_meta( $post_id, '_az_home_page_data', true );
+az-theme-child/inc/soviban-home.php:312 $raw = get_post_meta( $post_id, '_az_home_page_data', true );
+az-theme-child/inc/soviban-home.php:348 update_post_meta( $post_id, '_az_home_page_data', $raw );
+az-theme-child/inc/steel-storefront.php:37 $labels = $homepage ? array_column( az_home_page_get_data( absint( get_option( 'page_on_front' ) ) )['products']['sections'], 'title' ) : array( 'Tôn – Thép xây dựng', 'Tôn nhựa lấy sáng', 'Cuộn – Tấm – Ống Inox', 'Cách nhiệt PE – PU', 'Xà gồ chữ C–Z', 'Lam gió', 'Bảng màu' );
+az-theme-child/single-product.php:50 $manufacturer = get_post_meta( get_the_ID(), 'az_manufacturer', true );
+az-theme-child/single-product.php:51 $origin       = get_post_meta( get_the_ID(), 'az_origin', true );
+az-theme-child/single-product.php:52 $warranty     = get_post_meta( get_the_ID(), 'az_warranty', true );
+az-theme-child/single-product.php:53 $shopee_url   = get_post_meta( get_the_ID(), 'az_shopee_url', true );
+az-theme-child/single-product.php:54 $sendo_url    = get_post_meta( get_the_ID(), 'az_sendo_url', true );
+az-theme-child/single-product.php:55 $lazada_url   = get_post_meta( get_the_ID(), 'az_lazada_url', true );
+az-theme-child/single-product.php:56 $tech_specs   = get_post_meta( get_the_ID(), 'az_technical_specs', true );
+az-theme-child/single-product.php:57 $practical    = get_post_meta( get_the_ID(), 'az_practical_applications', true );
+az-theme-child/single-product.php:117 $thumb_alt = get_post_meta( $gallery_id, '_wp_attachment_image_alt', true ) ?: get_the_title();
+az-theme-child/single-product.php:156 $az_product_contact_title = trim( get_option( 'az_product_contact_title', '' ) );
+az-theme-child/single-product.php:157 $az_product_contact_desc  = trim( get_option( 'az_product_contact_desc', '' ) );
+az-theme-child/single-product.php:158 $az_product_contact_name  = trim( get_option( 'az_product_contact_name', '' ) );
+az-theme-child/single-product.php:159 $az_product_contact_phone = trim( get_option( 'az_product_contact_phone', '' ) );
+az-theme-child/single-product.php:160 $az_product_contact_zalo  = trim( get_option( 'az_product_contact_zalo', '' ) );
+az-theme-child/single-product.php:163 $az_product_contact_phone = function_exists( 'az_storefront_contact_phone' ) ? az_storefront_contact_phone() : trim( get_option( 'az_contact_phone', get_theme_mod( 'az_contact_phone', '' ) ) );
+az-theme-child/single-product.php:166 $az_product_contact_zalo = trim( get_option( 'az_contact_zalo_url', get_theme_mod( 'az_contact_zalo_url', '' ) ) );

@@ -1,0 +1,2177 @@
+﻿[
+    {
+        "Path":  "az-theme/.gitignore",
+        "Bytes":  14,
+        "SHA256":  "4D56952B0FB13BF8F9B6C13A6D4C34A075BAC3AF447636A1DF4335D7576E2F97"
+    },
+    {
+        "Path":  "az-theme/404.php",
+        "Bytes":  2387,
+        "SHA256":  "9EFEF054BCEA7AB027B59C2BD305481B54E0A1B81A549BA8CAB8A48EBB418763"
+    },
+    {
+        "Path":  "az-theme/archive.php",
+        "Bytes":  8369,
+        "SHA256":  "A86904A7BBA27FE874DFC75F8470546B73D7E1DD5191B0CD2E138F026916C8A9"
+    },
+    {
+        "Path":  "az-theme/archive-product.php",
+        "Bytes":  20847,
+        "SHA256":  "F4675EA32A8112D558261935EABD4FC08A687F721E4A0C0ABFD6ED86A9342818"
+    },
+    {
+        "Path":  "az-theme/assets/admin/css/az-admin.css",
+        "Bytes":  6643,
+        "SHA256":  "9F0D075AF16747DB358E9E5F088074CEDF9909E87EF66C87685DE2CCD8E0ABF1"
+    },
+    {
+        "Path":  "az-theme/assets/admin/css/az-admin-colors.css",
+        "Bytes":  1502,
+        "SHA256":  "A8E8B6C02E8C6AEADF295F8CD47EF1E54E79D0C308AF59F3C85532E96871E0BF"
+    },
+    {
+        "Path":  "az-theme/assets/admin/css/az-advanced-fields.css",
+        "Bytes":  9568,
+        "SHA256":  "2CBAE0BAD522396977989653C0913CDA1BAADD1AEFBE42F7497629FCAE722857"
+    },
+    {
+        "Path":  "az-theme/assets/admin/css/az-analytics.css",
+        "Bytes":  968,
+        "SHA256":  "A5BB1D867ADEBA4BD3400AD2F27F4F577C983A0865D9D4F8A2E264DEB4B1D685"
+    },
+    {
+        "Path":  "az-theme/assets/admin/css/az-dashboard.css",
+        "Bytes":  4122,
+        "SHA256":  "DC8EFF8CEA3D596FCC7A33C0D01E69B9236EF81F4EE8A450B965D465913E8A08"
+    },
+    {
+        "Path":  "az-theme/assets/admin/css/az-general-fields.css",
+        "Bytes":  3262,
+        "SHA256":  "CDF77CE29330A31FEF5ED1BBCC40ECBC0B0F69A17C6B70DC4C074DE19BC8F213"
+    },
+    {
+        "Path":  "az-theme/assets/admin/css/az-header-actions.css",
+        "Bytes":  583,
+        "SHA256":  "2AF8CD5E3430E74601859961A7EE9E3F3FECBB7C933E40E0682584F31DB2104E"
+    },
+    {
+        "Path":  "az-theme/assets/admin/css/az-layout-fields.css",
+        "Bytes":  995,
+        "SHA256":  "6362989CFF7A60FF94BC2395487D435A6BF3D2B681F89641FAF0B54B41FEA990"
+    },
+    {
+        "Path":  "az-theme/assets/admin/css/az-media-actions.css",
+        "Bytes":  714,
+        "SHA256":  "67853BF6B3D29A0BBDE3F6AB117E42866E6E4A70613273E60779FF131550AD76"
+    },
+    {
+        "Path":  "az-theme/assets/admin/css/az-notices.css",
+        "Bytes":  882,
+        "SHA256":  "035E6B71736F926417F89277192C2A5AFCDAC65012B3F922891352217E6818ED"
+    },
+    {
+        "Path":  "az-theme/assets/admin/css/az-performance.css",
+        "Bytes":  2752,
+        "SHA256":  "96B5905BB313FEED6755560D79172878990B4F841A90577C87A66A7501BCF351"
+    },
+    {
+        "Path":  "az-theme/assets/admin/css/az-switch-layout.css",
+        "Bytes":  2028,
+        "SHA256":  "3F5A3FDA55D5C238A79363DBC7A23F964E52F1CC57908827504A1223520BE62D"
+    },
+    {
+        "Path":  "az-theme/assets/admin/css/az-toggle-titles.css",
+        "Bytes":  7016,
+        "SHA256":  "C972692A66A9272387A207BEDDCCD17FAEB56EDC138E7C1742608F78C9C93AE8"
+    },
+    {
+        "Path":  "az-theme/assets/admin/js/az-advanced.js",
+        "Bytes":  5860,
+        "SHA256":  "1DB1512F8F08ED9CA6169B757A4ACC674FDF928C3D84BDDD501DB1DD38966B69"
+    },
+    {
+        "Path":  "az-theme/assets/admin/js/az-advanced-tabs.js",
+        "Bytes":  2347,
+        "SHA256":  "FD889C19E3FAD8277E807C65BA4C357E4A5D6FE24FB6A2C9C0CC46C4D8ADC76C"
+    },
+    {
+        "Path":  "az-theme/assets/admin/js/az-banner-editor.js",
+        "Bytes":  3604,
+        "SHA256":  "F1499CF9700165212B6F7B85C123A080980043B4FBA3BCB3FE23832DE4D640DA"
+    },
+    {
+        "Path":  "az-theme/assets/admin/js/az-repeater-sort.js",
+        "Bytes":  1705,
+        "SHA256":  "0F5BE5BD570E619EC7821EA799318AC39EB7D4AA56500BB0C8305C62D14DB4BA"
+    },
+    {
+        "Path":  "az-theme/assets/admin/js/az-reset-confirm.js",
+        "Bytes":  461,
+        "SHA256":  "DE65ED10BD6861820BEEF6A843F5A66D12AFC7F5CC640A21779EBDCBBE23CD32"
+    },
+    {
+        "Path":  "az-theme/assets/admin/js/az-user-status.js",
+        "Bytes":  1305,
+        "SHA256":  "AACD75F26283F616D593659AFF61778DB795AC6C1B13193569C27A321BDB17BE"
+    },
+    {
+        "Path":  "az-theme/assets/fonts/be-vietnam-pro/be-vietnam-pro-100-italic-latin.woff2",
+        "Bytes":  21180,
+        "SHA256":  "9E13590A36DC7CFA5DBEC466B22E2424D8C759BAAFA367DA236DDA70FDC03B02"
+    },
+    {
+        "Path":  "az-theme/assets/fonts/be-vietnam-pro/be-vietnam-pro-100-italic-latin-ext.woff2",
+        "Bytes":  12744,
+        "SHA256":  "61479E673AE22F89892165FC608B287369BEAF785E3E6A9DA21D45C5F65A6ECD"
+    },
+    {
+        "Path":  "az-theme/assets/fonts/be-vietnam-pro/be-vietnam-pro-100-italic-vietnamese.woff2",
+        "Bytes":  11176,
+        "SHA256":  "422AA3EE50BD1816DBD6BE2A73B8695C726E337C3BEEF5C50AD93EE63DE8411E"
+    },
+    {
+        "Path":  "az-theme/assets/fonts/be-vietnam-pro/be-vietnam-pro-100-normal-latin.woff2",
+        "Bytes":  20436,
+        "SHA256":  "36A8E1232A78132871E5ADE849B9565CB933D2F760AFC44774965621D9FDEAED"
+    },
+    {
+        "Path":  "az-theme/assets/fonts/be-vietnam-pro/be-vietnam-pro-100-normal-latin-ext.woff2",
+        "Bytes":  12636,
+        "SHA256":  "698D62DD960A5683269DD48998D9D043A68A20C0F6D489387D57B3E6CB2BCBB2"
+    },
+    {
+        "Path":  "az-theme/assets/fonts/be-vietnam-pro/be-vietnam-pro-100-normal-vietnamese.woff2",
+        "Bytes":  11068,
+        "SHA256":  "031A309648C5D98C03C6DBBF7A0EB3A3C2DD37418852DD99E353E8D77DEEDCE1"
+    },
+    {
+        "Path":  "az-theme/assets/fonts/be-vietnam-pro/be-vietnam-pro-200-italic-latin.woff2",
+        "Bytes":  22032,
+        "SHA256":  "58005B29FB88734709BA6B168ADA58F97E6B6C34BC1962A3D9A30953639A882F"
+    },
+    {
+        "Path":  "az-theme/assets/fonts/be-vietnam-pro/be-vietnam-pro-200-italic-latin-ext.woff2",
+        "Bytes":  13280,
+        "SHA256":  "2A7746CBB43D8A4C839761A62E5F9638D5882B3AA009DD70E76EDA6EC7738563"
+    },
+    {
+        "Path":  "az-theme/assets/fonts/be-vietnam-pro/be-vietnam-pro-200-italic-vietnamese.woff2",
+        "Bytes":  11744,
+        "SHA256":  "10169A965298C0E24FF2BD3F03C0E10BD54F25926F089D0A11F834A05B6D7063"
+    },
+    {
+        "Path":  "az-theme/assets/fonts/be-vietnam-pro/be-vietnam-pro-200-normal-latin.woff2",
+        "Bytes":  21848,
+        "SHA256":  "DA508D4EA364DEE9D22374B95628C0A1E127A6290B8DB325D5AF6B815B0AA31E"
+    },
+    {
+        "Path":  "az-theme/assets/fonts/be-vietnam-pro/be-vietnam-pro-200-normal-latin-ext.woff2",
+        "Bytes":  13384,
+        "SHA256":  "7D411D54586767989255B307D87F57F541FB408A6F9BC1FFB5882BB122564414"
+    },
+    {
+        "Path":  "az-theme/assets/fonts/be-vietnam-pro/be-vietnam-pro-200-normal-vietnamese.woff2",
+        "Bytes":  11684,
+        "SHA256":  "1CE907DB0E2E2AA290AD430BA050CF9661A02FD19FF47698D4C5765958C1C376"
+    },
+    {
+        "Path":  "az-theme/assets/fonts/be-vietnam-pro/be-vietnam-pro-300-italic-latin.woff2",
+        "Bytes":  22428,
+        "SHA256":  "6482C10406BCBBA772D01C3C37CA978928136D946122AC3998E989BDB2E7376A"
+    },
+    {
+        "Path":  "az-theme/assets/fonts/be-vietnam-pro/be-vietnam-pro-300-italic-latin-ext.woff2",
+        "Bytes":  13488,
+        "SHA256":  "8666D28254EEA802AB38004D0E0EB3710BC8C223CC32819E16423E7002665319"
+    },
+    {
+        "Path":  "az-theme/assets/fonts/be-vietnam-pro/be-vietnam-pro-300-italic-vietnamese.woff2",
+        "Bytes":  12164,
+        "SHA256":  "5204CEAAE5C6783C8E54B1D90E40C3DD7AC9F422BA00559093623322F6ACF72D"
+    },
+    {
+        "Path":  "az-theme/assets/fonts/be-vietnam-pro/be-vietnam-pro-300-normal-latin.woff2",
+        "Bytes":  21908,
+        "SHA256":  "D69DA10E86422161A72688D01D139F57AB6923277612C085C977EAB79D2D2925"
+    },
+    {
+        "Path":  "az-theme/assets/fonts/be-vietnam-pro/be-vietnam-pro-300-normal-latin-ext.woff2",
+        "Bytes":  13304,
+        "SHA256":  "D4B20F0ADEAA35D637434B6C5B5B5BC24971E6271BF4F75D18CF69DA35143111"
+    },
+    {
+        "Path":  "az-theme/assets/fonts/be-vietnam-pro/be-vietnam-pro-300-normal-vietnamese.woff2",
+        "Bytes":  12252,
+        "SHA256":  "1B48C66409B3E5A338C672E255AA3419B32D309466EA5B34E801D97601950BB8"
+    },
+    {
+        "Path":  "az-theme/assets/fonts/be-vietnam-pro/be-vietnam-pro-400-italic-latin.woff2",
+        "Bytes":  21432,
+        "SHA256":  "1B7F08408CC0CD57B66D99CACC7A0AFE41E14BB4F86CFE3E4EEA2A4D42F85140"
+    },
+    {
+        "Path":  "az-theme/assets/fonts/be-vietnam-pro/be-vietnam-pro-400-italic-latin-ext.woff2",
+        "Bytes":  13120,
+        "SHA256":  "CE621999BB59487222438A3F3340D7896A4F23623A0885BFB77001D3FA67C0E0"
+    },
+    {
+        "Path":  "az-theme/assets/fonts/be-vietnam-pro/be-vietnam-pro-400-italic-vietnamese.woff2",
+        "Bytes":  11840,
+        "SHA256":  "069CA983654BFEDD4A56EE016DE5A8F030BC3F8DA07497F6CA3522C8A51A0048"
+    },
+    {
+        "Path":  "az-theme/assets/fonts/be-vietnam-pro/be-vietnam-pro-400-normal-latin.woff2",
+        "Bytes":  21168,
+        "SHA256":  "03D1B589CFF172E1A670B3573E731D3380BC326F80CF83B0D3504E3188E2E074"
+    },
+    {
+        "Path":  "az-theme/assets/fonts/be-vietnam-pro/be-vietnam-pro-400-normal-latin-ext.woff2",
+        "Bytes":  13056,
+        "SHA256":  "F7A2811E471C2973A1179CE39DA3AD6BB8082381AA8D1535CCFCBC3D6D78A052"
+    },
+    {
+        "Path":  "az-theme/assets/fonts/be-vietnam-pro/be-vietnam-pro-400-normal-vietnamese.woff2",
+        "Bytes":  11532,
+        "SHA256":  "DC085E2FBA3414E5C5BF1E6172F921A9F81C5859946A4ED3D63C1E470D96A9E2"
+    },
+    {
+        "Path":  "az-theme/assets/fonts/be-vietnam-pro/be-vietnam-pro-500-italic-latin.woff2",
+        "Bytes":  22528,
+        "SHA256":  "6CC14B9016C2BC8C99D1D18BA9B98754913801197894E13DE41903689B28F70C"
+    },
+    {
+        "Path":  "az-theme/assets/fonts/be-vietnam-pro/be-vietnam-pro-500-italic-latin-ext.woff2",
+        "Bytes":  13624,
+        "SHA256":  "F92E480A78ACB01D0D4B71514E4C66DA97B25A9684E5365142427852A9A078E1"
+    },
+    {
+        "Path":  "az-theme/assets/fonts/be-vietnam-pro/be-vietnam-pro-500-italic-vietnamese.woff2",
+        "Bytes":  12120,
+        "SHA256":  "F54CD057AB230AFD49B63C25091EF8042E64B887FD09CBA15225C3102085CC74"
+    },
+    {
+        "Path":  "az-theme/assets/fonts/be-vietnam-pro/be-vietnam-pro-500-normal-latin.woff2",
+        "Bytes":  21892,
+        "SHA256":  "B621F77D35F777023AA11CA524462D511B4B28A813ADBC0E9D15A10FC61DFE4E"
+    },
+    {
+        "Path":  "az-theme/assets/fonts/be-vietnam-pro/be-vietnam-pro-500-normal-latin-ext.woff2",
+        "Bytes":  13548,
+        "SHA256":  "947D592EB7676914507FF68FC11FCF2CFDECD6EBAF0FA2AF6047F66A63EA7D0F"
+    },
+    {
+        "Path":  "az-theme/assets/fonts/be-vietnam-pro/be-vietnam-pro-500-normal-vietnamese.woff2",
+        "Bytes":  12172,
+        "SHA256":  "86341610CBE907EECF461C9159C168D5EFB52BB1A33963813A08F520555D8E66"
+    },
+    {
+        "Path":  "az-theme/assets/fonts/be-vietnam-pro/be-vietnam-pro-600-italic-latin.woff2",
+        "Bytes":  22464,
+        "SHA256":  "46A18A880AD2E45E1902F06C0A041C27BD6C84F4CB609F0405F47EFEFDBA9836"
+    },
+    {
+        "Path":  "az-theme/assets/fonts/be-vietnam-pro/be-vietnam-pro-600-italic-latin-ext.woff2",
+        "Bytes":  13624,
+        "SHA256":  "A0B4AD7F6BBFFE3E4EE745555B2337C7CC189D50517B657ECB0A9D7585D1BA01"
+    },
+    {
+        "Path":  "az-theme/assets/fonts/be-vietnam-pro/be-vietnam-pro-600-italic-vietnamese.woff2",
+        "Bytes":  11788,
+        "SHA256":  "A443CA0426BB3B0D07B7AB4753A407B430198C08F4D678C483135FE57A86A966"
+    },
+    {
+        "Path":  "az-theme/assets/fonts/be-vietnam-pro/be-vietnam-pro-600-normal-latin.woff2",
+        "Bytes":  22032,
+        "SHA256":  "9503DEC2A7C532C8331E9600BCAFEA287A4FD208573B8668D85AB8D8DE1863C7"
+    },
+    {
+        "Path":  "az-theme/assets/fonts/be-vietnam-pro/be-vietnam-pro-600-normal-latin-ext.woff2",
+        "Bytes":  13608,
+        "SHA256":  "20CC75DAEAAAA0FA8AF2B616B2DE2B2900F0CE14AE8E9FAA47D272CEDD93827F"
+    },
+    {
+        "Path":  "az-theme/assets/fonts/be-vietnam-pro/be-vietnam-pro-600-normal-vietnamese.woff2",
+        "Bytes":  12176,
+        "SHA256":  "97658C6F9A384F29A3005C3D96E2A0D1C810192CF68979071C290F5A377A9F99"
+    },
+    {
+        "Path":  "az-theme/assets/fonts/be-vietnam-pro/be-vietnam-pro-700-italic-latin.woff2",
+        "Bytes":  22544,
+        "SHA256":  "8180292895196CAEBEAF337E941C03443866DDCE81E771BB9F3388C5DC2B322F"
+    },
+    {
+        "Path":  "az-theme/assets/fonts/be-vietnam-pro/be-vietnam-pro-700-italic-latin-ext.woff2",
+        "Bytes":  13760,
+        "SHA256":  "2D1235A2B92A74C77B8E65CB206122EAC2615070080F581C7856BEF9CCB90CDD"
+    },
+    {
+        "Path":  "az-theme/assets/fonts/be-vietnam-pro/be-vietnam-pro-700-italic-vietnamese.woff2",
+        "Bytes":  12008,
+        "SHA256":  "80BCD79CC7D704588EE96C81D7C7CCA4C520B4137E379DF8290D6D7055F2CD8E"
+    },
+    {
+        "Path":  "az-theme/assets/fonts/be-vietnam-pro/be-vietnam-pro-700-normal-latin.woff2",
+        "Bytes":  22152,
+        "SHA256":  "A193DD87699BD2E18DDF72DC271493EA82A23DAD9F5C334D9F2A257B1E05FC30"
+    },
+    {
+        "Path":  "az-theme/assets/fonts/be-vietnam-pro/be-vietnam-pro-700-normal-latin-ext.woff2",
+        "Bytes":  13852,
+        "SHA256":  "33D57E5BD840B03921568E08D2BE1082D453E55F1BA55F421E41A1AA54E12601"
+    },
+    {
+        "Path":  "az-theme/assets/fonts/be-vietnam-pro/be-vietnam-pro-700-normal-vietnamese.woff2",
+        "Bytes":  12468,
+        "SHA256":  "4F58AF2D1C3E28A9BA14C51C82DB2751D78344B75BDCB34DE24A1031EBE59DA6"
+    },
+    {
+        "Path":  "az-theme/assets/fonts/be-vietnam-pro/be-vietnam-pro-800-italic-latin.woff2",
+        "Bytes":  22908,
+        "SHA256":  "FE0DE6D97532CB97BF7974C8C22939F572DA9FC1B3752ED436E0B919C0AE2005"
+    },
+    {
+        "Path":  "az-theme/assets/fonts/be-vietnam-pro/be-vietnam-pro-800-italic-latin-ext.woff2",
+        "Bytes":  13840,
+        "SHA256":  "09CE29A721554C96992B29FB9419FFEE5752C1FA16779D3EFE6E4AF575539D2B"
+    },
+    {
+        "Path":  "az-theme/assets/fonts/be-vietnam-pro/be-vietnam-pro-800-italic-vietnamese.woff2",
+        "Bytes":  12016,
+        "SHA256":  "0DC6F2E81DA6167F19E953D681A86FEFA9BB6F43BFEC9115FA04289BC9189AA2"
+    },
+    {
+        "Path":  "az-theme/assets/fonts/be-vietnam-pro/be-vietnam-pro-800-normal-latin.woff2",
+        "Bytes":  22320,
+        "SHA256":  "7C5D0871188C09339A6EB46948420ED9B11F3D06EA3FF1C5D1CF41B06A3504E7"
+    },
+    {
+        "Path":  "az-theme/assets/fonts/be-vietnam-pro/be-vietnam-pro-800-normal-latin-ext.woff2",
+        "Bytes":  13752,
+        "SHA256":  "85A2008E6D5F2381A076D36D38771957B118683D0FFF3029844737AFF6B96A10"
+    },
+    {
+        "Path":  "az-theme/assets/fonts/be-vietnam-pro/be-vietnam-pro-800-normal-vietnamese.woff2",
+        "Bytes":  12404,
+        "SHA256":  "26B241D1D5F489C8A65C1A3C4CDCDB48DD114A9ED7E0C0180182191F087CBE96"
+    },
+    {
+        "Path":  "az-theme/assets/fonts/be-vietnam-pro/be-vietnam-pro-900-italic-latin.woff2",
+        "Bytes":  21892,
+        "SHA256":  "82CEDD9D1E7E766861B0E5430F4F93374638CB7FB73847D96929C2A776A98853"
+    },
+    {
+        "Path":  "az-theme/assets/fonts/be-vietnam-pro/be-vietnam-pro-900-italic-latin-ext.woff2",
+        "Bytes":  13804,
+        "SHA256":  "A9FDDA97971D6BC44F61BC052A1603D5600C9C267D52189255B0D2346E9919B7"
+    },
+    {
+        "Path":  "az-theme/assets/fonts/be-vietnam-pro/be-vietnam-pro-900-italic-vietnamese.woff2",
+        "Bytes":  11792,
+        "SHA256":  "2CB5C613ACA253083293D88692FEE21C1FA9D41BFE5CEF0EFF17F19C886F33D9"
+    },
+    {
+        "Path":  "az-theme/assets/fonts/be-vietnam-pro/be-vietnam-pro-900-normal-latin.woff2",
+        "Bytes":  21760,
+        "SHA256":  "B7437222BF15D6BE4394C13EC31188E1BF8B9BE13E6C38DC4C18AD14511B4888"
+    },
+    {
+        "Path":  "az-theme/assets/fonts/be-vietnam-pro/be-vietnam-pro-900-normal-latin-ext.woff2",
+        "Bytes":  13592,
+        "SHA256":  "8734A69A892CE1EFB37EEDA024AFFE833D99F4CDE8FCE0C0BBFB4AFA5255E6B0"
+    },
+    {
+        "Path":  "az-theme/assets/fonts/be-vietnam-pro/be-vietnam-pro-900-normal-vietnamese.woff2",
+        "Bytes":  12072,
+        "SHA256":  "70B8FEB4C47C137C77BA65D3EF73D5EEDA852AF1D7CE26F307D7853983948795"
+    },
+    {
+        "Path":  "az-theme/assets/fonts/be-vietnam-pro/OFL.txt",
+        "Bytes":  4397,
+        "SHA256":  "6B7F8F73609A25EA78C891E34CF37B06F8A676B7EA986E941E43B009110F2A85"
+    },
+    {
+        "Path":  "az-theme/assets/fonts/be-vietnam-pro/README.md",
+        "Bytes":  1386,
+        "SHA256":  "7A64A45B263007375D91E1040FAAB8F33EE2AB4A8A67AA2A5C19D4D82FCF14BF"
+    },
+    {
+        "Path":  "az-theme/assets/images/banner-tbi-motion.jpg",
+        "Bytes":  298400,
+        "SHA256":  "10ED0486070AA7BD4CFB1E74D11B4C2BB1EA8E8F3DE8CE5CB3E013A930D0CD5D"
+    },
+    {
+        "Path":  "az-theme/assets/src/utilities.css",
+        "Bytes":  59,
+        "SHA256":  "CC1A7AD0D019DDB1D32D0ECB588BA0AC26CE41D8625DD6C366348B25F83A28EC"
+    },
+    {
+        "Path":  "az-theme/comments.php",
+        "Bytes":  11605,
+        "SHA256":  "C27DB3FC0F5A9295F5836C730B72D33234EE220613F7043F843C10DC4C265753"
+    },
+    {
+        "Path":  "az-theme/css/accessibility.css",
+        "Bytes":  361,
+        "SHA256":  "C6DED6982147775CB98835156C95023A0391B2FB8A9846A3AF371F6485402AF9"
+    },
+    {
+        "Path":  "az-theme/css/admin.css",
+        "Bytes":  4779,
+        "SHA256":  "97952FEC324D6509920D6F0CF5AB9E87AC8BA3D131D8C339997541F7EDE72121"
+    },
+    {
+        "Path":  "az-theme/css/az-content.css",
+        "Bytes":  5436,
+        "SHA256":  "9D497B1333F4C564D160C76C111F4EFFDB44A2F7028C2EC1FE65553D4A2C5CEB"
+    },
+    {
+        "Path":  "az-theme/css/az-price.css",
+        "Bytes":  2689,
+        "SHA256":  "A66EDB3B7D9F0FD7F14ED29C7019853A99932F70443F0251E5EBF813AAB2E4F6"
+    },
+    {
+        "Path":  "az-theme/css/az-product-card.css",
+        "Bytes":  7133,
+        "SHA256":  "39FAA5C93B275CE95CC27115A917DAF992452A4F1EDE91D7B241B40DA0C65D9D"
+    },
+    {
+        "Path":  "az-theme/css/back-to-top.css",
+        "Bytes":  1859,
+        "SHA256":  "E289918506B7986BA75D9F2BE1E8ACD257A8987750EDF97231957E09D9867349"
+    },
+    {
+        "Path":  "az-theme/css/banner-editor.css",
+        "Bytes":  6040,
+        "SHA256":  "3E7146394EFCC2390719AE0BED0FC3EEA47E99472866ABE95BDA516A314EBBA9"
+    },
+    {
+        "Path":  "az-theme/css/be-vietnam-pro.css",
+        "Bytes":  22762,
+        "SHA256":  "C203BA997CA1C49D92CEE465315D408C0D922BA7126F1346BB77B0B716BE3CDB"
+    },
+    {
+        "Path":  "az-theme/css/blog-archive.css",
+        "Bytes":  5434,
+        "SHA256":  "C86D1AADDA88FD3024D879D3D4C204742884C84FC9447C2298667435DB1534D5"
+    },
+    {
+        "Path":  "az-theme/css/blog-archive-hero-layout.css",
+        "Bytes":  1701,
+        "SHA256":  "E3EAA71A6C3AEAAEFC5E2D69E10145C32EAD82C5335FDCD761D62F957DA63E74"
+    },
+    {
+        "Path":  "az-theme/css/blog-author.css",
+        "Bytes":  1739,
+        "SHA256":  "E9FFE7B37B64F4B98BEA8DAE5F503D962BD8BC41550D1CB00940846765225EFB"
+    },
+    {
+        "Path":  "az-theme/css/blog-card.css",
+        "Bytes":  234,
+        "SHA256":  "5002E0A2CF39E410F70F684E5B3AB4D4003A989BD85219E6FF75D16A1F40DA73"
+    },
+    {
+        "Path":  "az-theme/css/blog-container-sync.css",
+        "Bytes":  2047,
+        "SHA256":  "7D56D581E0650472F56FE4F98628084BBA63D42DE0EBCE471D800E50E2F01F95"
+    },
+    {
+        "Path":  "az-theme/css/blog-hero.css",
+        "Bytes":  1510,
+        "SHA256":  "3CF3DBE39DD24E7958EFA03F0196F0DA7231AED3456A040E1A1784F50B89603C"
+    },
+    {
+        "Path":  "az-theme/css/blog-layout.css",
+        "Bytes":  1033,
+        "SHA256":  "1A28F42C51EEDF10FF6F2FA72D870A13A96C3D06C04F13E2E0112D3C169A115B"
+    },
+    {
+        "Path":  "az-theme/css/blog-meta.css",
+        "Bytes":  448,
+        "SHA256":  "1F7688A25428CE7621B592CA0FCC7D4D4AB623EF30973F1A925DE10DF6256C87"
+    },
+    {
+        "Path":  "az-theme/css/blog-sidebar.css",
+        "Bytes":  1561,
+        "SHA256":  "9792091F21878CF14D55C65D402D825CD3FFB72D8C10EB8F345864E7E2A3F43C"
+    },
+    {
+        "Path":  "az-theme/css/blog-single.css",
+        "Bytes":  5317,
+        "SHA256":  "E189FC49ED7ACB8604BD7905A3B59E8A7028BB8DBD15BF3E8FCFBAD05AB21F9E"
+    },
+    {
+        "Path":  "az-theme/css/blog-single-unified.css",
+        "Bytes":  6705,
+        "SHA256":  "892D668B495064381D173FD60750CF2983DF904998A22B924C470ECB3C550E70"
+    },
+    {
+        "Path":  "az-theme/css/contact-branches.css",
+        "Bytes":  1195,
+        "SHA256":  "08A9C6603EF11385A90C66F2E05A05700273CBB6DA885193A14327DF715B81F6"
+    },
+    {
+        "Path":  "az-theme/css/container-sync.css",
+        "Bytes":  5420,
+        "SHA256":  "37B5BB4169D3ADD8A4B74D4A4E102E5815627FF96DCDEEC3A54293BDFFE442CB"
+    },
+    {
+        "Path":  "az-theme/css/flatsome-compat.css",
+        "Bytes":  7372,
+        "SHA256":  "B4A58C0356AFA03786468DEA5B67B2EB4DCAC2649DD26FAABCC17F97E0F60144"
+    },
+    {
+        "Path":  "az-theme/css/floating-contact.css",
+        "Bytes":  8146,
+        "SHA256":  "001ABFC2D6BA64A90C2A68597BC3EA1139E6643DE2C7C138D6E2A3F1EACDAFBB"
+    },
+    {
+        "Path":  "az-theme/css/mobile-menu.css",
+        "Bytes":  7862,
+        "SHA256":  "02B03438FA31DAD01F6784936485A2D02845ABC3D3CD5A2DAF2D3B267B87F269"
+    },
+    {
+        "Path":  "az-theme/css/mobile-menu-brand-dropdown.css",
+        "Bytes":  7475,
+        "SHA256":  "7B44251A62DCAC9FEC55D38A3FDE3ED20F954E24B070FF8189AA4F1B74A2D3FB"
+    },
+    {
+        "Path":  "az-theme/css/neutral-page.css",
+        "Bytes":  3228,
+        "SHA256":  "12C557874354D0C1C7B1611AADCF15D7B26453EA4BB149E871044F56C87B166A"
+    },
+    {
+        "Path":  "az-theme/css/page.css",
+        "Bytes":  22461,
+        "SHA256":  "5033D4E51FD53EFC51F1F7DAEB283626A6719D5AA24109582FB87AAD3E040F99"
+    },
+    {
+        "Path":  "az-theme/css/README.md",
+        "Bytes":  3453,
+        "SHA256":  "0DB1AB98A739812D5F86D9DB8D3ECF3E6F4AC1AA35C6ACFA3C7C7AEB5030D2DF"
+    },
+    {
+        "Path":  "az-theme/css/shared-banner.css",
+        "Bytes":  6417,
+        "SHA256":  "90E860DAF6A5BD99CB5C739B958E39954606131C6CE0B0F2A6D79C1451BD6004"
+    },
+    {
+        "Path":  "az-theme/css/woocommerce.css",
+        "Bytes":  74970,
+        "SHA256":  "1E07F15E7B4C521FB7C997317697DF0D2D74E5F57F5CD7815F5E7F9B67E08F70"
+    },
+    {
+        "Path":  "az-theme/docs/ANALYTICS-SHORTCODE.md",
+        "Bytes":  436,
+        "SHA256":  "9E8C7662960C694526ABAB2CA7F231DA98ED68CB67050E97937726DC2AF1CD5E"
+    },
+    {
+        "Path":  "az-theme/docs/ARCHITECTURE.md",
+        "Bytes":  5829,
+        "SHA256":  "C79F11661E09F390F7D35A4EAC67ACFC8F13BB9A5C65031EDF0443F8F53D63B3"
+    },
+    {
+        "Path":  "az-theme/docs/audit/CALLSITES.md",
+        "Bytes":  72457,
+        "SHA256":  "8EC294B08FB22C3526F6DFCE1F398F0AF6E1FEE8F0C5539DE98A773EFE5FA8AD"
+    },
+    {
+        "Path":  "az-theme/docs/audit/FILES-AND-PREFIXES.md",
+        "Bytes":  55684,
+        "SHA256":  "9D29459CD6EBA779CB5F0BF609261E7BABF90449F4C6F201DC04DD9BFADFC8B5"
+    },
+    {
+        "Path":  "az-theme/docs/audit/source-inventory.json",
+        "Bytes":  209320,
+        "SHA256":  "B8677622A8710265FFA0896F5B878588583CE57AEBE068E9BEA506A570190A69"
+    },
+    {
+        "Path":  "az-theme/docs/AZ-POST-CARD.md",
+        "Bytes":  1667,
+        "SHA256":  "48A7F31AF1757EB3CCB84CA472AA0F6A8B9BDB540BCBF11DC0071389233B1143"
+    },
+    {
+        "Path":  "az-theme/docs/AZ-THEME-ARCHITECTURE.md",
+        "Bytes":  157106,
+        "SHA256":  "3243AB78F9280AF6AF3551108D1FB1A282AC1312A040ECF26520EF5DABEC7E75"
+    },
+    {
+        "Path":  "az-theme/docs/BRANDING-SEO.md",
+        "Bytes":  4098,
+        "SHA256":  "6D4C1FED6107A45B235A7FE71B1967677DCBDA0B93198B1163FD75EA8F7306EF"
+    },
+    {
+        "Path":  "az-theme/docs/CHANGELOG.md",
+        "Bytes":  10792,
+        "SHA256":  "014350572B7E0BC0CE18862CDA6DAC889BBB7BF383B5FB1E7418BBB35B55A41B"
+    },
+    {
+        "Path":  "az-theme/docs/CHILD-THEME.md",
+        "Bytes":  6819,
+        "SHA256":  "6223A972ABEE457AEDBF9FB30110D705F29B64D509243DBE9A7AEE8EBF8D76D5"
+    },
+    {
+        "Path":  "az-theme/docs/CLEANUP.md",
+        "Bytes":  2771,
+        "SHA256":  "7658C2FB75C714237052DAB1998801417F3542B6281CE5C079ADB49F7A8EA402"
+    },
+    {
+        "Path":  "az-theme/docs/CODING-STANDARDS.md",
+        "Bytes":  3708,
+        "SHA256":  "B1EF35F9402B5BFB51CD820480E1AA9177E23391738F50E1587D51C47241A9BE"
+    },
+    {
+        "Path":  "az-theme/docs/COMPATIBILITY.md",
+        "Bytes":  3651,
+        "SHA256":  "AD1873ECA5D809E91F240790668F75F22A29C0316F038CAABBA604E99710A0A2"
+    },
+    {
+        "Path":  "az-theme/docs/CONTACT-MAPS.md",
+        "Bytes":  2069,
+        "SHA256":  "AACFB4E4DDD6C041A9BF74244880B22271CD278D8E1A7063C9923595FF9F7796"
+    },
+    {
+        "Path":  "az-theme/docs/CONTACT-SHORTCODES.md",
+        "Bytes":  818,
+        "SHA256":  "2042BE8C72673BD7F45270FAFC3B18CF1F1A2FD5F3A6DB1A9C30C425155C99A6"
+    },
+    {
+        "Path":  "az-theme/docs/CSS-ARCHITECTURE.md",
+        "Bytes":  4896,
+        "SHA256":  "F765109B2CCFF7AF36CEBD9EFBDAB87869A17EB0291682BAA33C21BB8CF920F6"
+    },
+    {
+        "Path":  "az-theme/docs/CURRENT-AUDIT.md",
+        "Bytes":  6295,
+        "SHA256":  "FB58C1550B0014B7205801CC1AE488703D3D231C28FCA30F787FB04FA241AC10"
+    },
+    {
+        "Path":  "az-theme/docs/CUSTOM-HEADER-FOOTER.md",
+        "Bytes":  293,
+        "SHA256":  "355127218D3E5C9F73E5D2564BE1D674FDD9D4350EF00CDADD24A9A2F0FEBC74"
+    },
+    {
+        "Path":  "az-theme/docs/DATABASE.md",
+        "Bytes":  3538,
+        "SHA256":  "D1661ABECE0FB0857C84059F762334A758CF002DD010FE2B4EFEE7906DF26AE1"
+    },
+    {
+        "Path":  "az-theme/docs/FEATURE-TEMPLATE.md",
+        "Bytes":  1851,
+        "SHA256":  "B163EB3CD7F5BBCAEFB2F65283097205E9A935D6DD182D61B81E62AA5792B868"
+    },
+    {
+        "Path":  "az-theme/docs/FOOTER-BACK-TO-TOP.md",
+        "Bytes":  1893,
+        "SHA256":  "CB80C3148ED0FF1A392FD307F320DEBA6DD1EDB1FDAE1B1FFF052FFA924AE2CA"
+    },
+    {
+        "Path":  "az-theme/docs/HEADER-ARCHITECTURE.md",
+        "Bytes":  5820,
+        "SHA256":  "FE770672DE781806240D6AA08B1A95215FE5FD66B863C0F2EC9B2DFD2454D7FE"
+    },
+    {
+        "Path":  "az-theme/docs/images/homepage-banner-reference.png",
+        "Bytes":  6287977,
+        "SHA256":  "87F81178B55DBC07422405312BF1FDDCED93BD95871F136573E0B5A713A492B2"
+    },
+    {
+        "Path":  "az-theme/docs/images/homepage-editor-reference.png",
+        "Bytes":  2570078,
+        "SHA256":  "60F982C4C292C7BC31E2E7C83F7BF1C30730FE5E6AB09BB09934689758C369C4"
+    },
+    {
+        "Path":  "az-theme/docs/MIGRATION-MAP.md",
+        "Bytes":  2945,
+        "SHA256":  "10C74A1141C21425BCCE904661BD72575C8E92D5AB50C2EC0F8F878C91B62583"
+    },
+    {
+        "Path":  "az-theme/docs/MODULES.md",
+        "Bytes":  6192,
+        "SHA256":  "22BBD473C6B7CE7F16973D4E8A5F0ACEA67E82B6B40E8EE866932D64D2CDF0E2"
+    },
+    {
+        "Path":  "az-theme/docs/NEUTRAL-PAGE.md",
+        "Bytes":  9553,
+        "SHA256":  "D988CB08B7B9942C233D25780D9935684DC710311E9A5CAADC77C2E4535B30B4"
+    },
+    {
+        "Path":  "az-theme/docs/OPTIONS-SCHEMA.md",
+        "Bytes":  36104,
+        "SHA256":  "165626CEA484E8608C48374B16645CF5E496BCA2F73B32AC45EFAC9296877BB1"
+    },
+    {
+        "Path":  "az-theme/docs/PERFORMANCE-SETTINGS.md",
+        "Bytes":  2182,
+        "SHA256":  "378892AFC02257AFA6750C0B10D95B25321675379CDED76C773199B828E9BEFF"
+    },
+    {
+        "Path":  "az-theme/docs/README.md",
+        "Bytes":  3268,
+        "SHA256":  "60F66787FA8322ECFC8D09CB43461383D3E7E537E4430629F006AFED95066BD8"
+    },
+    {
+        "Path":  "az-theme/docs/REUSABLE-THEME.md",
+        "Bytes":  7223,
+        "SHA256":  "EE470AE395D85AD5FAC2599D229C4BF9ACA9F6205593664C543076BC0298DAA8"
+    },
+    {
+        "Path":  "az-theme/docs/ROADMAP.md",
+        "Bytes":  4255,
+        "SHA256":  "9A483C89ECAAC62328138709997B622BE383F98BA440AD64985980EA862211D2"
+    },
+    {
+        "Path":  "az-theme/docs/SECURITY.md",
+        "Bytes":  3213,
+        "SHA256":  "45713931E2CDC3EC9CFEC156894ADFAF45F2792241F87139EB50D07669E1DEBB"
+    },
+    {
+        "Path":  "az-theme/docs/TESTING.md",
+        "Bytes":  9082,
+        "SHA256":  "94C856142A8A0D08007C7073A176A5CD8EFF92DCD05536C0865F9E4F30B0546F"
+    },
+    {
+        "Path":  "az-theme/docs/tools/audit-source.cjs",
+        "Bytes":  11235,
+        "SHA256":  "C77E2193F81C6211EB45DD2D658469D29917294A55092FEE325168E33C32F7E7"
+    },
+    {
+        "Path":  "az-theme/docs/tools/check-homepage.cjs",
+        "Bytes":  2410,
+        "SHA256":  "16184C11623348D7F47E73B0FAE6511556B81804D3A34F4E5296EB46D13BB393"
+    },
+    {
+        "Path":  "az-theme/docs/visual-reference-brief.md",
+        "Bytes":  1499,
+        "SHA256":  "35B95DC2C6A3CFDCDD34AE3A208007D279928855D3FE766FF239765778D0D3DF"
+    },
+    {
+        "Path":  "az-theme/footer.php",
+        "Bytes":  3975,
+        "SHA256":  "53CCE85610F628CA57C119EA86BFCFE7713D5BE01D60619CD247AC18D72BCCD4"
+    },
+    {
+        "Path":  "az-theme/front-page.php",
+        "Bytes":  10121,
+        "SHA256":  "9EEEFE64E146F098D69F114D7A92FBB887A3869CB9B9EF66F1B875E17C12D6A7"
+    },
+    {
+        "Path":  "az-theme/functions.php",
+        "Bytes":  679,
+        "SHA256":  "60042BE5CFECCC6A0BBDE27FFC3D8A98BF5EB80A8712B1A0FDDD23C298BDFF37"
+    },
+    {
+        "Path":  "az-theme/header.php",
+        "Bytes":  5630,
+        "SHA256":  "7268F33996EB565F51409874C7139E251E3EF7EA3F715689D9DC87D26C571549"
+    },
+    {
+        "Path":  "az-theme/home.php",
+        "Bytes":  138,
+        "SHA256":  "8DAC975A72542D00410DDD9EDAD02A067CDC0F1D1A0EFC60D332B13D164D6CB0"
+    },
+    {
+        "Path":  "az-theme/inc/admin/class-admin.php",
+        "Bytes":  706,
+        "SHA256":  "F998BC7DF4552484ECE8DA99D990C63A6A020FBAECD6999E0575D5B8649F3E8D"
+    },
+    {
+        "Path":  "az-theme/inc/admin/class-admin-assets.php",
+        "Bytes":  4465,
+        "SHA256":  "FA7E7A7EC2128109F851AB420303512C3F898BCEEA156E0CAC7EB7C1F21CDFFD"
+    },
+    {
+        "Path":  "az-theme/inc/admin/class-advanced.php",
+        "Bytes":  9891,
+        "SHA256":  "13C1035DCA4A9FA9FB7F5D01031EAB85FDB0A542BA2C2A956B2689817A9CB3BF"
+    },
+    {
+        "Path":  "az-theme/inc/admin/class-child-theme-installer.php",
+        "Bytes":  10211,
+        "SHA256":  "C40F9A3D4E3615D22D922018EFE35D6F366BB2BCF175CE160A63DD909F57BD98"
+    },
+    {
+        "Path":  "az-theme/inc/admin/class-dashboard.php",
+        "Bytes":  2448,
+        "SHA256":  "7236587BBC09D6F0DCF9CDE66A3DA60F160DDED6053633D5B6673087DCE25D58"
+    },
+    {
+        "Path":  "az-theme/inc/admin/README.md",
+        "Bytes":  2185,
+        "SHA256":  "69EF5DD9F2AA80341A1BF3B6AA2A16270BF369B78278AA2912E5993ACCD54C06"
+    },
+    {
+        "Path":  "az-theme/inc/admin/sections/blog.php",
+        "Bytes":  6585,
+        "SHA256":  "CDFFE8DFA2B77270E828936796E5734CDF8DE18FF7FB229E70F4BC07AF75CF7D"
+    },
+    {
+        "Path":  "az-theme/inc/admin/sections/branding.php",
+        "Bytes":  1894,
+        "SHA256":  "1B177E50D40F6ECBA408C12A501CEFD373EA747E79F00F43B5CC22E9D8DB5EA9"
+    },
+    {
+        "Path":  "az-theme/inc/admin/sections/colors.php",
+        "Bytes":  2070,
+        "SHA256":  "0AD363AED8537040B71E14A106A247425822ED989702C50DAC2FF2D3EB3EFFD6"
+    },
+    {
+        "Path":  "az-theme/inc/admin/sections/compatibility.php",
+        "Bytes":  725,
+        "SHA256":  "8A538F6B30A4F1E98C8BB5EBD7E21A8B77E798960FC4895690171335D1675778"
+    },
+    {
+        "Path":  "az-theme/inc/admin/sections/custom-code.php",
+        "Bytes":  960,
+        "SHA256":  "7DF90A393EFD303CAE0615ACDF301C5C5602756EACBDC46985E86B0E1FCC3497"
+    },
+    {
+        "Path":  "az-theme/inc/admin/sections/footer.php",
+        "Bytes":  1190,
+        "SHA256":  "21EC7D362B093AD5C246D072B029E22015BDFD03F18FF50AD418E74402A268CB"
+    },
+    {
+        "Path":  "az-theme/inc/admin/sections/general.php",
+        "Bytes":  6211,
+        "SHA256":  "5771D4D5ED2240AF4E6183A2FEF993DB21F7AF15508AFA63EECC6953D7C563C8"
+    },
+    {
+        "Path":  "az-theme/inc/admin/sections/google.php",
+        "Bytes":  2523,
+        "SHA256":  "DD2A86FBF4835E72F8E5BC7CD33A200AE3E4E8ABD451AF0C053F49D999981369"
+    },
+    {
+        "Path":  "az-theme/inc/admin/sections/header.php",
+        "Bytes":  5685,
+        "SHA256":  "0432BE9692BDF2AD23484CF8EE06CABBD6A979DD8B79950C02FB27C606711EA0"
+    },
+    {
+        "Path":  "az-theme/inc/admin/sections/layout.php",
+        "Bytes":  1314,
+        "SHA256":  "AC6DC7B9E142E21F8363686615ECEA7AC998A8992C6A7677617F7F4E8BD2927F"
+    },
+    {
+        "Path":  "az-theme/inc/admin/sections/performance.php",
+        "Bytes":  7470,
+        "SHA256":  "4613AC8AF5A8420D2B42CA83E320214EC50E9C0F59918E35500CBEFBFAD568FF"
+    },
+    {
+        "Path":  "az-theme/inc/admin/sections/social.php",
+        "Bytes":  2743,
+        "SHA256":  "32FEE2764254C75D8D910615DAD2AEC131375FEC1C990F14495715E9473EC775"
+    },
+    {
+        "Path":  "az-theme/inc/admin/sections/typography.php",
+        "Bytes":  5885,
+        "SHA256":  "CF0ECF7E6D8F425D47B99B6E25CE76FB7BD48359B8784B4BD03867274D819E73"
+    },
+    {
+        "Path":  "az-theme/inc/admin/sections/user.php",
+        "Bytes":  2537,
+        "SHA256":  "C93D102AD96B0A40C6890C768047BC5B80A2FA706F08649006C27F965572D1BA"
+    },
+    {
+        "Path":  "az-theme/inc/admin/sections/woocommerce.php",
+        "Bytes":  3701,
+        "SHA256":  "E319425C23C19123310C850E18E1204A8EAD75EBED3BE315F238FBB97E4DD597"
+    },
+    {
+        "Path":  "az-theme/inc/admin/templates/child-theme/functions.php",
+        "Bytes":  2236,
+        "SHA256":  "E21F8FD61033A97B1523FDA5109993CC2AD077E4814E75D83B38CC0065244914"
+    },
+    {
+        "Path":  "az-theme/inc/admin/templates/child-theme/README.md",
+        "Bytes":  2271,
+        "SHA256":  "54249AE674CEDD7EFE2D6B5D444CB80A823F497772525C9B962A384BA2327A91"
+    },
+    {
+        "Path":  "az-theme/inc/admin/templates/child-theme/style.css",
+        "Bytes":  280,
+        "SHA256":  "9F78F74021BA3FBA00F40173B5A2C94031EC1D944ACD70AF599B40304D62C7ED"
+    },
+    {
+        "Path":  "az-theme/inc/bootstrap.php",
+        "Bytes":  4122,
+        "SHA256":  "63B7B9A4316DF8BF209D5C4B23820D40912E72FF0432CA6523F5B3AF8C9E1C65"
+    },
+    {
+        "Path":  "az-theme/inc/core/accessibility.php",
+        "Bytes":  700,
+        "SHA256":  "26BEFA5A6B0D68EEBDFE1DD0C6D0230E4804CCF41FABF0155F641BDCAC628943"
+    },
+    {
+        "Path":  "az-theme/inc/core/auth-rate-limit.php",
+        "Bytes":  797,
+        "SHA256":  "79126EC83F8E6E8AE4707F8480812689348180EE05D8713741F9C26792820AC6"
+    },
+    {
+        "Path":  "az-theme/inc/core/blog-image-description.php",
+        "Bytes":  5439,
+        "SHA256":  "218B4C66F45EF967564D2617E97760698F7856D840097348F96B55BAEC44A864"
+    },
+    {
+        "Path":  "az-theme/inc/core/branding-seo.php",
+        "Bytes":  1631,
+        "SHA256":  "09B508A3F328D65AD7C3CC60FF448763F7290B87478C0F478CBBBD2D0DE6DF7D"
+    },
+    {
+        "Path":  "az-theme/inc/core/class-blog.php",
+        "Bytes":  795,
+        "SHA256":  "216A78C5CE98D60260B537393AEC8AC9E270A6FD7CC3384F5CD86F69729F5E7A"
+    },
+    {
+        "Path":  "az-theme/inc/core/class-custom-code.php",
+        "Bytes":  3937,
+        "SHA256":  "EB7A41B05C7B6454490CDD98D0215D3A03C7B063C9FCBC45DEFFE7A3F8FB2E89"
+    },
+    {
+        "Path":  "az-theme/inc/core/class-dynamic-css.php",
+        "Bytes":  6026,
+        "SHA256":  "DBB7C0F3395174B5FEA704C3CFBEB109CAF01757856955365A0B2AE226A7D263"
+    },
+    {
+        "Path":  "az-theme/inc/core/class-performance.php",
+        "Bytes":  3142,
+        "SHA256":  "72381F7300D86AF7CFA7E839BA4BB9A73008F219B9B55D3C53147D3FE6EBBC8E"
+    },
+    {
+        "Path":  "az-theme/inc/core/class-site-effects.php",
+        "Bytes":  5896,
+        "SHA256":  "4F534E08069E5178F638F2A29304366468A78690849A6303BB2D4028B56E6B69"
+    },
+    {
+        "Path":  "az-theme/inc/core/editor.php",
+        "Bytes":  788,
+        "SHA256":  "5EFA29B6D4087A08AE274444B196D604E4810B3382D23A060FB47E6DC60A7073"
+    },
+    {
+        "Path":  "az-theme/inc/core/google-login.php",
+        "Bytes":  8542,
+        "SHA256":  "AF6776D06DC0BBDA89DD64BF35188002554FB757B260C9CF830AA86BEA114BE7"
+    },
+    {
+        "Path":  "az-theme/inc/core/html-minify.php",
+        "Bytes":  1667,
+        "SHA256":  "DAFA3C3A9087BE6402E43B5378561472927634A976B2BD4C17E26751027ECB27"
+    },
+    {
+        "Path":  "az-theme/inc/core/media-tools.php",
+        "Bytes":  4120,
+        "SHA256":  "E76E634C3F18CAEAB8CD00CF94D4EFE57871F41D6E6161E622984C2041800E34"
+    },
+    {
+        "Path":  "az-theme/inc/core/mobile-menu.php",
+        "Bytes":  4822,
+        "SHA256":  "813345EB56C60575EC57C6476B5E3D8C8B443D3B4E75BB521367A0A7FBDF6E71"
+    },
+    {
+        "Path":  "az-theme/inc/core/neutral-page.php",
+        "Bytes":  581,
+        "SHA256":  "C0B073329D8EBECF8E594211FA60EACE404EC19DFB06A7C1F1D27F51746E36F3"
+    },
+    {
+        "Path":  "az-theme/inc/core/performance-security.php",
+        "Bytes":  4555,
+        "SHA256":  "63D969BB230A756D1D8D52F7068ADD4A7CA09B046CDA09EADCC57E8FD47DB17A"
+    },
+    {
+        "Path":  "az-theme/inc/core/performance-tools.php",
+        "Bytes":  1990,
+        "SHA256":  "8B08C4E8B609C01E542F10B0E2E217A1978EBAA1A8FEACEC663C73FE45FADC9B"
+    },
+    {
+        "Path":  "az-theme/inc/core/shared-banner.php",
+        "Bytes":  16098,
+        "SHA256":  "0030039148ECC7884F3612407831FFEF4D70B2941C10A0961FE1500E9C2163AD"
+    },
+    {
+        "Path":  "az-theme/inc/core/upload-limits.php",
+        "Bytes":  1718,
+        "SHA256":  "12B7C2BD4AE486529B248D2F6245EED26611BCCD24C14E938D298C39F9401CC1"
+    },
+    {
+        "Path":  "az-theme/inc/core/user-options.php",
+        "Bytes":  7475,
+        "SHA256":  "1928C5BCC6A4D99C7095AD2B41BA9E121AF22744A617BC7B04B46D56D0BE2AD9"
+    },
+    {
+        "Path":  "az-theme/inc/floating-contact.php",
+        "Bytes":  4531,
+        "SHA256":  "446ECC4A58841B8B4509C2A6B403C6DD246901E2944030955AF12710E62B1C25"
+    },
+    {
+        "Path":  "az-theme/inc/functions/admin-settings.php",
+        "Bytes":  33447,
+        "SHA256":  "E7008B86D909329E7B47325B107F561784C09691DE4860BCA1AC40852C691C2F"
+    },
+    {
+        "Path":  "az-theme/inc/functions/category-images.php",
+        "Bytes":  5484,
+        "SHA256":  "54B1A2E0FEAB7A31ADDCF220B67E3D718000511060C9C5A9341DA750F787E4E4"
+    },
+    {
+        "Path":  "az-theme/inc/functions/contact-form.php",
+        "Bytes":  4375,
+        "SHA256":  "B2117D4DBDA6E2F3E77EBC7231297CF4616A4AD7E20E4A20018D88BE2ADA0EBC"
+    },
+    {
+        "Path":  "az-theme/inc/functions/content-media.php",
+        "Bytes":  6474,
+        "SHA256":  "C37B852DAEB799725A1E8EC04CFE3E5E7D32FE308A4E317D81B3BC67CC8E7A29"
+    },
+    {
+        "Path":  "az-theme/inc/functions/customizer.php",
+        "Bytes":  7363,
+        "SHA256":  "16330B07CEC8D1805743D404B99CCC7C30EC35DB3E447C45B2A524BF1B5BC4E8"
+    },
+    {
+        "Path":  "az-theme/inc/functions/home-products.php",
+        "Bytes":  22051,
+        "SHA256":  "6853E37852C30BE0447EB9CC4624FAE2B6908390A13BB33C57904FB870386A37"
+    },
+    {
+        "Path":  "az-theme/inc/functions/integrations-access.php",
+        "Bytes":  7290,
+        "SHA256":  "3CEF0AA802B8714D88FE4C72E63826F519DD05A2905B28CA9BB11830074C625C"
+    },
+    {
+        "Path":  "az-theme/inc/functions/licenses.php",
+        "Bytes":  14284,
+        "SHA256":  "1266BFA3A52399B7266B1B65598BB46E5AC59BC668C1F429B0E0597658DE62FB"
+    },
+    {
+        "Path":  "az-theme/inc/functions/menu-icons.php",
+        "Bytes":  8739,
+        "SHA256":  "C7B1B88A10E9C985460195560068C7F32C2B6CC79E0CEF78337518190DEC8381"
+    },
+    {
+        "Path":  "az-theme/inc/functions/pricing.php",
+        "Bytes":  16696,
+        "SHA256":  "5E63D47012F6C9CC0691F8D6D9518DEF5961352094614C94C198AB200940A2EA"
+    },
+    {
+        "Path":  "az-theme/inc/functions/product-attributes-pricing.php",
+        "Bytes":  13321,
+        "SHA256":  "591B754B46F0414EC1375B88E6C182CE554CE350F47A1170D04B374F9FE9E574"
+    },
+    {
+        "Path":  "az-theme/inc/functions/product-fields.php",
+        "Bytes":  4472,
+        "SHA256":  "68517B74F3EF85EEAF0CFE55502E25DDB80C6C1C99C96677387AC71F21E393FB"
+    },
+    {
+        "Path":  "az-theme/inc/functions/product-videos.php",
+        "Bytes":  8500,
+        "SHA256":  "D187FB2B1154287933D188D8AB6A2A1C956C30A08C9773DE42503DA93BA7C9B4"
+    },
+    {
+        "Path":  "az-theme/inc/functions/security.php",
+        "Bytes":  926,
+        "SHA256":  "7F4D64CC952B0A2EDD16AF4356C6D93DC6CDE78C4A30FF088FC2FD5B04695CB8"
+    },
+    {
+        "Path":  "az-theme/inc/functions/term-language.php",
+        "Bytes":  2650,
+        "SHA256":  "6CC6B11293A8851AC341CB43118C4264F96230C968F3183C74419FEDA486FE84"
+    },
+    {
+        "Path":  "az-theme/inc/functions/theme-setup.php",
+        "Bytes":  26152,
+        "SHA256":  "560A6B4447CDA42F0040DA12167CC8D58BBDD92647A356EE4CF895BB71020520"
+    },
+    {
+        "Path":  "az-theme/inc/functions/translation.php",
+        "Bytes":  10847,
+        "SHA256":  "5496B63DDE2F04A653EE1C5DDD3F0A8613CE1952B54033063DFCE44EE75ED0E2"
+    },
+    {
+        "Path":  "az-theme/inc/functions/woocommerce.php",
+        "Bytes":  41215,
+        "SHA256":  "35A27E629F251E06BC5D37C688E69A5CDFF619D2A5FDD8787C25C9F91F166682"
+    },
+    {
+        "Path":  "az-theme/inc/helpers/contact-maps.php",
+        "Bytes":  3389,
+        "SHA256":  "0E430F6540FAF1C173164F024848A782602EDC43FC54A3FA0897ED179E54289C"
+    },
+    {
+        "Path":  "az-theme/inc/helpers/footer-components.php",
+        "Bytes":  725,
+        "SHA256":  "781445F4BF81AE69B1BAB4D8493CD67A7322EEED4EEB1A07D6F8E1062BAAF2F4"
+    },
+    {
+        "Path":  "az-theme/inc/helpers/header-components.php",
+        "Bytes":  8406,
+        "SHA256":  "AA5C11E87FA1EBFC7221D245B9CC469971CF9418E6480FC85D7E3C5E1D3C9A18"
+    },
+    {
+        "Path":  "az-theme/inc/helpers/options.php",
+        "Bytes":  15218,
+        "SHA256":  "BF2D574B90AA11FD558E29090C2E898D76AADE0E7D83B4CD775C6241346C8A84"
+    },
+    {
+        "Path":  "az-theme/inc/helpers/utilities.php",
+        "Bytes":  217,
+        "SHA256":  "DDE5387DDA98FB60B3CEF92B652CFD679A00829DC0892C8F4374EE9E04BC1C27"
+    },
+    {
+        "Path":  "az-theme/inc/license-api.php",
+        "Bytes":  13983,
+        "SHA256":  "8BB86861F166E62FAC98FA01232FB13EC87A9BD6DE10DEB6C08E3D5C9B2B5636"
+    },
+    {
+        "Path":  "az-theme/inc/modules/analytics/class-analytics.php",
+        "Bytes":  4506,
+        "SHA256":  "08DFF985AB8163D089D2DCABA933045BA24EBDBFA251F97845C1A57471D10FFC"
+    },
+    {
+        "Path":  "az-theme/inc/modules/analytics/README.md",
+        "Bytes":  675,
+        "SHA256":  "D6B9B31484F0800B9B91A303BEC53D53B68E0B9B403F665A362F727DC7AF0BB9"
+    },
+    {
+        "Path":  "az-theme/inc/modules/content-duplicate.php",
+        "Bytes":  5063,
+        "SHA256":  "563DA3804CE53F599476A2549F176DDFC43DEDDD24181312645B1AD5C9EF053C"
+    },
+    {
+        "Path":  "az-theme/inc/modules/flatsome-compat/migrations/class-settings-importer.php",
+        "Bytes":  3626,
+        "SHA256":  "59C483A715C2BA193E7C25A4DDC893221163C303A1D8250DD6ADC941B155D7B3"
+    },
+    {
+        "Path":  "az-theme/inc/modules/flatsome-compat/migrations/class-settings-map.php",
+        "Bytes":  3627,
+        "SHA256":  "DC1F5ACA1A615939305F736BA2F4188E41C89CFA8E27FF1B95559C98B797524D"
+    },
+    {
+        "Path":  "az-theme/inc/modules/flatsome-compat/README.md",
+        "Bytes":  560,
+        "SHA256":  "874AF6966CE34AA35E87CB7973BFF87A98CF94CCE212BD8377E6048763D4802B"
+    },
+    {
+        "Path":  "az-theme/inc/modules/flatsome-compat/shortcodes.php",
+        "Bytes":  21690,
+        "SHA256":  "C44998F1779C09F22127A84DCFD6B23D393373EFB566F0D108560CD07DE47DE6"
+    },
+    {
+        "Path":  "az-theme/inc/modules/flatsome-compat/widgets.php",
+        "Bytes":  2031,
+        "SHA256":  "5DD084CB2148270B7145069F572FE4FE80D65051B90C17D63A1653428230B281"
+    },
+    {
+        "Path":  "az-theme/inc/modules/homepage/admin.php",
+        "Bytes":  5163,
+        "SHA256":  "98EC0BD5C683309DE710CD4DB555C5FF34AB434596264AB4AAD9C03FDBD4E41E"
+    },
+    {
+        "Path":  "az-theme/inc/modules/homepage/homepage.css",
+        "Bytes":  6824,
+        "SHA256":  "1475A05CFC15605D08516A8537583CEE4AC0867A84C26416D8E48BC58C2F0D13"
+    },
+    {
+        "Path":  "az-theme/inc/modules/homepage/homepage.js",
+        "Bytes":  1563,
+        "SHA256":  "CF93EA5EEB8F42F11367804D11078F96CD7850F5A6C893FAF5CEEE8E1617C38F"
+    },
+    {
+        "Path":  "az-theme/inc/modules/homepage/module.php",
+        "Bytes":  6615,
+        "SHA256":  "65B787ABACC63ADB2DBD84D478A50590602BC00273462A457F85F03030F00829"
+    },
+    {
+        "Path":  "az-theme/inc/modules/homepage/README.md",
+        "Bytes":  7373,
+        "SHA256":  "EC10AC6BE973B4AACD003E1E26B5059EAE4DB4D79426D867BF02ECBA1B907A11"
+    },
+    {
+        "Path":  "az-theme/inc/modules/homepage/templates/category-products.php",
+        "Bytes":  3842,
+        "SHA256":  "A85AAF2C3273E1036D92677E0B559ECF30AE0254C18089E1DC30F532018B1ED9"
+    },
+    {
+        "Path":  "az-theme/inc/modules/homepage/templates/custom-content.php",
+        "Bytes":  784,
+        "SHA256":  "E53EB8A87F2FB0E7736505B3C5B9C86C114FE9B8B3E93FD0563EA36D96444CAF"
+    },
+    {
+        "Path":  "az-theme/inc/modules/homepage/templates/featured-categories.php",
+        "Bytes":  1607,
+        "SHA256":  "1548CA1F959E584D706A589AF2A332C7BCD251F334FA1FCA7FE6A01345C0A079"
+    },
+    {
+        "Path":  "az-theme/inc/modules/homepage/templates/hero.php",
+        "Bytes":  2078,
+        "SHA256":  "32CFB16041679C55F077A344423B4410326272DF8149CFFD8C36AD64844597F7"
+    },
+    {
+        "Path":  "az-theme/inc/modules/homepage/templates/news.php",
+        "Bytes":  1628,
+        "SHA256":  "F9BC644CB421AFCAEB431F9EEB3E4289622F0D31E1B7141239A1D49B88299F4C"
+    },
+    {
+        "Path":  "az-theme/inc/modules/homepage/templates/services.php",
+        "Bytes":  651,
+        "SHA256":  "3A548166D585AAC3A5A81E7FB977E37A1B6E6EF7D927BED0396CE91A2D3620E7"
+    },
+    {
+        "Path":  "az-theme/inc/modules/homepage/templates/suggested.php",
+        "Bytes":  729,
+        "SHA256":  "BE8191626AF3871ED85E7898254E97D642B31F34A5EE7E74E17217242D1EE91B"
+    },
+    {
+        "Path":  "az-theme/inc/modules/homepage/templates/weekly.php",
+        "Bytes":  684,
+        "SHA256":  "636F7478864C38D1D17B1D286CF3F2E7D555443FFFECB763AEDF09598B866F9F"
+    },
+    {
+        "Path":  "az-theme/inc/modules/homepage/templates/wide-banners.php",
+        "Bytes":  911,
+        "SHA256":  "B9EF4E9A9600B2F38D4E619DC4C2E9F24F45E70A5DB21CCA8A51A9BE3FE6EEC6"
+    },
+    {
+        "Path":  "az-theme/inc/modules/leads/inc/lead-forms.php",
+        "Bytes":  57552,
+        "SHA256":  "08A7763E92386CB0E24D70D9D37460128DA73D4824D1A8580412C4C728041E3E"
+    },
+    {
+        "Path":  "az-theme/inc/modules/leads/inc/leads-manager.php",
+        "Bytes":  45500,
+        "SHA256":  "15D7DB9359C40264DD6E56769BAAFA79D56D9CE2ACB6E74F356DC5965C1F6C5A"
+    },
+    {
+        "Path":  "az-theme/inc/modules/leads/module.php",
+        "Bytes":  3891,
+        "SHA256":  "802BD264CB611C267814F658776D81D3322A17C9A84593736E9FA5FE233D0394"
+    },
+    {
+        "Path":  "az-theme/inc/modules/leads/README.md",
+        "Bytes":  2756,
+        "SHA256":  "D84B5D1CB56375A48B8FEFAF8202F1346CB33A367A0869E2A9EECFC8F91636A2"
+    },
+    {
+        "Path":  "az-theme/inc/options/class-options.php",
+        "Bytes":  383,
+        "SHA256":  "2995D2E7E3E60DA1DC551E547978B39CC2F5237B40238028061523181D5C4C90"
+    },
+    {
+        "Path":  "az-theme/inc/options/class-registry.php",
+        "Bytes":  642,
+        "SHA256":  "3B1061BC7F6659916A5ADFC0A210382348A291861CBE09D1855B87E001E1732B"
+    },
+    {
+        "Path":  "az-theme/inc/options/class-renderer.php",
+        "Bytes":  13504,
+        "SHA256":  "264849AC5E1ADCF3F5E31D3B9928E807527B287341541E02E26F58711610A217"
+    },
+    {
+        "Path":  "az-theme/inc/options/class-sanitizer.php",
+        "Bytes":  4131,
+        "SHA256":  "64EA762CDC2CFA0DA890BE2CD737A5453F73DB9504B5908F7ABC18A878F8621F"
+    },
+    {
+        "Path":  "az-theme/inc/options/README.md",
+        "Bytes":  1051,
+        "SHA256":  "9E36AA675CB8F6AA01A5B10B506323AB2AEB36EB275A45AAF7955767F7AF0881"
+    },
+    {
+        "Path":  "az-theme/index.php",
+        "Bytes":  3956,
+        "SHA256":  "3F06E38C7ED313AB6811795DDD57D6981DD9577DDD14DEAFC17F18770A200160"
+    },
+    {
+        "Path":  "az-theme/js/accessibility.js",
+        "Bytes":  474,
+        "SHA256":  "F126E97C611AF8AAD6F5872FBD83B591C20D514EDCB1645614293CE60BB617FA"
+    },
+    {
+        "Path":  "az-theme/js/az-flatsome-compat.js",
+        "Bytes":  1074,
+        "SHA256":  "72693ED19D0D3494622AB5B77711FC31213AB4DF30656BE4E82985CBEAE5BE1C"
+    },
+    {
+        "Path":  "az-theme/js/az-language.js",
+        "Bytes":  8277,
+        "SHA256":  "1A87FBF06F784816382680333C00F5C90927E832E20D90034F12490E933A5926"
+    },
+    {
+        "Path":  "az-theme/js/az-logo-variants.js",
+        "Bytes":  1321,
+        "SHA256":  "228F80D3B95AC0C050D54FF769D319C622BB5FB8A520EE2F11B9C618A954874D"
+    },
+    {
+        "Path":  "az-theme/js/az-product-variation.js",
+        "Bytes":  1210,
+        "SHA256":  "EE0FD77CEC3472BEEEEFED5DCBA71597EB3085DB445C3F102002DE001724BDE7"
+    },
+    {
+        "Path":  "az-theme/js/az-shop-categories.js",
+        "Bytes":  1654,
+        "SHA256":  "3CA7E03472CB5A158459FBA6E99330422F9B1AE658B85916CE12B1517C68CE84"
+    },
+    {
+        "Path":  "az-theme/js/az-site-effects.js",
+        "Bytes":  1945,
+        "SHA256":  "CCC6548BDA578A8410ED0CAB134FA16DE75A76AB62EFA94121EC9E9FF876C69D"
+    },
+    {
+        "Path":  "az-theme/js/az-sticky-header.js",
+        "Bytes":  537,
+        "SHA256":  "298A8133BFF6409DB6F65BC2DEA2C4B6B84ECBF1C7B2537E82DF583E7A6AB3B9"
+    },
+    {
+        "Path":  "az-theme/js/content-protection.js",
+        "Bytes":  960,
+        "SHA256":  "2D1C9BCFF914972FFD2842ED1C5C9A8765FB85256B04A2605CA528433939B818"
+    },
+    {
+        "Path":  "az-theme/js/floating-contact.js",
+        "Bytes":  1084,
+        "SHA256":  "4BA76FCC300EAD2C6748430C8678773E01A6A3CB72736B496ACE56057B638CBC"
+    },
+    {
+        "Path":  "az-theme/js/mobile-menu.js",
+        "Bytes":  3261,
+        "SHA256":  "3ED3E04F280E12A1FAAA0B9AF1522FDDC133257970D81E0103F8ED2A42170851"
+    },
+    {
+        "Path":  "az-theme/js/prefetch.js",
+        "Bytes":  1005,
+        "SHA256":  "E80DC20AEB3163312B79BC3CDECC74672ECF2F4D31284F1EA3C2C28DE81D40A7"
+    },
+    {
+        "Path":  "az-theme/js/pricing-redirect.js",
+        "Bytes":  923,
+        "SHA256":  "38A738AE8B42FC341B66C652F9AB4ABCA37C3ED92FCC047A5958B5CA89D44933"
+    },
+    {
+        "Path":  "az-theme/js/profile-avatar.js",
+        "Bytes":  200,
+        "SHA256":  "E12FB49EE3B4631E4A051FAD0497796482E3D93F2CB48F4341D8459EB4018ABA"
+    },
+    {
+        "Path":  "az-theme/js/shared-banner.js",
+        "Bytes":  2974,
+        "SHA256":  "83BE551AA5C7F213F556C9498A89DC38947D7E4132587BCF62EE4E95746CD09D"
+    },
+    {
+        "Path":  "az-theme/languages/az-ai-theme-en_US.mo",
+        "Bytes":  7299,
+        "SHA256":  "42C80125D8A9D6E3110DDFF030BDF0C757CF3B3652825E0C84647432E6F393C9"
+    },
+    {
+        "Path":  "az-theme/languages/az-ai-theme-en_US.po",
+        "Bytes":  7342,
+        "SHA256":  "B3DD0025BE29FEFAAB5D7476267E9EDE48EACBE77953AB99501DAF28D19A517F"
+    },
+    {
+        "Path":  "az-theme/login.css",
+        "Bytes":  2452,
+        "SHA256":  "44C3B8CEF4EDFB3EBF57E4BDE91DF6BBC8CFC2FE78B66051EE327CCB988F2280"
+    },
+    {
+        "Path":  "az-theme/package.json",
+        "Bytes":  348,
+        "SHA256":  "C1AEC0FD4BD3196B3F93A747AAF2C45F6D797BA309F822E5AC61F62B364189BF"
+    },
+    {
+        "Path":  "az-theme/page.php",
+        "Bytes":  1781,
+        "SHA256":  "9B7136CB8DF1616E83CC0C9306C188535E9504B3D939073C345CD849E46AF383"
+    },
+    {
+        "Path":  "az-theme/page-about.php",
+        "Bytes":  250,
+        "SHA256":  "52B11FF464FD8A22390A93AE2B86870B671F66F73AB85B23803E32CCCD35377B"
+    },
+    {
+        "Path":  "az-theme/page-catalogue.php",
+        "Bytes":  3904,
+        "SHA256":  "E6BBDF093294E3412ED0DF1DDF18DA7BE82C1D2E278A11B8BC12EF2B583EB064"
+    },
+    {
+        "Path":  "az-theme/page-contact.php",
+        "Bytes":  10426,
+        "SHA256":  "434BAF69B93A57DAEFCCB2CD6EB890E9C751FE28786EC560D9020D52B62443AF"
+    },
+    {
+        "Path":  "az-theme/page-gallery.php",
+        "Bytes":  6693,
+        "SHA256":  "D070D46B9ABAAFE8EEFB468198D66033B5227FA1F2EC0F986377F9C5229AB122"
+    },
+    {
+        "Path":  "az-theme/page-neutral.php",
+        "Bytes":  1720,
+        "SHA256":  "BF98C27502560E2C5B0B16CD85B744218C315337DE75D9730DD2E59F59ACFAFD"
+    },
+    {
+        "Path":  "az-theme/screenshot.png",
+        "Bytes":  193330,
+        "SHA256":  "A59258CB0A573603C0F83AC658C69E894C4BDDC4F75101311342D78D3A299D3C"
+    },
+    {
+        "Path":  "az-theme/searchform.php",
+        "Bytes":  840,
+        "SHA256":  "D889A221AC43FBD6A77BD06AB4DA9DBC87E42593693FE2D8EB095C7299A3A7CF"
+    },
+    {
+        "Path":  "az-theme/single.php",
+        "Bytes":  7908,
+        "SHA256":  "BD4131AA3204DEDEDA1F8539E3AA5C22B7D7BEA74E6CE6BCB4C7AD31F4DEF3B0"
+    },
+    {
+        "Path":  "az-theme/single-product.php",
+        "Bytes":  30055,
+        "SHA256":  "7051642008BB0F6438BD02B26FA6B541F2A1D7D85F9E456AB83C62821E2960F9"
+    },
+    {
+        "Path":  "az-theme/style.css",
+        "Bytes":  60689,
+        "SHA256":  "50BA535C1E3C0E623261180FBD6ACD797052900857215C7E1F5DE19E15E273B0"
+    },
+    {
+        "Path":  "az-theme/tailwind.config.cjs",
+        "Bytes":  962,
+        "SHA256":  "44D8234A0137494E30855F1F169C07CFFD87EB5B52A2EFCC320C4775D3A74DF5"
+    },
+    {
+        "Path":  "az-theme/taxonomy-pa_brand.php",
+        "Bytes":  110,
+        "SHA256":  "E7E4BAC6B1AD935DDBF2D0D1AFAFF6BFD5F9D2A09F0C864C495FFF943F7EB8C9"
+    },
+    {
+        "Path":  "az-theme/taxonomy-pa_thuong-hieu.php",
+        "Bytes":  110,
+        "SHA256":  "E7E4BAC6B1AD935DDBF2D0D1AFAFF6BFD5F9D2A09F0C864C495FFF943F7EB8C9"
+    },
+    {
+        "Path":  "az-theme/taxonomy-product_brand.php",
+        "Bytes":  110,
+        "SHA256":  "E7E4BAC6B1AD935DDBF2D0D1AFAFF6BFD5F9D2A09F0C864C495FFF943F7EB8C9"
+    },
+    {
+        "Path":  "az-theme/taxonomy-product_cat.php",
+        "Bytes":  181,
+        "SHA256":  "1D78FD453B498781109DEB8399C699611F3787F569E5A5C546D131F294AE153C"
+    },
+    {
+        "Path":  "az-theme/taxonomy-product_warehouse.php",
+        "Bytes":  110,
+        "SHA256":  "E7E4BAC6B1AD935DDBF2D0D1AFAFF6BFD5F9D2A09F0C864C495FFF943F7EB8C9"
+    },
+    {
+        "Path":  "az-theme/template-parts/breadcrumb.php",
+        "Bytes":  7358,
+        "SHA256":  "C6D6F24CF64A9331BA5E7EEE4B0E986EE1B147D31CF8EDFC54F867D16EF8FA20"
+    },
+    {
+        "Path":  "az-theme/template-parts/language-switcher.php",
+        "Bytes":  1494,
+        "SHA256":  "1A2FF7CC95501AB01878139B179227B01D476FFDA448422758A2C44051F0B738"
+    },
+    {
+        "Path":  "az-theme/template-parts/language-switcher-simple.php",
+        "Bytes":  97,
+        "SHA256":  "657F6C50570251D6A199BE818044282ED12B0A2D542B4B6D7BCAA3C2F249C8AE"
+    },
+    {
+        "Path":  "az-theme/template-parts/product/head.php",
+        "Bytes":  2024,
+        "SHA256":  "D8CBD2C367B12B0EF205A5BE92846ABE1C9B10955D1AF705513B33D7716BCC42"
+    },
+    {
+        "Path":  "az-theme/template-parts/sidebar-intro.php",
+        "Bytes":  6742,
+        "SHA256":  "D06FBCF2F2D3DABD62C4FA48ED9AA153EC07AAC7F06B97F0CE284E81CA9C7B2B"
+    },
+    {
+        "Path":  "az-theme/tests/auth-rate-limit.php",
+        "Bytes":  1114,
+        "SHA256":  "7C7E592498AB9F994D0B62B33739C082754724616D1C3F9E3B2B88BA45DB6070"
+    },
+    {
+        "Path":  "az-theme/tests/back-to-top.cjs",
+        "Bytes":  3997,
+        "SHA256":  "E72671E1F16F7BE81036E24945CEAF1854E281A55572C8DBAD57D939080B60DE"
+    },
+    {
+        "Path":  "az-theme/tests/back-to-top.php",
+        "Bytes":  7357,
+        "SHA256":  "3C8F0B7DBFD168D8C1E7820B7B325B3B96B7F9A24A28A3ADF090D9A3A9536912"
+    },
+    {
+        "Path":  "az-theme/tests/blog-image-description.php",
+        "Bytes":  4764,
+        "SHA256":  "4424578D374EC1201C67D4C13EA5A66038214C40F484AE4F0AEEB08EFB6C7550"
+    },
+    {
+        "Path":  "az-theme/tests/branding-seo.php",
+        "Bytes":  7060,
+        "SHA256":  "797F51DCFA97ED6F8C9218F229888CCFC1BF686B051E77D849941BEAD8CE5606"
+    },
+    {
+        "Path":  "az-theme/tests/child-theme-installer.php",
+        "Bytes":  12864,
+        "SHA256":  "251EB4B001BE932BB923C503EA63BFAC187C44D6DCE49AB1C7E86F5A588C1B0E"
+    },
+    {
+        "Path":  "az-theme/tests/contact-leads.php",
+        "Bytes":  7057,
+        "SHA256":  "2C667BA96AE7513FED6536F9638DD37C6EE5B4DA953D501DCFDCB3EEFA351D83"
+    },
+    {
+        "Path":  "az-theme/tests/contact-maps.php",
+        "Bytes":  6215,
+        "SHA256":  "11123D30249E77581A179DECDA6D8287A26102DD7B1CCD4D7D5C9F7463DBC8E9"
+    },
+    {
+        "Path":  "az-theme/tests/custom-code.php",
+        "Bytes":  10860,
+        "SHA256":  "6CDA34BEC105CDD06CD2E80DE68779CDADF221EBE4815A8170D135C4B31EB320"
+    },
+    {
+        "Path":  "az-theme/tests/editor.php",
+        "Bytes":  1152,
+        "SHA256":  "3685F79B6972092F89B6462890BB987542DE1B6F249475CB9809B1175D637432"
+    },
+    {
+        "Path":  "az-theme/tests/google-login.php",
+        "Bytes":  4214,
+        "SHA256":  "B4A216A46CD34BD8EF6D90DD935BDA7687EDF8BA31343704D8C27B3024FE3340"
+    },
+    {
+        "Path":  "az-theme/tests/header-bottom.php",
+        "Bytes":  1199,
+        "SHA256":  "E42BA9C29BE8A1D69633819B22EC61A6787BB7EEC1D1E16E2C1D8F1B09DF6ABC"
+    },
+    {
+        "Path":  "az-theme/tests/html-minify.php",
+        "Bytes":  1071,
+        "SHA256":  "9D3A2E9C37F2A225210DF757A8D9B7A630FD026AE86503A32136875929D3213B"
+    },
+    {
+        "Path":  "az-theme/tests/media-tools.php",
+        "Bytes":  1729,
+        "SHA256":  "BE7EDDB6CC83A6AAA977EF1977791D051BD5EF138AE1B3B777EFFB9D1419B370"
+    },
+    {
+        "Path":  "az-theme/tests/mobile-menu.cjs",
+        "Bytes":  10303,
+        "SHA256":  "EC88B0ED8F6D6E5E9E5D2420748F5196E06C293A8D4DBBA547935005EC786A28"
+    },
+    {
+        "Path":  "az-theme/tests/mobile-menu.php",
+        "Bytes":  11742,
+        "SHA256":  "0A19F1AB9FED0AF5BB0138CFB4BE403A73AB8BE8A18DAABE93F4D1FCC338099F"
+    },
+    {
+        "Path":  "az-theme/tests/neutral-page.php",
+        "Bytes":  9262,
+        "SHA256":  "2B2F1F4D8D1E217F26BD8D71F40D464D6C4D67BF56ABDB1FEAD588E941A41584"
+    },
+    {
+        "Path":  "az-theme/tests/neutral-page-admin.php",
+        "Bytes":  2695,
+        "SHA256":  "6D0F765BD5ADAB725D3A3301AAA1376661069A241D70B8945FF57EB66393F704"
+    },
+    {
+        "Path":  "az-theme/tests/performance.php",
+        "Bytes":  2682,
+        "SHA256":  "37A697A7EE5B2674F6758F5A2D0DB3B0CCD3FCE95C2420D3859EDBDA58C0ADD1"
+    },
+    {
+        "Path":  "az-theme/tests/performance-security.php",
+        "Bytes":  2313,
+        "SHA256":  "AE6AFFF99D5731FEA13D5D8803D02EADC16FD2102C7193C63E9DAEBBAED24896"
+    },
+    {
+        "Path":  "az-theme/tests/qa.cjs",
+        "Bytes":  1283,
+        "SHA256":  "0D9C04678F79004E6AF2565AED1E7B6C19A330849E325B68AEF4BD7E0552FAA8"
+    },
+    {
+        "Path":  "az-theme/tests/reusable.php",
+        "Bytes":  2380,
+        "SHA256":  "DB9260843632B25E10F5C05EA5FEC94A3860418419B9C7FD6899C63121BF01CE"
+    },
+    {
+        "Path":  "az-theme/tests/shared-banner.cjs",
+        "Bytes":  3969,
+        "SHA256":  "17C0E6AE49F754628D11BAA4F516A7F7B358EE1BA3A19C19DE9B99744EF955B3"
+    },
+    {
+        "Path":  "az-theme/tests/shared-banner.md",
+        "Bytes":  1826,
+        "SHA256":  "374F50D54437F13E25E752F1627CCA533DAEA49EA45B8123E2E68DD09B0B6F01"
+    },
+    {
+        "Path":  "az-theme/tests/upload-limits.php",
+        "Bytes":  6198,
+        "SHA256":  "AC52C35E70A41338C33248D88299A378B6FEADBF71241A6D8B523469132CA2A5"
+    },
+    {
+        "Path":  "az-theme/tests/user-options.php",
+        "Bytes":  1744,
+        "SHA256":  "6FC923112FDA85565BB793755EBAD60724D7FADB83AA187E5C6033AE8D49C87D"
+    },
+    {
+        "Path":  "az-theme/theme.json",
+        "Bytes":  28811,
+        "SHA256":  "A0715020127D5E5122244021BDB13A89BEA97131284E6796F59C9B91DD4A6F63"
+    },
+    {
+        "Path":  "az-theme/woocommerce/cart/cart.php",
+        "Bytes":  7939,
+        "SHA256":  "EC615A749FE5126CC25E6FBCB51E77555AC6939313C7DF08DF51214E3835DE7E"
+    },
+    {
+        "Path":  "az-theme/woocommerce/cart/cart-empty.php",
+        "Bytes":  877,
+        "SHA256":  "F7F05F223C8EB35F9D7D163D691E337E82CB75BC530689DB2B24F014FEDC6A24"
+    },
+    {
+        "Path":  "az-theme/woocommerce/checkout/form-checkout.php",
+        "Bytes":  2208,
+        "SHA256":  "14B20A51CA3C363297C27353509438C7CA312B708B0EA743E5B3F2242475F0A0"
+    },
+    {
+        "Path":  "az-theme/woocommerce/content-product.php",
+        "Bytes":  358,
+        "SHA256":  "F69115DAA78999EFCBE7917E6A62DD2439C83127225DB6BFC937DB1D9B6D1E78"
+    },
+    {
+        "Path":  "az-theme/woocommerce/myaccount/my-account.php",
+        "Bytes":  458,
+        "SHA256":  "52A87FEE59CDD0842E874D341A866AFA0435CEE73E996AE67A604B925DED3809"
+    },
+    {
+        "Path":  "az-theme/woocommerce/order/form-tracking.php",
+        "Bytes":  2196,
+        "SHA256":  "76333BAEF8E87E7DC358069DAB662E08849CA8BF866566117E9758430B293840"
+    },
+    {
+        "Path":  "az-theme-child/assets/images/footer-map.svg",
+        "Bytes":  627,
+        "SHA256":  "4144C9DF07005F144B14BC303E1096C22CA56F334D09BBF9222851D2A8070604"
+    },
+    {
+        "Path":  "az-theme-child/assets/images/solar-home.svg",
+        "Bytes":  2487,
+        "SHA256":  "167E7DFD0E24D4426E581900844DABE97685F37F9DD4549A99A6A23D08679E83"
+    },
+    {
+        "Path":  "az-theme-child/assets/images/soviban/consulting.png",
+        "Bytes":  201173,
+        "SHA256":  "25D211F4CFB5413C6BE1D45B18FE032902BFB9721253B76610CA24BEDB18DAF1"
+    },
+    {
+        "Path":  "az-theme-child/assets/images/soviban/consulting-banner.png",
+        "Bytes":  585226,
+        "SHA256":  "5F792CD70471F81292E6ECC0E66BCDB45F6EEF0510044635F5CC4E36FB5A2802"
+    },
+    {
+        "Path":  "az-theme-child/assets/images/soviban/footer-city.png",
+        "Bytes":  485046,
+        "SHA256":  "F63B1D965C0783CF23B95625E9250926246812CD38FA37E5527544B6A4F31D16"
+    },
+    {
+        "Path":  "az-theme-child/assets/images/soviban/footer-logo.png",
+        "Bytes":  12897,
+        "SHA256":  "6EEE916C0218DC2579C6A256FBBE51766B47DDF3137F6B105EC8F1B3B273827E"
+    },
+    {
+        "Path":  "az-theme-child/assets/images/soviban/hero.png",
+        "Bytes":  968639,
+        "SHA256":  "033A15AAA281C8F6FF5248DAB44AECE4C21D9EFFC82E2A85959270A28A139F06"
+    },
+    {
+        "Path":  "az-theme-child/assets/images/soviban/logo.png",
+        "Bytes":  15327,
+        "SHA256":  "B36D5367F448703817115D1BDD6E7A8CBBE8EC0FF2EB40AC07D5E3DCBED42118"
+    },
+    {
+        "Path":  "az-theme-child/assets/images/soviban/management.png",
+        "Bytes":  144929,
+        "SHA256":  "89E77E1DF0F0D7A63B90B35164395DA179D203045DFBAEE3D0057CFD49BA6081"
+    },
+    {
+        "Path":  "az-theme-child/assets/images/soviban/partner-aerofoam.png",
+        "Bytes":  17876,
+        "SHA256":  "ED47057B354D3265C322A72B10AC5DB67D25A0B7A4E73731F0C03AB6DACF67F3"
+    },
+    {
+        "Path":  "az-theme-child/assets/images/soviban/partner-fc.png",
+        "Bytes":  11676,
+        "SHA256":  "B5591954F67AA5C82ED8A06B7F920FC02211D64752BD0CFCFFA24DE70EB65D0D"
+    },
+    {
+        "Path":  "az-theme-child/assets/images/soviban/partner-kps.png",
+        "Bytes":  20613,
+        "SHA256":  "111A5EEABC30CBAB32CA9D10A18194DA1DBB512A5BDB8246D91259AC85D126E3"
+    },
+    {
+        "Path":  "az-theme-child/assets/images/soviban/partner-sk.png",
+        "Bytes":  10199,
+        "SHA256":  "46D0FA32797E451888286ABB37D2448EB01FB2BFF97D484A04E00B81761B9FDA"
+    },
+    {
+        "Path":  "az-theme-child/assets/images/soviban/partner-tg.png",
+        "Bytes":  9818,
+        "SHA256":  "5BA66B228E1FEC795D53C114786F9CF15AE9BE3D80BE185F918457918332DC62"
+    },
+    {
+        "Path":  "az-theme-child/assets/images/soviban/services.png",
+        "Bytes":  244575,
+        "SHA256":  "A509A6952B33F90A75F3E455C86F5D52F90DED3D99FB1F37E60615B902A673F5"
+    },
+    {
+        "Path":  "az-theme-child/assets/images/soviban/skyline.jpg",
+        "Bytes":  669998,
+        "SHA256":  "3070C188604EB6B23CFF6FECE2FADB6C10622DEDF08E230C5B314FECB4356F4A"
+    },
+    {
+        "Path":  "az-theme-child/assets/images/soviban/skyline-evening.jpg",
+        "Bytes":  92230,
+        "SHA256":  "7D40D2F692BDC9D082D5151205D0EE9CFEE863489602AB64C814F8C946CF1DE6"
+    },
+    {
+        "Path":  "az-theme-child/assets/images/soviban/skyline-management.jpg",
+        "Bytes":  239386,
+        "SHA256":  "766FFAE8D03FEE4821D0E87FC70301B9530F03829CFDDC384C7C34F9D525AF5C"
+    },
+    {
+        "Path":  "az-theme-child/assets/images/soviban/skyline-night.jpeg",
+        "Bytes":  130571,
+        "SHA256":  "EE350DB8714C51C15719791559C4FC5EA1E6165CEC9E5D11924193E857445446"
+    },
+    {
+        "Path":  "az-theme-child/assets/images/soviban/skyline-river.jpg",
+        "Bytes":  490659,
+        "SHA256":  "362FD8751EBB24AB133D1FA1845789BDE7EFE9F1C3516A465319B7E0D18A9C7E"
+    },
+    {
+        "Path":  "az-theme-child/assets/images/steel-banner.svg",
+        "Bytes":  1641,
+        "SHA256":  "AB359915DB98E795B0CA4C354C41C1EA7D0024C0F76067B0B666DB07B5B6927E"
+    },
+    {
+        "Path":  "az-theme-child/assets/images/steel-promo.svg",
+        "Bytes":  907,
+        "SHA256":  "DC789AE6FF0C6E34388402DE8DA623D3A9897666F4D64C07CF5FE3E915D83ECB"
+    },
+    {
+        "Path":  "az-theme-child/assets/images/water-system.svg",
+        "Bytes":  2213,
+        "SHA256":  "ACCE3D7D90B04631CDF6A252F2E032FAD33CC50CC89C82BB752DFD07B02A69B5"
+    },
+    {
+        "Path":  "az-theme-child/css/catalog-sidebar.css",
+        "Bytes":  4987,
+        "SHA256":  "66704BAF47F190CA002163F5CFCAE8F97FF14A5DBF3A03161748E43F32F0DAD8"
+    },
+    {
+        "Path":  "az-theme-child/css/commerce-buttons.css",
+        "Bytes":  3209,
+        "SHA256":  "84195076BDE430FA4F2414CC508664269B6469183FED29FBA1532983B7F7BFB4"
+    },
+    {
+        "Path":  "az-theme-child/css/footer-storefront.css",
+        "Bytes":  4212,
+        "SHA256":  "D438E65953E1693EB155A4F0CA2CD1F62AD52178E32BAAC0D2DFFF2F149AB1EB"
+    },
+    {
+        "Path":  "az-theme-child/css/header-admin.css",
+        "Bytes":  962,
+        "SHA256":  "FDB47057C537B47E8414C7FCFC69B20426367BD799AEEB21A4569B2215A818A8"
+    },
+    {
+        "Path":  "az-theme-child/css/header-mega-menu.css",
+        "Bytes":  3233,
+        "SHA256":  "170E469F694BEC3A468A2F81D061074C2B7AF425A0198AC445DD4FA78D0A0A96"
+    },
+    {
+        "Path":  "az-theme-child/css/header-storefront.css",
+        "Bytes":  20395,
+        "SHA256":  "991589BDB3E20444FA448AC2433CC9A412B88A53D3151DB4338815441D5A6A03"
+    },
+    {
+        "Path":  "az-theme-child/css/home-partners-admin.css",
+        "Bytes":  3340,
+        "SHA256":  "1700701CC78AAEF285C7BCA94690A7B37448A20E78E2A87D72027DEC603D80EB"
+    },
+    {
+        "Path":  "az-theme-child/css/home-reference-layout.css",
+        "Bytes":  20104,
+        "SHA256":  "7012DF0ABD27D626F70EFE434B4B05E003A67565EA6011697F0C2B0836082FAE"
+    },
+    {
+        "Path":  "az-theme-child/css/home-storefront.css",
+        "Bytes":  8567,
+        "SHA256":  "04C1183BD10743C8A666986276875C466BA6491737FDB478AEB4B9AEC4616235"
+    },
+    {
+        "Path":  "az-theme-child/css/product-admin.css",
+        "Bytes":  2864,
+        "SHA256":  "CD2769B63C6C5050EF48EE367172C9E68B025A59124343CEB0C377DD913E4233"
+    },
+    {
+        "Path":  "az-theme-child/css/product-gallery.css",
+        "Bytes":  1442,
+        "SHA256":  "E159E59C137DA3B7E3E43536E752D8D4419C3893A01B33DA667B4E50F32E0307"
+    },
+    {
+        "Path":  "az-theme-child/css/social-contact.css",
+        "Bytes":  3546,
+        "SHA256":  "55E2B86D95ACCE833246501212F90A6230A9CB611CCA8D0430F84EFCCC4D59EB"
+    },
+    {
+        "Path":  "az-theme-child/css/soviban.css",
+        "Bytes":  16571,
+        "SHA256":  "11B3CF81B264E69D61E56477890B4CA72F7914506ABB7947A77DE54E8E791177"
+    },
+    {
+        "Path":  "az-theme-child/css/steel-storefront.css",
+        "Bytes":  22046,
+        "SHA256":  "530EC76D5C57EAB45F453E80C88D6641014CAAF8BE96A0C91A8FFEE6C7C0D917"
+    },
+    {
+        "Path":  "az-theme-child/docs/about-editor-preview.png",
+        "Bytes":  171676,
+        "SHA256":  "6D140B3F622F97CD7300C045FD0D43533BDDB71530F36AFB0591C1B9B659D5E8"
+    },
+    {
+        "Path":  "az-theme-child/docs/header-container-preview.jpg",
+        "Bytes":  24448,
+        "SHA256":  "D79A257821991788A64428FBC5E5AA355D617F82F3FC4BB6FE36A49DE2CB06AC"
+    },
+    {
+        "Path":  "az-theme-child/docs/home-admin-cleanup-preview.png",
+        "Bytes":  94819,
+        "SHA256":  "EFDBEDC806F60036C90A96683D0683E61B04DAE24FE0D74CDF6D648BAA45C5DD"
+    },
+    {
+        "Path":  "az-theme-child/docs/mobile-search-hotline-preview.jpg",
+        "Bytes":  12742,
+        "SHA256":  "3575E07B752D38FAF0E087493339CF531787E5AE9DC015062A52B166DB27F7F5"
+    },
+    {
+        "Path":  "az-theme-child/docs/NEUTRAL-PAGE.md",
+        "Bytes":  1917,
+        "SHA256":  "7DB37A33A1D656D42CB994FCAE1A8C399C0095A4EDC6C4D38D3837DFDBF5C13B"
+    },
+    {
+        "Path":  "az-theme-child/docs/neutral-page-preview.jpg",
+        "Bytes":  166172,
+        "SHA256":  "5FDB78E5F79D003ABD90BB5C0BA5B7777E6800583AA3BB9AF1941F329D0F3499"
+    },
+    {
+        "Path":  "az-theme-child/docs/neutral-parent-inherited-preview.png",
+        "Bytes":  271224,
+        "SHA256":  "B70EC7C5B245774A219C8076444C4DEC99FBE7255A882B0ECF02121F58B30552"
+    },
+    {
+        "Path":  "az-theme-child/docs/neutral-pasted-content-preview.jpg",
+        "Bytes":  140830,
+        "SHA256":  "A1BEEE31DE61750035F94E315FCC2EB5B20A5B37E4AA78318F77DFA8F65F8497"
+    },
+    {
+        "Path":  "az-theme-child/docs/skyline-feature-preview.jpg",
+        "Bytes":  112668,
+        "SHA256":  "F9B1F928CB014ADE9E663FF287A38657D02A8122B9D75511CB55C8CD5C32F44A"
+    },
+    {
+        "Path":  "az-theme-child/docs/skyline-slide-1-preview.jpg",
+        "Bytes":  108373,
+        "SHA256":  "712C747F4648866DF208B1B7902C3F0B89DED0BC346163ED0CA70E7C958222EE"
+    },
+    {
+        "Path":  "az-theme-child/docs/skyline-slide-2-preview.jpg",
+        "Bytes":  73181,
+        "SHA256":  "B27FA5FEECF00D0AE3E27A156784C6D2305DD1DC2EA09DD4D142B047A74E8585"
+    },
+    {
+        "Path":  "az-theme-child/docs/SOVIBAN-HOMEPAGE.md",
+        "Bytes":  23658,
+        "SHA256":  "AF30692B87D7C8E3809D3D40E7CFD8D1C24471D6BA2E5C2BD318A6BD304E746D"
+    },
+    {
+        "Path":  "az-theme-child/docs/soviban-homepage-desktop.jpg",
+        "Bytes":  427517,
+        "SHA256":  "6671FA9697270CB3AEFA1DAEC3A397A49B0ABE2FF4BA8144798DC4D35464192F"
+    },
+    {
+        "Path":  "az-theme-child/footer.php",
+        "Bytes":  280,
+        "SHA256":  "52B9860951777D3F45467C177E3AEBFEB4B3AA79075D209F80DCAC1896512D5C"
+    },
+    {
+        "Path":  "az-theme-child/footer-shop.php",
+        "Bytes":  149,
+        "SHA256":  "093E6DC500F9022193692A0F493E2B31DF1B3645B529ACD6899577DCE53A9B44"
+    },
+    {
+        "Path":  "az-theme-child/front-page.php",
+        "Bytes":  542,
+        "SHA256":  "E5DCE2F521D180703BDC34ACE80F27EF9513A0822679636CD0772A9FC8393114"
+    },
+    {
+        "Path":  "az-theme-child/functions.php",
+        "Bytes":  7870,
+        "SHA256":  "8129F616824D8D2795167513D19F4B77F6E5ED730E689365842C5F7DA5C690B8"
+    },
+    {
+        "Path":  "az-theme-child/header.php",
+        "Bytes":  4016,
+        "SHA256":  "111D11F35625246E030D54A5C9A3B975D06BFEF0A7D806BA1CBE155A0CBE7403"
+    },
+    {
+        "Path":  "az-theme-child/header-shop.php",
+        "Bytes":  149,
+        "SHA256":  "83A3B9F336931AD76C40B86659D865A4E21C04A27F95A8ADC50A2F9766BE3558"
+    },
+    {
+        "Path":  "az-theme-child/icon/location-button-1.png",
+        "Bytes":  16234,
+        "SHA256":  "095C9F9D2528900F52AEA399F1E6F2C270F05DF398E968950612663E930BFA0C"
+    },
+    {
+        "Path":  "az-theme-child/icon/location-button-2.png",
+        "Bytes":  8024,
+        "SHA256":  "4A878FFD5DD9F03624FB0322142DA160BA3052F1E4E04722F1DE26DB3487FD21"
+    },
+    {
+        "Path":  "az-theme-child/inc/branding-seo.php",
+        "Bytes":  267,
+        "SHA256":  "8381BA1E19B92B315B9AFD35B157912AB1A5C0495F42D5DF27A9B3F93777331C"
+    },
+    {
+        "Path":  "az-theme-child/inc/customizer.php",
+        "Bytes":  1334,
+        "SHA256":  "1C365C19F014E2EFEC6C18D424AD5C143FC801600E9CE833C2DB7E4858CC344F"
+    },
+    {
+        "Path":  "az-theme-child/inc/floating-contact.php",
+        "Bytes":  5168,
+        "SHA256":  "7486AA762E5D2B261930CF4FFB186A9B3C7A41F4EFB1E615E667FB05997017E6"
+    },
+    {
+        "Path":  "az-theme-child/inc/footer-storefront.php",
+        "Bytes":  11836,
+        "SHA256":  "A4945D3616729CF8E693E112A02484B913996BBF1F4C859C4862EAB476DB8F00"
+    },
+    {
+        "Path":  "az-theme-child/inc/header-colors.php",
+        "Bytes":  2521,
+        "SHA256":  "C1D43875EF912AEBF82B717E53D367B36EC7DDE239126028FD91492DDE52EBD1"
+    },
+    {
+        "Path":  "az-theme-child/inc/header-mega-menu.php",
+        "Bytes":  4927,
+        "SHA256":  "3C7B5DFC7976DE0F7B251F420CC6B6CF767AE92CC2382D1A14D542C3FE2A4093"
+    },
+    {
+        "Path":  "az-theme-child/inc/header-storefront.php",
+        "Bytes":  8243,
+        "SHA256":  "6C2AE13F295B4037D984D348E925BAF8285193CA4D5D415A35F6A9AE52B40F10"
+    },
+    {
+        "Path":  "az-theme-child/inc/header-typography.php",
+        "Bytes":  1031,
+        "SHA256":  "AA8A1E98EE55814E04A0DF09EAB020F1FF64CC5E4D08F9E86F364FCAF1D792B0"
+    },
+    {
+        "Path":  "az-theme-child/inc/home-partners.php",
+        "Bytes":  6851,
+        "SHA256":  "8B1497D824399A2F6AA239B68694F86A5D82AEACCB4C562A33CA5A74A44B299D"
+    },
+    {
+        "Path":  "az-theme-child/inc/home-storefront.php",
+        "Bytes":  3951,
+        "SHA256":  "1732619BA00AB3C873D6D5445C677475298FE5E3A6347F3463633AB9BAC0817D"
+    },
+    {
+        "Path":  "az-theme-child/inc/modules/homepage/page-fields.php",
+        "Bytes":  26003,
+        "SHA256":  "7A376C1B595503D5D644D26D93BEAA027B7FC3D27833DF9E62D5B40DA8E16401"
+    },
+    {
+        "Path":  "az-theme-child/inc/product-admin.php",
+        "Bytes":  4155,
+        "SHA256":  "16C3C325F7A0360A37BD2464492B2B6F84B5B203E22F8BF8750A8E087CFFF838"
+    },
+    {
+        "Path":  "az-theme-child/inc/product-display.php",
+        "Bytes":  7420,
+        "SHA256":  "657ECA412290E7B4AF80024FEF370E93D1CA298446089AFB1CC10677876C5CBA"
+    },
+    {
+        "Path":  "az-theme-child/inc/product-permalinks.php",
+        "Bytes":  11091,
+        "SHA256":  "07E60EE598A431D12F2EA047338AD14DC9C190D748D5572C0762B0AE19A876D9"
+    },
+    {
+        "Path":  "az-theme-child/inc/soviban-home.php",
+        "Bytes":  27869,
+        "SHA256":  "3272266EEEE22208EB647073AB25850A43D8CFAE0B08A9D9E7489402D33A5529"
+    },
+    {
+        "Path":  "az-theme-child/inc/steel-storefront.php",
+        "Bytes":  9854,
+        "SHA256":  "9B945CDC64B94065F42DC8F0366D5F8A32ED0D891F2D21FCAB6DD24348FA33D6"
+    },
+    {
+        "Path":  "az-theme-child/js/header-mega-menu.js",
+        "Bytes":  3094,
+        "SHA256":  "143A00FCB6586CE8625EC3DB21BBF9D731F6D1A1F48F8338C5D0B169C5F5A755"
+    },
+    {
+        "Path":  "az-theme-child/js/home-partners-admin.js",
+        "Bytes":  2689,
+        "SHA256":  "20DEFB97FC14A758FC32255FE8CDC4CC86522DF1841732BE64793C1D3CDD453D"
+    },
+    {
+        "Path":  "az-theme-child/js/social-contact.js",
+        "Bytes":  1427,
+        "SHA256":  "00ABC1466ABAED4C947787DF857EB52138A36AD31CA2EC35CA55CC233D1D825C"
+    },
+    {
+        "Path":  "az-theme-child/js/soviban-admin.js",
+        "Bytes":  749,
+        "SHA256":  "0ED5E533B1EB2745DEB5CD29742F8A55055CC486680A74F260491B33A0D22F39"
+    },
+    {
+        "Path":  "az-theme-child/js/steel-storefront.js",
+        "Bytes":  5316,
+        "SHA256":  "C32E4474BBA5A5A57E0D1DCE0E6748F0C70577E3270E4B1F5B2D13D55C1C7FAF"
+    },
+    {
+        "Path":  "az-theme-child/README.md",
+        "Bytes":  33758,
+        "SHA256":  "EB19F292776807EAC805C64ED8A84331327F6A10FC0C89C9F7E717020DAEBEFA"
+    },
+    {
+        "Path":  "az-theme-child/screenshot.png",
+        "Bytes":  193330,
+        "SHA256":  "A59258CB0A573603C0F83AC658C69E894C4BDDC4F75101311342D78D3A299D3C"
+    },
+    {
+        "Path":  "az-theme-child/single-product.php",
+        "Bytes":  30919,
+        "SHA256":  "477E6FA90E82020D8B5682C7939D3A24B3B85801D79DA97BEE4182D939B345E6"
+    },
+    {
+        "Path":  "az-theme-child/style.css",
+        "Bytes":  8131,
+        "SHA256":  "5A5940BE8A2E620BDEAEE503C8A55B80C825202833B699260357B49D0526C3E6"
+    },
+    {
+        "Path":  "az-theme-child/template-parts/footer-home.php",
+        "Bytes":  165,
+        "SHA256":  "E7398A717471237D627962805230A91B69DA78A447FC91A8360896727F98143B"
+    },
+    {
+        "Path":  "az-theme-child/template-parts/footer-reference.php",
+        "Bytes":  4730,
+        "SHA256":  "F989A837DCCC70650A9111C00D66D462559F7407EDFF78417498B987FEE957DC"
+    },
+    {
+        "Path":  "az-theme-child/template-parts/footer-soviban.php",
+        "Bytes":  4606,
+        "SHA256":  "0DAA13C4F75FF1047B4AD2697203DD3B6352B7144903A34DAD511E0F86AD0B79"
+    },
+    {
+        "Path":  "az-theme-child/template-parts/header-home.php",
+        "Bytes":  164,
+        "SHA256":  "D452F531FB686CAAD601B4F0624EAA3495FD66CB32231EE051E6BFEEA2FD2CCD"
+    },
+    {
+        "Path":  "az-theme-child/template-parts/home-partners.php",
+        "Bytes":  942,
+        "SHA256":  "BC932852350F4B11D47EDD1134E586AA6D15C8AEAD3EB4457641739701CE3DEB"
+    },
+    {
+        "Path":  "az-theme-child/template-parts/home-reference.php",
+        "Bytes":  158,
+        "SHA256":  "52F44C635B5A9E149A87B9C1CEBD5BDFC432E08792256D30133FDA1BC54C0FBC"
+    },
+    {
+        "Path":  "az-theme-child/template-parts/home-steel.php",
+        "Bytes":  8325,
+        "SHA256":  "25C255967632BBC7E9141981A0BEB297DEDFCCCDC51BD6C2A210E69903F68091"
+    },
+    {
+        "Path":  "az-theme-child/template-parts/home-storefront.php",
+        "Bytes":  4786,
+        "SHA256":  "ACA23D40BDC871862AEC95FC30AFC8EB6C1DB48C1753E29E10CB2D40CA2F7B33"
+    },
+    {
+        "Path":  "az-theme-child/template-parts/mobile-header.php",
+        "Bytes":  2592,
+        "SHA256":  "45505610AC23C4FACE079EA6DCD4E66DC5EE31B1B3B2DC0AF5D37BEB71ACA389"
+    },
+    {
+        "Path":  "az-theme-child/template-parts/soviban-carousel.php",
+        "Bytes":  6547,
+        "SHA256":  "362A80E432C2E1483BB5223C9640B51A6420B9E81CFC0CC922028A432EA44E98"
+    },
+    {
+        "Path":  "az-theme-child/template-parts/soviban-home-extras.php",
+        "Bytes":  2551,
+        "SHA256":  "5AAE4573F0AE27D376B94790C3AE6526FD068865501972E949F2A00723AFB424"
+    },
+    {
+        "Path":  "az-theme-child/tests/footer-location-actions.php",
+        "Bytes":  8002,
+        "SHA256":  "181D115F789C4891F42C54444359E5EB401B593659B475B6C28BECA6008437B6"
+    },
+    {
+        "Path":  "az-theme-child/tests/footer-sync.php",
+        "Bytes":  9391,
+        "SHA256":  "D9693456AC8B2C584403D86C1370E8D7C73DF60FFC20FBD24C0CB06D785CC1D2"
+    },
+    {
+        "Path":  "az-theme-child/tests/header-mega-menu.php",
+        "Bytes":  10507,
+        "SHA256":  "5EAFCDB5D12C9982343DDA6E52BD7D73E877E7641DCE1432783EF2F3E76499AA"
+    },
+    {
+        "Path":  "az-theme-child/tests/header-settings.php",
+        "Bytes":  20001,
+        "SHA256":  "E5AAFAB56E6AD5F48FFE9CB3F1B9B2A237C8C9941CD6AE8C9747E72716EC9825"
+    },
+    {
+        "Path":  "az-theme-child/tests/home-admin.php",
+        "Bytes":  5624,
+        "SHA256":  "E69736146FD37BEB3ACD429A12A98C9B9390DF4EE86D6C8699C93C664793D49A"
+    },
+    {
+        "Path":  "az-theme-child/tests/home-partners.php",
+        "Bytes":  7093,
+        "SHA256":  "E174C348344F93E579970EDD14AC7F71110708A8A37C99CB80432BCA46940A3D"
+    },
+    {
+        "Path":  "az-theme-child/tests/neutral-page.php",
+        "Bytes":  10442,
+        "SHA256":  "75A982A1C46C5099F903E940BFAB685061C4C6903767B0D52AD9E79357040906"
+    },
+    {
+        "Path":  "az-theme-child/tests/product-image-ratio.php",
+        "Bytes":  10232,
+        "SHA256":  "ECE1A647754D94DFA294FB755E3AF2389A04AB062D965EBE786F1B6AA925937F"
+    },
+    {
+        "Path":  "az-theme-child/tests/product-permalinks.php",
+        "Bytes":  19662,
+        "SHA256":  "550FC2CBCCAE391F05ECCB0CDCE4E10A8DDF165A2DB9BF5E5110D5502E31D20B"
+    },
+    {
+        "Path":  "az-theme-child/tests/social-contact.php",
+        "Bytes":  11074,
+        "SHA256":  "7C7073959A0C90BD076E5A8BB51520414A23193B6972B4E514B661F3E7961991"
+    },
+    {
+        "Path":  "az-theme-child/tests/soviban-home.php",
+        "Bytes":  28331,
+        "SHA256":  "F31B01A59C10E1ABE50F5716347230C0ACE6525AEBAB8CD6EC1AD8D89735FE9B"
+    }
+]

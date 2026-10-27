@@ -1,0 +1,2620 @@
+﻿[
+    {
+        "Key":  "thumbnail_id",
+        "Literal":  true,
+        "API":  "get_term_meta",
+        "Source":  "az-theme/archive-product.php:298",
+        "Child":  false
+    },
+    {
+        "Key":  "page_for_posts",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/archive.php:22",
+        "Child":  false
+    },
+    {
+        "Key":  "page_comments",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/comments.php:193",
+        "Child":  false
+    },
+    {
+        "Key":  "page_comments",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/comments.php:201",
+        "Child":  false
+    },
+    {
+        "Key":  "az_contact_phone",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/front-page.php:19",
+        "Child":  false
+    },
+    {
+        "Key":  "\u0027az_home_\u0027 . $slot . \u0027_banner_img\u0027",
+        "Literal":  false,
+        "API":  "get_option",
+        "Source":  "az-theme/front-page.php:34",
+        "Child":  false
+    },
+    {
+        "Key":  "\u0027az_home_\u0027 . $slot . \u0027_banner_slides\u0027",
+        "Literal":  false,
+        "API":  "get_option",
+        "Source":  "az-theme/front-page.php:35",
+        "Child":  false
+    },
+    {
+        "Key":  "\u0027az_home_\u0027 . $slot . \u0027_banner_alt\u0027",
+        "Literal":  false,
+        "API":  "get_option",
+        "Source":  "az-theme/front-page.php:52",
+        "Child":  false
+    },
+    {
+        "Key":  "\u0027az_home_\u0027 . $slot . \u0027_banner_link\u0027",
+        "Literal":  false,
+        "API":  "get_option",
+        "Source":  "az-theme/front-page.php:53",
+        "Child":  false
+    },
+    {
+        "Key":  "thumbnail_id",
+        "Literal":  true,
+        "API":  "get_term_meta",
+        "Source":  "az-theme/front-page.php:86",
+        "Child":  false
+    },
+    {
+        "Key":  "cp_cat_image_id",
+        "Literal":  true,
+        "API":  "get_term_meta",
+        "Source":  "az-theme/front-page.php:88",
+        "Child":  false
+    },
+    {
+        "Key":  "az_home_weekly_category_id",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/front-page.php:165",
+        "Child":  false
+    },
+    {
+        "Key":  "az_home_weekly_orderby",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/front-page.php:166",
+        "Child":  false
+    },
+    {
+        "Key":  "az_home_suggested_category_id",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/front-page.php:195",
+        "Child":  false
+    },
+    {
+        "Key":  "az_home_suggested_orderby",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/front-page.php:196",
+        "Child":  false
+    },
+    {
+        "Key":  "custom_logo",
+        "Literal":  true,
+        "API":  "get_theme_mod",
+        "Source":  "az-theme/header.php:13",
+        "Child":  false
+    },
+    {
+        "Key":  "az_catalogue_lines",
+        "Literal":  true,
+        "API":  "update_option",
+        "Source":  "az-theme/page-catalogue.php:19",
+        "Child":  false
+    },
+    {
+        "Key":  "az_catalogue_lines",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/page-catalogue.php:40",
+        "Child":  false
+    },
+    {
+        "Key":  "az_contact_hours",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/page-contact.php:12",
+        "Child":  false
+    },
+    {
+        "Key":  "az_moments_gallery",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/page-gallery.php:9",
+        "Child":  false
+    },
+    {
+        "Key":  "_wp_attachment_image_alt",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme/page-gallery.php:20",
+        "Child":  false
+    },
+    {
+        "Key":  "az_manufacturer",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme/single-product.php:50",
+        "Child":  false
+    },
+    {
+        "Key":  "az_origin",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme/single-product.php:51",
+        "Child":  false
+    },
+    {
+        "Key":  "az_warranty",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme/single-product.php:52",
+        "Child":  false
+    },
+    {
+        "Key":  "az_shopee_url",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme/single-product.php:53",
+        "Child":  false
+    },
+    {
+        "Key":  "az_sendo_url",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme/single-product.php:54",
+        "Child":  false
+    },
+    {
+        "Key":  "az_lazada_url",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme/single-product.php:55",
+        "Child":  false
+    },
+    {
+        "Key":  "az_technical_specs",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme/single-product.php:56",
+        "Child":  false
+    },
+    {
+        "Key":  "az_practical_applications",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme/single-product.php:57",
+        "Child":  false
+    },
+    {
+        "Key":  "_wp_attachment_image_alt",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme/single-product.php:116",
+        "Child":  false
+    },
+    {
+        "Key":  "az_product_contact_title",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/single-product.php:155",
+        "Child":  false
+    },
+    {
+        "Key":  "az_product_contact_desc",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/single-product.php:156",
+        "Child":  false
+    },
+    {
+        "Key":  "az_product_contact_name",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/single-product.php:157",
+        "Child":  false
+    },
+    {
+        "Key":  "az_product_contact_phone",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/single-product.php:158",
+        "Child":  false
+    },
+    {
+        "Key":  "az_product_contact_zalo",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/single-product.php:159",
+        "Child":  false
+    },
+    {
+        "Key":  "az_contact_phone",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/single-product.php:162",
+        "Child":  false
+    },
+    {
+        "Key":  "az_contact_phone",
+        "Literal":  true,
+        "API":  "get_theme_mod",
+        "Source":  "az-theme/single-product.php:162",
+        "Child":  false
+    },
+    {
+        "Key":  "az_contact_zalo_url",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/single-product.php:165",
+        "Child":  false
+    },
+    {
+        "Key":  "az_contact_zalo_url",
+        "Literal":  true,
+        "API":  "get_theme_mod",
+        "Source":  "az-theme/single-product.php:165",
+        "Child":  false
+    },
+    {
+        "Key":  "_status",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme/inc/license-api.php:135",
+        "Child":  false
+    },
+    {
+        "Key":  "_plan_slug",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme/inc/license-api.php:136",
+        "Child":  false
+    },
+    {
+        "Key":  "_api_calls_used",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme/inc/license-api.php:137",
+        "Child":  false
+    },
+    {
+        "Key":  "_api_calls_limit",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme/inc/license-api.php:138",
+        "Child":  false
+    },
+    {
+        "Key":  "_created_at",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme/inc/license-api.php:139",
+        "Child":  false
+    },
+    {
+        "Key":  "_expires_at",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme/inc/license-api.php:140",
+        "Child":  false
+    },
+    {
+        "Key":  "_license_domain",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme/inc/license-api.php:141",
+        "Child":  false
+    },
+    {
+        "Key":  "_expiry_date",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme/inc/license-api.php:154",
+        "Child":  false
+    },
+    {
+        "Key":  "_status",
+        "Literal":  true,
+        "API":  "update_post_meta",
+        "Source":  "az-theme/inc/license-api.php:166",
+        "Child":  false
+    },
+    {
+        "Key":  "_license_status",
+        "Literal":  true,
+        "API":  "update_post_meta",
+        "Source":  "az-theme/inc/license-api.php:167",
+        "Child":  false
+    },
+    {
+        "Key":  "_license_domain",
+        "Literal":  true,
+        "API":  "update_post_meta",
+        "Source":  "az-theme/inc/license-api.php:188",
+        "Child":  false
+    },
+    {
+        "Key":  "_license_domain",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme/inc/license-api.php:277",
+        "Child":  false
+    },
+    {
+        "Key":  "_license_domain",
+        "Literal":  true,
+        "API":  "update_post_meta",
+        "Source":  "az-theme/inc/license-api.php:287",
+        "Child":  false
+    },
+    {
+        "Key":  "_status",
+        "Literal":  true,
+        "API":  "update_post_meta",
+        "Source":  "az-theme/inc/license-api.php:288",
+        "Child":  false
+    },
+    {
+        "Key":  "_activated_at",
+        "Literal":  true,
+        "API":  "update_post_meta",
+        "Source":  "az-theme/inc/license-api.php:289",
+        "Child":  false
+    },
+    {
+        "Key":  "_plan_slug",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme/inc/license-api.php:292",
+        "Child":  false
+    },
+    {
+        "Key":  "_api_calls_used",
+        "Literal":  true,
+        "API":  "update_post_meta",
+        "Source":  "az-theme/inc/license-api.php:337",
+        "Child":  false
+    },
+    {
+        "Key":  "_last_used_at",
+        "Literal":  true,
+        "API":  "update_post_meta",
+        "Source":  "az-theme/inc/license-api.php:338",
+        "Child":  false
+    },
+    {
+        "Key":  "_tokens_used",
+        "Literal":  true,
+        "API":  "update_post_meta",
+        "Source":  "az-theme/inc/license-api.php:378",
+        "Child":  false
+    },
+    {
+        "Key":  "_last_used_at",
+        "Literal":  true,
+        "API":  "update_post_meta",
+        "Source":  "az-theme/inc/license-api.php:379",
+        "Child":  false
+    },
+    {
+        "Key":  "_license_key",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme/inc/license-api.php:424",
+        "Child":  false
+    },
+    {
+        "Key":  "iaca_set",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/license-api.php:427",
+        "Child":  false
+    },
+    {
+        "Key":  "iaca_set",
+        "Literal":  true,
+        "API":  "update_option",
+        "Source":  "az-theme/inc/license-api.php:429",
+        "Child":  false
+    },
+    {
+        "Key":  "az_theme_options",
+        "Literal":  true,
+        "API":  "update_option",
+        "Source":  "az-theme/inc/admin/class-advanced.php:100",
+        "Child":  false
+    },
+    {
+        "Key":  "az_theme_options",
+        "Literal":  true,
+        "API":  "update_option",
+        "Source":  "az-theme/inc/admin/class-advanced.php:107",
+        "Child":  false
+    },
+    {
+        "Key":  "self::NOTICE_KEY",
+        "Literal":  false,
+        "API":  "set_transient",
+        "Source":  "az-theme/inc/admin/class-child-theme-installer.php:38",
+        "Child":  false
+    },
+    {
+        "Key":  "az_child_theme_install_prompt",
+        "Literal":  true,
+        "API":  "delete_transient",
+        "Source":  "az-theme/inc/admin/class-child-theme-installer.php:39",
+        "Child":  false
+    },
+    {
+        "Key":  "self::NOTICE_KEY",
+        "Literal":  false,
+        "API":  "get_transient",
+        "Source":  "az-theme/inc/admin/class-child-theme-installer.php:117",
+        "Child":  false
+    },
+    {
+        "Key":  "self::NOTICE_KEY",
+        "Literal":  false,
+        "API":  "set_transient",
+        "Source":  "az-theme/inc/admin/class-child-theme-installer.php:162",
+        "Child":  false
+    },
+    {
+        "Key":  "az_child_theme_install_prompt",
+        "Literal":  true,
+        "API":  "delete_transient",
+        "Source":  "az-theme/inc/admin/class-child-theme-installer.php:163",
+        "Child":  false
+    },
+    {
+        "Key":  "self::NOTICE_KEY",
+        "Literal":  false,
+        "API":  "delete_transient",
+        "Source":  "az-theme/inc/admin/class-child-theme-installer.php:172",
+        "Child":  false
+    },
+    {
+        "Key":  "az_child_theme_install_prompt",
+        "Literal":  true,
+        "API":  "delete_transient",
+        "Source":  "az-theme/inc/admin/class-child-theme-installer.php:173",
+        "Child":  false
+    },
+    {
+        "Key":  "az_child_parent_mods_migrated",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/admin/templates/child-theme/functions.php:14",
+        "Child":  false
+    },
+    {
+        "Key":  "theme_mods_az-theme",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/admin/templates/child-theme/functions.php:18",
+        "Child":  false
+    },
+    {
+        "Key":  "$name",
+        "Literal":  false,
+        "API":  "set_theme_mod",
+        "Source":  "az-theme/inc/admin/templates/child-theme/functions.php:25",
+        "Child":  false
+    },
+    {
+        "Key":  "az_child_parent_mods_migrated",
+        "Literal":  true,
+        "API":  "update_option",
+        "Source":  "az-theme/inc/admin/templates/child-theme/functions.php:39",
+        "Child":  false
+    },
+    {
+        "Key":  "$key",
+        "Literal":  false,
+        "API":  "get_transient",
+        "Source":  "az-theme/inc/core/auth-rate-limit.php:6",
+        "Child":  false
+    },
+    {
+        "Key":  "$key",
+        "Literal":  false,
+        "API":  "set_transient",
+        "Source":  "az-theme/inc/core/auth-rate-limit.php:10",
+        "Child":  false
+    },
+    {
+        "Key":  "_wp_attachment_image_alt",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme/inc/core/blog-image-description.php:15",
+        "Child":  false
+    },
+    {
+        "Key":  "_wp_attachment_image_alt",
+        "Literal":  true,
+        "API":  "update_post_meta",
+        "Source":  "az-theme/inc/core/blog-image-description.php:16",
+        "Child":  false
+    },
+    {
+        "Key":  "_wp_attachment_image_alt",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme/inc/core/blog-image-description.php:51",
+        "Child":  false
+    },
+    {
+        "Key":  "$option",
+        "Literal":  false,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/core/class-custom-code.php:16",
+        "Child":  false
+    },
+    {
+        "Key":  "page_for_posts",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/core/class-site-effects.php:109",
+        "Child":  false
+    },
+    {
+        "Key":  "\u0027az_google_\u0027 . hash( \u0027sha256\u0027, $state )",
+        "Literal":  false,
+        "API":  "set_transient",
+        "Source":  "az-theme/inc/core/google-login.php:21",
+        "Child":  false
+    },
+    {
+        "Key":  "$key",
+        "Literal":  false,
+        "API":  "get_transient",
+        "Source":  "az-theme/inc/core/google-login.php:36",
+        "Child":  false
+    },
+    {
+        "Key":  "$key",
+        "Literal":  false,
+        "API":  "delete_transient",
+        "Source":  "az-theme/inc/core/google-login.php:37",
+        "Child":  false
+    },
+    {
+        "Key":  "az_google_sub",
+        "Literal":  true,
+        "API":  "update_user_meta",
+        "Source":  "az-theme/inc/core/google-login.php:56",
+        "Child":  false
+    },
+    {
+        "Key":  "_wp_attached_file",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme/inc/core/media-tools.php:7",
+        "Child":  false
+    },
+    {
+        "Key":  "_wp_attached_file",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme/inc/core/media-tools.php:46",
+        "Child":  false
+    },
+    {
+        "Key":  "_az_shared_banner",
+        "Literal":  true,
+        "API":  "get_term_meta",
+        "Source":  "az-theme/inc/core/shared-banner.php:14",
+        "Child":  false
+    },
+    {
+        "Key":  "_az_shared_banner",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme/inc/core/shared-banner.php:14",
+        "Child":  false
+    },
+    {
+        "Key":  "_az_page_banner_layout",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme/inc/core/shared-banner.php:19",
+        "Child":  false
+    },
+    {
+        "Key":  "_az_page_banner_images",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme/inc/core/shared-banner.php:22",
+        "Child":  false
+    },
+    {
+        "Key":  "_az_page_banner_custom_text",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme/inc/core/shared-banner.php:22",
+        "Child":  false
+    },
+    {
+        "Key":  "_az_page_banner_height",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme/inc/core/shared-banner.php:22",
+        "Child":  false
+    },
+    {
+        "Key":  "_az_category_banner_image",
+        "Literal":  true,
+        "API":  "get_term_meta",
+        "Source":  "az-theme/inc/core/shared-banner.php:25",
+        "Child":  false
+    },
+    {
+        "Key":  "_az_shared_banner",
+        "Literal":  true,
+        "API":  "update_post_meta",
+        "Source":  "az-theme/inc/core/shared-banner.php:114",
+        "Child":  false
+    },
+    {
+        "Key":  "_az_shared_banner",
+        "Literal":  true,
+        "API":  "update_term_meta",
+        "Source":  "az-theme/inc/core/shared-banner.php:124",
+        "Child":  false
+    },
+    {
+        "Key":  "az_avatar_id",
+        "Literal":  true,
+        "API":  "delete_user_meta",
+        "Source":  "az-theme/inc/core/user-options.php:87",
+        "Child":  false
+    },
+    {
+        "Key":  "az_avatar_id",
+        "Literal":  true,
+        "API":  "update_user_meta",
+        "Source":  "az-theme/inc/core/user-options.php:101",
+        "Child":  false
+    },
+    {
+        "Key":  "az_avatar_id",
+        "Literal":  true,
+        "API":  "get_user_meta",
+        "Source":  "az-theme/inc/core/user-options.php:112",
+        "Child":  false
+    },
+    {
+        "Key":  "az_lead_smtp_enabled",
+        "Literal":  true,
+        "API":  "register_setting",
+        "Source":  "az-theme/inc/functions/admin-settings.php:42",
+        "Child":  false
+    },
+    {
+        "Key":  "az_lead_notify_emails",
+        "Literal":  true,
+        "API":  "register_setting",
+        "Source":  "az-theme/inc/functions/admin-settings.php:43",
+        "Child":  false
+    },
+    {
+        "Key":  "az_lead_smtp_host",
+        "Literal":  true,
+        "API":  "register_setting",
+        "Source":  "az-theme/inc/functions/admin-settings.php:44",
+        "Child":  false
+    },
+    {
+        "Key":  "az_lead_smtp_port",
+        "Literal":  true,
+        "API":  "register_setting",
+        "Source":  "az-theme/inc/functions/admin-settings.php:45",
+        "Child":  false
+    },
+    {
+        "Key":  "az_lead_smtp_encryption",
+        "Literal":  true,
+        "API":  "register_setting",
+        "Source":  "az-theme/inc/functions/admin-settings.php:46",
+        "Child":  false
+    },
+    {
+        "Key":  "az_lead_smtp_username",
+        "Literal":  true,
+        "API":  "register_setting",
+        "Source":  "az-theme/inc/functions/admin-settings.php:47",
+        "Child":  false
+    },
+    {
+        "Key":  "az_lead_smtp_password",
+        "Literal":  true,
+        "API":  "register_setting",
+        "Source":  "az-theme/inc/functions/admin-settings.php:48",
+        "Child":  false
+    },
+    {
+        "Key":  "az_lead_smtp_from_email",
+        "Literal":  true,
+        "API":  "register_setting",
+        "Source":  "az-theme/inc/functions/admin-settings.php:49",
+        "Child":  false
+    },
+    {
+        "Key":  "az_lead_smtp_from_name",
+        "Literal":  true,
+        "API":  "register_setting",
+        "Source":  "az-theme/inc/functions/admin-settings.php:50",
+        "Child":  false
+    },
+    {
+        "Key":  "az_lead_smtp_debug",
+        "Literal":  true,
+        "API":  "register_setting",
+        "Source":  "az-theme/inc/functions/admin-settings.php:51",
+        "Child":  false
+    },
+    {
+        "Key":  "az_lead_notify_emails",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/functions/admin-settings.php:158",
+        "Child":  false
+    },
+    {
+        "Key":  "az_contact_email",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/functions/admin-settings.php:161",
+        "Child":  false
+    },
+    {
+        "Key":  "admin_email",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/functions/admin-settings.php:161",
+        "Child":  false
+    },
+    {
+        "Key":  "admin_email",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/functions/admin-settings.php:165",
+        "Child":  false
+    },
+    {
+        "Key":  "az_lead_smtp_enabled",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/functions/admin-settings.php:214",
+        "Child":  false
+    },
+    {
+        "Key":  "az_lead_smtp_host",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/functions/admin-settings.php:218",
+        "Child":  false
+    },
+    {
+        "Key":  "az_lead_smtp_port",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/functions/admin-settings.php:219",
+        "Child":  false
+    },
+    {
+        "Key":  "az_lead_smtp_username",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/functions/admin-settings.php:220",
+        "Child":  false
+    },
+    {
+        "Key":  "az_lead_smtp_password",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/functions/admin-settings.php:221",
+        "Child":  false
+    },
+    {
+        "Key":  "az_lead_smtp_debug",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/functions/admin-settings.php:233",
+        "Child":  false
+    },
+    {
+        "Key":  "az_lead_smtp_encryption",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/functions/admin-settings.php:236",
+        "Child":  false
+    },
+    {
+        "Key":  "az_lead_smtp_from_email",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/functions/admin-settings.php:241",
+        "Child":  false
+    },
+    {
+        "Key":  "az_lead_smtp_from_name",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/functions/admin-settings.php:245",
+        "Child":  false
+    },
+    {
+        "Key":  "az_lead_smtp_enabled",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/functions/admin-settings.php:384",
+        "Child":  false
+    },
+    {
+        "Key":  "az_lead_notify_emails",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/functions/admin-settings.php:388",
+        "Child":  false
+    },
+    {
+        "Key":  "az_contact_email",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/functions/admin-settings.php:388",
+        "Child":  false
+    },
+    {
+        "Key":  "admin_email",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/functions/admin-settings.php:388",
+        "Child":  false
+    },
+    {
+        "Key":  "az_lead_smtp_host",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/functions/admin-settings.php:392",
+        "Child":  false
+    },
+    {
+        "Key":  "az_lead_smtp_port",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/functions/admin-settings.php:396",
+        "Child":  false
+    },
+    {
+        "Key":  "az_lead_smtp_encryption",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/functions/admin-settings.php:400",
+        "Child":  false
+    },
+    {
+        "Key":  "az_lead_smtp_encryption",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/functions/admin-settings.php:400",
+        "Child":  false
+    },
+    {
+        "Key":  "az_lead_smtp_encryption",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/functions/admin-settings.php:400",
+        "Child":  false
+    },
+    {
+        "Key":  "az_lead_smtp_username",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/functions/admin-settings.php:404",
+        "Child":  false
+    },
+    {
+        "Key":  "az_lead_smtp_password",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/functions/admin-settings.php:408",
+        "Child":  false
+    },
+    {
+        "Key":  "az_lead_smtp_from_email",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/functions/admin-settings.php:412",
+        "Child":  false
+    },
+    {
+        "Key":  "az_contact_email",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/functions/admin-settings.php:412",
+        "Child":  false
+    },
+    {
+        "Key":  "admin_email",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/functions/admin-settings.php:412",
+        "Child":  false
+    },
+    {
+        "Key":  "az_lead_smtp_from_name",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/functions/admin-settings.php:416",
+        "Child":  false
+    },
+    {
+        "Key":  "az_lead_smtp_debug",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/functions/admin-settings.php:420",
+        "Child":  false
+    },
+    {
+        "Key":  "az_contact_email",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/functions/admin-settings.php:431",
+        "Child":  false
+    },
+    {
+        "Key":  "admin_email",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/functions/admin-settings.php:431",
+        "Child":  false
+    },
+    {
+        "Key":  "_wv_about_seeded",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme/inc/functions/admin-settings.php:493",
+        "Child":  false
+    },
+    {
+        "Key":  "_wv_about_original_content",
+        "Literal":  true,
+        "API":  "update_post_meta",
+        "Source":  "az-theme/inc/functions/admin-settings.php:495",
+        "Child":  false
+    },
+    {
+        "Key":  "_wv_about_seeded",
+        "Literal":  true,
+        "API":  "update_post_meta",
+        "Source":  "az-theme/inc/functions/admin-settings.php:504",
+        "Child":  false
+    },
+    {
+        "Key":  "az_catalogue_lines",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/functions/admin-settings.php:515",
+        "Child":  false
+    },
+    {
+        "Key":  "cp_cat_image_id",
+        "Literal":  true,
+        "API":  "get_term_meta",
+        "Source":  "az-theme/inc/functions/category-images.php:38",
+        "Child":  false
+    },
+    {
+        "Key":  "cp_cat_image_id",
+        "Literal":  true,
+        "API":  "update_term_meta",
+        "Source":  "az-theme/inc/functions/category-images.php:110",
+        "Child":  false
+    },
+    {
+        "Key":  "cp_cat_image_id",
+        "Literal":  true,
+        "API":  "delete_term_meta",
+        "Source":  "az-theme/inc/functions/category-images.php:112",
+        "Child":  false
+    },
+    {
+        "Key":  "cp_cat_image_id",
+        "Literal":  true,
+        "API":  "get_term_meta",
+        "Source":  "az-theme/inc/functions/category-images.php:121",
+        "Child":  false
+    },
+    {
+        "Key":  "\u0027az_contact_captcha_\u0027 . $token",
+        "Literal":  false,
+        "API":  "set_transient",
+        "Source":  "az-theme/inc/functions/contact-form.php:24",
+        "Child":  false
+    },
+    {
+        "Key":  "$transient_key",
+        "Literal":  false,
+        "API":  "get_transient",
+        "Source":  "az-theme/inc/functions/contact-form.php:41",
+        "Child":  false
+    },
+    {
+        "Key":  "$transient_key",
+        "Literal":  false,
+        "API":  "delete_transient",
+        "Source":  "az-theme/inc/functions/contact-form.php:43",
+        "Child":  false
+    },
+    {
+        "Key":  "$meta_key",
+        "Literal":  false,
+        "API":  "get_post_meta",
+        "Source":  "az-theme/inc/functions/content-media.php:102",
+        "Child":  false
+    },
+    {
+        "Key":  "$meta_key",
+        "Literal":  false,
+        "API":  "update_post_meta",
+        "Source":  "az-theme/inc/functions/content-media.php:105",
+        "Child":  false
+    },
+    {
+        "Key":  "az_logo_size",
+        "Literal":  true,
+        "API":  "get_theme_mod",
+        "Source":  "az-theme/inc/functions/customizer.php:17",
+        "Child":  false
+    },
+    {
+        "Key":  "az_logo_text_size",
+        "Literal":  true,
+        "API":  "get_theme_mod",
+        "Source":  "az-theme/inc/functions/customizer.php:18",
+        "Child":  false
+    },
+    {
+        "Key":  "az_home_category_sections",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/functions/home-products.php:11",
+        "Child":  false
+    },
+    {
+        "Key":  "az_home_featured_category_ids",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/functions/home-products.php:42",
+        "Child":  false
+    },
+    {
+        "Key":  "az_home_featured_category_ids",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/functions/home-products.php:131",
+        "Child":  false
+    },
+    {
+        "Key":  "thumbnail_id",
+        "Literal":  true,
+        "API":  "get_term_meta",
+        "Source":  "az-theme/inc/functions/home-products.php:162",
+        "Child":  false
+    },
+    {
+        "Key":  "cp_cat_image_id",
+        "Literal":  true,
+        "API":  "get_term_meta",
+        "Source":  "az-theme/inc/functions/home-products.php:165",
+        "Child":  false
+    },
+    {
+        "Key":  "custom_logo",
+        "Literal":  true,
+        "API":  "get_theme_mod",
+        "Source":  "az-theme/inc/functions/home-products.php:172",
+        "Child":  false
+    },
+    {
+        "Key":  "az_contact_phone",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/functions/home-products.php:196",
+        "Child":  false
+    },
+    {
+        "Key":  "az_contact_phone",
+        "Literal":  true,
+        "API":  "get_theme_mod",
+        "Source":  "az-theme/inc/functions/home-products.php:196",
+        "Child":  false
+    },
+    {
+        "Key":  "az_flash_sale_countdown_hours",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/functions/home-products.php:399",
+        "Child":  false
+    },
+    {
+        "Key":  "az_home_category_batch_size",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/functions/home-products.php:504",
+        "Child":  false
+    },
+    {
+        "Key":  "az_home_products_per_category",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/functions/home-products.php:522",
+        "Child":  false
+    },
+    {
+        "Key":  "_status",
+        "Literal":  true,
+        "API":  "update_post_meta",
+        "Source":  "az-theme/inc/functions/integrations-access.php:62",
+        "Child":  false
+    },
+    {
+        "Key":  "_license_status",
+        "Literal":  true,
+        "API":  "update_post_meta",
+        "Source":  "az-theme/inc/functions/integrations-access.php:63",
+        "Child":  false
+    },
+    {
+        "Key":  "show_admin_bar_front",
+        "Literal":  true,
+        "API":  "update_user_meta",
+        "Source":  "az-theme/inc/functions/integrations-access.php:120",
+        "Child":  false
+    },
+    {
+        "Key":  "_license_key",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme/inc/functions/licenses.php:83",
+        "Child":  false
+    },
+    {
+        "Key":  "_license_domain",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme/inc/functions/licenses.php:97",
+        "Child":  false
+    },
+    {
+        "Key":  "_plan_slug",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme/inc/functions/licenses.php:105",
+        "Child":  false
+    },
+    {
+        "Key":  "_plan_type",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme/inc/functions/licenses.php:107",
+        "Child":  false
+    },
+    {
+        "Key":  "_license_status",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme/inc/functions/licenses.php:123",
+        "Child":  false
+    },
+    {
+        "Key":  "_status",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme/inc/functions/licenses.php:125",
+        "Child":  false
+    },
+    {
+        "Key":  "_tokens_used",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme/inc/functions/licenses.php:139",
+        "Child":  false
+    },
+    {
+        "Key":  "_tokens_limit",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme/inc/functions/licenses.php:140",
+        "Child":  false
+    },
+    {
+        "Key":  "_license_key",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme/inc/functions/licenses.php:165",
+        "Child":  false
+    },
+    {
+        "Key":  "_license_domain",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme/inc/functions/licenses.php:166",
+        "Child":  false
+    },
+    {
+        "Key":  "_license_status",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme/inc/functions/licenses.php:167",
+        "Child":  false
+    },
+    {
+        "Key":  "_plan_type",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme/inc/functions/licenses.php:168",
+        "Child":  false
+    },
+    {
+        "Key":  "_plan_slug",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme/inc/functions/licenses.php:169",
+        "Child":  false
+    },
+    {
+        "Key":  "_tokens_used",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme/inc/functions/licenses.php:170",
+        "Child":  false
+    },
+    {
+        "Key":  "_tokens_limit",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme/inc/functions/licenses.php:171",
+        "Child":  false
+    },
+    {
+        "Key":  "$meta_key",
+        "Literal":  false,
+        "API":  "update_post_meta",
+        "Source":  "az-theme/inc/functions/licenses.php:293",
+        "Child":  false
+    },
+    {
+        "Key":  "_status",
+        "Literal":  true,
+        "API":  "update_post_meta",
+        "Source":  "az-theme/inc/functions/licenses.php:297",
+        "Child":  false
+    },
+    {
+        "Key":  "_menu_item_icon_url",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme/inc/functions/menu-icons.php:15",
+        "Child":  false
+    },
+    {
+        "Key":  "_menu_item_icon_id",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme/inc/functions/menu-icons.php:16",
+        "Child":  false
+    },
+    {
+        "Key":  "_menu_item_icon_width",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme/inc/functions/menu-icons.php:17",
+        "Child":  false
+    },
+    {
+        "Key":  "_menu_item_icon_height",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme/inc/functions/menu-icons.php:18",
+        "Child":  false
+    },
+    {
+        "Key":  "_menu_item_icon_url",
+        "Literal":  true,
+        "API":  "update_post_meta",
+        "Source":  "az-theme/inc/functions/menu-icons.php:65",
+        "Child":  false
+    },
+    {
+        "Key":  "_menu_item_icon_url",
+        "Literal":  true,
+        "API":  "delete_post_meta",
+        "Source":  "az-theme/inc/functions/menu-icons.php:66",
+        "Child":  false
+    },
+    {
+        "Key":  "_menu_item_icon_id",
+        "Literal":  true,
+        "API":  "update_post_meta",
+        "Source":  "az-theme/inc/functions/menu-icons.php:70",
+        "Child":  false
+    },
+    {
+        "Key":  "_menu_item_icon_id",
+        "Literal":  true,
+        "API":  "delete_post_meta",
+        "Source":  "az-theme/inc/functions/menu-icons.php:71",
+        "Child":  false
+    },
+    {
+        "Key":  "_menu_item_icon_width",
+        "Literal":  true,
+        "API":  "update_post_meta",
+        "Source":  "az-theme/inc/functions/menu-icons.php:74",
+        "Child":  false
+    },
+    {
+        "Key":  "_menu_item_icon_height",
+        "Literal":  true,
+        "API":  "update_post_meta",
+        "Source":  "az-theme/inc/functions/menu-icons.php:76",
+        "Child":  false
+    },
+    {
+        "Key":  "_menu_item_icon_url",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme/inc/functions/menu-icons.php:131",
+        "Child":  false
+    },
+    {
+        "Key":  "_menu_item_icon_width",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme/inc/functions/menu-icons.php:133",
+        "Child":  false
+    },
+    {
+        "Key":  "_menu_item_icon_height",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme/inc/functions/menu-icons.php:134",
+        "Child":  false
+    },
+    {
+        "Key":  "_az_ai_price",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme/inc/functions/pricing.php:118",
+        "Child":  false
+    },
+    {
+        "Key":  "_az_ai_period",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme/inc/functions/pricing.php:119",
+        "Child":  false
+    },
+    {
+        "Key":  "_az_ai_featured",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme/inc/functions/pricing.php:120",
+        "Child":  false
+    },
+    {
+        "Key":  "_az_ai_description",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme/inc/functions/pricing.php:121",
+        "Child":  false
+    },
+    {
+        "Key":  "_az_ai_button_text",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme/inc/functions/pricing.php:122",
+        "Child":  false
+    },
+    {
+        "Key":  "_az_ai_button_url",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme/inc/functions/pricing.php:123",
+        "Child":  false
+    },
+    {
+        "Key":  "_az_ai_token_limit",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme/inc/functions/pricing.php:124",
+        "Child":  false
+    },
+    {
+        "Key":  "_az_ai_post_limit",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme/inc/functions/pricing.php:125",
+        "Child":  false
+    },
+    {
+        "Key":  "_az_ai_plan_name_en",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme/inc/functions/pricing.php:129",
+        "Child":  false
+    },
+    {
+        "Key":  "_az_ai_price_vnd",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme/inc/functions/pricing.php:139",
+        "Child":  false
+    },
+    {
+        "Key":  "_az_ai_description_en",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme/inc/functions/pricing.php:151",
+        "Child":  false
+    },
+    {
+        "Key":  "_az_ai_button_text_en",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme/inc/functions/pricing.php:179",
+        "Child":  false
+    },
+    {
+        "Key":  "_az_ai_content_en",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme/inc/functions/pricing.php:189",
+        "Child":  false
+    },
+    {
+        "Key":  "_az_ai_price",
+        "Literal":  true,
+        "API":  "update_post_meta",
+        "Source":  "az-theme/inc/functions/pricing.php:209",
+        "Child":  false
+    },
+    {
+        "Key":  "_az_ai_price_vnd",
+        "Literal":  true,
+        "API":  "update_post_meta",
+        "Source":  "az-theme/inc/functions/pricing.php:213",
+        "Child":  false
+    },
+    {
+        "Key":  "_az_ai_plan_name_en",
+        "Literal":  true,
+        "API":  "update_post_meta",
+        "Source":  "az-theme/inc/functions/pricing.php:217",
+        "Child":  false
+    },
+    {
+        "Key":  "_az_ai_period",
+        "Literal":  true,
+        "API":  "update_post_meta",
+        "Source":  "az-theme/inc/functions/pricing.php:221",
+        "Child":  false
+    },
+    {
+        "Key":  "_az_ai_description",
+        "Literal":  true,
+        "API":  "update_post_meta",
+        "Source":  "az-theme/inc/functions/pricing.php:225",
+        "Child":  false
+    },
+    {
+        "Key":  "_az_ai_token_limit",
+        "Literal":  true,
+        "API":  "update_post_meta",
+        "Source":  "az-theme/inc/functions/pricing.php:229",
+        "Child":  false
+    },
+    {
+        "Key":  "_az_ai_post_limit",
+        "Literal":  true,
+        "API":  "update_post_meta",
+        "Source":  "az-theme/inc/functions/pricing.php:233",
+        "Child":  false
+    },
+    {
+        "Key":  "_az_ai_featured",
+        "Literal":  true,
+        "API":  "update_post_meta",
+        "Source":  "az-theme/inc/functions/pricing.php:237",
+        "Child":  false
+    },
+    {
+        "Key":  "_az_ai_button_text",
+        "Literal":  true,
+        "API":  "update_post_meta",
+        "Source":  "az-theme/inc/functions/pricing.php:240",
+        "Child":  false
+    },
+    {
+        "Key":  "_az_ai_button_text_en",
+        "Literal":  true,
+        "API":  "update_post_meta",
+        "Source":  "az-theme/inc/functions/pricing.php:244",
+        "Child":  false
+    },
+    {
+        "Key":  "_az_ai_description_en",
+        "Literal":  true,
+        "API":  "update_post_meta",
+        "Source":  "az-theme/inc/functions/pricing.php:248",
+        "Child":  false
+    },
+    {
+        "Key":  "_az_ai_content_en",
+        "Literal":  true,
+        "API":  "update_post_meta",
+        "Source":  "az-theme/inc/functions/pricing.php:252",
+        "Child":  false
+    },
+    {
+        "Key":  "_az_ai_button_url",
+        "Literal":  true,
+        "API":  "update_post_meta",
+        "Source":  "az-theme/inc/functions/pricing.php:256",
+        "Child":  false
+    },
+    {
+        "Key":  "_az_ai_author_name",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme/inc/functions/pricing.php:279",
+        "Child":  false
+    },
+    {
+        "Key":  "_az_ai_author_position",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme/inc/functions/pricing.php:280",
+        "Child":  false
+    },
+    {
+        "Key":  "_az_ai_author_position_en",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme/inc/functions/pricing.php:281",
+        "Child":  false
+    },
+    {
+        "Key":  "_az_ai_content_en",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme/inc/functions/pricing.php:282",
+        "Child":  false
+    },
+    {
+        "Key":  "_az_ai_author_name",
+        "Literal":  true,
+        "API":  "update_post_meta",
+        "Source":  "az-theme/inc/functions/pricing.php:318",
+        "Child":  false
+    },
+    {
+        "Key":  "_az_ai_author_position",
+        "Literal":  true,
+        "API":  "update_post_meta",
+        "Source":  "az-theme/inc/functions/pricing.php:322",
+        "Child":  false
+    },
+    {
+        "Key":  "_az_ai_author_position_en",
+        "Literal":  true,
+        "API":  "update_post_meta",
+        "Source":  "az-theme/inc/functions/pricing.php:326",
+        "Child":  false
+    },
+    {
+        "Key":  "_az_ai_content_en",
+        "Literal":  true,
+        "API":  "update_post_meta",
+        "Source":  "az-theme/inc/functions/pricing.php:330",
+        "Child":  false
+    },
+    {
+        "Key":  "az_price_rate",
+        "Literal":  true,
+        "API":  "get_term_meta",
+        "Source":  "az-theme/inc/functions/product-attributes-pricing.php:180",
+        "Child":  false
+    },
+    {
+        "Key":  "az_price_rate",
+        "Literal":  true,
+        "API":  "delete_term_meta",
+        "Source":  "az-theme/inc/functions/product-attributes-pricing.php:202",
+        "Child":  false
+    },
+    {
+        "Key":  "az_price_rate",
+        "Literal":  true,
+        "API":  "update_term_meta",
+        "Source":  "az-theme/inc/functions/product-attributes-pricing.php:207",
+        "Child":  false
+    },
+    {
+        "Key":  "az_price_rate",
+        "Literal":  true,
+        "API":  "get_term_meta",
+        "Source":  "az-theme/inc/functions/product-attributes-pricing.php:258",
+        "Child":  false
+    },
+    {
+        "Key":  "az_price_rate",
+        "Literal":  true,
+        "API":  "get_term_meta",
+        "Source":  "az-theme/inc/functions/product-attributes-pricing.php:321",
+        "Child":  false
+    },
+    {
+        "Key":  "$key",
+        "Literal":  false,
+        "API":  "get_post_meta",
+        "Source":  "az-theme/inc/functions/product-fields.php:39",
+        "Child":  false
+    },
+    {
+        "Key":  "az_technical_specs",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme/inc/functions/product-fields.php:46",
+        "Child":  false
+    },
+    {
+        "Key":  "az_practical_applications",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme/inc/functions/product-fields.php:60",
+        "Child":  false
+    },
+    {
+        "Key":  "$key",
+        "Literal":  false,
+        "API":  "update_post_meta",
+        "Source":  "az-theme/inc/functions/product-fields.php:92",
+        "Child":  false
+    },
+    {
+        "Key":  "$key",
+        "Literal":  false,
+        "API":  "delete_post_meta",
+        "Source":  "az-theme/inc/functions/product-fields.php:92",
+        "Child":  false
+    },
+    {
+        "Key":  "$key",
+        "Literal":  false,
+        "API":  "update_post_meta",
+        "Source":  "az-theme/inc/functions/product-fields.php:98",
+        "Child":  false
+    },
+    {
+        "Key":  "$key",
+        "Literal":  false,
+        "API":  "delete_post_meta",
+        "Source":  "az-theme/inc/functions/product-fields.php:98",
+        "Child":  false
+    },
+    {
+        "Key":  "$key",
+        "Literal":  false,
+        "API":  "update_post_meta",
+        "Source":  "az-theme/inc/functions/product-fields.php:107",
+        "Child":  false
+    },
+    {
+        "Key":  "$key",
+        "Literal":  false,
+        "API":  "delete_post_meta",
+        "Source":  "az-theme/inc/functions/product-fields.php:107",
+        "Child":  false
+    },
+    {
+        "Key":  "_az_product_video_urls",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme/inc/functions/product-videos.php:67",
+        "Child":  false
+    },
+    {
+        "Key":  "video",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme/inc/functions/product-videos.php:70",
+        "Child":  false
+    },
+    {
+        "Key":  "$legacy_key",
+        "Literal":  false,
+        "API":  "get_post_meta",
+        "Source":  "az-theme/inc/functions/product-videos.php:73",
+        "Child":  false
+    },
+    {
+        "Key":  "$single_key",
+        "Literal":  false,
+        "API":  "get_post_meta",
+        "Source":  "az-theme/inc/functions/product-videos.php:82",
+        "Child":  false
+    },
+    {
+        "Key":  "_az_product_video_urls",
+        "Literal":  true,
+        "API":  "delete_post_meta",
+        "Source":  "az-theme/inc/functions/product-videos.php:199",
+        "Child":  false
+    },
+    {
+        "Key":  "_az_product_video_urls",
+        "Literal":  true,
+        "API":  "update_post_meta",
+        "Source":  "az-theme/inc/functions/product-videos.php:203",
+        "Child":  false
+    },
+    {
+        "Key":  "_category_name_en",
+        "Literal":  true,
+        "API":  "get_term_meta",
+        "Source":  "az-theme/inc/functions/term-language.php:16",
+        "Child":  false
+    },
+    {
+        "Key":  "_category_name_en",
+        "Literal":  true,
+        "API":  "update_term_meta",
+        "Source":  "az-theme/inc/functions/term-language.php:53",
+        "Child":  false
+    },
+    {
+        "Key":  "_category_name_en",
+        "Literal":  true,
+        "API":  "delete_term_meta",
+        "Source":  "az-theme/inc/functions/term-language.php:55",
+        "Child":  false
+    },
+    {
+        "Key":  "_menu_item_label_en",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme/inc/functions/theme-setup.php:26",
+        "Child":  false
+    },
+    {
+        "Key":  "$key . \u0027_en\u0027",
+        "Literal":  false,
+        "API":  "get_theme_mod",
+        "Source":  "az-theme/inc/functions/theme-setup.php:184",
+        "Child":  false
+    },
+    {
+        "Key":  "$key",
+        "Literal":  false,
+        "API":  "get_theme_mod",
+        "Source":  "az-theme/inc/functions/theme-setup.php:187",
+        "Child":  false
+    },
+    {
+        "Key":  "_menu_item_label_en",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme/inc/functions/theme-setup.php:401",
+        "Child":  false
+    },
+    {
+        "Key":  "_menu_item_label_en",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme/inc/functions/theme-setup.php:429",
+        "Child":  false
+    },
+    {
+        "Key":  "$option_name",
+        "Literal":  false,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/functions/woocommerce.php:747",
+        "Child":  false
+    },
+    {
+        "Key":  "$option_name",
+        "Literal":  false,
+        "API":  "update_option",
+        "Source":  "az-theme/inc/functions/woocommerce.php:811",
+        "Child":  false
+    },
+    {
+        "Key":  "az_theme_options",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/helpers/options.php:3",
+        "Child":  false
+    },
+    {
+        "Key":  "az_contact_company",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/helpers/options.php:28",
+        "Child":  false
+    },
+    {
+        "Key":  "\u0027email\u0027 === $type ? ( \u0027email\u0027 === $legacy_key ? \u0027az_contact_email\u0027 : ( \u0027sales_email\u0027 === $legacy_key ? \u0027az_contact_sales_email\u0027 : \u0027az_contact_support_email\u0027 ) ) : \u0027az_contact_phone\u0027",
+        "Literal":  false,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/helpers/options.php:29",
+        "Child":  false
+    },
+    {
+        "Key":  "az_contact_phone",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/helpers/options.php:30",
+        "Child":  false
+    },
+    {
+        "Key":  "az_contact_email",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/helpers/options.php:31",
+        "Child":  false
+    },
+    {
+        "Key":  "admin_email",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/helpers/options.php:31",
+        "Child":  false
+    },
+    {
+        "Key":  "$legacy[ $field ]",
+        "Literal":  false,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/helpers/options.php:35",
+        "Child":  false
+    },
+    {
+        "Key":  "$legacy",
+        "Literal":  false,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/helpers/options.php:44",
+        "Child":  false
+    },
+    {
+        "Key":  "custom_logo",
+        "Literal":  true,
+        "API":  "get_theme_mod",
+        "Source":  "az-theme/inc/helpers/options.php:45",
+        "Child":  false
+    },
+    {
+        "Key":  "page_on_front",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/helpers/options.php:64",
+        "Child":  false
+    },
+    {
+        "Key":  "$key",
+        "Literal":  false,
+        "API":  "add_post_meta",
+        "Source":  "az-theme/inc/modules/content-duplicate.php:56",
+        "Child":  false
+    },
+    {
+        "Key":  "self::OPTION",
+        "Literal":  false,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/modules/analytics/class-analytics.php:9",
+        "Child":  false
+    },
+    {
+        "Key":  "self::OPTION",
+        "Literal":  false,
+        "API":  "update_option",
+        "Source":  "az-theme/inc/modules/analytics/class-analytics.php:10",
+        "Child":  false
+    },
+    {
+        "Key":  "AZ_Analytics::OPTION",
+        "Literal":  false,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/modules/analytics/class-analytics.php:16",
+        "Child":  false
+    },
+    {
+        "Key":  "az_theme_options",
+        "Literal":  true,
+        "API":  "update_option",
+        "Source":  "az-theme/inc/modules/flatsome-compat/migrations/class-settings-importer.php:54",
+        "Child":  false
+    },
+    {
+        "Key":  "az_theme_options",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/modules/flatsome-compat/migrations/class-settings-importer.php:55",
+        "Child":  false
+    },
+    {
+        "Key":  "az_theme_options",
+        "Literal":  true,
+        "API":  "update_option",
+        "Source":  "az-theme/inc/modules/homepage/admin.php:69",
+        "Child":  false
+    },
+    {
+        "Key":  "az_theme_options",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/modules/homepage/module.php:21",
+        "Child":  false
+    },
+    {
+        "Key":  "\u0027az_home_\u0027 . $id . \u0027_enabled\u0027",
+        "Literal":  false,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/modules/homepage/module.php:49",
+        "Child":  false
+    },
+    {
+        "Key":  "\u0027az_home_\u0027 . $id . \u0027_title\u0027",
+        "Literal":  false,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/modules/homepage/module.php:50",
+        "Child":  false
+    },
+    {
+        "Key":  "\u0027az_home_\u0027 . $id . \u0027_count\u0027",
+        "Literal":  false,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/modules/homepage/module.php:51",
+        "Child":  false
+    },
+    {
+        "Key":  "az_home_products_per_category",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/modules/homepage/module.php:55",
+        "Child":  false
+    },
+    {
+        "Key":  "az_home_featured_category_ids",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/modules/homepage/templates/featured-categories.php:3",
+        "Child":  false
+    },
+    {
+        "Key":  "page_for_posts",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/modules/homepage/templates/news.php:26",
+        "Child":  false
+    },
+    {
+        "Key":  "az9s_leads_db_version",
+        "Literal":  true,
+        "API":  "update_option",
+        "Source":  "az-theme/inc/modules/leads/module.php:41",
+        "Child":  false
+    },
+    {
+        "Key":  "az9s_lead_notification_emails",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/modules/leads/module.php:42",
+        "Child":  false
+    },
+    {
+        "Key":  "az9s_lead_notification_emails",
+        "Literal":  true,
+        "API":  "update_option",
+        "Source":  "az-theme/inc/modules/leads/module.php:43",
+        "Child":  false
+    },
+    {
+        "Key":  "admin_email",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/modules/leads/module.php:43",
+        "Child":  false
+    },
+    {
+        "Key":  "az9s_last_lead_mail_status",
+        "Literal":  true,
+        "API":  "delete_option",
+        "Source":  "az-theme/inc/modules/leads/module.php:48",
+        "Child":  false
+    },
+    {
+        "Key":  "az9s_last_smtp_test_status",
+        "Literal":  true,
+        "API":  "delete_option",
+        "Source":  "az-theme/inc/modules/leads/module.php:49",
+        "Child":  false
+    },
+    {
+        "Key":  "az9s_leads_db_version",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/modules/leads/module.php:55",
+        "Child":  false
+    },
+    {
+        "Key":  "az9s_leads_db_version",
+        "Literal":  true,
+        "API":  "update_option",
+        "Source":  "az-theme/inc/modules/leads/module.php:59",
+        "Child":  false
+    },
+    {
+        "Key":  "az9s_lead_notification_emails",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/modules/leads/module.php:66",
+        "Child":  false
+    },
+    {
+        "Key":  "admin_email",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/modules/leads/module.php:71",
+        "Child":  false
+    },
+    {
+        "Key":  "admin_email",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/modules/leads/module.php:85",
+        "Child":  false
+    },
+    {
+        "Key":  "az_smtp_settings",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/modules/leads/module.php:89",
+        "Child":  false
+    },
+    {
+        "Key":  "az9s_lead_forms",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/modules/leads/inc/lead-forms.php:10",
+        "Child":  false
+    },
+    {
+        "Key":  "az9s_lead_forms",
+        "Literal":  true,
+        "API":  "update_option",
+        "Source":  "az-theme/inc/modules/leads/inc/lead-forms.php:122",
+        "Child":  false
+    },
+    {
+        "Key":  "az9s_lead_forms",
+        "Literal":  true,
+        "API":  "update_option",
+        "Source":  "az-theme/inc/modules/leads/inc/lead-forms.php:144",
+        "Child":  false
+    },
+    {
+        "Key":  "az9s_last_lead_mail_status",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/modules/leads/inc/lead-forms.php:1054",
+        "Child":  false
+    },
+    {
+        "Key":  "admin_email",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/modules/leads/inc/leads-manager.php:61",
+        "Child":  false
+    },
+    {
+        "Key":  "az9s_last_lead_mail_status",
+        "Literal":  true,
+        "API":  "update_option",
+        "Source":  "az-theme/inc/modules/leads/inc/leads-manager.php:64",
+        "Child":  false
+    },
+    {
+        "Key":  "az_smtp_settings",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/modules/leads/inc/leads-manager.php:105",
+        "Child":  false
+    },
+    {
+        "Key":  "az9s_last_lead_mail_status",
+        "Literal":  true,
+        "API":  "update_option",
+        "Source":  "az-theme/inc/modules/leads/inc/leads-manager.php:128",
+        "Child":  false
+    },
+    {
+        "Key":  "az9s_last_lead_mail_status",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/modules/leads/inc/leads-manager.php:334",
+        "Child":  false
+    },
+    {
+        "Key":  "az9s_lead_notification_emails",
+        "Literal":  true,
+        "API":  "update_option",
+        "Source":  "az-theme/inc/modules/leads/inc/leads-manager.php:691",
+        "Child":  false
+    },
+    {
+        "Key":  "az_smtp_settings",
+        "Literal":  true,
+        "API":  "update_option",
+        "Source":  "az-theme/inc/modules/leads/inc/leads-manager.php:694",
+        "Child":  false
+    },
+    {
+        "Key":  "admin_email",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/modules/leads/inc/leads-manager.php:705",
+        "Child":  false
+    },
+    {
+        "Key":  "az9s_last_smtp_test_status",
+        "Literal":  true,
+        "API":  "update_option",
+        "Source":  "az-theme/inc/modules/leads/inc/leads-manager.php:731",
+        "Child":  false
+    },
+    {
+        "Key":  "az9s_lead_notification_emails",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/modules/leads/inc/leads-manager.php:746",
+        "Child":  false
+    },
+    {
+        "Key":  "admin_email",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/modules/leads/inc/leads-manager.php:746",
+        "Child":  false
+    },
+    {
+        "Key":  "az9s_last_smtp_test_status",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/modules/leads/inc/leads-manager.php:747",
+        "Child":  false
+    },
+    {
+        "Key":  "admin_email",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/modules/leads/inc/leads-manager.php:812",
+        "Child":  false
+    },
+    {
+        "Key":  "admin_email",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/modules/leads/inc/leads-manager.php:827",
+        "Child":  false
+    },
+    {
+        "Key":  "$field[\u0027legacy\u0027]",
+        "Literal":  false,
+        "API":  "get_option",
+        "Source":  "az-theme/inc/options/class-renderer.php:6",
+        "Child":  false
+    },
+    {
+        "Key":  "$field[\u0027legacy_theme_mod\u0027]",
+        "Literal":  false,
+        "API":  "get_theme_mod",
+        "Source":  "az-theme/inc/options/class-renderer.php:7",
+        "Child":  false
+    },
+    {
+        "Key":  "cp_intro_text",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/template-parts/sidebar-intro.php:16",
+        "Child":  false
+    },
+    {
+        "Key":  "cp_intro_gallery",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/template-parts/sidebar-intro.php:21",
+        "Child":  false
+    },
+    {
+        "Key":  "cp_badge_role",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/template-parts/sidebar-intro.php:83",
+        "Child":  false
+    },
+    {
+        "Key":  "cp_badge_city",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/template-parts/sidebar-intro.php:89",
+        "Child":  false
+    },
+    {
+        "Key":  "cp_badge_hometown",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/template-parts/sidebar-intro.php:95",
+        "Child":  false
+    },
+    {
+        "Key":  "cp_intro_link",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme/template-parts/sidebar-intro.php:117",
+        "Child":  false
+    },
+    {
+        "Key":  "az_child_parent_mods_migrated",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme-child/functions.php:30",
+        "Child":  true
+    },
+    {
+        "Key":  "theme_mods_az-theme",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme-child/functions.php:32",
+        "Child":  true
+    },
+    {
+        "Key":  "$name",
+        "Literal":  false,
+        "API":  "set_theme_mod",
+        "Source":  "az-theme-child/functions.php:39",
+        "Child":  true
+    },
+    {
+        "Key":  "az_child_parent_mods_migrated",
+        "Literal":  true,
+        "API":  "update_option",
+        "Source":  "az-theme-child/functions.php:44",
+        "Child":  true
+    },
+    {
+        "Key":  "show_welcome_panel",
+        "Literal":  true,
+        "API":  "get_user_meta",
+        "Source":  "az-theme-child/functions.php:147",
+        "Child":  true
+    },
+    {
+        "Key":  "show_welcome_panel",
+        "Literal":  true,
+        "API":  "update_user_meta",
+        "Source":  "az-theme-child/functions.php:148",
+        "Child":  true
+    },
+    {
+        "Key":  "az_manufacturer",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme-child/single-product.php:50",
+        "Child":  true
+    },
+    {
+        "Key":  "az_origin",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme-child/single-product.php:51",
+        "Child":  true
+    },
+    {
+        "Key":  "az_warranty",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme-child/single-product.php:52",
+        "Child":  true
+    },
+    {
+        "Key":  "az_shopee_url",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme-child/single-product.php:53",
+        "Child":  true
+    },
+    {
+        "Key":  "az_sendo_url",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme-child/single-product.php:54",
+        "Child":  true
+    },
+    {
+        "Key":  "az_lazada_url",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme-child/single-product.php:55",
+        "Child":  true
+    },
+    {
+        "Key":  "az_technical_specs",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme-child/single-product.php:56",
+        "Child":  true
+    },
+    {
+        "Key":  "az_practical_applications",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme-child/single-product.php:57",
+        "Child":  true
+    },
+    {
+        "Key":  "_wp_attachment_image_alt",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme-child/single-product.php:117",
+        "Child":  true
+    },
+    {
+        "Key":  "az_product_contact_title",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme-child/single-product.php:156",
+        "Child":  true
+    },
+    {
+        "Key":  "az_product_contact_desc",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme-child/single-product.php:157",
+        "Child":  true
+    },
+    {
+        "Key":  "az_product_contact_name",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme-child/single-product.php:158",
+        "Child":  true
+    },
+    {
+        "Key":  "az_product_contact_phone",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme-child/single-product.php:159",
+        "Child":  true
+    },
+    {
+        "Key":  "az_product_contact_zalo",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme-child/single-product.php:160",
+        "Child":  true
+    },
+    {
+        "Key":  "az_contact_phone",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme-child/single-product.php:163",
+        "Child":  true
+    },
+    {
+        "Key":  "az_contact_phone",
+        "Literal":  true,
+        "API":  "get_theme_mod",
+        "Source":  "az-theme-child/single-product.php:163",
+        "Child":  true
+    },
+    {
+        "Key":  "az_contact_zalo_url",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme-child/single-product.php:166",
+        "Child":  true
+    },
+    {
+        "Key":  "az_contact_zalo_url",
+        "Literal":  true,
+        "API":  "get_theme_mod",
+        "Source":  "az-theme-child/single-product.php:166",
+        "Child":  true
+    },
+    {
+        "Key":  "$legacy",
+        "Literal":  false,
+        "API":  "get_option",
+        "Source":  "az-theme-child/inc/footer-storefront.php:50",
+        "Child":  true
+    },
+    {
+        "Key":  "$key",
+        "Literal":  false,
+        "API":  "get_term_meta",
+        "Source":  "az-theme-child/inc/header-mega-menu.php:32",
+        "Child":  true
+    },
+    {
+        "Key":  "page_on_front",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme-child/inc/home-partners.php:6",
+        "Child":  true
+    },
+    {
+        "Key":  "_az_home_page_data",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme-child/inc/home-partners.php:7",
+        "Child":  true
+    },
+    {
+        "Key":  "_az_home_page_data",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme-child/inc/home-partners.php:89",
+        "Child":  true
+    },
+    {
+        "Key":  "_az_home_page_data",
+        "Literal":  true,
+        "API":  "update_post_meta",
+        "Source":  "az-theme-child/inc/home-partners.php:96",
+        "Child":  true
+    },
+    {
+        "Key":  "$key",
+        "Literal":  false,
+        "API":  "get_post_meta",
+        "Source":  "az-theme-child/inc/product-admin.php:47",
+        "Child":  true
+    },
+    {
+        "Key":  "$key",
+        "Literal":  false,
+        "API":  "get_post_meta",
+        "Source":  "az-theme-child/inc/product-admin.php:56",
+        "Child":  true
+    },
+    {
+        "Key":  "permalink_structure",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme-child/inc/product-permalinks.php:6",
+        "Child":  true
+    },
+    {
+        "Key":  "default_product_cat",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme-child/inc/product-permalinks.php:48",
+        "Child":  true
+    },
+    {
+        "Key":  "az_child_product_rewrite_version",
+        "Literal":  true,
+        "API":  "delete_option",
+        "Source":  "az-theme-child/inc/product-permalinks.php:134",
+        "Child":  true
+    },
+    {
+        "Key":  "az_child_product_rewrite_version",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme-child/inc/product-permalinks.php:139",
+        "Child":  true
+    },
+    {
+        "Key":  "az_child_product_rewrite_version",
+        "Literal":  true,
+        "API":  "update_option",
+        "Source":  "az-theme-child/inc/product-permalinks.php:142",
+        "Child":  true
+    },
+    {
+        "Key":  "page_on_front",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme-child/inc/soviban-home.php:44",
+        "Child":  true
+    },
+    {
+        "Key":  "_az_home_page_data",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme-child/inc/soviban-home.php:46",
+        "Child":  true
+    },
+    {
+        "Key":  "_az_home_page_data",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme-child/inc/soviban-home.php:135",
+        "Child":  true
+    },
+    {
+        "Key":  "_az_home_page_data",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme-child/inc/soviban-home.php:312",
+        "Child":  true
+    },
+    {
+        "Key":  "_az_home_page_data",
+        "Literal":  true,
+        "API":  "update_post_meta",
+        "Source":  "az-theme-child/inc/soviban-home.php:348",
+        "Child":  true
+    },
+    {
+        "Key":  "page_on_front",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme-child/inc/steel-storefront.php:37",
+        "Child":  true
+    },
+    {
+        "Key":  "page_on_front",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme-child/inc/modules/homepage/page-fields.php:63",
+        "Child":  true
+    },
+    {
+        "Key":  "_az_home_page_data",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme-child/inc/modules/homepage/page-fields.php:64",
+        "Child":  true
+    },
+    {
+        "Key":  "page_on_front",
+        "Literal":  true,
+        "API":  "get_option",
+        "Source":  "az-theme-child/inc/modules/homepage/page-fields.php:78",
+        "Child":  true
+    },
+    {
+        "Key":  "_az_home_page_data",
+        "Literal":  true,
+        "API":  "get_post_meta",
+        "Source":  "az-theme-child/inc/modules/homepage/page-fields.php:278",
+        "Child":  true
+    },
+    {
+        "Key":  "_az_home_page_data",
+        "Literal":  true,
+        "API":  "update_post_meta",
+        "Source":  "az-theme-child/inc/modules/homepage/page-fields.php:283",
+        "Child":  true
+    }
+]

@@ -1,0 +1,974 @@
+FILE az-theme/docs/tools/audit-source.cjs
+NOTE: Source review only; no test execution in this audit.
+const fs = require('node:fs');
+const path = require('node:path');
+const crypto = require('node:crypto');
+    if (['docs', '.git', 'node_modules'].includes(entry.name)) return [];
+    ext: path.extname(file), text: /\.(php|css|js|json|po)$/.test(file) ? data.toString('utf8') : null };
+    if ('([{'.includes(c)) depth++;
+    if (')]}'.includes(c)) depth--;
+const calls = [], includes = [], declarations = [], prefixes = {}, schema = [];
+    for (const m of text.matchAll(/\b(require_once|require|include_once|include)\b\s*([^;\r\n]+)[;]?/g)) includes.push({ file: file.path, line: lineAt(m.index), kind: m[1], expression: m[2].trim() });
+const report = { scope: 'Theme source only, docs excluded. Static candidates, not runtime execution or PHP lint. Comments/embedded JS may appear; review context at cited lines.', files: files.map(({text, ...f}) => f), counts, calls, includes, declarations, duplicateDeclarations, prefixes, schema };
+fs.mkdirSync(out, { recursive: true });
+fs.writeFileSync(path.join(out, 'source-inventory.json'), JSON.stringify(report, null, 2) + '\n');
+  let role = f.path.startsWith('woocommerce/') ? 'WooCommerce override' : f.path.startsWith('template-parts/') ? 'Template part' : f.ext === '.php' && !f.path.includes('/') && f.path !== 'functions.php' ? 'Template / template helper' : f.ext.slice(1);
+inventory += '\n## Includes / requires (source candidates)\n\n| Location | Kind | Expression |\n| --- | --- | --- |\n';
+for (const i of includes) inventory += `| ${ref(i)} | ${i.kind} | ${esc(i.expression)} |\n`;
+inventory += '\n## PHP declarations (includes embedded-language candidates)\n\n| Name | Kind | Location |\n| --- | --- | --- |\n';
+inventory += '\n## Identifier prefixes (all textual occurrences)\n\nIncludes WordPress, WooCommerce, constants, strings and comments; not all are theme-owned. CSS classes/variables are listed separately below.\n\n';
+fs.writeFileSync(path.join(out, 'FILES-AND-PREFIXES.md'), inventory);
+let hookDoc = '# API callsites (generated)\n\nEvery matched source call is listed, including dynamic arguments. Counts are static candidates; comments and nested embedded code require context review. Full arguments are in source-inventory.json.\n';
+fs.writeFileSync(path.join(out, 'CALLSITES.md'), hookDoc);
+for (const c of calls.filter(c => [...optionApis, ...modApis].includes(c.api))) {
+  const store = modApis.includes(c.api) ? 'theme_mod' : 'option';
+  const owned = /^(az_|az_)/.test(row.key);
+options += '\nDynamic families include advisor 1..4, homepage sections/banner/brands, bilingual _en variants and contact schema writes. Use full expressions/callsites before designing migration. Default values and register_setting sanitizer arguments remain verbatim in audit/source-inventory.json; heterogeneous legacy keys must not receive invented uniform defaults.\n\n## Planned nested storage\n\n`az_theme_options`: general, branding, colors, typography, layout, header, footer, blog, homepage, woocommerce, modules, performance, custom_code. State: Planned migration only. Future reads via az_get_option(path, default); distinguish absent keys from explicit false/0/empty values. Do not copy or delete legacy data without approved mapping and rollback.\n';
+fs.writeFileSync(path.join(root, 'docs/OPTIONS-SCHEMA.md'), options.replaceAll('](../../', '](../'));
+console.log(JSON.stringify({counts, files: files.length, callsites: calls.length, includes: includes.length, keys: keys.size, dynamic: dynamic.length, duplicateDeclarations}, null, 2));
+FILE az-theme/docs/tools/check-homepage.cjs
+NOTE: Source review only; no test execution in this audit.
+const fs = require('node:fs');
+const path = require('node:path');
+const assert = require('node:assert/strict');
+const { execFileSync } = require('node:child_process');
+assert.equal(ids.length, 9);
+assert.equal(new Set(ids).size, 9);
+for (const id of ids) assert(fs.existsSync(path.join(root, 'inc/modules/homepage/templates', id + '.php')), id);
+        assert(m[1].startsWith('az_'));
+assert.equal(names.length, new Set(names).size);
+assert(!/!important|(?:^|[^\w-])body\b/.test(css));
+if (process.argv[2]) {
+    const old = execFileSync('git', ['show', process.argv[2] + ':' + relative], { cwd: root, encoding: 'utf8' }).replace(/\r\n/g, '\n');
+    assert(old.includes('<script>'), 'Ref must be the pre-STEP-16 source');
+    assert.equal(read('inc/modules/homepage/homepage.js').trim(), old.split('<script>')[1].split('</script>')[0].trim());
+    assert.equal(current.slice(current.indexOf(start), current.indexOf(end)), old.slice(old.indexOf(start), old.indexOf(end)));
+FILE az-theme/tests/auth-rate-limit.php
+NOTE: Source review only; no test execution in this audit.
+function check( $ok, $label ) { if ( ! $ok ) { throw new RuntimeException( $label ); } echo "PASS $label\n"; }
+require dirname( __DIR__ ) . '/inc/core/auth-rate-limit.php';
+check( az_auth_rate_allowed( 'test', 'one', 2, 600 ), 'first request allowed' );
+check( az_auth_rate_allowed( 'test', 'one', 2, 600 ), 'second request allowed' );
+check( ! az_auth_rate_allowed( 'test', 'one', 2, 600 ), 'over limit denied' );
+check( az_auth_rate_allowed( 'test', 'two', 2, 600 ), 'identities isolated' );
+check( az_auth_rate_allowed( 'test', 'one', 2, 600 ), 'expired limit resets' );
+check( '127.0.0.1' === az_auth_client_identity(), 'untrusted proxy header ignored' );
+FILE az-theme/tests/back-to-top.cjs
+NOTE: Source review only; no test execution in this audit.
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const vm = require('node:vm');
+const path = require('node:path');
+function check(condition, label) { assert.ok(condition, label); checks++; console.log(`PASS ${label}`); }
+check(!f.classes.has('is-visible'), 'button is hidden at top of page');
+check(f.classes.has('is-enhanced'), 'script activates conditional visibility only after initialization');
+check(f.classes.has('is-visible'), 'button appears when scrolling down');
+check(f.events.scroll.options.passive, 'scroll listener is passive');
+check(f.window.destination.top === 0 && f.window.destination.behavior === 'smooth', 'click smoothly scrolls to top');
+check(prevented, 'enhanced click replaces native anchor jump with smooth scrolling');
+check(!f.classes.has('is-visible'), 'button hides again at top');
+check(reduced.window.destination.behavior === 'auto', 'reduced-motion preference skips animated scrolling');
+check(!deferred.events.scroll, 'initialization waits for DOM readiness');
+check(!deferred.classes.has('is-enhanced'), 'delayed script does not apply hidden styling to native link');
+check(!!deferred.events.scroll && !!deferred.clicks.click, 'DOMContentLoaded initializes scrolling');
+check(!fixture({ present: false }).events.scroll, 'disabled button attaches no scroll listener');
+check(restored.classes.has('is-visible'), 'initializes as visible on a restored scrolled page');
+check(!restored.classes.has('is-visible'), 'pageshow refreshes visibility after browser scroll restoration');
+check(short.classes.has('is-visible'), 'button appears at footer even when page scroll range is below 360px');
+check(!short.classes.has('is-visible'), 'resize recalculates threshold for changed page height');
+check(fallback.classes.has('is-visible'), 'scrolling element offset works when scrollY is unavailable');
+FILE az-theme/tests/back-to-top.php
+NOTE: Source review only; no test execution in this audit.
+require ABSPATH . 'wp-includes/class-wp-dependency.php';
+require ABSPATH . 'wp-includes/class-wp-dependencies.php';
+function check( $ok, $message ) {
+require dirname( __DIR__ ) . '/inc/helpers/options.php';
+require dirname( __DIR__ ) . '/inc/options/class-renderer.php';
+require dirname( __DIR__ ) . '/inc/options/class-sanitizer.php';
+require dirname( __DIR__ ) . '/inc/core/class-site-effects.php';
+$fields = array_column( require dirname( __DIR__ ) . '/inc/admin/sections/footer.php', null, 'id' );
+check( '' === output( $render ), 'new installs do not render a disabled button' );
+check( ! $scripts && ! $styles, 'disabled effects do not load CSS or a script' );
+check( false !== strpos( output( $render ), 'az-back-to-top--right' ), 'old General setting keeps its button on the right' );
+check( false !== strpos( output( $admin ), 'checked="checked"' ), 'Footer switch reflects the old saved General setting' );
+check( '' === output( $render ), 'explicit Footer off overrides old General on' );
+check( false === strpos( output( $admin ), 'checked="checked"' ), 'admin switch also honors explicit Footer off' );
+check( ! $scripts, 'Footer off prevents back-to-top script loading' );
+check( 1 === count( $scripts ) && 'az-site-effects' === $scripts[0][0], 'preloader still loads shared script with back-to-top off' );
+check( ! $styles, 'preloader alone does not load back-to-top CSS' );
+check( false !== strpos( $html, 'az-back-to-top--left' ), 'Footer on overrides General off and renders the chosen left position' );
+check( 1 === substr_count( $html, 'data-az-back-to-top' ) && false !== strpos( $html, 'aria-label="Lên đầu trang"' ), 'renders one accessible button' );
+check( false !== strpos( $html, 'href="#page"' ) && false !== strpos( $html, 'stroke="currentColor"' ), 'native top link and intrinsic SVG work before JavaScript initializes' );
+check( 1 === count( $scripts ) && substr( hash_file( 'sha256', dirname( __DIR__ ) . '/js/az-site-effects.js' ), 0, 12 ) === $scripts[0][3] && true === $scripts[0][4], 'enabled button enqueues script with content hash in footer' );
+check( 1 === count( $styles ) && '/theme/css/back-to-top.css' === $styles[0][1] && array() === $styles[0][2], 'button loads independent component stylesheet' );
+check( substr( hash_file( 'sha256', dirname( __DIR__ ) . '/css/back-to-top.css' ), 0, 12 ) === $styles[0][3], 'component CSS version changes with content, not deployment timestamps' );
+require dirname( __DIR__ ) . '/inc/core/class-performance.php';
+check( false === $style_registry->registered['az-ai-theme-style']->src && in_array( 'az-back-to-top', $style_registry->to_do, true ), 'Performance can disable parent CSS without disabling button styling' );
+check( false !== strpos( output( $render ), 'az-back-to-top--right' ), 'right position renders correctly' );
+check( false !== strpos( output( $render ), 'az-back-to-top--right' ) && false === strpos( output( $render ), '<script>' ), 'invalid saved position safely falls back to right' );
+check( 'right' === AZ_Options_Sanitizer::sanitize( 'invalid', 'select', $position ), 'save rejects unknown positions' );
+check( 'left' === AZ_Options_Sanitizer::sanitize( 'left', 'select', $position ), 'save accepts left position' );
+check( '' === output( $render ), 'Reset Footer disables button even when legacy data exists' );
+check( false !== strpos( $html, '<option value="left" selected="selected"' ), 'Footer dropdown reflects saved left position' );
+$general = array_column( require dirname( __DIR__ ) . '/inc/admin/sections/general.php', null, 'id' );
+check( ! isset( $general['back_to_top'] ), 'Footer is the single control owner' );
+check( false === strpos( $child_footer, 'az-steel-backtop' ) && false !== strpos( $child_footer, 'wp_footer();' ), 'child footer uses shared hook without its duplicate arrow' );
+check( isset( $hooks['wp_footer'][5] ), 'button rendering is hooked into parent and child footers' );
+FILE az-theme/tests/blog-image-description.php
+NOTE: Source review only; no test execution in this audit.
+function check( $ok, $label ) { if ( ! $ok ) { throw new RuntimeException( $label ); } echo "PASS $label\n"; }
+require dirname( __DIR__ ) . '/inc/core/blog-image-description.php';
+az_blog_image_description( 1, $image, false ); check( ! $writes, 'disabled by default' );
+check( $writes === array( 'alt' => 'Bài viết thử', 'description' => 'Bài viết thử' ), 'fills empty ALT and description' );
+az_blog_image_description( 1, $image, false ); check( ! $writes, 'preserves custom descriptions' );
+$alt = ''; $image->post_content = ''; az_blog_image_description( 1, $image, true ); check( isset( $writes['alt'], $writes['description'] ), 'empty descriptions filled when existing attachment is saved' );
+$image->post_parent = 0; az_blog_image_description( 1, $image, false ); check( ! $writes, 'unattached uploads excluded' );
+$image->post_parent = 2; $parent->post_status = 'auto-draft'; az_blog_image_description( 1, $image, false ); check( ! $writes, 'auto-draft placeholder title excluded' );
+$core = dirname( __DIR__, 4 ) . '/wp-includes/html-api/';
+require_once dirname( __DIR__, 4 ) . '/wp-includes/utf8.php';
+foreach ( array( 'class-wp-html-attribute-token.php', 'class-wp-html-span.php', 'class-wp-html-text-replacement.php', 'class-wp-html-decoder.php', 'class-wp-html-tag-processor.php' ) as $file ) { require_once $core . $file; }
+check( false !== strpos( $result, 'alt="Bài viết thử"' ) && false !== strpos( $result, 'title="Bài viết thử"' ), 'existing content images get ALT and tooltip' );
+check( false !== strpos( $result, 'alt="Custom"' ), 'existing content ALT preserved' );
+check( false !== strpos( $result, '<img role="presentation" src="decorative.jpg">' ), 'decorative images untouched' );
+check( '<img src="old.jpg">' === az_blog_content_image_descriptions( '<img src="old.jpg">' ), 'disabled leaves frontend unchanged' );
+check( false !== strpos( az_blog_insert_image_title( '<img src="new.jpg">' ), 'title="Bài viết thử"' ), 'Classic insert HTML gets title immediately' );
+check( false !== strpos( $saved['post_content'], 'title="Bài viết thử"' ), 'saving persists missing image titles' );
+check( false !== strpos( $saved['post_content'], 'title="Manual"' ), 'saving preserves manual titles' );
+check( $data === az_blog_save_image_titles( $data, array() ), 'Gutenberg saved markup remains byte-identical' );
+FILE az-theme/tests/branding-seo.php
+NOTE: Source review only; no test execution in this audit.
+function check( $ok, $label ) { if ( ! $ok ) { fwrite( STDERR, "FAIL $label\n" ); exit( 1 ); } }
+function post_password_required() { return false; }
+if ( $with_child ) { require dirname( __DIR__, 2 ) . '/az-theme-child/inc/branding-seo.php'; }
+require dirname( __DIR__ ) . '/inc/helpers/options.php';
+require dirname( __DIR__ ) . '/inc/core/branding-seo.php';
+require dirname( __DIR__ ) . '/inc/core/shared-banner.php';
+require dirname( __DIR__ ) . '/inc/options/class-sanitizer.php';
+$fields = require dirname( __DIR__ ) . '/inc/admin/sections/branding.php';
+check( count( $ids ) === count( array_unique( $ids ) ), 'Unique Branding fields' );
+check( 'textarea' === $field['type'], 'Parent owns Meta description control' );
+check( 'New description' === AZ_Options_Sanitizer::sanitize( '<b>New description</b>', 'textarea', $field ), 'Parent sanitizer' );
+    if ( $GLOBALS['with_child'] ) { require dirname( __DIR__, 2 ) . '/az-theme-child/template-parts/home-storefront.php'; }
+    check( 1 === preg_match_all( '/<h1\b/i', $html ), 'Exactly one H1 with homepage banner/template' );
+    check( false !== strpos( $html, '>' . esc_html( $case[2] ) . '</h1>' ), 'H1 custom/site title fallback' );
+    check( 1 === substr_count( $head, 'name="description"' ), 'One description tag from theme or plugin' );
+    check( false !== strpos( $head, esc_attr( $case[3] ) ), 'Description custom/tagline fallback and escaping' );
+    check( $case[3] === az_filter_home_meta_description( 'Plugin auto description' ), 'SEO plugin filter' );
+check( 'Line 1 Line 2 & more' === az_get_home_meta_description(), 'Normalize whitespace/entities' );
+check( $tagline === az_get_home_meta_description(), 'Invalid value falls back' );
+check( '' === render_head(), 'Empty description and tagline omit empty meta' );
+check( 'Page SEO' === az_filter_home_meta_description( 'Page SEO' ), 'Unrelated page SEO preserved' );
+check( 'plain' !== $mode || '' === render_head(), 'Theme does not emit homepage meta elsewhere' );
+check( 1 === preg_match_all( '/<h1\b/i', render_home() ), 'Inner banner/template keeps one H1' );
+check( $with_child === az_home_meta_description_context(), 'Child extends context without parent dependency' );
+check( 'Admin SEO' === az_filter_home_meta_description( 'Admin SEO' ), 'Admin context untouched' );
+FILE az-theme/tests/child-theme-installer.php
+NOTE: Source review only; no test execution in this audit.
+require ABSPATH . 'wp-includes/class-wp-error.php';
+require ABSPATH . 'wp-admin/includes/class-wp-filesystem-base.php';
+require ABSPATH . 'wp-admin/includes/class-wp-filesystem-direct.php';
+$state = array( 'stylesheet' => 'az-theme', 'template' => 'az-theme', 'admin' => false, 'file_mods' => true, 'multisite' => false, 'super_admin' => false, 'capabilities' => true, 'fail_write' => '', 'fail_connect' => false, 'fail_mkdir' => false, 'options' => array(), 'css' => array(), 'transients' => array(), 'hooks' => array(), 'writes' => array(), 'css_error' => false );
+    public function mkdir( $path, $mode = false, $owner = false, $group = false ) {
+        return ! $GLOBALS['state']['fail_mkdir'] && parent::mkdir( $path, $mode, $owner, $group );
+function check( $condition, $message ) {
+mkdir( $source, 0755, true );
+require dirname( __DIR__ ) . '/inc/admin/class-child-theme-installer.php';
+    check( count( $state['hooks'] ) === 1 && 'after_switch_theme' === $state['hooks'][0][0], 'activation hook registered on public requests without admin UI hooks' );
+    check( get_transient( AZ_Child_Theme_Installer::NOTICE_KEY ) === 'created', 'parent activation automatically creates child even when next request is anonymous' );
+    check( AZ_Child_Theme_Installer::child_theme_exists(), 'generated child declares Template: az-theme' );
+    check( $state['writes'] === array( 'functions.php', 'README.md', 'style.css' ), 'all starter files written, stylesheet published last' );
+    check( get_stylesheet() === 'az-theme', 'creating child leaves parent active until child activation' );
+    file_put_contents( $child . '/functions.php', '<?php /* website-specific code */' );
+    file_put_contents( $child . '/custom.php', 'keep this layout' );
+    check( $installer->install_child_theme() === 'exists' && hash_file( 'sha256', $child . '/functions.php' ) === $hash && file_get_contents( $child . '/custom.php' ) === 'keep this layout', 'repeat activation preserves every existing child file' );
+    check( $installer->install_child_theme()->get_error_code() === 'parent_inactive', 'no installer writes when child is active' );
+    mkdir( $child );
+    file_put_contents( $child . '/functions.php', 'existing incomplete child' );
+    check( $installer->install_child_theme()->get_error_code() === 'child_theme_conflict' && file_get_contents( $child . '/functions.php' ) === 'existing incomplete child', 'incomplete existing directory is never repaired or overwritten' );
+    file_put_contents( $child . '/style.css', "Theme Name: Other\nTemplate: another-parent\n" );
+    check( $installer->install_child_theme()->get_error_code() === 'child_theme_conflict', 'unrelated theme using the child slug is not treated as a valid child' );
+    check( $installer->install_child_theme()->get_error_code() === 'file_mods_disabled' && ! file_exists( $child ), 'DISALLOW_FILE_MODS respected' );
+    check( $installer->install_child_theme()->get_error_code() === 'file_mods_disabled', 'multisite tenant cannot create shared theme files' );
+    check( $installer->install_child_theme()->get_error_code() === 'filesystem_error' && ! file_exists( $child ), 'filesystem connection failure leaves no child directory' );
+    $state['fail_mkdir'] = true;
+    check( $installer->install_child_theme()->get_error_code() === 'filesystem_error' && ! file_exists( $child ), 'directory creation failure handled' );
+    $state['fail_mkdir'] = false;
+    unlink( $source . '/README.md' );
+    check( $installer->install_child_theme()->get_error_code() === 'source_error' && ! file_exists( $child ), 'missing starter file detected before any child writes' );
+        check( $installer->install_child_theme()->get_error_code() === 'filesystem_error' && ! file_exists( $child ), 'failed/partial ' . $file . ' write rolled back for safe retry' );
+    check( $installer->install_child_theme() === 'created', 'retry succeeds after filesystem failure' );
+    catch ( RuntimeException $error ) { check( strpos( $error->getMessage(), 'quyền' ) !== false, 'manual installation rejects insufficient capabilities' ); }
+    catch ( RuntimeException $error ) { check( $error->getMessage() === 'Nonce checked: az_create_child_theme', 'manual installation checks nonce before mutation' ); }
+    require $child . '/functions.php';
+    check( $mods['custom_logo'] === 88 && $mods['color'] === '' && $mods['enabled'] === false, 'migration preserves child logo and explicit empty/false values' );
+    check( $mods['nav_menu_locations'] === array( 'primary' => 3 ), 'missing menu assignments copied from parent' );
+    check( $mods['custom_css_post_id'] === 99 && $state['css']['az-theme-child'] === $state['css']['az-theme'], 'Additional CSS copied into a separate child post' );
+    check( ! isset( get_theme_mods()['later'] ), 'migration runs only once, parent changes do not overwrite child settings' );
+    check( $state['css']['az-theme-child'] === '', 'existing child CSS post preserved even when empty' );
+    check( ! get_option( 'az_child_parent_mods_migrated' ), 'CSS save failure does not mark migration complete' );
+    check( $enqueued[0] === 'az-theme-child' && $enqueued[2] === array( 'az-container-sync' ) && $enqueued[3] === filemtime( $child . '/style.css' ), 'child CSS uses parent dependency and cache-busting version' );
+    check( in_array( array( 'wp_enqueue_scripts', 'az_child_enqueue_assets', 100 ), $state['hooks'], true ), 'child CSS enqueued after parent homepage/module assets' );
+FILE az-theme/tests/contact-leads.php
+NOTE: Source review only; no test execution in this audit.
+require dirname( __DIR__ ) . '/inc/functions/admin-settings.php';
+require dirname( __DIR__ ) . '/inc/functions/contact-form.php';
+require dirname( __DIR__ ) . '/inc/modules/leads/inc/leads-manager.php';
+function check( $ok, $label ) { if ( ! $ok ) { fwrite( STDERR, "FAIL $label\n" ); exit( 1 ); } echo "PASS $label\n"; }
+check( in_array( 'az_handle_contact_form', $hooks['wp_ajax_az_contact_form_submit'], true ) && in_array( 'az_handle_contact_form', $hooks['wp_ajax_nopriv_az_contact_form_submit'], true ), 'Logged-in and visitor AJAX endpoints' );
+check( $response->success && 1 === count( $wpdb->rows ), 'Valid request saves exactly one AZ9S lead' );
+check( 'Khách hàng' === $row['name'] && '0981368995' === $row['phone'] && 'customer@example.test' === $row['email'], 'Contact identity mapped and sanitized' );
+check( 'az-contact-page' === $row['form_id'] && 'Trang liên hệ' === $row['form_title'] && 'new' === $row['status'], 'Source and status visible to Leads manager' );
+check( "Chủ đề: Lắp đặt\nTư vấn thiết bị\nVà vật tư" === $row['message'], 'Topic and multiline message preserved' );
+check( '127.0.0.1' === $row['ip'] && current_time( 'mysql' ) === $row['created_at'], 'IP and server timestamp stored' );
+check( $response->data['lead_id'] === 1 && $response->data['mail_sent'], 'AJAX returns stored ID and mail result' );
+check( count( $mail_calls ) === 1 && $mail_calls[0][0] === array( 'leads@example.test' ) && strpos( $mail_calls[0][2], 'Lắp đặt' ) !== false, 'One AZ9S notification with topic and configured recipients' );
+check( $response->success && ! $response->data['mail_sent'] && count( $wpdb->rows ) === 2, 'SMTP failure still retains the lead' );
+check( ! $response->success && count( $wpdb->rows ) === $rows_before && count( $mail_calls ) === $mail_before, 'DB failure does not claim success or mail a nonexistent lead' );
+check( $response->success && ! isset( $row['form_id'] ) && strpos( $row['message'], 'Tên form: Trang liên hệ' ) === 0, 'Older AZ9S schema keeps source in message' );
+    check( ! $response->success && count( $wpdb->attempts ) === $attempts_before, 'Invalid nonce/required field/CAPTCHA rejected before insert' );
+check( ! $response->success && count( $wpdb->attempts ) === $attempts_before, 'Consumed CAPTCHA cannot be reused' );
+check( $response->success && 'Form liên hệ' === $row['form_title'] && strpos( $row['message'], 'Chủ đề:') === false && '' === $row['email'], 'Optional fields and default source supported' );
+FILE az-theme/tests/contact-maps.php
+NOTE: Source review only; no test execution in this audit.
+function check( $ok, $label ) { if ( ! $ok ) { throw new RuntimeException( $label ); } echo "PASS $label\n"; }
+function render_contact() { ob_start(); require dirname( __DIR__ ) . '/page-contact.php'; return ob_get_clean(); }
+require dirname( __DIR__ ) . '/inc/options/class-sanitizer.php';
+require dirname( __DIR__ ) . '/inc/helpers/options.php';
+$fields = require dirname( __DIR__ ) . '/inc/admin/sections/general.php';
+check( ! in_array( 'fallback', array_column( $fields, 'group' ), true ), 'parent removes the fallback address group' );
+check( isset( $shortcodes['az_google_map'] ), 'map shortcode is registered in the parent' );
+check( '' === az_google_map_shortcode() && '' === az_get_address() && array() === az_get_contact_items( 'address' ), 'retired fallback values never render' );
+check( '' === az_general_shortcode( array( 'field' => 'google_maps_url' ) ), 'directions shortcode never reads retired values' );
+check( ! $styles, 'no map data means no map asset' );
+check( array( 1, 3 ) === array_column( $maps, 'index' ), 'valid maps retain address-list order and support iframe-only rows' );
+check( 2 === substr_count( $html, '<iframe ' ) && strpos( $html, 'pb=office') < strpos( $html, 'pb=map-only' ), 'all maps render in saved order' );
+check( false === strpos( $html, 'onload=' ) && false === strpos( $html, '<script' ) && false === strpos( $html, 'evil.test' ), 'untrusted markup and iframe destinations are excluded' );
+check( false !== strpos( $html, 'Địa chỉ &amp; A' ) && false !== strpos( $html, 'pb=office&amp;lang=vi' ) && false === strpos( $html, '&amp;amp;' ), 'labels, addresses and iframe URLs are escaped correctly' );
+check( az_contact_shortcode( array( 'type' => 'map' ) ) === $html && az_general_shortcode( array( 'field' => 'google_maps_embed' ) ) === $html, 'all map shortcode entry points share the same source' );
+check( 1 === substr_count( $one, '<iframe ' ) && false !== strpos( $one, 'az-contact-branches__grid--single' ) && false === strpos( $one, '__info' ) && false === strpos( $one, '<h2>' ), 'a selected iframe-only location renders a full-width map without empty text blocks' );
+check( '' === az_google_map_shortcode( array( 'index' => 2 ) ) && '' === az_google_map_shortcode( array( 'index' => -1 ) ), 'missing or invalid map selections render no empty section' );
+check( 'Địa chỉ & A' === az_get_address() && 'Địa chỉ &amp; A' === az_general_shortcode( array( 'field' => 'address' ) ), 'address helpers and shortcodes use the address list' );
+check( 'https://maps.app.goo.gl/head-office' === az_general_shortcode( array( 'field' => 'google_maps_url' ) ), 'directions shortcode reads a current location URL' );
+check( 2 === substr_count( render_contact(), '<iframe ' ), 'Contact template renders both valid maps including the iframe-only row' );
+check( '/az-theme/css/contact-branches.css' === $styles[0][1], 'shared Maps CSS is loaded for custom sections as well as Contact' );
+check( '' === az_google_map_shortcode() && false === strpos( render_contact(), '<iframe ' ), 'cleared address list does not resurrect the old map' );
+FILE az-theme/tests/custom-code.php
+NOTE: Source review only; no test execution in this audit.
+function check( $ok, $label ) { if ( ! $ok ) { throw new RuntimeException( $label ); } echo "PASS $label\n"; }
+require dirname( __DIR__ ) . '/inc/options/class-sanitizer.php';
+require dirname( __DIR__ ) . '/inc/options/class-registry.php';
+require dirname( __DIR__ ) . '/inc/options/class-renderer.php';
+require dirname( __DIR__ ) . '/inc/core/class-custom-code.php';
+require dirname( __DIR__ ) . '/inc/functions/admin-settings.php';
+require dirname( __DIR__ ) . '/inc/admin/class-advanced.php';
+$fields = require dirname( __DIR__ ) . '/inc/admin/sections/custom-code.php';
+check( ! isset( $registered_pages['az-hfc-settings'] ) && ! isset( $registered_settings['az_hfc_group'] ), 'retired Header & Footer screen and save group are no longer registered' );
+check( ! function_exists( 'az_hfc_settings_page' ) && ! function_exists( 'az_hfc_sanitize_code' ) && ! function_exists( 'az_hfc_print_code' ), 'retired screen, sanitizer and output helper are removed' );
+check( isset( $registered_pages['az-contact-leads'] ) && isset( $registered_settings['az_lead_smtp_group'] ), 'unrelated Leads and SMTP configuration stay available' );
+check( '/wp-admin/admin.php?page=az-theme-advanced&section=custom_code' === $redirect_url, 'old Header & Footer URL redirects to the parent Custom Code editor' );
+check( 1 === count( $hooks['wp_head'][30] ) && ! isset( $hooks['wp_head'][99] ) && ! isset( $hooks['wp_footer'][99] ), 'parent is the sole output owner; legacy callbacks cannot duplicate snippets' );
+check( 1 === substr_count( $head, $header ) && 1 === substr_count( $head, 'id="az-custom-css"' ), 'authorized Header Code and CSS render once through parent hooks' );
+check( trim( $opening ) === $body && isset( $hooks['wp_body_open'][0] ), 'Body Open preserves the complete noscript iframe and runs first' );
+check( trim( $ending ) === $footer, 'Footer Code retains JavaScript backslashes and renders once' );
+check( ! AZ_Custom_Code::needs_review( $options ), 'authorized code does not require another review' );
+check( AZ_Custom_Code::editor_values( $options )['header_code'] === $header, 'admin editor resolves signed source without metadata' );
+check( trim( output( array( new AZ_Custom_Code(), 'head' ) ) ) === trim( $head ), 'explicit Advanced values override legacy values' );
+check( '' === output( function() use ( $empty ) { $empty->head(); $empty->body(); $empty->footer(); } ), 'explicit clears never restore legacy tracking' );
+check( $editor['header_code'] === $legacy['az_hfc_header_scripts'] && $editor['body_open_code'] === $body, 'Advanced recognizes legacy header and body values' );
+check( $editor['footer_code'] === '<script>window.bottom=1;</script>' . "\n" . $footer, 'Advanced includes both legacy Body bottom and Footer code' );
+check( AZ_Custom_Code::needs_review( $options ) && '' === output( array( new AZ_Custom_Code(), 'head' ) ), 'unsigned imported scripts require a save and do not leak visible JavaScript' );
+check( trim( output( array( new AZ_Custom_Code(), 'head' ) ) ) === $header, 'legacy signed comments are recognized without duplicate output' );
+check( 1 === substr_count( $old_footer, 'window.bottom' ) && 1 === substr_count( $old_footer, 'window.footer' ), 'both signed legacy footer positions render exactly once' );
+check( 1 === substr_count( output( array( new AZ_Custom_Code(), 'footer' ) ), 'window.footer' ), 'identical legacy footer snippets are deduplicated' );
+check( ! AZ_Custom_Code::needs_review( $options ) && $header === AZ_Custom_Code::trusted_markup( $options['custom_code']['header_code'] ), 'actual Advanced save authorizes resolved legacy code' );
+check( AZ_Custom_Code::needs_review( $options ) && '' === output( array( new AZ_Custom_Code(), 'head' ) ), 'a new installation flags imported tracking instead of running stale signatures' );
+check( ! AZ_Custom_Code::needs_review( $options ) && trim( output( array( new AZ_Custom_Code(), 'head' ) ) ) === $header, 'same parent module authorizes and renders code on another website after save' );
+check( $original_header === $options['custom_code']['header_code'] && $css === $options['custom_code']['custom_css'], 'restricted save preserves scripts while allowing CSS edits' );
+check( false !== strpos( output( array( new AZ_Custom_Code(), 'head' ) ), $header ), 'saved trusted scripts render independently of visitor permissions' );
+check( false !== strpos( output( array( new AZ_Custom_Code(), 'head' ) ), $css ), 'CSS stored in a code array also renders without a type error' );
+check( '' === AZ_Options_Sanitizer::code_source( array( 'code' => array() ) ) && '' === AZ_Custom_Code::trusted_markup( null ), 'malformed and null values are safely ignored' );
+check( false !== strpos( $admin, '&lt;script' ) && false === strpos( $admin, '<script' ), 'admin textarea displays source without executing it' );
+FILE az-theme/tests/editor.php
+NOTE: Source review only; no test execution in this audit.
+require dirname( __DIR__ ) . '/inc/core/editor.php';
+FILE az-theme/tests/google-login.php
+NOTE: Source review only; no test execution in this audit.
+function check( $ok, $label ) { if ( ! $ok ) { throw new RuntimeException( $label ); } echo "PASS $label\n"; }
+require dirname( __DIR__ ) . '/inc/core/google-login.php';
+check( ! az_google_ready(), 'Google login disabled by default' );
+check( ! az_google_ready(), 'missing secret disables login' );
+check( (bool) az_google_ready(), 'fully configured login enabled' );
+check( ! az_google_valid_identity( array( 'sub' => '123', 'email' => 'test@example.com', 'email_verified' => false ) ), 'unverified email rejected' );
+check( ! az_google_valid_identity( array( 'email' => 'test@example.com', 'email_verified' => true ) ), 'missing subject rejected' );
+check( az_google_valid_identity( array( 'sub' => '123', 'email' => 'test@example.com', 'email_verified' => true ) ), 'verified Google identity accepted' );
+check( ! az_google_captcha_ready(), 'captcha off by default' );
+check( ! az_google_captcha_ready(), 'incomplete captcha not activated' );
+check( (bool) az_google_captcha_ready(), 'configured v2 captcha enabled' );
+check( is_wp_error( az_google_verify_captcha( $user, '' ) ), 'missing captcha rejected' );
+check( is_wp_error( az_google_verify_captcha( $user, '' ) ), 'Google network failure fails closed' );
+check( is_wp_error( az_google_verify_captcha( $user, '' ) ), 'foreign captcha hostname rejected' );
+check( is_wp_error( az_google_verify_captcha( $user, '' ) ), 'expired captcha rejected' );
+check( $user === az_google_verify_captcha( $user, '' ), 'valid captcha preserves authenticated user' );
+catch ( RuntimeException $error ) { check( false !== strpos( $error->getMessage(), 'không hợp lệ' ), 'OAuth mismatched state rejected' ); }
+catch ( RuntimeException $error ) { check( false !== strpos( $error->getMessage(), 'hết hạn' ), 'OAuth expired callback rejected' ); }
+FILE az-theme/tests/header-bottom.php
+NOTE: Source review only; no test execution in this audit.
+require dirname( dirname( __DIR__ ) ) . '/az-theme-child/inc/steel-storefront.php';
+FILE az-theme/tests/html-minify.php
+NOTE: Source review only; no test execution in this audit.
+require dirname( __DIR__ ) . '/inc/core/html-minify.php';
+FILE az-theme/tests/media-tools.php
+NOTE: Source review only; no test execution in this audit.
+function check( $ok, $label ) { if ( ! $ok ) { throw new RuntimeException( $label ); } echo "PASS $label\n"; }
+require dirname( __DIR__ ) . '/inc/core/media-tools.php';
+check( is_string( $GLOBALS['title'] ) && '' !== $GLOBALS['title'], 'hidden admin page has non-null title before admin header' );
+check( ! az_missing_local_image( 2 ), 'non-images excluded' );
+check( az_missing_local_image( 1 ), 'missing local primary image detected' );
+check( ! az_missing_local_image( 1 ), 'external CDN excluded' );
+check( ! az_missing_local_image( 1 ), 'path traversal excluded' );
+check( ! az_missing_local_image( 1 ), 'remote metadata excluded' );
+FILE az-theme/tests/mobile-menu.cjs
+NOTE: Source review only; no test execution in this audit.
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const path = require('node:path');
+const vm = require('node:vm');
+function check(condition, message) {
+  assert.ok(condition, message);
+check(branded.summary.getAttribute('aria-expanded') === 'false', 'closed trigger starts collapsed');
+check(branded.locked() && branded.summary.getAttribute('aria-expanded') === 'true', 'drawer locks page scroll and updates expanded state');
+check(branded.document.activeElement === branded.close, 'branded drawer focuses close control on opening');
+check(branded.submenu.hidden && branded.childSubmenu.hidden && branded.treeItems().length === 2, 'right drawer starts with nested branches collapsed');
+check(branded.menu.open && !branded.submenu.hidden && rightToggle.getAttribute('aria-expanded') === 'true', 'right drawer submenu expands without closing the drawer');
+check(rightToggle.getAttribute('aria-label') === 'Đóng menu con: Góc chuyên gia', 'right drawer submenu has translated expanded label');
+check(!branded.childSubmenu.hidden && rightNestedToggle.getAttribute('aria-controls') === branded.childSubmenu.id, 'right drawer supports a second nested level');
+check(branded.submenu.hidden && branded.childSubmenu.hidden && rightToggle.getAttribute('aria-expanded') === 'false', 'right drawer branches collapse again');
+check(branded.menu.fire('keydown', { key: 'Tab' }).prevented && branded.document.activeElement === branded.logo, 'Tab wraps from last link to first panel control');
+check(branded.menu.fire('keydown', { key: 'Tab', shiftKey: true }).prevented && branded.document.activeElement === branded.last, 'Shift+Tab wraps to final link');
+check(branded.menu.fire('keydown', { key: 'Escape' }).prevented && !branded.menu.open && !branded.locked(), 'Escape closes drawer and unlocks page');
+check(branded.document.activeElement === branded.summary, 'closing restores focus to menu trigger');
+  check(!branded.menu.open && !branded.locked(), `${label} closes drawer and unlocks scroll`);
+check(!branded.menu.open && !branded.locked(), 'desktop breakpoint closes drawer and removes scroll lock');
+  check(existing.menu.open, `${style} retains previous link behavior`);
+  check(existing.locked() === (style !== 'dropdown'), `${style} retains previous scroll behavior`);
+check(coffee.locked() && coffee.document.activeElement === coffee.close, 'coffee overlay locks scroll and focuses close button');
+check(coffee.treeItems().length === 2 && coffee.submenu.hidden && coffee.childSubmenu.hidden, 'each nested branch starts collapsed with its own toggle');
+check(parentToggle.getAttribute('aria-controls') === coffee.submenu.id && nestedToggle.getAttribute('aria-controls') === coffee.childSubmenu.id && coffee.submenu.id !== coffee.childSubmenu.id, 'nested controls reference unique submenu IDs');
+check(parentToggle.getAttribute('aria-expanded') === 'false' && parentToggle.getAttribute('aria-label') === 'Mở menu con: Góc chuyên gia', 'submenu button has collapsed state and parent label');
+check(coffee.menu.fire('keydown', { key: 'Tab' }).prevented && coffee.document.activeElement === coffee.logo, 'hidden submenu links are excluded when final branch is collapsed');
+check(coffee.menu.open && !coffee.submenu.hidden && parentToggle.getAttribute('aria-expanded') === 'true', 'submenu toggle expands its branch without closing overlay');
+check(parentToggle.getAttribute('aria-label') === 'Đóng menu con: Góc chuyên gia' && coffee.childSubmenu.hidden, 'expanded label updates while nested branch stays collapsed');
+check(!coffee.childSubmenu.hidden && nestedToggle.getAttribute('aria-expanded') === 'true', 'supports a second level of nested navigation');
+check(coffee.submenu.hidden && parentToggle.getAttribute('aria-expanded') === 'false', 'submenu toggle collapses branch again');
+check(coffee.menu.fire('keydown', { key: 'Tab' }).prevented && coffee.document.activeElement === coffee.logo, 'coffee overlay wraps Tab across visible controls');
+check(!coffee.menu.open && !coffee.locked(), 'nested destination closes coffee menu and restores page scroll');
+check(!coffee.menu.open && coffee.document.activeElement === coffee.summary, 'coffee close button restores trigger focus');
+check(!coffee.menu.open && !coffee.locked(), 'clicking outside coffee panel closes overlay');
+check(coffee.menu.fire('keydown', { key: 'Escape' }).prevented && !coffee.menu.open, 'Escape closes coffee overlay');
+check(!coffee.menu.open && !coffee.locked(), 'desktop breakpoint dismisses coffee overlay');
+FILE az-theme/tests/mobile-menu.php
+NOTE: Source review only; no test execution in this audit.
+function check( $ok, $message ) {
+require dirname( __DIR__ ) . '/inc/helpers/header-components.php';
+require dirname( __DIR__ ) . '/inc/core/mobile-menu.php';
+require dirname( __DIR__ ) . '/inc/options/class-sanitizer.php';
+require dirname( __DIR__ ) . '/inc/options/class-renderer.php';
+check( strpos( $html, 'az-mobile-menu--brand_right' ) !== false, 'new style renders branded right drawer' );
+check( strpos( $html, 'az-mobile-header__logo' ) !== false && strpos( $html, 'az-mobile-menu__brand' ) !== false, 'header and drawer both render branding' );
+check( substr_count( $html, 'data-logo-id="22"' ) === 2, 'mobile logo is used in both positions' );
+check( substr_count( $html, 'id="az-mobile-navigation"' ) === 1 && substr_count( $html, 'id="az-mobile-menu-panel"' ) === 1, 'navigation IDs remain unique' );
+check( strpos( $html, 'aria-label="Mở menu"' ) !== false && strpos( $html, 'role="dialog" aria-modal="true"' ) !== false, 'icon trigger and modal panel have accessible labels' );
+check( strpos( $html, 'Vấn đề thường gặp' ) !== false && $menu_args['menu'] === 12, 'drawer uses selected WordPress menu' );
+check( $menu_args['fallback_cb'] === false && $menu_args['depth'] === 0, 'preserves full menu hierarchy and no fallback pages' );
+check( '' === $duplicate, 'multiple header calls do not duplicate drawer' );
+check( in_array( 'az-mobile-menu-brand-right', $classes, true ), 'compact mobile header class is opt-in' );
+check( substr_count( $fallback, 'data-logo-id="11"' ) === 2, 'falls back to desktop logo when mobile logo is absent' );
+check( strpos( $fallback, '<img' ) === false && substr_count( $fallback, '>AZ Theme</a>' ) === 2, 'site name remains usable when no logo is configured' );
+check( strpos( $sticky, 'az-mobile-header is-sticky' ) !== false, 'respects sticky Header main setting' );
+    check( 'brand_right' === az_mobile_menu_style() && in_array( 'az-mobile-menu-brand-right', $hooks['body_class']( array() ), true ), 'removed/invalid style uses style 1: ' . $style );
+check( 'brand_right' === az_mobile_menu_style(), 'new installs use style 1' );
+check( '' === az_mobile_menu_markup() && ! in_array( 'az-mobile-menu-brand-right', $hooks['body_class']( array() ), true ), 'disabled menu keeps original header visible' );
+check( '' === az_mobile_menu_markup(), 'None still hides menu' );
+check( '' === az_mobile_menu_markup() && ! in_array( 'az-mobile-menu-brand-right', $hooks['body_class']( array() ), true ), 'missing menu never hides original header' );
+check( $menu_args['menu'] === 9, 'falls back to configured primary menu' );
+check( $menu_args['menu'] === 0 && $menu_args['theme_location'] === 'primary', 'uses primary location when no explicit menu is chosen' );
+$fields = require dirname( __DIR__ ) . '/inc/admin/sections/header.php';
+check( AZ_Options_Sanitizer::sanitize( 'brand_right', 'select', $field ) === 'brand_right', 'Advanced save accepts new style' );
+check( array_keys( $field['options'] ) === array( 'none', 'brand_right', 'brand_dropdown' ), 'Advanced offers only None and styles 1 and 2' );
+check( strpos( $field['options']['brand_right'], 'Kiểu 1 —' ) === 0 && strpos( $field['options']['brand_dropdown'], 'Kiểu 2 —' ) === 0, 'styles are numbered 1 and 2 without changing saved option keys' );
+check( $field['default'] === 'brand_right' && AZ_Options_Sanitizer::sanitize( 'bad', 'select', $field ) === 'brand_right', 'default/reset and unknown submitted style use style 1' );
+check( AZ_Options_Sanitizer::sanitize( 'none', 'select', $field ) === 'none', 'save preserves None' );
+    check( AZ_Options_Sanitizer::sanitize( $legacy_style, 'select', $field ) === 'brand_right', 'save rejects removed style: ' . $legacy_style );
+    check( strpos( $admin, 'value="brand_right" selected="selected"' ) !== false, 'admin reflects style 1 for saved legacy value: ' . $legacy_style );
+check( strpos( $coffee, 'az-mobile-header--brand_dropdown' ) !== false && strpos( $coffee, 'az-mobile-menu--brand_dropdown' ) !== false, 'coffee style renders compact header and its own overlay' );
+check( substr_count( $coffee, 'data-logo-id="22"' ) === 2, 'coffee style uses configured mobile logo in header and overlay' );
+check( strpos( $coffee, 'Vấn đề thường gặp' ) !== false && $menu_args['menu'] === 12, 'coffee style uses existing selected menu content' );
+check( strpos( $coffee, 'data-submenu-open-label="Mở menu con"' ) !== false && strpos( $coffee, 'data-submenu-close-label="Đóng menu con"' ) !== false, 'submenu labels are supplied by WordPress translation functions' );
+check( in_array( 'az-mobile-menu-brand-dropdown', $classes, true ) && ! in_array( 'az-mobile-menu-brand-right', $classes, true ), 'coffee header class is separate from right drawer' );
+check( AZ_Options_Sanitizer::sanitize( 'brand_dropdown', 'select', $field ) === 'brand_dropdown', 'Advanced save accepts coffee style' );
+check( ! in_array( 'az-mobile-menu-brand-dropdown', $hooks['body_class']( array() ), true ), 'disabled coffee menu preserves original header' );
+check( ! in_array( 'az-mobile-menu-brand-dropdown', $hooks['body_class']( array() ), true ), 'missing coffee menu preserves original header' );
+check( substr_count( $coffee, 'fill="none" stroke="currentColor"' ) === 2, 'menu and close icons carry their own stroke without external CSS' );
+check( isset( $enqueued_styles['az-mobile-menu-brand-dropdown'] ), 'style 2 registers a dedicated stylesheet' );
+check( $enqueued_styles['az-mobile-menu-brand-dropdown']['dependencies'] === array( 'az-mobile-menu' ), 'style 2 stylesheet follows shared drawer rules' );
+check( is_file( $file ) && $enqueued_styles['az-mobile-menu-brand-dropdown']['version'] === substr( hash_file( 'sha256', $file ), 0, 12 ), 'style 2 CSS version is derived from deployed content' );
+check( $enqueued_styles['az-mobile-menu']['version'] === substr( hash_file( 'sha256', get_template_directory() . '/css/mobile-menu.css' ), 0, 12 ), 'shared CSS version is derived from content rather than timestamp' );
+check( $enqueued_scripts['az-mobile-menu']['version'] === substr( hash_file( 'sha256', get_template_directory() . '/js/mobile-menu.js' ), 0, 12 ), 'mobile JS also uses content version' );
+check( ! isset( $enqueued_styles['az-mobile-menu-brand-dropdown'] ), 'style 1 does not receive style 2 overrides' );
+check( empty( $enqueued_styles ), 'disabled mobile menu loads no menu styles' );
+FILE az-theme/tests/neutral-page.php
+NOTE: Source review only; no test execution in this audit.
+function post_password_required() { return $GLOBALS['az_test_locked']; }
+function az_test_neutral_check( $ok, $label ) { if ( ! $ok ) { throw new RuntimeException( $label ); } echo "PASS $label\n"; }
+function get_template_part( $slug ) { require $GLOBALS['az_test_parent'] . '/' . $slug . '.php'; }
+function az_test_neutral_render( $template = 'page-neutral.php' ) { $GLOBALS['az_test_loop'] = 0; ob_start(); require $GLOBALS['az_test_parent'] . '/' . $template; return ob_get_clean(); }
+require $az_test_parent . '/inc/core/neutral-page.php';
+az_test_neutral_check( array( 'az_neutral_page_assets' ) === $az_test_hooks['wp_enqueue_scripts'][60], 'parent registers its asset loader at enqueue time' );
+az_test_neutral_check( '/az-theme/css/neutral-page.css' === $az_test_styles['az-neutral-page'][0]
+az_test_neutral_check( (string) filemtime( $az_test_parent . '/css/neutral-page.css' ) === $az_test_styles['az-neutral-page'][2], 'asset version follows the resolved file' );
+az_test_neutral_check( '/custom-child/css/neutral-page.css' === $az_test_styles['az-neutral-page'][0]
+    az_test_neutral_check( array() === $az_test_styles, 'assets excluded for other template: ' . $az_test_template );
+az_test_neutral_check( false === strpos( $html, '<h1>' ) && false === strpos( $html, 'az-neutral-page__heading' ) && false !== strpos( $html, '<h2>Nội dung độc lập</h2>' ) && false !== strpos( $html, '<strong>chi tiết</strong>' ), 'template omits automatic Page title and retains editor headings/content' );
+az_test_neutral_check( false !== strpos( $html, 'az-neutral-page__image' ) && false !== strpos( $html, 'fetchpriority="high"' ), 'featured image is a full-width article image' );
+az_test_neutral_check( false !== strpos( $html, 'id="main"' ) && false !== strpos( $html, 'id="az-main-content"' )
+az_test_neutral_check( false !== strpos( $html, 'Nội dung trang khác.' ) && false === strpos( $html, 'az-neutral-page__featured' ), 'same parent template renders independent content without an image' );
+az_test_neutral_check( false !== strpos( $html, 'post-password-form' ) && false === strpos( $html, 'Nội dung trang khác.' )
+az_test_neutral_check( false !== strpos( $html, 'aria-label="Phân trang nội dung"' ) && false !== strpos( $html, 'test-comments' ), 'WordPress pagination and comments remain available' );
+az_test_neutral_check( 1 === substr_count( $html, '<h1>' ) && false === strpos( $html, 'az-neutral-page__heading' ), 'shared banner owns the single H1 when active' );
+az_test_neutral_check( false === strpos( $source, 'az_child_' ) && false === strpos( $source, '--az-child-' )
+az_test_neutral_check( false !== strpos( file_get_contents( $az_test_parent . '/inc/bootstrap.php' ), "'/inc/core/neutral-page.php'" ), 'normal parent bootstrap includes the reusable module' );
+az_test_neutral_check( isset( $az_test_styles['az-neutral-page'] ), 'About template inherits the editorial stylesheet' );
+az_test_neutral_check( $html === az_test_neutral_render(), 'About and neutral templates use exactly the same editorial rendering' );
+az_test_neutral_check( false !== strpos( $html, $az_test_content ) && false === strpos( $html, 'Giới thiệu Công ty chúng tôi' ) && false === strpos( $html, 'wv-about-lead-form' ), 'About renders editor formatting without legacy defaults or a built-in contact form' );
+az_test_neutral_check( false !== strpos( $html, 'az-neutral-page__content"></div>' ) && false === strpos( $html, 'Công ty chúng tôi' ), 'empty About editor content stays empty rather than restoring canned text' );
+az_test_neutral_check( false !== strpos( $html, 'post-password-form' ) && false === strpos( $html, 'az-neutral-page__featured' ) && false === strpos( $html, 'test-comments' ), 'About reuses password protection without leaking media or comments' );
+FILE az-theme/tests/neutral-page-admin.php
+NOTE: Source review only; no test execution in this audit.
+/** About editor removal: normal parent include path, no WordPress/database bootstrap. */
+function az_test_editor_check( $ok, $label ) { if ( ! $ok ) { throw new RuntimeException( $label ); } echo "PASS $label\n"; }
+require dirname( __DIR__ ) . '/inc/functions/customizer.php';
+    az_test_editor_check( array() === $boxes, 'no legacy About metabox for template: ' . $template );
+    az_test_editor_check( array() === $writes && $before === $metadata, 'stale About fields cannot rewrite editor or legacy metadata: ' . $template );
+az_test_editor_check( '' === ob_get_clean(), 'About module adds no styles hiding the normal WordPress editor' );
+az_test_editor_check( array() === $assets, 'removed About module no longer enqueues its extra editor/media assets' );
+az_test_editor_check( isset( $hooks['wp_head'], $hooks['customize_preview_init'] ), 'unrelated customizer logo and preview hooks remain registered' );
+az_test_editor_check( ! function_exists( 'az_gioi_thieu_meta_box' ) && ! function_exists( 'az_gioi_thieu_get_data' ), 'retired About form and defaults are no longer loaded' );
+FILE az-theme/tests/performance.php
+NOTE: Source review only; no test execution in this audit.
+require ABSPATH . 'wp-includes/class-wp-dependency.php';
+require ABSPATH . 'wp-includes/class-wp-dependencies.php';
+function check($ok,$message){if(!$ok)throw new RuntimeException($message);echo "PASS $message\n";}
+require dirname(__DIR__).'/inc/core/class-performance.php';
+check($styles->registered['az-ai-theme-style']->src===false && in_array('child',$styles->to_do,true),'disabled parent CSS preserves child dependencies');
+check(!in_array('jquery-migrate',$scripts->to_do,true),'jQuery Migrate absent from resolved dependency list');
+check(in_array(['wp_enqueue_scripts','wp_enqueue_emoji_styles'],$hooks,true),'modern Emoji CSS hook removed');
+check(in_array(['embed_oembed_discover','__return_false'],$hooks,true),'oEmbed discovery disabled');
+check(!$p->lazy_loading(true,'img','content') && $p->lazy_loading(true,'iframe','content'),'image toggle does not disable iframe lazy loading');
+check($styles->registered['dashicons']->src==='/icons.css','Blog icons retained for guests');
+$blog=false;$p->assets();check($styles->registered['dashicons']->src===false,'Dashicons removed outside Blog');
+FILE az-theme/tests/performance-security.php
+NOTE: Source review only; no test execution in this audit.
+function check( $value, $label ) { if ( ! $value ) { throw new RuntimeException( $label ); } echo "PASS $label\n"; }
+require dirname( __DIR__ ) . '/inc/core/performance-security.php';
+check( ! az_performance_security_enabled( 'disable_xmlrpc' ), 'all options off by default' );
+check( $hooks['xmlrpc_enabled']( true ), 'master off preserves XML-RPC' );
+check( array() === $hooks['xmlrpc_methods']( array( 'pingback.ping' => 'a', 'wp.getPosts' => 'b' ) ), 'XML-RPC methods disabled' );
+check( array( 'wp.getPosts' => 'b' ) === $hooks['xmlrpc_methods']( array( 'pingback.ping' => 'a', 'wp.getPosts' => 'b' ) ), 'pingback removed without disabling other methods' );
+check( array( 'Other' => 'ok' ) === $hooks['wp_headers']( array( 'x-pingback' => 'url', 'Other' => 'ok' ) ), 'only pingback header removed' );
+check( $hooks['rest_authentication_errors']( null ) instanceof WP_Error, 'anonymous REST restricted' );
+check( null === $hooks['rest_authentication_errors']( null ), 'authenticated REST preserved' );
+check( $error === $hooks['rest_authentication_errors']( $error ), 'existing authentication errors preserved' );
+check( $file === az_security_validate_image_upload( $file ), 'uploads unchanged when option disabled' );
+check( $file === az_security_validate_image_upload( $file ), 'existing upload errors preserved' );
+FILE az-theme/tests/qa.cjs
+NOTE: Source review only; no test execution in this audit.
+const fs=require('fs');const path=require('path');const root=path.resolve(__dirname,'..');const read=p=>fs.readFileSync(path.join(root,p),'utf8');const checks=[['no tester UI',!read('inc/admin/class-admin.php').includes('Tester')],['valid form targets',read('inc/admin/class-advanced.php').includes('form="az-advanced-form"')&&read('inc/admin/class-advanced.php').includes('form="az-reset-section-form"')],['nonces/actions',read('inc/admin/class-advanced.php').includes("az_save_theme_options")&&read('inc/admin/class-advanced.php').includes("az_reset_theme_section")],['nested merge',read('inc/admin/class-advanced.php').includes('$current[ $field[\'id\'] ]')],['dynamic css',read('inc/core/class-dynamic-css.php').includes('az-theme-dynamic-css')],['body architecture',!read('header.php').includes("body_class( 'az-storefront")],['logo helper',read('inc/helpers/options.php').includes('function az_get_logo_id')],['footer social helper',read('footer.php').includes('az_get_social_links')],['performance execution',read('inc/core/class-performance.php').includes('disable_emoji')],['no production tests',!read('inc/bootstrap.php').includes('/tests/')]];let failed=0;for(const [name,ok] of checks){console.log((ok?'PASS ':'FAIL ')+name);if(!ok)failed++;}process.exitCode=failed?1:0;
+FILE az-theme/tests/reusable.php
+NOTE: Source review only; no test execution in this audit.
+require dirname( __DIR__ ) . '/inc/options/class-sanitizer.php';
+require dirname( __DIR__ ) . '/inc/core/class-custom-code.php';
+require dirname( __DIR__ ) . '/inc/functions/content-media.php';
+function check( $condition, $label ) {
+check( AZ_Custom_Code::trusted_markup( $signed ) === $raw, 'authorized script survives frontend rendering' );
+check( AZ_Custom_Code::trusted_markup( $raw ) === '', 'unsigned legacy script is not executed' );
+check( strpos( AZ_Custom_Code::trusted_markup( $tampered ), '<script>' ) === false, 'modified signed code loses trust' );
+check( AZ_Options_Sanitizer::code_source( $signed ) === $raw, 'editor shows code without signature metadata' );
+check( AZ_Custom_Code::trusted_markup( array( 'code' => $raw, 'signature' => 'other-installation' ) ) === '', 'foreign installation signature is rejected' );
+check( AZ_Options_Sanitizer::sanitize( $signed, 'code', $field ) === $signed, 'repeated saves do not nest signatures' );
+check( strpos( AZ_Options_Sanitizer::sanitize( $raw, 'code', $field ), '<script>' ) === false, 'restricted users cannot authorize scripts' );
+check( strpos( AZ_Options_Sanitizer::sanitize( '</style><script>bad()</script>', 'code', array( 'id' => 'custom_css' ) ), '<' ) === false, 'CSS cannot break out of style element' );
+check( true, 'remote media import returns before any write by default' );
+FILE az-theme/tests/shared-banner.cjs
+NOTE: Source review only; no test execution in this audit.
+const fs = require('node:fs');
+const path = require('node:path');
+const assert = require('node:assert/strict');
+const { JSDOM } = require('jsdom');
+const Parser = require('php-parser');
+assert.equal(doc.querySelector('.az-shared-banner__controls').hidden, false);
+assert.ok(doc.body.classList.contains('az-banner-overlay-ready'));
+assert.ok(test.tick()); test.tick()();
+assert.equal(doc.querySelector('[data-slide-status]').textContent, '2 / 2');
+assert.equal(doc.querySelector('[data-slide-status]').textContent, '1 / 2');
+assert.equal(doc.querySelector('[data-slide-status]').textContent, '2 / 2');
+doc.querySelector('[data-pause]').click(); assert.equal(test.tick(), null);
+doc.querySelector('[data-pause]').click(); assert.ok(test.tick());
+doc.querySelector('.az-shared-banner').dispatchEvent(new w.Event('mouseenter')); assert.equal(test.tick(), null);
+doc.querySelector('.az-shared-banner').dispatchEvent(new w.Event('mouseleave')); assert.ok(test.tick());
+doc.querySelector('[data-direction="1"]').focus(); assert.equal(test.tick(), null);
+doc.querySelector('[data-direction="1"]').blur(); assert.ok(test.tick());
+assert.equal(fixture(true).tick(), null);
+assert.ok(!/#[a-f\d]{3,8}\b|rgba?\(/i.test(css), 'No hardcoded colour values');
+assert.ok(css.includes('--az-container') && css.includes('--az-mobile-gutter'));
+assert.equal(ad.querySelector('input').value, '20,10');
+assert.equal(ad.querySelector('input').value, '10');
+assert.equal(ad.querySelector('input').value, '');
+assert.equal(ad.querySelectorAll('img').length, 0);
+FILE az-theme/tests/shared-banner.md
+NOTE: Source review only; no test execution in this audit.
+WordPress integration checklist (requires running WordPress):
+FILE az-theme/tests/upload-limits.php
+NOTE: Source review only; no test execution in this audit.
+function check( $ok, $message ) {
+require dirname( __DIR__ ) . '/inc/core/upload-limits.php';
+require dirname( __DIR__ ) . '/inc/options/class-sanitizer.php';
+require dirname( __DIR__ ) . '/inc/options/class-renderer.php';
+require ABSPATH . 'wp-admin/includes/file.php';
+$fields = require dirname( __DIR__ ) . '/inc/admin/sections/performance.php';
+check( wp_max_upload_size() === $server_limit, 'missing option keeps existing upload ceiling' );
+check( az_validate_upload_file_size( $file ) === $file, 'disabled option leaves uploads unchanged' );
+    check( az_upload_file_limit_bytes() === 0, 'zero/invalid saved value safely disables custom limit: ' . gettype( $invalid ) );
+check( wp_max_upload_size() === 5 * MB_IN_BYTES, 'Media ceiling reflects configured MB' );
+    check( az_validate_upload_file_size( $allowed ) === $allowed, 'allows file below or exactly at limit: ' . $size );
+check( is_string( $rejected['error'] ) && strpos( $rejected['error'], '5.00 MB' ) !== false, 'direct upload one byte over limit receives readable error' );
+check( ! empty( $result['error'] ) && strpos( $result['error'], '5.00 MB' ) !== false, 'core upload handler rejects oversized file before moving it' );
+check( az_validate_upload_file_size( $existing_error ) === $existing_error, 'preserves prior validation errors' );
+check( az_validate_upload_file_size( $php_error ) === $php_error, 'preserves PHP upload errors' );
+check( wp_max_upload_size() === MB_IN_BYTES, 'configured limit cannot raise server ceiling' );
+check( ! empty( az_validate_upload_file_size( array_replace( $file, array( 'size' => MB_IN_BYTES + 1 ) ) )['error'] ), 'server ceiling also enforced by upload prefilter' );
+check( wp_max_upload_size() === MB_IN_BYTES / 2, 'preserves lower network/plugin ceiling' );
+check( wp_max_upload_size() === MB_IN_BYTES / 2, 'supports fractional MB limits' );
+    file_put_contents( $temporary, str_repeat( 'x', MB_IN_BYTES / 2 + 1 ) );
+    check( ! empty( $result['error'] ) && strpos( $result['error'], '0.50 MB' ) !== false, 'core sideload handler rejects raw REST/import file with missing size' );
+    check( ! empty( az_validate_upload_file_size( $raw )['error'] ), 'actual temporary file size defeats underreported size' );
+    check( is_file( $temporary ), 'validation does not delete temporary file' );
+    unlink( $temporary );
+check( AZ_Options_Sanitizer::sanitize( '-5', $field['type'], $field ) === 0, 'save sanitization clamps negative limit to zero' );
+check( AZ_Options_Sanitizer::sanitize( '0.5', $field['type'], $field ) === 0.5, 'save sanitization preserves fractional MB' );
+check( AZ_Options_Sanitizer::sanitize( $field['default'], $field['type'], $field ) == 0, 'Reset Section default disables custom limit' );
+check( strpos( $html, 'type="number"' ) !== false && strpos( $html, 'min="0"' ) !== false && strpos( $html, '>MB</span>' ) !== false, 'Performance renders numeric MB field with nonnegative minimum' );
+check( strpos( $html, 'value="0.5"' ) !== false, 'Performance renders saved limit' );
+FILE az-theme/tests/user-options.php
+NOTE: Source review only; no test execution in this audit.
+function check( $ok, $label ) { if ( ! $ok ) { throw new RuntimeException( $label ); } echo "PASS $label\n"; }
+require dirname( __DIR__ ) . '/inc/core/user-options.php';
+check( ! az_user_feature( 'own_content' ), 'master off by default' );
+check( 5 === $hooks['ajax_query_attachments_args']( array() )['author'], 'Media restricted to current author' );
+check( array( 'do_not_allow' ) === $hooks['map_meta_cap']( array( 'edit_posts' ), 'edit_post', 5, array( 7 ) ), 'cannot edit another author post' );
+check( ! $hooks['show_admin_bar']( true ), 'non-admin bar hidden' );
+check( array() === $hooks['ajax_query_attachments_args']( array() ), 'administrator sees all Media' );
+check( $hooks['show_admin_bar']( true ), 'administrator bar preserved in users mode' );
+check( ! $hooks['show_admin_bar']( true ), 'all mode also hides administrator bar' );
+check( $hooks['show_admin_bar']( true ), 'master off restores existing bar behavior' );
+FILE az-theme-child/tests/footer-location-actions.php
+NOTE: Source review only; no test execution in this audit.
+require dirname($theme) . '/az-theme/inc/options/class-registry.php';
+require dirname($theme) . '/az-theme/inc/options/class-sanitizer.php';
+require $theme . '/inc/footer-storefront.php';
+function check( $condition, $message ) { if ( ! $condition ) { throw new RuntimeException( $message ); } echo "PASS $message\n"; }
+AZ_Options_Registry::add_section( 'general', 'General', require dirname($theme) . '/az-theme/inc/admin/sections/general.php' );
+check( !in_array('fallback', array_column($fields,'group'),true), 'parent and child no longer register the fallback address group' );
+check( !in_array('parking_url', array_column($fields,'id'),true) && !in_array('parking_url',array_column($addresses['fields'],'id'),true), 'parking link fields are removed from both General and the address repeater' );
+check( in_array('maps_embed',array_column($addresses['fields'],'id'),true) && in_array('maps_url',array_column($addresses['fields'],'id'),true), 'existing Google Maps fields remain available' );
+check( $clean[0]['maps_url'] === $row['maps_url'] && !isset($clean[0]['parking_url']), 'address save keeps Maps URL and drops the obsolete parking field' );
+check( count($locations) === 2 && $locations[0]['value'] === $row['value'] && $locations[1]['label'] === 'Chi nhánh', 'only locations with configured Maps links are retained in order' );
+check( az_child_footer_location_url($locations[0]) === $row['maps_url'], 'configured Google Maps destination takes priority' );
+check( 2 === substr_count($html,'class="az-footer-location-action"') && 2 === substr_count($html,'<img '), 'each location shows the two supplied icon images' );
+check( strpos($html,'/icon/location-button-1.png') !== false && strpos($html,'/icon/location-button-2.png') !== false, 'icon loader uses the requested child-theme PNGs' );
+check( 1 === substr_count($html,'<a ') && strpos($html,'href="https://maps.app.goo.gl/directions"') !== false && strpos($html,'rel="noopener noreferrer"') !== false, 'only directions is a labelled link opening Maps in a new tab' );
+check( preg_match('#<span class="az-footer-location-action"><img[^>]+location-button-2\.png[^>]*></span>#',$html) && strpos($html,'old-parking') === false && strpos($html,'role="button"') === false && strpos($html,'tabindex') === false, 'parking is a static image without a link, button role or keyboard focus' );
+check( az_child_footer_location_url(array('value'=>'A & B, Hà Nội','maps_url'=>'javascript:alert(1)')) === '', 'invalid Maps links cannot generate a link from the address' );
+check( '' === capture(function(){az_child_footer_location_actions(array('value'=>'660 Cách Mạng Tháng 8, Tây Ninh','maps_url'=>''));}), 'address without a Maps link hides both icons' );
+check( '' === capture(function(){az_child_footer_location_actions(array('value'=>'Showroom','maps_url'=>'   ','maps_embed'=>'<iframe src="https://www.google.com/maps/embed"></iframe>'));}), 'whitespace link and iframe do not create a footer group' );
+check( 2 === substr_count($html,'class="az-footer-location-actions"') && 4 === substr_count($html,'<img ') && strpos($html,'directions') < strpos($html,'https://maps.app.goo.gl/branch'), 'adding a Maps location appends a second two-icon group beneath the first' );
+check( '' === capture(function(){az_child_footer_location_actions(array('value'=>''));}), 'empty data produces no empty icon group' );
+check( az_child_footer_locations(array('addresses'=>array(array('label'=>'Only label'),array('maps_url'=>'javascript:alert(1)'),array('parking_url'=>'https://example.test/parking')),'address'=>'','google_maps_url'=>'')) === array(), 'labels, invalid URLs and obsolete parking-only rows cannot create footer groups' );
+check( $legacy === array(), 'removed legacy address and Maps URL cannot create footer groups' );
+check( az_child_footer_locations(array('address'=>'','google_maps_url'=>'')) === array(), 'explicitly cleared fallback values stay empty' );
+check( az_child_footer_locations(array('addresses'=>array(array('value'=>'Main branch','maps_url'=>'')),'google_maps_url'=>'https://maps.app.goo.gl/old')) === array(), 'cleared branch links cannot resurrect a fallback or legacy Maps group' );
+check( az_child_footer_locations(array('address'=>'Legacy address','google_maps_url'=>'')) === array(), 'fallback address alone cannot create icons' );
+check( $link_only === array(), 'retired fallback Maps URL cannot create a group' );
+check( strpos($html,'<iframe') === false && strpos($clean[0]['maps_embed'],'google.com/maps/embed') !== false, 'iframe configuration remains available but never renders in the footer' );
+check( az_child_footer_locations(array('addresses'=>array(array('maps_embed'=>$embed)),'address'=>'','google_maps_url'=>'')) === array(), 'iframe-only rows do not create empty icon groups' );
+check( strpos($home, "foreach ( $" . "az_footer_data['locations']") !== false && strpos($inner,"'/template-parts/footer-reference.php'") !== false, 'all footer entry points render the complete location list' );
+FILE az-theme-child/tests/footer-sync.php
+NOTE: Source review only; no test execution in this audit.
+require dirname($theme) . '/az-theme/inc/options/class-registry.php';
+require dirname($theme) . '/az-theme/inc/options/class-sanitizer.php';
+require $theme . '/inc/footer-storefront.php';
+    ob_start(); require get_stylesheet_directory() . $entry; return ob_get_clean();
+function check( $condition, $message ) { if ( ! $condition ) { throw new RuntimeException( $message ); } echo "PASS $message\n"; }
+check( 1 === $footer_calls && 1 === $partner_calls, 'homepage runs wp_footer once and keeps its partner section' );
+check( 4 === substr_count(footer_markup($homepage), '<section ') && strpos($homepage, 'Hồ sơ năng lực') !== false, 'homepage retains its four content columns' );
+check( strpos($homepage,'/icon/location-button-2.png') !== false && strpos($homepage,'az-footer-location-map') === false && strpos($homepage,'google.com/maps/embed') === false, 'homepage shows directions and static parking icons without a Maps iframe' );
+check( 2 === substr_count($homepage,'class="az-footer-location-actions"') && 2 === substr_count($homepage,'<span class="az-footer-location-action">') && strpos($homepage,'QL22 B, Hòa Thành, Tây Ninh') !== false, 'only linked locations create icon groups while unlinked addresses remain in company contacts' );
+    check( footer_markup($html) === footer_markup($homepage), "$type renders the identical homepage footer" );
+    check( 1 === $footer_calls && 0 === $partner_calls && 1 === substr_count($html, '</html>'), "$type uses one closing document and no homepage partners" );
+check( footer_markup(render_footer(false, '/template-parts/footer-home.php')) === footer_markup($homepage), 'legacy footer entry also delegates to the shared footer' );
+check( strpos($cleared,'az-footer-location-actions') === false && strpos($cleared,'660 Cách Mạng Tháng 8, Tây Ninh') !== false, 'clearing every branch link hides all icon groups without removing contact addresses' );
+check( strpos(render_footer(false), 'az-reference-footer__copyright') === false, 'copyright visibility follows Advanced settings' );
+check( strpos($homepage, 'href="https://example.test/profile.pdf?view=1&amp;lang=vi"') !== false && strpos($homepage, 'aria-label="Xem Hồ sơ năng lực (mở tab mới)"') !== false, 'cover opens the configured document URL with a labelled safe link' );
+check( strpos($homepage, 'Danh mục sản phẩm chân trang') === false && strpos($homepage, ' download') === false, 'profile replaces the old category menu without forcing download' );
+check( strpos($html, '<div class="az-footer-profile-preview">') !== false, 'image without a document URL remains visible without an empty link' );
+check( az_child_footer_data()['profile']['url'] === '', 'unsafe document URL is rejected' );
+check( strpos($html,'az-footer-profile-title') === false && strpos($html,'az-reference-footer__grid--without-profile') !== false, 'cleared image hides the column and expands the other three columns' );
+check( az_child_footer_data()['profile']['image'] === '', 'non-image or deleted attachment cannot render as a cover' );
+check( az_child_footer_data()['profile']['title'] === 'Hồ sơ công ty', 'profile title is plain text' );
+AZ_Options_Registry::add_section('general','General',require dirname($theme).'/az-theme/inc/admin/sections/general.php');
+    check( count($match) === 1 && $match[0]['type'] === $type, "$key registers once in General" );
+    check( AZ_Options_Sanitizer::sanitize($value,$type,$match[0]) === ('image'===$type?123:$value), "$key saves through the parent sanitizer" );
+check( strpos(file_get_contents($theme.'/css/home-reference-layout.css'), 'az-reference-footer') === false, 'homepage has no separate footer CSS overrides' );
+check( strpos(file_get_contents($theme.'/functions.php'), "wp_enqueue_style( 'az-footer-storefront'") !== false, 'shared footer stylesheet remains registered for every page' );
+FILE az-theme-child/tests/header-mega-menu.php
+NOTE: Source review only; no test execution in this audit.
+require $root . '/wp-includes/plugin.php';
+require $root . '/wp-includes/class-wp-walker.php';
+require $root . '/wp-includes/class-walker-nav-menu.php';
+require dirname( __DIR__ ) . '/inc/header-mega-menu.php';
+function check( $condition, $message ) { if ( ! $condition ) { throw new RuntimeException( $message ); } echo "PASS $message\n"; }
+check( $xpath->query( '//div[contains(@class,"az-mega-menu__panel")]/ul/li' )->length === 12, 'all manual child links stay in their left columns' );
+check( $xpath->query( '//div[contains(@class,"az-mega-menu__panel")]/div/img' )->length === 3, 'category images are separate right columns' );
+check( strpos( $html, 'data-image-id="101"' ) !== false && strpos( $html, 'data-image-id="102"' ) !== false, 'each product category uses its own thumbnail' );
+check( strpos( $html, 'alt="Điện Năng Lượng Mặt Trời"' ) !== false, 'category image has accessible text' );
+check( $xpath->query( '//div[contains(@class,"az-mega-menu__panel") and not(contains(@class,"az-mega-menu__panel--image"))]' )->length === 1, 'missing image leaves a links-only panel' );
+check( $xpath->query( '//li[@id="menu-item-50"]/button' )->length === 0, 'leaf items have no unused toggles' );
+check( strpos( render_menu( $items, 'az-steel-menu', 1 ), 'data-az-mega-toggle' ) === false, 'flat menus do not render buttons for omitted submenus' );
+check( strpos( $html, 'Hybrid)' ) < strpos( $html, 'Solar Pump' ), 'manual menu order preserved' );
+check( strpos( $nested, 'Menu cấp ba' ) !== false, 'third-level links remain reachable' );
+check( strpos( $blog, 'data-image-id="103"' ) !== false, 'blog category uses existing category image field' );
+check( az_child_mega_menu_term( $custom )->term_id === 1, 'exact local custom category links resolve artwork' );
+check( az_child_mega_menu_term( $custom ) === null, 'external links never borrow local artwork' );
+check( az_child_mega_menu_term( $custom ) === null, 'matching slug alone does not misidentify a category' );
+check( az_child_mega_menu_term( $custom )->term_id === 1, 'relative category links with query resolve' );
+check( strpos( $filtered, 'test-icon' ) !== false && strpos( $filtered, 'aria-current="page"' ) !== false, 'WordPress title/icon filters and active-link attributes preserved' );
+check( $items[0]->classes === array(), 'shared menu objects are not mutated for mobile' );
+check( count( $ids[1] ) === count( array_unique( $ids[1] ) ), 'primary and sticky toggles have unique panel IDs' );
+    check( ! isset( apply_filters( 'wp_nav_menu_args', array( 'menu_class' => $class ) )['walker'] ), $class . ' keeps its existing renderer' );
+check( apply_filters( 'wp_nav_menu_args', array( 'menu_class' => 'az-steel-menu', 'walker' => $existing ) )['walker'] === $existing, 'explicit plugin walkers are respected' );
+check( strpos( render_menu( $items ), 'az-mega-menu__image' ) === false, 'WooCommerce unavailable keeps menu links without product images' );
+FILE az-theme-child/tests/header-settings.php
+NOTE: Source review only; no test execution in this audit.
+require $parent . '/inc/helpers/header-components.php';
+require $parent . '/inc/core/mobile-menu.php';
+require $theme . '/inc/steel-storefront.php';
+require $theme . '/inc/home-storefront.php';
+require $theme . '/inc/header-storefront.php';
+require $theme . '/inc/header-colors.php';
+    ob_start(); require $GLOBALS['theme'] . '/header.php'; return ob_get_clean();
+function check( $ok, $message ) { if ( ! $ok ) { throw new RuntimeException( $message ); } echo "PASS $message\n"; }
+    if ( 'none' === $argv[2] ) { check( '' === $html, 'None hides mobile menu' ); exit; }
+    check( strpos( $html, 'az-mobile-menu--' . $resolved_style ) !== false, 'mobile style ' . $argv[2] . ' resolves to ' . $resolved_style );
+    check( strpos( $html, 'data-menu="40"' ) !== false, 'selected mobile menu ' . $argv[2] );
+    if ( $off ) { foreach ( array( 'az-mobile-search', 'az-shared-hotline', 'az-header-action--account', 'az-header-action--cart', 'az-header-action--cta', 'az-child-mobile-category' ) as $marker ) { check( strpos( $html, $marker ) === false, 'mobile turns off ' . $marker ); } }
+        check( strpos( $html, 'az-child-mobile-category' ) === false && strpos( $html, 'az-steel-category-list' ) === false, 'mobile category switch removes button and menu ' . $argv[2] );
+        check( strpos( $html, 'az-mobile-search' ) !== false && strpos( $html, 'az-header-action--account' ) !== false, 'mobile category switch preserves other controls ' . $argv[2] );
+        foreach ( array( 'az-mobile-search', '0900 333 444', 'az-header-action--account', 'az-header-action--cart', 'az-header-action--cta', 'Chọn danh mục', 'is-sticky' ) as $marker ) { check( strpos( $html, $marker ) !== false, 'branded mobile receives ' . $marker ); }
+        check( strpos( $html, 'data-logo-id="22"' ) !== false, 'mobile logo variant' );
+foreach ( array( '--az-header-main-height:150px', 'Top text', 'data-menu="30"', 'data-menu="20"', 'data-menu="10"', 'Tìm thiết bị', 'Chọn danh mục', 'Khách hàng', '/woo/myaccount/', 'Giỏ của tôi', 'Đặt lịch', '/dat-lich/', '0900 333 444', 'Tư vấn', 'data-depth="0"' ) as $marker ) { check( strpos( $html, $marker ) !== false, 'main header receives ' . $marker ); }
+foreach ( $hidden as $key => $marker ) { $html = render_header( array( 'header' => array( $key => 0 ) ) ); check( strpos( $html, $marker ) === false, 'turn off ' . $key ); }
+require $parent . '/inc/options/class-sanitizer.php';
+            check( strpos( $html, 'az-steel-category-toggle' ) !== false && strpos( $html, 'id="az-steel-categories"' ) !== false, $page . ' saved switch enables category button and dropdown' );
+            check( strpos( $menu, 'data-menu="72"' ) !== false, $page . ' re-enabled category uses the selected menu' );
+            check( strpos( $html, 'az-steel-category-toggle' ) === false && strpos( $html, 'id="az-steel-categories"' ) === false && '' === $menu, $page . ' saved switch removes category button and all category markup' );
+            check( strpos( $html, 'az-shared-navrow--no-category' ) !== false && strpos( $html, 'data-menu="10"' ) !== false, $page . ' disabled category preserves primary menu without an empty column' );
+            check( 72 === $GLOBALS['options']['header']['category_menu'], $page . ' disabled category preserves menu selection' );
+check( strpos( render_header( array( 'header' => array( 'show_category' => 0, 'show_primary_menu' => 0 ) ) ), 'az-steel-navband' ) === false, 'both menus disabled leave no empty navigation band' );
+check( strpos( render_header( array( 'header' => array( 'hotline' => '' ) ) ), 'az-shared-hotline' ) === false, 'empty hotline stays hidden' );
+check( strpos( render_header( array( 'header' => array( 'cta_url' => '' ) ) ), 'az-header-action--cta' ) === false, 'incomplete CTA stays hidden' );
+check( strpos( render_header( array( 'header' => array( 'transparent' => 1 ) ) ), 'az-shared-header is-transparent' ) !== false, 'transparent header flag' );
+check( strpos( $html, 'az-header-action--cart' ) === false && strpos( $html, '/tai-khoan/' ) !== false && strpos( $html, 'name="post_type"' ) === false, 'no WooCommerce: no cart/product search and account fallback' );
+check( strpos( render_header(), 'az-header-action--cart' ) === false, 'catalogue purchase policy' );
+foreach ( array( 'az-sticky-topbar', 'az-sticky-main', 'az-sticky-bottom', 'az-sticky-search', 'data-menu="50"', 'data-logo-id="33"', '/woo/myaccount/', 'az-header-action--cart', 'az-header-action--cta', '0900 333 444' ) as $marker ) { check( strpos( $html, $marker ) !== false, 'sticky receives ' . $marker ); }
+foreach ( array( 'sticky' => 'data-az-sticky-header', 'sticky_top_bar' => 'az-sticky-topbar', 'sticky_header_main' => 'az-sticky-main', 'sticky_header_bottom' => 'az-sticky-bottom', 'sticky_show_search' => 'az-sticky-search' ) as $key => $marker ) { $changed = $header; $changed[ $key ] = 0; $html = capture( function() use ( $changed ) { az_child_render_sticky_header( $changed ); } ); check( strpos( $html, $marker ) === false, 'sticky turns off ' . $key ); }
+check( strpos( $html, 'az-sticky-topbar' ) === false && strpos( $html, 'az-sticky-bottom' ) === false, 'sticky respects disabled top/bottom sources' );
+foreach ( array( 71, 72, 73 ) as $id ) { check( strpos( $html, 'data-menu="' . $id . '"' ) !== false, 'selected menu replaces default ' . $id ); }
+check( strpos( render_header(), '--az-header-main-height:150px' ) !== false, 'inner page shares Header settings' );
+        $html = capture( function() use ( $entry ) { require $GLOBALS['theme'] . '/' . $entry; } );
+        check( ! empty( $match[0] ) && $match[0] === $reference_header, ( $home ? 'home' : 'inner' ) . ' ' . $entry . ' renders identical configured header' );
+        check( 1 === substr_count( $html, '<!DOCTYPE html>' ) && 1 === substr_count( $html, '<header class="az-steel-header' ), $entry . ' renders one document and one main header' );
+check( strpos( capture( function() use ( $snapshot ) { az_child_steel_main_menu( 'az-steel-menu', $snapshot ); } ), 'data-menu="81"' ) !== false, 'primary uses supplied Header option snapshot' );
+check( strpos( capture( function() use ( $snapshot ) { az_child_steel_main_menu( 'az-sticky-menu', $snapshot, 'sticky' ); } ), 'data-menu="84"' ) !== false, 'sticky uses supplied Header option snapshot' );
+check( strpos( capture( function() use ( $snapshot ) { az_child_steel_top_menu( $snapshot ); } ), 'data-menu="82"' ) !== false, 'top bar uses supplied Header option snapshot' );
+check( strpos( capture( function() use ( $snapshot ) { az_child_steel_category_links( true, $snapshot ); } ), 'data-menu="83"' ) !== false, 'category uses supplied Header option snapshot' );
+check( '' === capture( function() use ( $snapshot ) { az_child_steel_main_menu( 'az-steel-menu', $snapshot ); } ), 'supplied disabled primary switch wins over saved enabled setting' );
+    check( '' === capture( function() { az_child_home_menu(); } ) && '' === capture( function() { az_child_steel_main_menu(); } ), ( $home ? 'home' : 'inner' ) . ' missing primary menu never renders hardcoded demo links' );
+    check( strpos( $html, 'az-steel-navband' ) === false, ( $home ? 'home' : 'inner' ) . ' no assigned menu leaves no empty navigation band' );
+    check( '' === capture( function() use ( $options ) { az_child_render_sticky_header( $options ); } ), 'missing sticky/primary menu leaves no empty sticky band' );
+check( strpos( $css, ':root{--az-menu-background:#112233;--az-menu-text:#abcdef;' ) !== false && strpos( $css, '#page.az-home-storefront' ) === false, 'all pages receive one set of explicitly saved menu colors' );
+check( strpos( az_child_menu_colors_css(), ':root{--az-menu-background:#ef1429;' ) !== false, 'unsaved header shares SOVIBAN palette on every page' );
+check( strpos( $css, '.az-shared-header' ) === false && strpos( $css, '.az-shared-brandbar' ) === false, 'homepage stylesheet no longer overrides shared header layout' );
+check( preg_match( '/\.az-shared-brandbar\s*\{[^}]*min-height:\s*var\(--az-header-main-height, 96px\)/', $css ) === 1, 'shared height reads setting variable on every page' );
+check( strpos( $css, '.az-shared-header.is-transparent .az-steel-navband { background: transparent; }' ) !== false, 'shared transparency overrides palette on every page' );
+foreach ( array( 'none', 'left', 'right', 'dropdown', 'brand_right', 'brand_dropdown' ) as $style ) { passthru( escapeshellarg( PHP_BINARY ) . ' ' . escapeshellarg( __FILE__ ) . ' --mobile ' . escapeshellarg( $style ), $code ); check( 0 === $code, 'mobile subprocess ' . $style ); }
+foreach ( array( 'brand_right', 'brand_dropdown' ) as $style ) { passthru( escapeshellarg( PHP_BINARY ) . ' ' . escapeshellarg( __FILE__ ) . ' --mobile ' . escapeshellarg( $style ) . ' off', $code ); check( 0 === $code, 'mobile controls disabled ' . $style ); }
+foreach ( array( 'brand_right', 'brand_dropdown' ) as $style ) { passthru( escapeshellarg( PHP_BINARY ) . ' ' . escapeshellarg( __FILE__ ) . ' --mobile ' . escapeshellarg( $style ) . ' category-off', $code ); check( 0 === $code, 'mobile category disabled independently ' . $style ); }
+FILE az-theme-child/tests/home-admin.php
+NOTE: Source review only; no test execution in this audit.
+require __DIR__ . '/soviban-home.php';
+    check( false === strpos( $admin, $obsolete ), 'editor removes unused controls: ' . $obsolete );
+check( array(
+check( 4 === $xpath->query( '//*[@id="az-home-admin"]/details[last()]//details' )->length
+check( false !== strpos( $admin, 'az_child_soviban' ) && false !== strpos( $admin, 'az_home_partners' ), 'active child components retain their fields' );
+check( ! function_exists( 'az_child_reference_admin' ) && ! isset( $hooks['save_post_page'][20] ), 'obsolete module and save handler are removed' );
+    check( $before[ $branch ] === $metadata[1][ $branch ], 'save preserves unedited or retired metadata: ' . $branch );
+check( '/keep-legacy.jpg' === $metadata[1]['steel']['featured_image'] && '' === $metadata[1]['steel']['other']
+check( '0' === $metadata[1]['products']['sections'][0]['title'] && array( 3, 4 ) === $metadata[1]['products']['sections'][0]['category_ids']
+check( 1 === $metadata[1]['blog']['enabled'] && 5 === $metadata[1]['blog']['category_id']
+check( 1 === $metadata[1]['video']['enabled'] && array( 'https://youtu.be/dQw4w9WgXcQ' ) === $metadata[1]['video']['items'], 'video settings remain functional' );
+check( array() === az_home_page_get_data( 1 )['products']['sections'] && array() === az_home_page_get_data( 1 )['video']['items']
+check( $saved['steel'] === $metadata[1]['steel'] && $saved['blog'] === $metadata[1]['blog'] && $saved['projects'] === $metadata[1]['projects'], 'partial forms preserve other active panels' );
+    check( $saved === $metadata, 'save rejects ' . $flag );
+check( $saved === $metadata, 'save rejects revisions' );
+FILE az-theme-child/tests/home-partners.php
+NOTE: Source review only; no test execution in this audit.
+require $theme . '/inc/modules/homepage/page-fields.php';
+require $theme . '/inc/home-partners.php';
+function check( $condition, $message ) { if ( ! $condition ) { throw new RuntimeException( $message ); } echo "PASS $message\n"; }
+check( 'ĐỐI TÁC CỦA CHÚNG TÔI' === az_child_home_partners_data()['title'], 'existing homepage receives the partner heading by default' );
+check( az_child_home_partners_data()['items'] === array( array( 'id' => 0, 'image' => '/old-logo.svg' ) ), 'legacy images remain available without name or link' );
+check( strpos( $html, '/old-logo.svg' ) !== false && strpos( $html, '<a ' ) === false && strpos( $html, 'Legacy name' ) === false, 'legacy render includes only logos' );
+check( strpos( $admin, 'az_home_partner_name' ) === false && strpos( $admin, 'az_home_partner_url' ) === false && strpos( $admin, 'data-home-partner-add' ) !== false, 'gallery replaces name and link fields' );
+check( strpos( $admin, 'role="switch"' ) !== false && strpos( $admin, 'az-home-partners-toggle__track' ) !== false, 'visibility uses an accessible compact switch' );
+check( $metadata['reference']['category_title'] === 'Keep categories' && $metadata['video']['items'][0] === 'Keep video', 'saving gallery preserves other homepage settings' );
+check( 'Đối tác của chúng tôi' === $metadata['partners']['title'] && 3 === count( $metadata['partners']['items'] ), 'save strips heading markup, skips duplicate and invalid images' );
+check( array_column( $metadata['partners']['items'], 'id' ) === array( 12, 11, 0 ), 'gallery order and legacy images are preserved' );
+check( $metadata['partners']['items'][0]['image'] === $attachments[12], 'attachment ID supplies the trusted Media URL' );
+check( 3 === substr_count( $html, '<img ' ) && strpos( $html, '<a ' ) === false, 'gallery renders images without links' );
+check( strpos( $html, 'alt="Media alt"' ) !== false && strpos( $html, 'alt="Logo đối tác"' ) !== false, 'Media alt text and legacy fallback are retained' );
+check( strpos( $html, 'aria-labelledby="az-home-partners-title"' ) !== false && strpos( $html, 'loading="lazy"' ) !== false, 'section is labelled and offscreen logos load lazily' );
+check( 11 === $metadata['partners']['items'][0]['id'], 'legacy Media URL resolves to an attachment on save' );
+check( array() === az_child_home_partners_data()['items'], 'removing all partners does not resurrect old rows' );
+check( '' === capture( function() { az_child_home_partners_render(); } ), 'disabled partner section renders nothing' );
+    check( $before === $metadata, 'save rejects ' . $flag ); $GLOBALS[$flag] = true;
+check( $before === $metadata, 'revision save preserves partner settings' );
+check( $before === $metadata, 'missing editor fields never reset partner settings' );
+check( strpos( $footer, 'az_child_home_partners_render()' ) !== false && strpos( $footer, 'az-home-social-strip' ) === false, 'homepage replaces social strip with partner component' );
+FILE az-theme-child/tests/neutral-page.php
+NOTE: Source review only; no test execution in this audit.
+require __DIR__ . '/soviban-home.php';
+require $parent . '/inc/core/neutral-page.php';
+function get_header() { require $GLOBALS['theme'].'/header.php'; }
+function get_footer() { require $GLOBALS['theme'].'/footer.php'; }
+function render_neutral( $id = 99 ) { $GLOBALS['queried_id']=$id;$GLOBALS['loop_index']=0;$GLOBALS['content_calls']=0;return capture(function(){require $GLOBALS['parent'].'/'.( 'page-about.php'===$GLOBALS['az_child_fixture_template'] ? 'page-about.php' : 'page-neutral.php' );}); }
+check(false===strpos($html,'<h1>') && false===strpos($html,'az-neutral-page__heading') && false!==strpos($html,'Hệ thống quản lý tòa nhà thông minh'),'neutral template omits duplicate title while retaining the breadcrumb Page name');
+check(false!==strpos($html,'class="az-neutral-page__image"') && false!==strpos($html,'<strong>quản lý tòa nhà</strong>') && 1===$content_calls,'featured media and rich content use normal WordPress render paths');
+check(false!==strpos($html,'id="main"') && false!==strpos($html,'id="az-main-content"') && 1===substr_count($html,'<!DOCTYPE html>') && 1===substr_count($html,'</html>'),'shared header/footer and both skip-link targets are retained');
+check(false!==strpos($html,'class="az-content az-neutral-page__content"') && false===strpos($html,'az-neutral-hero'),'neutral page reuses parent article typography without the old overlay hero');
+check(array('az-content','az-page-style')===$styles['az-neutral-page'][1] && false!==strpos($html,'/az-theme/css/neutral-page.css') && false===strpos($html,'/az-theme-child/css/neutral-page.css'),'inherited stylesheet comes from parent and follows its content/page styles');
+check(false!==strpos($other,'Nội dung riêng của trang chính sách.') && false===strpos($other,'Các đối tượng quản lý'),'same template uses each Page own content');
+check(false===strpos($html,'az-neutral-page__featured') && false!==strpos($html,'Các đối tượng quản lý'),'page without a featured image retains readable content');
+check(false!==strpos($html,'post-password-form') && false===strpos($html,'Các đối tượng quản lý') && false===strpos($html,'az-neutral-page__featured') && false===strpos($html,'fixture-comments'),'password page does not expose article body, featured image or comments');
+check(false!==strpos($html,'aria-label="Phân trang nội dung"') && false!==strpos($html,'fixture-comments'),'WordPress content pagination and enabled comments remain available');
+check(1===substr_count($html,'<h1>') && false!==strpos($html,'Banner trang') && false===strpos($html,'class="az-neutral-page__heading"'),'active parent banner owns the single H1');
+check(false!==strpos($html,'<strong>quản lý tòa nhà</strong>') && false!==strpos($html,'/az-theme/css/neutral-page.css') && false===strpos($html,'wv-about-lead-form'),'About template inherits child header/footer and renders WordPress editor formatting with parent styles');
+foreach(array('','front-page.php','page-contact.php') as $template){$az_child_fixture_template=$template;unset($styles['az-neutral-page']);az_neutral_page_assets();check(!isset($styles['az-neutral-page']),'neutral stylesheet does not load on template '.$template);}
+FILE az-theme-child/tests/product-image-ratio.php
+NOTE: Source review only; no test execution in this audit.
+require dirname($theme).'/az-theme/inc/options/class-registry.php';
+require dirname($theme).'/az-theme/inc/options/class-sanitizer.php';
+require dirname($theme).'/az-theme/inc/options/class-renderer.php';
+require $theme.'/inc/product-display.php';
+AZ_Options_Registry::add_section('woocommerce','WooCommerce', require dirname($theme).'/az-theme/inc/admin/sections/woocommerce.php');
+function check( $ok, $message ) { if (!$ok) { throw new RuntimeException($message); } echo "PASS $message\n"; }
+check(3 === count($image_fields), 'image fields register once and preserve existing WooCommerce fields');
+    check(strpos($html,'name="az_theme_options[woocommerce]['.$field['id'].']"') !== false,'admin renderer exposes '.$field['id']);
+    check($ratio === az_child_product_image_ratio(),'saved mode '.$mode.' reaches gallery ratio');
+    check(strpos(gallery_html(),'--az-product-image-ratio: '.$ratio) !== false,'template applies '.$mode);
+$options=array(); check('1 / 1' === az_child_product_image_ratio(),'unsaved settings default to square');
+check('5 / 3' === az_child_product_image_ratio(),'custom width and height reach rendering');
+check('1 / 100' === az_child_product_image_ratio(),'custom dimensions are bounded and never divide by zero');
+check('4 / 3' === az_child_product_image_ratio(),'malformed custom dimensions use safe defaults');
+    $options=array('gallery_image_ratio'=>$mode); check('1 / 1' === az_child_product_image_ratio(),'invalid mode cannot inject CSS');
+check(strpos(gallery_html(),'az-product-main-frame--original') !== false,'original images use intrinsic height');
+check(in_array('az-woocommerce',$styles['az-child-product-gallery']['deps'],true),'gallery override loads after parent WooCommerce CSS');
+check(in_array('az-product-card',$styles['az-child-product-gallery']['deps'],true),'catalogue override loads after shared card CSS');
+check(!$styles,'image stylesheet does not load on unrelated pages');
+check('existing thumbnail' === az_child_catalogue_product_image('existing thumbnail',$image_product,'woocommerce_thumbnail',array()),'unrelated pages keep existing image markup');
+        check(isset($styles['az-child-product-gallery']) && strpos($inline_styles['az-child-product-gallery'],'--az-product-image-ratio:'.$ratio.';') !== false,$page.' receives saved ratio '.$mode);
+        if ('original' === $mode) { check(strpos($inline_styles['az-child-product-gallery'],'--az-product-card-image-height:auto;') !== false,$page.' original images use natural height'); }
+    check('full' === $image_calls[0]['size'] && $attrs === $image_calls[0]['attrs'],$page.' uses the complete artwork and preserves image attributes');
+    check('small image' === az_child_catalogue_product_image('small image',$image_product,'thumbnail',$attrs),$page.' keeps non-card image sizes');
+    check('placeholder' === az_child_catalogue_product_image('placeholder',$placeholder_product,'woocommerce_thumbnail',$attrs),$page.' keeps products without an image');
+FILE az-theme-child/tests/product-permalinks.php
+NOTE: Source review only; no test execution in this audit.
+require $root . '/wp-includes/plugin.php';
+require $root . '/wp-includes/class-wp-rewrite.php';
+require $root . '/wp-includes/class-wp.php';
+require $root . '/wp-includes/class-wp-post.php';
+require $root . '/wp-includes/class-wp-matchesmapregex.php';
+require $root . '/wp-includes/link-template.php';
+require $root . '/wp-includes/rewrite.php';
+function check( $ok, $message ) { if ( ! $ok ) { throw new RuntimeException( $message ); } echo "PASS $message\n"; }
+require dirname( __DIR__ ) . '/inc/product-permalinks.php';
+check( get_term_link( $terms[1] ) === 'https://example.test/site/giai-phap-nlmt/', 'root category drops the old base' );
+check( get_term_link( $terms[2] ) === 'https://example.test/site/giai-phap-nlmt/pin-luu-tru/', 'child category keeps its parent path' );
+check( get_term_link( $terms[3] ) === 'https://example.test/site/giai-phap-nlmt/pin-luu-tru/lithium/', 'deeper categories keep the full tree' );
+check( get_permalink( 10 ) === 'https://example.test/site/giai-phap-nlmt/pin-luu-tru/pin-flex16/', 'real WordPress permalink API uses the deepest assigned category' );
+check( get_post_permalink( 10, true ) === 'https://example.test/site/giai-phap-nlmt/pin-luu-tru/%product%/', 'editor permalink keeps the product placeholder' );
+check( get_permalink( 13 ) === 'https://example.test/site/chua-phan-loai/san-pham-moi/', 'uncategorized products use the configured default category' );
+check( az_child_product_permalink( 'original', $posts[11], false, false ) === 'original', 'blog post URLs remain unchanged' );
+check( az_child_product_category_link( 'news URL', (object) array('taxonomy'=>'category'), 'category' ) === 'news URL', 'news categories remain unchanged' );
+check( az_child_product_permalink( 'draft URL', $posts[12], false, false ) === 'draft URL', 'draft URLs and preview permissions remain unchanged' );
+check( az_child_product_permalink( 'sample URL', $sample, true, false ) === 'https://example.test/site/giai-phap-nlmt/pin-luu-tru/%product%/', 'draft editor sample shows the future pretty URL' );
+check( get_permalink( 10 ) === 'https://example.test/site/may-loc-nuoc/pin-flex16/', 'WooCommerce primary-category integration controls the canonical product path' );
+check( get_permalink( 10 ) === 'https://example.test/site/giai-phap-nlmt/pin-luu-tru/pin-flex16/', 'stale unassigned primary category is rejected' );
+check( count( $flushes ) === 1 && $flushes[0] === false, 'rules refresh once without writing server configuration' );
+check( $options['permalink_structure'] === '/%postname%/' && ! in_array('woocommerce_permalinks',$updates,true), 'global and WooCommerce permalink settings are not overwritten' );
+check( route('giai-phap-nlmt/')['product_cat'] === 'giai-phap-nlmt', 'WordPress parser resolves root category' );
+check( route('giai-phap-nlmt/pin-luu-tru/')['product_cat'] === 'giai-phap-nlmt/pin-luu-tru', 'subcategory wins over the parent product wildcard' );
+check( route('giai-phap-nlmt/pin-luu-tru/lithium/')['product_cat'] === 'giai-phap-nlmt/pin-luu-tru/lithium', 'parser resolves a third-level category' );
+check( $vars['post_type'] === 'product' && $vars['name'] === 'pin-flex16' && !isset($vars['product_cat']), 'product request resolves through the native product query, without a conflicting taxonomy constraint' );
+check( $vars['product_cat'] === 'giai-phap-nlmt/pin-luu-tru' && $vars['paged'] === '2', 'category pagination reaches the correct archive' );
+check( $vars['product_cat'] === 'giai-phap-nlmt/pin-luu-tru' && $vars['feed'] === 'rss2', 'category feed still works' );
+    check( $vars['name'] === 'pin-flex16' && $vars[$expect[0]] === $expect[1], 'product endpoint '.$endpoint.' is preserved' );
+check( route('danh-muc-san-pham/giai-phap-nlmt/pin-luu-tru/')['product_cat'] === 'giai-phap-nlmt/pin-luu-tru', 'old category rules remain routable for redirects' );
+check( route('san-pham/pin-flex16/')['name'] === 'pin-flex16', 'old product rules remain routable for redirects' );
+foreach ( array('cua-hang','gio-hang','thanh-toan','tai-khoan','gioi-thieu') as $slug ) { check( route($slug.'/')['pagename'] === $slug, 'existing Page '.$slug.' keeps its route' ); }
+check( get_term_link($terms[6]) === 'https://example.test/site/danh-muc-san-pham/gio-hang/', 'category colliding with cart keeps its old URL' );
+check( get_term_link($terms[7]) === 'https://example.test/site/danh-muc-san-pham/gioi-thieu/', 'category colliding with a published Page keeps its old URL' );
+check( get_term_link($terms[8]) === 'https://example.test/site/danh-muc-san-pham/wp-json/', 'REST prefix is protected' );
+check( get_permalink(14) === 'https://example.test/site/san-pham/san-pham-trung-page/', 'product colliding with a Page keeps its existing permalink' );
+check( route('giai-phap-nlmt/pin-luu-tru/san-pham-trung-page/')['page_id'] === 105, 'Page created after rule generation takes precedence over a product rule' );
+check( get_permalink(15) === 'https://example.test/site/san-pham/sp-danh-muc-trung/', 'products under a reserved category keep routable existing links' );
+check( get_permalink(16) === 'https://example.test/site/san-pham/pin-luu-tru/', 'product sharing a child-category slug keeps its unambiguous existing URL' );
+check( az_child_product_category_link('old feed category URL',$feed_term,'product_cat') === 'old feed category URL', 'global feed prefix remains reserved' );
+check( (route('khong-ton-tai/foo/')['error'] ?? '') === '404', 'unknown category prefix remains a 404 instead of becoming a product catch-all' );
+check( count($flushes)===2 && route('giai-phap-nlmt/pin-dien/')['product_cat']==='giai-phap-nlmt/pin-dien', 'editing a category regenerates rules once with the new slug' );
+check( get_permalink(10) === 'https://example.test/site/may-loc-nuoc/pin-luu-tru/pin-flex16/' && route('may-loc-nuoc/pin-luu-tru/')['product_cat'] === 'may-loc-nuoc/pin-luu-tru', 'moving a category updates both links and routes to the new parent' );
+check( route('giai-phap-nlmt/bien-tan/')['product_cat']==='giai-phap-nlmt/bien-tan', 'new category becomes routable after one refresh' );
+check( !array_key_exists('^giai\\-phap\\-nlmt/bien\\-tan/?$',$options['rewrite_rules']), 'deleted category rules are removed' );
+check( az_child_product_permalink_redirect_url('/site/danh-muc-san-pham/giai-phap-nlmt/pin-luu-tru/page/2/?orderby=price&utm_source=test') === 'https://example.test/site/giai-phap-nlmt/pin-luu-tru/page/2/?orderby=price&utm_source=test', 'legacy category redirect retains pagination, ordering and tracking' );
+check( az_child_product_permalink_redirect_url('/site/san-pham/pin-flex16/?utm_source=test') === 'https://example.test/site/giai-phap-nlmt/pin-luu-tru/pin-flex16/?utm_source=test', 'legacy product redirects to its canonical hierarchy URL' );
+check( az_child_product_permalink_redirect_url('/site/?p=10&post_type=product&utm_campaign=ads') === 'https://example.test/site/giai-phap-nlmt/pin-luu-tru/pin-flex16/?utm_campaign=ads', 'plain product URL loses routing parameters but keeps campaign tracking' );
+check( !az_child_product_permalink_redirect_url('/site/giai-phap-nlmt/pin-luu-tru/pin-flex16/?utm_source=test'), 'canonical product URL does not redirect in a loop' );
+check( az_child_product_permalink_redirect_url('/site/san-pham/pin-flex16/2/') === 'https://example.test/site/giai-phap-nlmt/pin-luu-tru/pin-flex16/2/', 'multi-page product content keeps its page during redirect' );
+check( az_child_product_permalink_redirect_url('/site/san-pham/pin-flex16/feed/atom/') === 'https://example.test/site/giai-phap-nlmt/pin-luu-tru/pin-flex16/feed/atom/', 'product feed redirect keeps its native endpoint' );
+check( az_child_product_permalink_redirect_url('/site/danh-muc-san-pham/giai-phap-nlmt/pin-luu-tru/feed/') === 'https://example.test/site/giai-phap-nlmt/pin-luu-tru/feed/', 'category feed redirect keeps its native endpoint' );
+foreach ( array('admin','ajax','preview','404') as $skip ) { $context=array('type'=>'product','id'=>10,$skip=>true); check(!az_child_product_permalink_redirect_url('/site/san-pham/pin-flex16/'), $skip.' request is not redirected'); }
+check(!az_child_product_permalink_redirect_url('/site/san-pham/pin-flex16/'), 'POST review/cart operations are not redirected');
+check(!az_child_product_permalink_redirect_url('/site/san-pham/pin-flex16/?add-to-cart=10'), 'GET add-to-cart is not repeated by a canonical redirect');
+check(!az_child_product_permalink_redirect_url('/site/bai-viet/'), 'news articles are not redirected');
+check( get_permalink(10) === 'https://example.test/site/giai-phap-nlmt/pin-luu-tru/pin-flex16', 'URLs respect installations without trailing slashes' );
+check( az_child_product_permalink_rules(legacy_rules())===legacy_rules() && az_child_product_category_link('plain',$terms[1],'product_cat')==='plain', 'plain permalink installations retain their existing routes and links' );
+check( az_child_product_permalink_rules(legacy_rules())===legacy_rules(), 'disabling WooCommerce leaves existing rules alone' );
+check( has_action('template_redirect','az_child_product_permalink_redirect')===1, '301 redirect handler runs before WooCommerce canonical redirect' );
+FILE az-theme-child/tests/social-contact.php
+NOTE: Source review only; no test execution in this audit.
+require get_template_directory().'/inc/options/class-registry.php';
+require get_template_directory().'/inc/options/class-sanitizer.php';
+require get_template_directory().'/inc/options/class-renderer.php';
+require get_template_directory().'/inc/helpers/options.php';
+require $theme.'/inc/steel-storefront.php';
+require $theme.'/inc/floating-contact.php';
+function check( $value, $message ) { if(!$value){throw new RuntimeException($message);} echo "PASS $message\n"; }
+AZ_Options_Registry::add_section('social','Social',require get_template_directory().'/inc/admin/sections/social.php');
+check(array_keys($field['options'])===array('icons','social_expand') && count(array_filter($fields,function($v){return $v['id']==='contact_style';}))===1,'only styles 1 and 2 register without duplicating the select');
+check(AZ_Options_Sanitizer::sanitize('social_expand','select',$field)==='social_expand','parent sanitizer accepts and preserves style 2');
+check($field['default']==='icons' && AZ_Options_Sanitizer::sanitize('invalid','select',$field)==='icons','default/reset and invalid styles use style 1');
+check($hooks['wp_footer'][5]===array('az_child_render_contact') && $hooks['wp_enqueue_scripts'][35]===array('az_child_contact_assets'),'only one renderer and asset callback are registered');
+check(count($items)===11,'all ten networks and the optional hotline are available');
+check(substr_count($html,'class="az-contact__link ')===11 && substr_count($html,'<aside ')===1,'all configured channels render in one widget');
+check(strpos($html,'aria-expanded="false"')!==false && strpos($html,'aria-label="Các kênh liên hệ" hidden')!==false,'panel starts closed above its labelled toggle');
+check(substr_count($html,'rel="noopener noreferrer"')===10 && strpos($html,'href="tel:0933003911"')!==false,'network destinations open safely and hotline uses a telephone link');
+check(strpos($html,'&amp;amp;')===false && strpos($html,'?a=1&amp;b=2')!==false,'query parameters are escaped once');
+check(isset($styles['az-child-social-contact']) && $styles['az-child-social-contact'][1]===array('az-floating-contact'),'child stylesheet follows the shared base');
+check(isset($scripts['az-child-social-contact']) && !isset($scripts['az-floating-contact']),'only the new interaction script is loaded for style 2');
+ check(strpos($html,'az-contact--icons')!==false && capture('az_render_contact')===$html,"style $style uses the style 1 renderer");
+ check(strpos($html,'href="tel:0933003911"')!==false && strpos($html,'https://example.test/zalo')!==false && strpos($html,'https://example.test/messenger')!==false && substr_count($html,'class="az-contact__link ')===3 && strpos($html,'az-contact__toggle')===false,"style $style retains Messenger/Zalo/phone without retired layout controls");
+ check(strpos($html,'&amp;amp;')===false && substr_count($html,'?a=1&amp;b=2')===2,"style $style escapes Messenger and Zalo query parameters once");
+ check(AZ_Options_Sanitizer::sanitize($style,'select',$field)==='icons',"save normalizes $style to style 1");
+ check(strpos($admin,'value="icons" selected="selected"')!==false,"admin reflects style 1 for $style");
+ check(isset($styles['az-floating-contact']) && !$scripts && !isset($styles['az-child-social-contact']),"style $style loads icon CSS without retired scripts");
+check(strpos(capture('az_child_render_contact'),'az-contact--icons')!==false,'missing setting also uses style 1');
+check(substr_count($html,'class="az-contact__link ')===1 && strpos($html,'az-contact__messenger')!==false && capture('az_child_render_contact')===$html,'Messenger alone renders through both parent and child style 1');
+check(strpos($html,'href="https://m.me/example?ref=site&amp;source=contact"')!==false && strpos($html,'target="_blank" rel="noopener noreferrer"')!==false && strpos($html,'aria-label="Nhắn tin Facebook Messenger (mở tab mới)"')!==false,'Messenger uses its configured chat URL with a safe new tab and accessible label');
+check(strpos($html,az_contact_icon('messenger'))!==false && strpos(az_contact_icon('messenger'),'fill="currentColor"')!==false,'Messenger renders the shared lightning icon');
+check(isset($styles['az-floating-contact']) && !$scripts && !isset($styles['az-child-social-contact']),'Messenger-only style 1 loads the parent CSS without interaction scripts');
+check(strpos($html,'az-contact__messenger')<strpos($html,'az-contact__zalo') && strpos($html,'az-contact__zalo')<strpos($html,'az-contact__phone'),'style 1 orders Messenger above Zalo and phone');
+ check(strpos($html,'az-contact__messenger')===false && substr_count($html,'class="az-contact__link ')===2,'empty or unsafe Messenger URL preserves the existing Zalo and phone buttons');
+check(capture('az_render_contact')==='','style 1 does not confuse a Facebook page URL with its Messenger chat URL');
+check(strpos(capture('az_render_contact'),'href="https://m.me/legacy"')!==false,'style 1 supports a saved legacy Messenger URL');
+check(capture('az_render_contact')==='','explicitly cleared Messenger never restores the legacy chat URL');
+check(capture('az_render_contact')==='' && !$styles && !$scripts,'disabled master switch hides Messenger and its assets in style 1');
+check(count(az_child_social_contact_items())===1 && strpos(capture('az_child_render_contact'),'az-contact-social__facebook')!==false,'Facebook alone renders without requiring phone or Zalo');
+check(count(az_child_social_contact_items())===1,'invalid telephone numbers are omitted');
+check(capture('az_child_render_contact')==='', 'empty and unsafe destinations produce no launcher');
+check(!$styles && !$scripts,'empty widget does not load its assets');
+check(capture('az_child_render_contact')==='', 'disabled master switch hides style 2');
+check(count(az_child_social_contact_items())===1,'legacy Social URL remains available through parent helper');
+check(az_child_social_contact_items()===array(),'explicitly cleared Social URL never resurrects its legacy value');
+FILE az-theme-child/tests/soviban-home.php
+NOTE: Source review only; no test execution in this audit.
+function post_password_required( ...$args ) { return $GLOBALS['az_child_fixture_locked'] ?? false; }
+function get_template_part( $slug, $name = null, $args = array() ) { $file = get_stylesheet_directory() . '/' . $slug . '.php'; if ( ! is_file( $file ) ) { $file = get_template_directory() . '/' . $slug . '.php'; } require $file; }
+require $parent . '/inc/helpers/options.php';
+require $parent . '/inc/helpers/header-components.php';
+require $parent . '/inc/helpers/footer-components.php';
+require $parent . '/inc/core/shared-banner.php';
+require $parent . '/inc/core/mobile-menu.php';
+require $parent . '/inc/core/class-dynamic-css.php';
+require $theme . '/inc/steel-storefront.php';
+require $theme . '/inc/home-storefront.php';
+require $theme . '/inc/header-storefront.php';
+require $theme . '/inc/header-colors.php';
+require $theme . '/inc/footer-storefront.php';
+require $theme . '/inc/modules/homepage/page-fields.php';
+require $theme . '/inc/home-partners.php';
+require $theme . '/inc/soviban-home.php';
+function check( $ok, $message ) { if ( ! $ok ) { throw new RuntimeException( $message ); } echo "PASS $message\n"; }
+	require $theme . '/header.php';
+	if ( $is_home ) { require $theme . '/template-parts/home-storefront.php'; } else { echo '<main id="main" style="min-height:500px">Nội dung trang trong</main>'; }
+	require $theme . '/footer.php';
+check( 3 === count( az_child_soviban_data()['services'] ), 'fresh homepage has three reference services' );
+check( 5 === count( az_child_home_partners_data()['items'] ), 'fresh homepage reuses five bundled partner images' );
+check( 'Quản lý khai thác' === $feature['title'] && false !== strpos( $feature['image'], 'skyline-management.jpg' ), 'skyline foreground defaults use the reference image and text' );
+	check( array() === az_child_soviban_skyline_feature( az_child_soviban_data() ), 'explicit disabled foreground is not restored by defaults' );
+check( array() === az_child_soviban_skyline_feature( az_child_soviban_data() ), 'clearing all foreground content hides the block' );
+check( '0' === az_child_soviban_skyline_feature( az_child_soviban_data() )['title'], 'foreground literal zero remains valid text' );
+	check( array() === $data['services'] && array() === $data['skyline_items'] && '' === $data['footer_logo'] && ( is_array( $empty ) ? '' : $empty ) === $data['intro_title'], 'explicit empty values do not resurrect website defaults' );
+check( array() === az_child_soviban_promos(1) && array() === az_home_page_get_data()['steel']['promos'], 'cleared promo collection stays empty in frontend and editor' );
+check( array() === az_child_home_partners_data()['items'], 'cleared partner collection stays empty' );
+check( 'Edited' === $metadata[1]['soviban']['intro_title'] && false === strpos($metadata[1]['soviban']['intro_description'],'<script'), 'save sanitizes text and rich description' );
+check( '' === $metadata[1]['soviban']['services'][0]['url'] && 0 === $metadata[1]['soviban']['intro_enabled'], 'save rejects unsafe link and respects unchecked switches' );
+check( array('keep') === $metadata[1]['unknown'] && array('keep video') === $metadata[1]['video']['items'] && array() === $metadata[1]['steel']['promos'], 'save preserves all other homepage branches' );
+check( array() === az_child_soviban_data()['services'], 'removing all service rows stays empty after save' );
+foreach ( array('nonce_valid','can_edit') as $flag ) { $GLOBALS[$flag] = false; az_child_soviban_save(1,$post); check($before===$metadata,'rejects '.$flag); $GLOBALS[$flag]=true; }
+$revision = true; az_child_soviban_save(1,$post); $revision = false; check($before===$metadata,'rejects revisions');
+unset($_POST['az_child_soviban_present']); az_child_soviban_save(1,$post); check($before===$metadata,'missing panel preserves data');
+check( 'Managed building' === $metadata[1]['soviban']['skyline_feature_title'] && false === strpos($metadata[1]['soviban']['skyline_feature_description'],'<script'), 'foreground saves plain title and sanitized rich description' );
+check( home_url('/chosen.jpg') === $metadata[1]['soviban']['skyline_feature_image'] && '' === $metadata[1]['soviban']['skyline_feature_url'], 'foreground resolves image URL and rejects unsafe detail links' );
+check( 'Keep background' === $metadata[1]['soviban']['skyline_items'][0]['title'] && 'Keep footer' === $metadata[1]['soviban']['footer_note'] && array('keep video') === $metadata[1]['video']['items'], 'foreground save preserves background collection, footer and other meta branches' );
+check( 0 === $metadata[1]['soviban']['skyline_feature_enabled'] && '' === $metadata[1]['soviban']['skyline_feature_image'], 'unchecked foreground and cleared image stay off and empty after saving' );
+check( 0 === $metadata[1]['soviban']['skyline_feature_enabled'], 'older or partial forms do not reset the foreground switch' );
+	check( array()===az_child_soviban_linked_feature($link), 'automatic slide rejects non-public, protected, missing or external content: '.$link );
+check( 'Quản lý khai thác'===$dynamic_features[0]['title'] && 'Custom second slide'===$dynamic_features[1]['title'] && home_url('/custom-slide.jpg')===$dynamic_features[1]['image'], 'each saved slide resolves its own automatic or custom content' );
+check( false===strpos($dynamic_features[1]['description'],'<script') && false!==strpos($dynamic_features[1]['description'],'<strong>Own content</strong>'), 'custom slide description is sanitized while retaining rich text' );
+check( home_url('/uy-thac-tron-goi/')===$dynamic_features[1]['url'] && 'Updated footer'===$metadata[1]['soviban']['footer_note'] && array('keep video')===$metadata[1]['video']['items'], 'per-slide detail URLs and unrelated saved settings are preserved' );
+check( $raw_rows===$metadata[1]['soviban']['skyline_items'], 'legacy form submissions preserve existing per-slide fields' );
+check( !isset($dynamic_features[0]) && '0'===$dynamic_features[1]['title'] && ''===$dynamic_features[1]['image'], 'background-only mode and explicit cleared image/literal zero remain per slide' );
+check( array(0)===array_keys(az_child_soviban_skyline_features($legacy_data,$legacy_slides)), 'legacy global block is used only for the first unlinked slide' );
+check( array()===az_child_soviban_data()['skyline_items'], 'removing every dynamic slide does not restore defaults' );
+	check( (bool)$transparent === $data['overlay_header'] && (int)$autoplay === $data['autoplay'], 'layout none keeps independent overlay/playback switches: '.$transparent.'/'.$autoplay.'/'.$images );
+	if ( '11,999,12' === $images ) { check(array(11,12)===$data['ids'],'manual slider retains all valid image IDs in order'); }
+$data = az_child_header_options(); check( ''===$data['top_bar_text'] && false===$data['show_account'] && 100===$data['height'] && 0===$data['child_top_social'], 'saved Header values outrank child defaults' );
+$html = capture(function() use($theme) { require $theme.'/header.php'; require $theme.'/template-parts/home-storefront.php'; require $theme.'/footer.php'; });
+check( 3 === substr_count($html,'class="az-child-home__service"') && 5 === substr_count($html,'class="az-home-partners__item"') && 1 === substr_count($html,'class="az-child-footer"'), 'full template renders reference services, partners and one footer' );
+check( 4 === substr_count($html,'data-az-steel-feature="') && false !== strpos($html,'Xem chi tiết: Quản lý khai thác') && false !== strpos($html,'Xem chi tiết: Ủy thác trọn gói'), 'skyline renders distinct linked foregrounds for its four slides' );
+$foreground_html = capture(function() use($theme){ require $theme.'/template-parts/home-storefront.php'; });
+check( false !== strpos($foreground_html,'az-child-skyline-feature--text-only') && false === strpos($foreground_html,'class="az-child-skyline-feature__link"') && false !== strpos($foreground_html,'<strong>Edited content</strong>'), 'image and detail link can be cleared without losing rich description' );
+check( false === strpos(capture(function() use($theme){ require $theme.'/template-parts/home-storefront.php'; }),'class="az-child-skyline-feature'), 'disabled foreground preserves the background carousel without the block' );
+check( false===strpos($hero_html[0],'data-az-steel-prev') && false===strpos($hero_html[0],'data-az-steel-pause'), 'single-image hero has no controls or playback button' );
+$footer_home = capture(function() use($theme){ require $theme.'/footer.php'; });
+$footer_inner = capture(function() use($theme){ require $theme.'/footer.php'; });
+check($a[0]===$b[0] && false===strpos($footer_inner,'WRONG INNER PAGE'),'inner page renders same footer from homepage settings');
+az_child_soviban_assets(); check( !in_array('az-home-storefront',$styles['az-child-soviban'][1],true),'inner page asset graph has no missing homepage dependency');
