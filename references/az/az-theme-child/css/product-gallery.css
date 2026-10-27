@@ -1,0 +1,45 @@
+/* Keep intrinsic image dimensions from expanding the configured gallery frame. */
+.single-product .az-product-main-frame {
+  width: 100%;
+  aspect-ratio: var(--az-product-image-ratio, 1 / 1);
+  min-width: 0;
+  min-height: 0;
+}
+.single-product .az-product-main-frame .az-product-main-img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  object-fit: contain;
+  object-position: center;
+}
+/* Preserve the full artwork, including text near the edges, on hover. */
+.single-product .az-product-main-frame .az-product-main-img:hover { transform: none; }
+.single-product .az-product-main-frame--original .az-product-main-img {
+  position: static;
+  height: auto;
+}
+
+/* Catalogue, related and viewed cards share the detail gallery's saved ratio. */
+.az-site :is(.az-shop-page, .az-product-related) .az-product-card .az-product-card__image.az-shop-card-img {
+  aspect-ratio: var(--az-product-image-ratio, 1 / 1);
+  height: auto;
+  min-height: 0;
+  flex-shrink: 0;
+}
+.az-site :is(.az-shop-page, .az-product-related) .az-product-card .az-product-card__image.az-shop-card-img img {
+  position: var(--az-product-card-image-position, absolute);
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: var(--az-product-card-image-height, 100%);
+  max-width: none;
+  max-height: none;
+  object-fit: contain;
+  object-position: center;
+  transform: none;
+}

@@ -1,0 +1,1 @@
+﻿PASS skip-link JavaScript: 23 assertions; actual assets/accessibility/skip-link.js executed in tools V8 isolate with tests/skip-link.test.js DOM fixture. V8 version not exposed. Not Node/browser integration. No vendor.

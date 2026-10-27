@@ -1,0 +1,105 @@
+/* Performance settings: keep every toggle aligned inside a compact option card. */
+.az-theme-admin--performance .az-settings-grid {
+    gap: 12px;
+    padding: 18px;
+}
+
+.az-theme-admin--performance .az-advanced__field.az-field--switch {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-rows: auto auto;
+    column-gap: 18px;
+    row-gap: 4px;
+    align-items: center;
+    min-height: 76px;
+    padding: 14px 16px;
+    border: 1px solid #dce3ed;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 1px 2px rgba(16, 42, 86, 0.03);
+    box-sizing: border-box;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.az-theme-admin--performance .az-advanced__field.az-field--switch:hover {
+    border-color: #bfdbfe;
+    background: #fbfdff;
+}
+
+.az-theme-admin--performance .az-advanced__field.az-field--switch:focus-within {
+    border-color: var(--az-admin-primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.az-theme-admin--performance .az-field--switch .az-advanced__field-label {
+    grid-column: 1;
+    grid-row: 1;
+    align-self: end;
+    margin: 0;
+    color: var(--az-admin-text);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.az-theme-admin--performance .az-field--switch .az-advanced__help {
+    grid-column: 1;
+    grid-row: 2;
+    align-self: start;
+    margin: 0;
+    color: var(--az-admin-muted);
+    font-size: 13px;
+    line-height: 1.45;
+}
+
+.az-theme-admin--performance .az-field--switch .az-advanced__switch {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    align-self: center;
+    margin: 0;
+}
+
+.az-theme-admin--performance .az-advanced__switch label {
+    width: 48px;
+    height: 26px;
+}
+
+.az-theme-admin--performance .az-advanced__switch label span {
+    width: 20px;
+    height: 20px;
+}
+
+.az-theme-admin--performance .az-advanced__switch input:checked + label span {
+    transform: translateX(22px);
+}
+
+.az-theme-admin--performance .az-advanced__switch input:focus-visible + label {
+    outline: 0;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+.az-theme-admin--performance .az-settings-card--admin_tools .az-settings-grid {
+    grid-template-columns: minmax(0, 1fr);
+}
+
+@media (max-width: 782px) {
+    .az-theme-admin--performance .az-settings-grid {
+        grid-template-columns: minmax(0, 1fr);
+        padding: 14px;
+    }
+
+    .az-theme-admin--performance .az-advanced__field.az-field--switch {
+        min-height: 70px;
+        padding: 12px 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .az-theme-admin--performance .az-advanced__field.az-field--switch {
+        column-gap: 12px;
+    }
+
+    .az-theme-admin--performance .az-field--switch .az-advanced__help {
+        font-size: 12px;
+    }
+}

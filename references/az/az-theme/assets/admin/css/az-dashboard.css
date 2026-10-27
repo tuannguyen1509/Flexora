@@ -1,0 +1,50 @@
+.az-theme-admin .az-admin-dashboard__header{margin-bottom:24px}.az-theme-admin .az-admin-dashboard__stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-bottom:26px}.az-theme-admin .az-admin-stat{min-height:118px;padding:22px 24px;background:#fff;border:1px solid #dce3ed;border-radius:12px;box-shadow:0 8px 22px rgba(16,42,86,.06);box-sizing:border-box}.az-theme-admin .az-admin-stat span{display:block;color:#66758a;font-size:13px;font-weight:600}.az-theme-admin .az-admin-stat strong{display:block;margin-top:17px;color:#10233f;font-size:32px;line-height:1;font-weight:750}.az-theme-admin .az-admin-dashboard__actions{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;padding:0 0 32px}.az-theme-admin .az-dashboard-card{min-width:0;min-height:148px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:18px;background:#fff;border:1px solid #e1e8f0;border-radius:12px;color:#10233f;text-decoration:none;box-sizing:border-box;box-shadow:0 8px 22px rgba(16,42,86,.05);transition:transform .15s ease,box-shadow .15s ease,border-color .15s ease}.az-theme-admin .az-dashboard-card:hover,.az-theme-admin .az-dashboard-card:focus{border-color:#93c5fd;color:#1d4ed8;transform:translateY(-3px);box-shadow:0 14px 28px rgba(16,42,86,.12);outline:0}.az-theme-admin .az-dashboard-card .dashicons{flex:0 0 auto;width:auto;height:auto;font-size:36px;color:#2583b7}.az-theme-admin .az-dashboard-card>span:last-child{display:block;width:100%;overflow-wrap:anywhere;text-transform:uppercase;font-size:14px;line-height:1.35;font-weight:650;text-align:center}.az-theme-admin .az-dashboard-card--primary{border-color:#fbbf24;background:#fffdf7}.az-theme-admin .az-dashboard-card--primary .dashicons{color:#f59e0b}@media(max-width:1100px){.az-theme-admin .az-admin-dashboard__stats,.az-theme-admin .az-admin-dashboard__actions{grid-template-columns:repeat(3,minmax(0,1fr))}}@media(max-width:782px){.az-theme-admin .az-admin-dashboard__stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.az-theme-admin .az-admin-stat{min-height:100px;padding:17px}.az-theme-admin .az-admin-stat strong{font-size:27px}.az-theme-admin .az-admin-dashboard__actions{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.az-theme-admin .az-dashboard-card{min-height:122px;padding:14px 10px}.az-theme-admin .az-dashboard-card>span:last-child{font-size:12px}}@media(max-width:520px){.az-theme-admin .az-admin-dashboard__stats,.az-theme-admin .az-admin-dashboard__actions{grid-template-columns:1fr}.az-theme-admin .az-dashboard-card{min-height:82px;flex-direction:row;justify-content:flex-start;padding:0 18px}.az-theme-admin .az-dashboard-card>span:last-child{text-align:left;font-size:13px}}
+.az-theme-admin.az-admin-dashboard .az-admin-dashboard__actions {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  padding-bottom: 32px;
+}
+.az-theme-admin.az-admin-dashboard .az-dashboard-card {
+  min-height: 128px;
+  padding: 20px 18px;
+  gap: 14px;
+  border-radius: 12px;
+}
+.az-theme-admin.az-admin-dashboard .az-dashboard-card .dashicons {
+  width: 32px;
+  height: 32px;
+  font-size: 32px;
+  line-height: 1;
+}
+.az-theme-admin.az-admin-dashboard .az-dashboard-card:focus-visible {
+  outline: 3px solid #2563eb;
+  outline-offset: 3px;
+}
+.az-theme-admin.az-admin-dashboard .az-admin-dashboard__actions > .notice {
+  grid-column: 1 / -1;
+  margin: 0;
+}
+@media (max-width: 960px) {
+  .az-theme-admin.az-admin-dashboard .az-admin-dashboard__actions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 520px) {
+  .az-theme-admin.az-admin-dashboard .az-admin-dashboard__actions {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+  .az-theme-admin.az-admin-dashboard .az-dashboard-card {
+    min-height: 80px;
+    padding: 16px 18px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .az-theme-admin.az-admin-dashboard .az-dashboard-card {
+    transition: none;
+  }
+  .az-theme-admin.az-admin-dashboard .az-dashboard-card:hover,
+  .az-theme-admin.az-admin-dashboard .az-dashboard-card:focus {
+    transform: none;
+  }
+}

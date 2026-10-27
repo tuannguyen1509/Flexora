@@ -1,0 +1,6 @@
+# Reference and historical snapshots must retain exact bytes across Git checkouts.
+references/az/** -text
+docs/implementation-history/phase-03/** -text
+*.zip binary
+# Container scripts require LF even on Windows hosts.
+*.sh text eol=lf

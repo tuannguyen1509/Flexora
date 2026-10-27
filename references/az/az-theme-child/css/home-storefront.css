@@ -1,0 +1,106 @@
+/* Homepage only: reference proportions, white catalog and yellow accents. */
+.az-home-storefront {
+  --az-home-yellow: #ffc629;
+  --az-home-ink: #202020;
+  background: #fff;
+  color: #333;
+}
+.az-home-storefront .az-steel-container { max-width: var(--az-container, 1200px); }
+.az-home-storefront a:hover { color: #9a6900; }
+.az-home-storefront a:focus-visible,
+.az-home-storefront button:focus-visible { outline-color: #986500; }
+.az-home-main { padding: 0 0 28px; }
+.az-home-storefront .az-home-hero { aspect-ratio: 4 / 1; min-height: 0; overflow: hidden; background: #5badcf; }
+.az-home-hero .az-steel-hero__slide,
+.az-home-hero .az-steel-hero__slide > a { height: 100%; }
+.az-home-hero .az-steel-hero__slide[hidden] { display: none; }
+.az-home-hero .az-steel-hero__slide img { width: 100%; height: 100%; object-fit: cover; }
+.az-home-hero__fallback { position: relative; }
+.az-home-hero__copy { position: absolute; inset: 0 0 0 40%; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; padding: 22px; color: #fff; }
+.az-home-hero__copy > p { margin: 0 0 6px; font-size: 10px; letter-spacing: 2px; }
+.az-home-hero__copy h2 { margin: 0 0 12px; color: #fff; font-family: var(--az-font-heading, Arial, sans-serif); font-size: clamp(18px, 2.6vw, 34px); font-weight: 800; font-style: italic; line-height: 1.15; }
+.az-home-hero__copy > span { font-size: 11px; }
+.az-home-hero__copy > a { margin-top: 18px; padding: 8px 18px; border-radius: 3px; background: #fff; color: #247499; font-size: 13px; font-weight: 700; }
+.az-home-benefits { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; padding: 16px 18px; background: #111; color: #fff; }
+.az-home-benefits > div { display: flex; align-items: center; gap: 12px; min-width: 0; }
+.az-home-benefits svg { flex: 0 0 36px; width: 36px; height: 36px; }
+.az-home-benefits strong { display: block; margin-bottom: 3px; color: var(--az-home-yellow); font-size: 12px; font-weight: 600; }
+.az-home-benefits small { display: block; color: #d0d0d0; font-size: 10px; }
+.az-home-section { margin-top: 30px; scroll-margin-top: 24px; }
+.az-home-section-heading { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 22px; border-block: 1px solid #f1f1f1; }
+.az-home-section-heading h2 { max-width: 80%; margin: -1px 0; padding: 8px 12px; background: var(--az-home-yellow); color: #242424; font-family: var(--az-font-heading, Arial, sans-serif); font-size: 14px; font-weight: 700; line-height: 1.25; text-transform: uppercase; }
+.az-home-section-heading > a { flex-shrink: 0; padding: 8px 0 8px 8px; color: #333; font-size: 12px; font-weight: 600; }
+.az-home-section-heading > a span { margin-left: 4px; }
+.az-home-product-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 18px; }
+.az-home-product { min-width: 0; border: 1px solid #ebebeb; background: #fff; }
+.az-home-product > a { display: block; height: 100%; }
+.az-home-product__image { position: relative; aspect-ratio: 1 / 1; overflow: hidden; background: #fff; }
+.az-home-product__image img { display: block; width: 100%; height: 100%; object-fit: contain; transition: transform .2s ease; }
+.az-home-product a:hover img { transform: scale(1.035); }
+.az-home-product h3 { margin: 0; padding: 10px 9px 12px; min-height: 56px; color: #444; font-family: var(--az-font-main, Arial, sans-serif); font-size: 12px; font-weight: 400; line-height: 1.45; overflow-wrap: anywhere; }
+.az-home-discount { position: absolute; top: 8px; left: 0; padding: 5px 6px; background: var(--az-home-yellow); color: #3a2a00; font-size: 10px; font-weight: 700; line-height: 1; }
+.az-home-empty { grid-column: 1 / -1; display: grid; place-items: center; min-height: 140px; margin: 0; padding: 24px; border: 1px solid #eee; background: #fafafa; color: #777; font-size: 14px; text-align: center; }
+.az-home-service-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
+.az-home-service-card { min-width: 0; border: 1px solid #eee; background: #fff; }
+.az-home-service-card__image { position: relative; aspect-ratio: 1.4; overflow: hidden; background: #f2f3f4; }
+.az-home-service-card__image img { width: 100%; height: 100%; object-fit: cover; }
+.az-home-service-icon { position: absolute; top: 12px; left: 0; display: grid; place-items: center; width: 34px; height: 42px; border-radius: 0 10px 10px 0; background: var(--az-home-yellow); color: #fff; }
+.az-home-service-icon svg { width: 22px; height: 22px; }
+.az-home-service-card h3 { margin: 10px 10px 5px; color: #9c7100; font-size: 13px; line-height: 1.35; font-weight: 600; }
+.az-home-service-card p { margin: 0 10px 12px; color: #777; font-size: 12px; line-height: 1.5; }
+.az-home-image-placeholder { display: grid; place-items: center; width: 100%; height: 100%; background: #edf0f2; color: #abb4bb; }
+.az-home-image-placeholder svg { width: 48px; height: 48px; }
+.az-home-project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: repeat(2, 240px); gap: 20px; }
+.az-home-project-card { position: relative; overflow: hidden; min-width: 0; background: #d5dce0; }
+.az-home-project-card:first-child { grid-row: span 2; }
+.az-home-project-card > a { position: relative; display: block; width: 100%; height: 100%; color: #fff; }
+.az-home-project-card img { width: 100%; height: 100%; object-fit: cover; }
+.az-home-project-card > a::after { position: absolute; inset: 0; content: ''; background: linear-gradient(180deg, #00000005 20%, #0009 100%); }
+.az-home-project-badge { position: absolute; z-index: 1; top: 18px; left: 18px; display: grid; place-items: center; width: 42px; height: 42px; border-radius: 50%; background: var(--az-home-yellow); }
+.az-home-project-badge svg { width: 24px; height: 24px; }
+.az-home-project-card__caption { position: absolute; z-index: 1; right: 16px; bottom: 24px; left: 16px; text-align: center; }
+.az-home-project-card__caption h3 { margin: 0 0 12px; color: #fff; font-size: 16px; font-weight: 700; text-transform: uppercase; }
+.az-home-project-card__caption > span { display: inline-block; padding: 5px 13px; border: 1px solid #ffffffb3; color: #fff; font-size: 10px; text-transform: uppercase; }
+@media (max-width: 1100px) {
+  .az-home-product-grid { gap: 14px; }
+  .az-home-benefits { gap: 12px; }
+  .az-home-benefits svg { width: 28px; height: 28px; flex-basis: 28px; }
+}
+@media (max-width: 960px) {
+  .az-home-storefront .az-home-hero { aspect-ratio: 3.5 / 1; }
+  .az-home-benefits { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .az-home-product-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .az-home-project-grid { grid-template-rows: repeat(2, 190px); }
+}
+@media (max-width: 640px) {
+  .az-home-storefront .az-steel-container { width: calc(100% - 28px); }
+  .az-home-storefront .az-home-hero { aspect-ratio: 2.3 / 1; }
+  .az-home-hero__copy { left: 31%; padding: 12px; }
+  .az-home-hero__copy > p { font-size: 7px; letter-spacing: 1px; }
+  .az-home-hero__copy h2 { font-size: 18px; margin-bottom: 6px; }
+  .az-home-hero__copy > span { font-size: 8px; }
+  .az-home-hero__copy > a { margin-top: 10px; padding: 6px 10px; font-size: 10px; }
+  .az-home-benefits { padding: 14px 10px; gap: 14px 10px; }
+  .az-home-benefits > div { gap: 8px; }
+  .az-home-benefits strong { font-size: 10px; }
+  .az-home-benefits small { font-size: 9px; }
+  .az-home-section { margin-top: 24px; }
+  .az-home-section-heading { margin-bottom: 14px; gap: 6px; }
+  .az-home-section-heading h2 { max-width: 76%; padding: 8px; font-size: 11px; }
+  .az-home-section-heading > a { font-size: 10px; }
+  .az-home-product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .az-home-product h3 { font-size: 11px; padding: 8px; }
+  .az-home-service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .az-home-service-card h3 { font-size: 12px; }
+  .az-home-service-card p { font-size: 11px; }
+  .az-home-project-grid { grid-template-rows: repeat(2, 150px); gap: 12px; }
+  .az-home-project-badge { top: 10px; left: 10px; width: 30px; height: 30px; }
+  .az-home-project-badge svg { width: 18px; height: 18px; }
+  .az-home-project-card__caption { bottom: 14px; right: 10px; left: 10px; }
+  .az-home-project-card__caption h3 { font-size: 12px; }
+}
+@media (max-width: 380px) {
+  .az-home-hero__copy h2 { font-size: 15px; }
+  .az-home-hero__copy > p, .az-home-hero__copy > span { display: none; }
+}
+@media (prefers-reduced-motion: reduce) { .az-home-product__image img { transition: none; } }

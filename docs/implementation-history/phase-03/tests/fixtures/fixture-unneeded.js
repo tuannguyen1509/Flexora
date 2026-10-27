@@ -1,0 +1,1 @@
+/* Unused asset fixture. Must never be enqueued simply because registered. */

@@ -1,0 +1,359 @@
+# English translations for AZ AI Theme
+# Copyright (C) 2024 AZ9S Team
+# This file is distributed under the same license as the AZ AI Theme package.
+msgid ""
+msgstr ""
+"Project-Id-Version: AZ AI Theme 1.0.0\n"
+"Report-Msgid-Bugs-To: https://az9s.com/\n"
+"POT-Creation-Date: 2024-01-01 00:00+0000\n"
+"PO-Revision-Date: 2024-01-01 00:00+0000\n"
+"Last-Translator: AZ9S Team\n"
+"Language-Team: English\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+# Navigation and Menu
+msgid "Primary Menu"
+msgstr "Primary Menu"
+
+# Registration Page
+msgid "Create Account"
+msgstr "Create Account"
+
+msgid "Join the elite network of AI-powered creators."
+msgstr "Join the elite network of AI-powered creators."
+
+msgid "Full Name"
+msgstr "Full Name"
+
+msgid "John Doe"
+msgstr "John Doe"
+
+msgid "Email Address"
+msgstr "Email Address"
+
+msgid "john@example.com"
+msgstr "john@example.com"
+
+msgid "Password"
+msgstr "Password"
+
+msgid "Confirm Password"
+msgstr "Confirm Password"
+
+# Login Page
+msgid "Welcome Back"
+msgstr "Welcome Back"
+
+msgid "Sign in to your account to continue your AI journey."
+msgstr "Sign in to your account to continue your AI journey."
+
+msgid "Email"
+msgstr "Email"
+
+msgid "Remember me"
+msgstr "Remember me"
+
+msgid "Forgot Password?"
+msgstr "Forgot Password?"
+
+msgid "Sign In"
+msgstr "Sign In"
+
+msgid "Don't have an account?"
+msgstr "Don't have an account?"
+
+msgid "Create one here"
+msgstr "Create one here"
+
+# Home Page
+msgid "AI-Powered Content Creation"
+msgstr "AI-Powered Content Creation"
+
+msgid "Transform your ideas into engaging content with our advanced AI technology. Create blog posts, articles, and marketing copy in minutes, not hours."
+msgstr "Transform your ideas into engaging content with our advanced AI technology. Create blog posts, articles, and marketing copy in minutes, not hours."
+
+msgid "Start Creating Now"
+msgstr "Start Creating Now"
+
+msgid "Watch Demo"
+msgstr "Watch Demo"
+
+msgid "Trusted by 10,000+ Content Creators"
+msgstr "Trusted by 10,000+ Content Creators"
+
+# Features Section
+msgid "Why Choose AZ Content AI?"
+msgstr "Why Choose AZ Content AI?"
+
+msgid "Powerful features designed to supercharge your content creation workflow"
+msgstr "Powerful features designed to supercharge your content creation workflow"
+
+msgid "AI-Powered Writing"
+msgstr "AI-Powered Writing"
+
+msgid "Generate high-quality content using advanced AI algorithms trained on millions of articles."
+msgstr "Generate high-quality content using advanced AI algorithms trained on millions of articles."
+
+msgid "Multiple Templates"
+msgstr "Multiple Templates"
+
+msgid "Choose from dozens of pre-built templates for blogs, ads, emails, and social media posts."
+msgstr "Choose from dozens of pre-built templates for blogs, ads, emails, and social media posts."
+
+msgid "SEO Optimized"
+msgstr "SEO Optimized"
+
+msgid "All generated content is optimized for search engines to help you rank higher."
+msgstr "All generated content is optimized for search engines to help you rank higher."
+
+msgid "Fast Generation"
+msgstr "Fast Generation"
+
+msgid "Create professional content in seconds, not hours. Save time and boost productivity."
+msgstr "Create professional content in seconds, not hours. Save time and boost productivity."
+
+msgid "Multi-Language"
+msgstr "Multi-Language"
+
+msgid "Generate content in multiple languages to reach a global audience."
+msgstr "Generate content in multiple languages to reach a global audience."
+
+msgid "Team Collaboration"
+msgstr "Team Collaboration"
+
+msgid "Work together with your team members and share content seamlessly."
+msgstr "Work together with your team members and share content seamlessly."
+
+# Pricing Section
+msgid "Choose Your Plan"
+msgstr "Choose Your Plan"
+
+msgid "Select the perfect plan for your content creation needs"
+msgstr "Select the perfect plan for your content creation needs"
+
+msgid "Free"
+msgstr "Free"
+
+msgid "Perfect for getting started"
+msgstr "Perfect for getting started"
+
+msgid "Get Started"
+msgstr "Get Started"
+
+msgid "Pro"
+msgstr "Pro"
+
+msgid "Best for professionals"
+msgstr "Best for professionals"
+
+msgid "Upgrade Now"
+msgstr "Upgrade Now"
+
+msgid "Business"
+msgstr "Business"
+
+msgid "Perfect for teams"
+msgstr "Perfect for teams"
+
+msgid "Contact Sales"
+msgstr "Contact Sales"
+
+msgid "posts per month"
+msgstr "posts per month"
+
+msgid "All templates"
+msgstr "All templates"
+
+msgid "24/7 Support"
+msgstr "24/7 Support"
+
+msgid "Priority generation"
+msgstr "Priority generation"
+
+msgid "Team collaboration"
+msgstr "Team collaboration"
+
+msgid "Custom templates"
+msgstr "Custom templates"
+
+msgid "API access"
+msgstr "API access"
+
+# Testimonials
+msgid "What Our Users Say"
+msgstr "What Our Users Say"
+
+msgid "Join thousands of satisfied content creators"
+msgstr "Join thousands of satisfied content creators"
+
+# Footer
+msgid "Product"
+msgstr "Product"
+
+msgid "Features"
+msgstr "Features"
+
+msgid "Pricing"
+msgstr "Pricing"
+
+msgid "Templates"
+msgstr "Templates"
+
+msgid "API"
+msgstr "API"
+
+msgid "Company"
+msgstr "Company"
+
+msgid "About Us"
+msgstr "About Us"
+
+msgid "Blog"
+msgstr "Blog"
+
+msgid "Careers"
+msgstr "Careers"
+
+msgid "Contact"
+msgstr "Contact"
+
+msgid "Support"
+msgstr "Support"
+
+msgid "Help Center"
+msgstr "Help Center"
+
+msgid "Documentation"
+msgstr "Documentation"
+
+msgid "Community"
+msgstr "Community"
+
+msgid "Status"
+msgstr "Status"
+
+msgid "Legal"
+msgstr "Legal"
+
+msgid "Privacy Policy"
+msgstr "Privacy Policy"
+
+msgid "Terms of Service"
+msgstr "Terms of Service"
+
+msgid "Cookie Policy"
+msgstr "Cookie Policy"
+
+msgid "All rights reserved."
+msgstr "All rights reserved."
+
+# Dashboard
+msgid "Dashboard"
+msgstr "Dashboard"
+
+msgid "My Account"
+msgstr "My Account"
+
+msgid "Logout"
+msgstr "Logout"
+
+msgid "Settings"
+msgstr "Settings"
+
+msgid "Billing"
+msgstr "Billing"
+
+msgid "Usage"
+msgstr "Usage"
+
+# Error Messages
+msgid "Please fill in all required fields."
+msgstr "Please fill in all required fields."
+
+msgid "Invalid email address."
+msgstr "Invalid email address."
+
+msgid "Passwords do not match."
+msgstr "Passwords do not match."
+
+msgid "Registration successful! Please check your email."
+msgstr "Registration successful! Please check your email."
+
+msgid "Login failed. Please check your credentials."
+msgstr "Login failed. Please check your credentials."
+
+# Language Switcher
+msgid "Language changed successfully"
+msgstr "Language changed successfully"
+
+msgid "Invalid language"
+msgstr "Invalid language"
+
+msgid "Tiếng Việt"
+msgstr "Vietnamese"
+
+msgid "English"
+msgstr "English"
+
+# Checkout Page
+msgid "Checkout"
+msgstr "Checkout"
+
+msgid "Order Summary"
+msgstr "Order Summary"
+
+msgid "Payment Method"
+msgstr "Payment Method"
+
+msgid "Credit Card"
+msgstr "Credit Card"
+
+msgid "PayPal"
+msgstr "PayPal"
+
+msgid "Card Number"
+msgstr "Card Number"
+
+msgid "Expiry Date"
+msgstr "Expiry Date"
+
+msgid "CVV"
+msgstr "CVV"
+
+msgid "Cardholder Name"
+msgstr "Cardholder Name"
+
+msgid "Complete Purchase"
+msgstr "Complete Purchase"
+
+msgid "Processing..."
+msgstr "Processing..."
+
+# License Management
+msgid "My Licenses"
+msgstr "My Licenses"
+
+msgid "Active"
+msgstr "Active"
+
+msgid "Expired"
+msgstr "Expired"
+
+msgid "Renew"
+msgstr "Renew"
+
+msgid "Cancel"
+msgstr "Cancel"
+
+msgid "License Key"
+msgstr "License Key"
+
+msgid "Expires"
+msgstr "Expires"
+
+msgid "Never"
+msgstr "Never"

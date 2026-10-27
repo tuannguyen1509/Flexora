@@ -1,0 +1,153 @@
+/*
+ * Container sync
+ * Keeps every public template aligned to the homepage content width.
+ */
+/* Primary AZ architecture path. Legacy body-scoped rules below remain for compatibility. */
+.az-site .az-wrap,
+.az-site .az-container,
+.az-site .az-shop-page,
+.az-site .az-product-page,
+.az-site .az-cart-page,
+.az-site .az-blog-page,
+.az-site .az-single-post {
+  width: min(100% - (var(--az-gutter, 24px) * 2), var(--az-container, 1110px));
+  max-width: var(--az-container);
+  margin-inline: auto;
+  box-sizing: border-box;
+}
+
+.az-site .az-shop-page,
+.az-site .az-product-page,
+.az-site .az-cart-page,
+.az-site .az-blog-page,
+.az-site .az-single-post {
+  width: 100%;
+  max-width: none;
+}
+
+@media(max-width:960px){
+  body.az-storefront .az-shop-titlebar .az-container,
+  body.az-storefront .az-shop-layout,
+  body.az-storefront.single-product .az-product-detail .az-container,
+  body.az-storefront.single-product .az-container{
+    width:min(100% - var(--az-gutter, 24px),var(--az-container-tablet, 960px)) !important;
+    max-width:var(--az-container-tablet, 960px) !important;
+  }
+}
+
+@media(max-width:640px){
+  .az-site .az-wrap,
+  .az-site .az-container {
+  width: min(100% - (var(--az-mobile-gutter, 24px) * 2), var(--az-container, 1110px));
+  }
+}
+
+body.az-storefront .az-wrap,
+body.az-storefront .az-container,
+body.az-storefront .az-header-modern .az-container,
+body.az-storefront .az-footer > .az-container,
+body.az-storefront .az-footer-main,
+body.az-storefront .az-footer-bottom .az-container,
+body.az-storefront .az-shop-titlebar .az-container,
+body.az-storefront .az-shop-layout,
+body.az-storefront .az-featured-categories,
+body.az-storefront .az-neutral-shell,
+body.az-storefront .az-about-shell,
+body.az-storefront .wv-about-shell,
+body.az-storefront .wv-about-section > .wp-block-group__inner-container,
+body.az-storefront .wv-about-section > .wp-block-columns,
+body.az-storefront .wv-about-section > .wp-block-heading,
+body.az-storefront .wv-about-section > p,
+body.az-storefront .wv-about-section > figure,
+body.az-storefront .wv-about-section .wv-about-grid,
+body.az-storefront .pg-container,
+body.az-storefront .pp-layout,
+body.az-storefront .arc-container,
+body.az-storefront .arc-hero-inner,
+body.az-storefront .single-header-wrap,
+body.az-storefront .single-content-wrap,
+body.az-storefront .ab-container,
+body.az-storefront .ab-shell,
+body.az-storefront .ab-story-inner,
+body.az-storefront .ab-moments-inner,
+body.az-storefront .ct-hero-inner,
+body.az-storefront .ct-layout,
+body.az-storefront .gcg-hero-inner,
+body.az-storefront .gcg-body,
+body.az-storefront.single-product .az-product-detail .az-container,
+body.az-storefront.single-product .az-container{
+  width:min(100% - var(--az-gutter, 24px),var(--az-container, 1110px)) !important;
+  max-width:var(--az-container, 1110px) !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+  box-sizing:border-box !important;
+}
+
+/* WooCommerce templates do not require a legacy body class to use the shared container. */
+.az-container,
+.az-shop-layout,
+.az-shop-titlebar .az-container,
+.az-product-detail .az-container{
+  width:min(100% - var(--az-gutter, 24px),var(--az-container, 1110px));
+  max-width:var(--az-container, 1110px);
+  margin-left:auto;
+  margin-right:auto;
+  box-sizing:border-box;
+}
+
+@media(max-width:960px){
+  .az-container,
+  .az-shop-layout,
+  .az-shop-titlebar .az-container,
+  .az-product-detail .az-container{
+    width:min(100% - var(--az-gutter, 24px),var(--az-container-tablet, 960px));
+    max-width:var(--az-container-tablet, 960px);
+  }
+}
+
+@media(max-width:640px){
+  body.az-storefront .az-wrap,
+  body.az-storefront .az-container,
+  body.az-storefront .az-header-modern .az-container,
+  body.az-storefront .az-footer > .az-container,
+  body.az-storefront .az-footer-main,
+  body.az-storefront .az-footer-bottom .az-container,
+  body.az-storefront .az-shop-titlebar .az-container,
+  body.az-storefront .az-shop-layout,
+  body.az-storefront .az-featured-categories,
+  body.az-storefront .az-neutral-shell,
+  body.az-storefront .az-about-shell,
+  body.az-storefront .wv-about-shell,
+  body.az-storefront .wv-about-section > .wp-block-group__inner-container,
+  body.az-storefront .wv-about-section > .wp-block-columns,
+  body.az-storefront .wv-about-section > .wp-block-heading,
+  body.az-storefront .wv-about-section > p,
+  body.az-storefront .wv-about-section > figure,
+  body.az-storefront .wv-about-section .wv-about-grid,
+  body.az-storefront .pg-container,
+  body.az-storefront .pp-layout,
+  body.az-storefront .arc-container,
+  body.az-storefront .arc-hero-inner,
+  body.az-storefront .single-header-wrap,
+  body.az-storefront .single-content-wrap,
+  body.az-storefront .ab-container,
+  body.az-storefront .ab-shell,
+  body.az-storefront .ab-story-inner,
+  body.az-storefront .ab-moments-inner,
+  body.az-storefront .ct-hero-inner,
+  body.az-storefront .ct-layout,
+  body.az-storefront .gcg-hero-inner,
+  body.az-storefront .gcg-body,
+  body.az-storefront.single-product .az-product-detail .az-container,
+  body.az-storefront.single-product .az-container{
+    width:min(100% - (var(--az-mobile-gutter, 24px) * 2),var(--az-container, 1110px)) !important;
+  }
+
+  .az-container,
+  .az-shop-layout,
+  .az-shop-titlebar .az-container,
+  .az-product-detail .az-container{
+    width:min(100% - (var(--az-mobile-gutter, 24px) * 2),var(--az-container, 1110px));
+    max-width:var(--az-container, 1110px);
+  }
+}

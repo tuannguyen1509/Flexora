@@ -1,0 +1,16 @@
+.az-theme-admin .az-advanced__field.az-field--switch{display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:42px}
+.az-theme-admin .az-field--switch .az-advanced__field-label{margin:0;line-height:1.4}
+.az-theme-admin .az-field--switch .az-advanced__switch{flex:0 0 auto;margin-left:auto}
+.az-theme-admin .az-field--switch .az-advanced__help{flex:1 0 100%;order:3}
+@media(max-width:782px){.az-theme-admin .az-advanced__field.az-field--switch{min-height:40px}}
+.az-theme-admin .az-settings-card--flatsome .az-advanced__field.az-field--switch{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px 16px;align-items:center}
+.az-theme-admin .az-settings-card--flatsome .az-advanced__field-label{grid-column:1;grid-row:1;white-space:nowrap;margin:0}
+.az-theme-admin .az-settings-card--flatsome .az-advanced__switch{grid-column:2;grid-row:1;margin:0}
+.az-theme-admin .az-settings-card--flatsome .az-advanced__help,
+.az-theme-admin .az-settings-card--flatsome .az-advanced__shortcode{grid-column:1/-1;min-width:0;white-space:normal;overflow-wrap:anywhere;margin:0}
+.az-theme-admin.az-theme-admin--social .az-settings-card--contact .az-advanced__field.az-field--switch{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:8px 12px}
+.az-theme-admin.az-theme-admin--social .az-settings-card--contact .az-field--switch .az-advanced__field-label{grid-column:1;grid-row:1;white-space:nowrap;margin:0}
+.az-theme-admin.az-theme-admin--social .az-settings-card--contact .az-field--switch .az-advanced__switch{grid-column:2;grid-row:1;margin:0}
+.az-theme-admin.az-theme-admin--social .az-settings-card--contact .az-field--switch .az-advanced__help,
+.az-theme-admin.az-theme-admin--social .az-settings-card--contact .az-field--switch .az-advanced__shortcode{grid-column:1/-1;min-width:0;white-space:normal;overflow-wrap:anywhere;margin:0}
+@media(max-width:480px){.az-theme-admin.az-theme-admin--social .az-settings-card--contact .az-field--switch .az-advanced__field-label{font-size:12px}}

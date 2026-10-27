@@ -1,0 +1,118 @@
+.az-contact{position:fixed;left:20px;bottom:calc(20px + env(safe-area-inset-bottom,0px));z-index:1000;font-family:var(--az-font-main,Arial,sans-serif);font-size:14px;max-width:calc(100vw - 40px)}
+.az-contact *{box-sizing:border-box}
+.az-contact__links{display:flex;flex-direction:column;align-items:flex-start;gap:10px;margin-bottom:10px}
+.az-contact__links[hidden]{display:none}
+.az-contact .az-contact__link{display:flex;align-items:center;gap:10px;min-height:48px;padding:6px 16px 6px 6px;border-radius:30px;color:#fff;text-decoration:none;box-shadow:0 4px 16px #0002;transition:transform .15s,box-shadow .15s}
+.az-contact__zalo{background:#0068ff}
+.az-contact__phone{background:#b91c1c}
+.az-contact__icon{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:#ffffff24;flex-shrink:0;font-weight:700;font-size:13px}
+.az-contact__icon svg{width:24px;height:24px}
+.az-contact__phone small,.az-contact__phone strong{display:block;line-height:1.4}
+.az-contact__phone small{font-size:11px}
+.az-contact__phone strong{font-size:15px}
+.az-contact .az-contact__toggle{display:flex;align-items:center;justify-content:center;gap:8px;min-height:52px;padding:12px 18px;border:0;border-radius:30px;background:#154c85;color:#fff;font:inherit;font-weight:600;cursor:pointer;box-shadow:0 4px 16px #0003}
+.az-contact__toggle svg{width:24px;height:24px}
+.az-contact .az-contact__toggle{width:56px;height:56px;padding:0;border-radius:50%}
+.az-contact__toggle>span{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.az-contact a:hover{transform:translateY(-2px);box-shadow:0 6px 20px #0003}
+.az-contact a:focus-visible,.az-contact button:focus-visible{outline:3px solid #154c85;outline-offset:4px}
+@media(max-width:640px){.az-contact{left:12px;bottom:calc(12px + env(safe-area-inset-bottom,0px));max-width:calc(100vw - 24px)}.az-contact--buttons .az-contact__zalo>span:last-child{display:none}.az-contact--buttons .az-contact__zalo{padding:6px}.az-contact__links{gap:8px}}
+@media(prefers-reduced-motion:reduce){.az-contact .az-contact__link{transition:none}.az-contact a:hover{transform:none}}
+
+.az-contact.az-contact--icons{left:30px;bottom:calc(30px + env(safe-area-inset-bottom,0px))}
+.az-contact--icons .az-contact__links{gap:22px;margin-bottom:0}
+.az-contact.az-contact--icons .az-contact__link{
+  position:relative;
+  isolation:isolate;
+  display:grid;
+  place-items:center;
+  width:48px;
+  height:48px;
+  min-width:48px;
+  min-height:48px;
+  padding:0;
+  border:0;
+  border-radius:50%;
+  --az-contact-wave:#2189ed;
+  background:var(--az-contact-wave);
+  box-shadow:0 4px 12px #162c461a;
+}
+.az-contact.az-contact--icons .az-contact__phone{--az-contact-wave:#eb3333}
+.az-contact.az-contact--icons .az-contact__messenger{--az-contact-wave:#3582f6;border:3px solid #fff}
+.az-contact--icons .az-contact__link>span:last-child{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.az-contact--icons .az-contact__link::before,
+.az-contact--icons .az-contact__link::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:50%;
+  background:var(--az-contact-wave);
+  pointer-events:none;
+  z-index:-1;
+}
+.az-contact--icons .az-contact__link::before{opacity:.22;transform:scale(1.32);animation:az-contact-wave-inner 2.8s ease-in-out infinite}
+.az-contact--icons .az-contact__link::after{opacity:.07;transform:scale(1.68);animation:az-contact-wave-outer 2.8s ease-in-out infinite}
+.az-contact--icons .az-contact__icon{
+  position:relative;
+  width:100%;
+  height:100%;
+  background:transparent;
+  animation:az-contact-ring 4.8s ease-in-out infinite;
+  transform-origin:center;
+}
+.az-contact--icons .az-contact__icon svg{display:block;width:30px;height:30px}
+.az-contact--icons .az-contact__phone .az-contact__icon svg{width:25px;height:25px}
+.az-contact--icons .az-contact__phone .az-contact__icon,
+.az-contact--icons .az-contact__phone::before,
+.az-contact--icons .az-contact__phone::after{animation-delay:.6s}
+.az-contact--icons .az-contact__link:hover,
+.az-contact--icons .az-contact__link:focus-visible{box-shadow:0 6px 16px #162c4626}
+.az-contact--icons .az-contact__link:hover .az-contact__icon,
+.az-contact--icons .az-contact__link:focus-visible .az-contact__icon{animation:none}
+@keyframes az-contact-wave-inner{0%,100%{transform:scale(1.28);opacity:.22}50%{transform:scale(1.42);opacity:.12}}
+@keyframes az-contact-wave-outer{0%,100%{transform:scale(1.55);opacity:.09}50%{transform:scale(1.72);opacity:.04}}
+@keyframes az-contact-ring{0%,4%,24%,100%{transform:rotate(0)}7%,15%{transform:rotate(-10deg)}11%,19%{transform:rotate(10deg)}}
+@media(max-width:640px){
+  .az-contact.az-contact--icons{left:26px;bottom:calc(26px + env(safe-area-inset-bottom,0px))}
+  .az-contact--icons .az-contact__links{gap:20px}
+  .az-contact.az-contact--icons .az-contact__link{width:46px;height:46px;min-width:46px;min-height:46px}
+}
+@media(prefers-reduced-motion:reduce){
+  .az-contact--icons .az-contact__icon,
+  .az-contact--icons .az-contact__link::before,
+  .az-contact--icons .az-contact__link::after{animation:none}
+}
+.az-contact--cards .az-contact__links{gap:8px;margin-bottom:0}
+.az-contact--cards .az-contact__link{background:#fff;border:1px solid #dce3ed;border-radius:10px;padding:6px 10px 6px 6px;min-height:44px;max-width:100%;gap:8px;font-size:12px;box-shadow:0 3px 12px #00000014}
+.az-contact--cards .az-contact__zalo{color:#0054d1}
+.az-contact--cards .az-contact__phone{color:#a21616}
+.az-contact--cards .az-contact__icon{background:#eff6ff;border-radius:8px;width:30px;height:30px;font-size:10px}
+.az-contact--cards .az-contact__icon svg{width:18px;height:18px}
+.az-contact--cards .az-contact__phone small{font-size:10px;line-height:1.25}
+.az-contact--cards .az-contact__phone strong{font-size:13px;line-height:1.35;white-space:nowrap}
+.az-contact--cards .az-contact__phone .az-contact__icon{background:#fff1f2}
+.az-contact--expand .az-contact__links{gap:8px;margin-bottom:8px}
+.az-contact--expand .az-contact__link{min-height:44px;padding:5px 12px 5px 5px;gap:8px;font-size:12px;border-radius:24px;box-shadow:0 3px 12px #0002}
+.az-contact--expand .az-contact__icon{width:32px;height:32px;font-size:11px}
+.az-contact--expand .az-contact__icon svg{width:20px;height:20px}
+.az-contact--expand .az-contact__phone small{font-size:10px;line-height:1.25}
+.az-contact--expand .az-contact__phone strong{font-size:13px;line-height:1.35;white-space:nowrap}
+.az-contact--expand .az-contact__toggle{width:44px;height:44px;min-height:44px;box-shadow:0 3px 12px #0002}
+.az-contact--expand .az-contact__toggle svg{width:20px;height:20px}
+.az-contact.az-contact--dock{left:50%;transform:translateX(-50%);width:max-content;max-width:calc(100vw - 24px)}
+.az-contact--dock .az-contact__links{flex-direction:row;align-items:stretch;gap:6px;margin:0;padding:6px;background:#fff;border:1px solid #dce3ed;border-radius:14px;box-shadow:0 4px 16px #0002}
+.az-contact--dock .az-contact__link{border-radius:10px;box-shadow:none;min-width:0;min-height:44px;padding:5px 10px;gap:7px;flex:0 1 auto;justify-content:center;font-size:12px}
+.az-contact--dock .az-contact__icon{width:30px;height:30px;font-size:10px}
+.az-contact--dock .az-contact__icon svg{width:18px;height:18px}
+.az-contact--dock .az-contact__phone small{font-size:10px;line-height:1.25}
+.az-contact--dock .az-contact__phone strong{font-size:13px;line-height:1.35;white-space:nowrap}
+.az-contact--dock .az-contact__link>span:last-child{min-width:0;overflow-wrap:anywhere}
+@media(max-width:640px){
+  .az-contact.az-contact--dock{left:0;bottom:0;transform:none;width:100%;max-width:100%}
+  .az-contact--dock .az-contact__links{border-radius:12px 12px 0 0;padding:6px 8px calc(6px + env(safe-area-inset-bottom,0px));gap:6px}
+  .az-contact--dock .az-contact__link{padding:5px 8px;gap:6px;font-size:12px;flex:1}
+  .az-contact--dock .az-contact__icon{width:28px;height:28px;font-size:10px}
+  .az-contact--dock .az-contact__phone strong{font-size:12px}
+  .az-contact--dock .az-contact__phone small{font-size:10px}
+  body.az-has-contact-dock{padding-bottom:calc(64px + env(safe-area-inset-bottom,0px))}
+}

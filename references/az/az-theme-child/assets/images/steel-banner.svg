@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680">
+<defs><linearGradient id="blue" x2="1" y2="1"><stop stop-color="#244e97"/><stop offset="1" stop-color="#112d65"/></linearGradient><linearGradient id="metal"><stop stop-color="#667a88"/><stop offset=".45" stop-color="#e8f1f3"/><stop offset=".65" stop-color="#a3b4bc"/><stop offset="1" stop-color="#425d6f"/></linearGradient><pattern id="grid" width="55" height="55" patternUnits="userSpaceOnUse"><path d="M27 9 42 27 27 45 12 27Z" fill="none" stroke="#1286c3" opacity=".35"/></pattern></defs>
+<path fill="url(#blue)" d="M0 0h1200v680H0z"/><path fill="url(#grid)" d="M640 0h560v680H500z"/>
+<path fill="#d9e5ec" d="m1200 0-470 680h470Z"/>
+<g stroke="#294454" stroke-width="17" fill="none"><path d="m1200 80-430 600m430-460L930 680m270-315-100 315M930 180l270 200M830 330l370 210M760 470l440 175"/></g>
+<g transform="translate(-120 370) rotate(-25)"><path fill="url(#metal)" d="M0 0h620v62H0zM0 76h620v62H0zM0 152h620v62H0zM0 228h620v62H0z"/><g fill="#344c5c" stroke="#a6bcc5" stroke-width="8"><ellipse cx="620" cy="31" rx="18" ry="28"/><ellipse cx="620" cy="107" rx="18" ry="28"/><ellipse cx="620" cy="183" rx="18" ry="28"/><ellipse cx="620" cy="259" rx="18" ry="28"/></g></g>
+<path fill="#09234e" opacity=".8" d="M40 220h1030v135H40z"/>
+<text x="600" y="274" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-weight="700" font-size="33">CHUYÊN CUNG CẤP CÁC LOẠI</text><text x="600" y="326" text-anchor="middle" fill="#c6eaff" font-family="Arial,sans-serif" font-weight="700" font-size="38">SẮT THÉP XÂY DỰNG</text>
+</svg>

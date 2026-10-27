@@ -1,0 +1,65 @@
+/* Shared homepage footer design, applied to every page in the child theme. */
+#page .az-reference-footer {
+  --az-footer-blue: #009dd5;
+  --az-footer-blue-dark: #007fae;
+  background: #eff6f9;
+  color: #4f5d65;
+  font-family: var(--az-font-main, Arial, sans-serif);
+  font-size: 13px;
+  line-height: 1.7;
+}
+.az-reference-footer *,
+.az-reference-footer *::before,
+.az-reference-footer *::after { box-sizing: border-box; }
+#page .az-reference-footer .az-steel-container { width: calc(100% - 48px); max-width: var(--az-container, 1200px); margin-inline: auto; }
+#page .az-reference-footer a { color: inherit; text-decoration: none; }
+#page .az-reference-footer a:hover { color: var(--az-footer-blue-dark); }
+.az-reference-footer a:focus-visible { outline: 2px solid var(--az-footer-blue-dark); outline-offset: 4px; }
+.az-reference-footer__grid {
+  display: grid;
+  grid-template-columns: 1.45fr 1fr .8fr 1.2fr;
+  gap: 32px;
+  padding-block: 36px 66px;
+}
+.az-reference-footer__grid > section { min-width: 0; }
+.az-reference-footer__grid--without-profile { grid-template-columns: 1.45fr 1fr 1.2fr; }
+.az-footer-profile-preview { display: block; max-width: 260px; overflow: hidden; border: 1px solid #dce6ec; border-radius: 10px; background: #fff; }
+.az-footer-profile-preview .az-footer-profile-image { display: block; width: 100%; max-width: 100%; height: auto; margin: 0; }
+.az-footer-profile-preview:where(a):hover { border-color: var(--az-footer-blue); }
+#page .az-reference-footer h2 {
+  margin: 0 0 12px;
+  padding: 0;
+  color: var(--az-footer-blue);
+  font-family: var(--az-font-heading, var(--az-font-main, Arial, sans-serif));
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.4;
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+#page .az-reference-footer h2::after { display: none; }
+#page .az-reference-footer ul { margin: 0; padding: 0; list-style: none; }
+.az-reference-footer li { margin: 0 0 8px; overflow-wrap: anywhere; }
+.az-home-footer-description { margin: 0 0 14px; }
+.az-home-footer-links a { display: inline-block; }
+.az-footer-contact-row { display: flex; align-items: baseline; gap: 5px; }
+.az-footer-contact-row > svg { position: relative; top: 3px; flex: 0 0 16px; width: 16px; height: 16px; color: var(--az-footer-blue); }
+.az-footer-contact-row > span { min-width: 0; }
+.az-footer-fanpage-frame { width: 100%; max-width: 340px; height: 150px; overflow: hidden; background: #fff; }
+.az-footer-fanpage-frame iframe { display: block; width: 100%; max-width: 100%; height: 150px; border: 0; }
+.az-footer-fanpage-link { display: inline-flex; align-items: center; gap: 6px; margin-top: 10px; font-size: 12px; }
+.az-footer-location-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 16px; }
+#page .az-reference-footer .az-footer-location-action { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; padding: 8px 10px; border: 1px solid #f47b8b; border-radius: 28px; background: #fff; color: #303b42; box-shadow: 0 4px 12px #0000000d; font: 500 13px/1.3 var(--az-font-main, Arial, sans-serif); text-transform: uppercase; text-decoration: none; transition: border-color .2s, box-shadow .2s; }
+.az-footer-location-action img { display: block; width: 108px; height: auto; object-fit: contain; }
+#page .az-reference-footer a.az-footer-location-action:hover { border-color: #e53c53; color: #303b42; box-shadow: 0 5px 14px #00000016; }
+#page .az-reference-footer a.az-footer-location-action:focus-visible { outline: 2px solid var(--az-footer-blue); outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) { #page .az-reference-footer .az-footer-location-action { transition: none; } }
+.az-reference-footer__copyright { padding-block: 12px; border: 0; background: var(--az-footer-blue); color: #fff; font-size: 12px; text-align: left; }
+@media (max-width: 900px) {
+  .az-reference-footer__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 640px) {
+  #page .az-reference-footer .az-steel-container { width: calc(100% - 28px); }
+  .az-reference-footer__grid { grid-template-columns: minmax(0, 1fr); gap: 26px; padding-block: 28px 38px; }
+}

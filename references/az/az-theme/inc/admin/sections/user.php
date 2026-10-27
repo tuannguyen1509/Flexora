@@ -1,0 +1,11 @@
+<?php
+return array(
+    array( 'id' => 'enabled', 'type' => 'switch', 'title' => 'Bật tùy chọn User', 'description' => 'Công tắc tổng. Không sửa vai trò hoặc quyền đã lưu của thành viên.', 'default' => 0, 'group' => 'access', 'group_title' => 'Quyền truy cập và hiển thị' ),
+    array( 'id' => 'own_content', 'type' => 'switch', 'title' => 'Chỉ xem bài viết và ảnh của mình', 'description' => 'Lọc danh sách bài viết và Media trong quản trị/REST theo tác giả; chặn sửa hoặc xóa nội dung của người khác. Người có quyền manage_options không bị giới hạn. Không ẩn bài viết công khai trên website.', 'default' => 0, 'group' => 'access' ),
+    array( 'id' => 'admin_only', 'type' => 'switch', 'title' => 'Chỉ quản trị viên vào Dashboard', 'description' => 'Chuyển thành viên không có manage_options về trang chủ. Giữ AJAX và admin-post cho các biểu mẫu frontend. Khi bật, thành viên thường không vào trang Hồ sơ để tải avatar.', 'default' => 0, 'group' => 'access' ),
+    array( 'id' => 'show_id', 'type' => 'switch', 'title' => 'Hiển thị ID thành viên', 'description' => 'Thêm cột ID trong danh sách thành viên và hiển thị ID trong Hồ sơ.', 'default' => 0, 'group' => 'access' ),
+    array( 'id' => 'hide_admin_bar', 'type' => 'switch', 'title' => 'Ẩn thanh Admin Bar', 'description' => 'Cần bật công tắc tổng “Bật tùy chọn User” và lưu thay đổi. Chọn nơi áp dụng bên dưới; không thay đổi tùy chọn hồ sơ đã lưu.', 'default' => 0, 'group' => 'bar', 'group_title' => 'Admin Bar' ),
+    array( 'id' => 'admin_bar_location', 'type' => 'select', 'title' => 'Nơi ẩn Admin Bar', 'options' => array( 'frontend' => 'Chỉ giao diện website', 'both' => 'Website và trang quản trị' ), 'default' => 'frontend', 'group' => 'bar' ),
+    array( 'id' => 'admin_bar_scope', 'type' => 'select', 'title' => 'Ẩn Admin Bar cho', 'options' => array( 'users' => 'Thành viên không phải quản trị viên', 'all' => 'Tất cả người dùng' ), 'default' => 'users', 'group' => 'bar' ),
+    array( 'id' => 'avatar_upload', 'type' => 'switch', 'title' => 'Cho phép tải avatar trong Hồ sơ', 'description' => 'Cho tải ảnh JPEG/PNG/WebP tối đa 2 MB trong Hồ sơ. Không cấp quyền tải file khác; avatar cũ được giữ trong Media khi đổi ảnh.', 'default' => 0, 'group' => 'avatar', 'group_title' => 'Avatar' ),
+);

@@ -1,0 +1,52 @@
+/* Shared AZ admin forms. See plants/admin-form-pattern.md. */
+.az-admin {
+    --az-admin-color-primary: #2271b1;
+    --az-admin-color-accent: #fb8018;
+    --az-admin-color-accent-text: #a84400;
+    --az-admin-color-accent-soft: #fff7ed;
+    --az-admin-color-text: #263449;
+    --az-admin-color-muted: #586579;
+    --az-admin-color-border: #cbd5e1;
+    --az-admin-color-surface: #fff;
+    --az-admin-color-danger: #b42318;
+    --az-admin-radius: 8px;
+    --az-admin-control-height: 48px;
+    color: var(--az-admin-color-text);
+    font-size: 16px;
+    line-height: 1.6;
+    letter-spacing: 0;
+}
+.az-admin h1 { font-size: 24px; font-weight: 600; margin-bottom: 20px; }
+.az-admin-section { margin: 0 0 20px; padding: 0; border: 1px solid var(--az-admin-color-border); border-radius: var(--az-admin-radius); background: var(--az-admin-color-surface); scroll-margin-top: 52px; }
+.az-admin-section[open] { border-color: var(--az-admin-color-accent); }
+.az-admin-section-heading { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 16px 20px; min-height: 64px; box-sizing: border-box; border-radius: var(--az-admin-radius); background: var(--az-admin-color-accent-soft); color: var(--az-admin-color-accent-text); font-size: 18px; font-weight: 600; cursor: pointer; list-style: none; overflow-wrap: anywhere; }
+.az-admin-section-heading::-webkit-details-marker { display: none; }
+.az-admin-section[open] > .az-admin-section-heading { border-bottom: 1px solid var(--az-admin-color-border); border-radius: var(--az-admin-radius) var(--az-admin-radius) 0 0; }
+.az-admin-section-toggle { flex: 0 0 30px; width: 30px; height: 30px; border-radius: 50%; background: var(--az-admin-color-accent); color: #fff; display: grid; place-items: center; font-size: 22px; line-height: 1; }
+.az-admin-section-toggle::before { content: "+"; }
+.az-admin-section[open] > .az-admin-section-heading .az-admin-section-toggle::before { content: "-"; }
+.az-admin-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 16px; padding: 20px; }
+.az-admin-field { min-width: 0; }
+.az-admin-field label { display: block; font-weight: 500; margin-bottom: 6px; overflow-wrap: anywhere; }
+.az-admin-field input, .az-admin-field textarea, .az-admin-field select { box-sizing: border-box; width: 100%; max-width: 100%; min-height: var(--az-admin-control-height); padding: 10px 12px; margin: 0; font: inherit; color: var(--az-admin-color-text); border: 1px solid var(--az-admin-color-border); border-radius: var(--az-admin-radius); background: var(--az-admin-color-surface); }
+.az-admin-field textarea { resize: vertical; min-height: 120px; }
+.az-admin-field input[type="checkbox"] { width: 20px; height: 20px; min-height: 20px; padding: 0; border-radius: 4px; }
+.az-admin-field:has(textarea), .az-admin-field:has(.az-admin-image-tools), .az-admin-field-wide { grid-column: 1 / -1; }
+.az-admin-field input:focus, .az-admin-field textarea:focus, .az-admin-field select:focus { border-color: var(--az-admin-color-primary); box-shadow: 0 0 0 1px var(--az-admin-color-primary); outline: none; }
+.az-admin-help { margin: 6px 0 0; color: var(--az-admin-color-muted); font-size: 13px; overflow-wrap: anywhere; }
+.az-admin-help:empty { display: none; }
+.az-admin-image-tools { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-top: 12px; }
+.az-admin-image-preview { width: 120px; height: 80px; object-fit: contain; border: 1px solid var(--az-admin-color-border); border-radius: 6px; background: #f6f7f7; }
+.az-admin-image-preview[hidden] { display: none; }
+.az-admin-button { min-height: 44px; padding: 9px 18px; border: 1px solid var(--az-admin-color-primary); border-radius: 6px; background: var(--az-admin-color-surface); color: var(--az-admin-color-primary); font: inherit; font-size: 14px; font-weight: 600; cursor: pointer; white-space: normal; overflow-wrap: anywhere; }
+.az-admin-button:hover { background: #f0f6fc; }
+.az-admin-button-primary { background: var(--az-admin-color-primary); color: #fff; }
+.az-admin-button-primary:hover { background: #135e96; }
+.az-admin-image-remove { color: var(--az-admin-color-danger); border-color: var(--az-admin-color-border); }
+.az-admin-button:focus-visible, .az-admin-section-heading:focus-visible { outline: 2px solid var(--az-admin-color-primary); outline-offset: 3px; }
+.az-admin-actions { position: sticky; bottom: 0; padding: 16px; background: var(--az-admin-color-surface); border-top: 1px solid var(--az-admin-color-border); display: flex; justify-content: flex-end; }
+@media (max-width: 600px) {
+    .az-admin-fields { grid-template-columns: 1fr; padding: 16px; }
+    .az-admin-section-heading { padding: 14px 16px; font-size: 16px; }
+    .az-admin-section { scroll-margin-top: 12px; }
+}

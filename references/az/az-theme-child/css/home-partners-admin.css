@@ -1,0 +1,23 @@
+/* Scoped to the homepage partner editor so other metabox controls stay intact. */
+#az-home-admin .az-home-partners-visibility > span { display: block; margin-bottom: 6px; font-weight: 600; }
+#az-home-admin .az-home-partners-toggle { position: relative; display: flex; align-items: center; gap: 10px; min-height: 50px; cursor: pointer; font-weight: 500; }
+#az-home-admin .az-home-partners-toggle input[type="checkbox"] { position: absolute; width: 1px !important; height: 1px !important; min-height: 0; margin: 0; padding: 0; opacity: 0; clip-path: inset(50%); }
+#az-home-admin .az-home-partners-toggle__track { position: relative; flex: 0 0 38px; width: 38px; height: 22px; border-radius: 20px; background: #a8b0bd; transition: background .15s ease; }
+#az-home-admin .az-home-partners-toggle__track::after { content: ""; position: absolute; top: 3px; left: 3px; width: 16px; height: 16px; border-radius: 50%; background: #fff; box-shadow: 0 1px 3px #0002; transition: transform .15s ease; }
+#az-home-admin .az-home-partners-toggle input:checked + .az-home-partners-toggle__track { background: #2271b1; }
+#az-home-admin .az-home-partners-toggle input:checked + .az-home-partners-toggle__track::after { transform: translateX(16px); }
+#az-home-admin .az-home-partners-toggle input:focus-visible + .az-home-partners-toggle__track { outline: 2px solid #2271b1; outline-offset: 3px; }
+#az-home-admin .az-home-partners-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin: 22px 0 14px; }
+#az-home-admin .az-home-partners-toolbar p { margin: 6px 0 0; color: #646970; }
+#az-home-admin .az-home-partners-toolbar .button { flex-shrink: 0; }
+#az-home-admin .az-home-partners-gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(112px, 1fr)); gap: 12px; }
+#az-home-admin .az-home-partners-logo { position: relative; display: flex; align-items: center; justify-content: center; min-height: 100px; padding: 16px; border: 1px solid #d8dee8; border-radius: 8px; background: #fff; }
+#az-home-admin .az-home-partners-logo img { display: block; width: 100%; height: 64px; object-fit: contain; }
+#az-home-admin .az-home-partners-remove { position: absolute; top: 4px; right: 4px; display: grid; place-items: center; width: 24px; height: 24px; padding: 0; border: 1px solid #d8dee8; border-radius: 50%; background: #fff; color: #646970; font-size: 18px; line-height: 1; cursor: pointer; }
+#az-home-admin .az-home-partners-remove:hover { border-color: #d63638; color: #d63638; }
+#az-home-admin .az-home-partners-remove:focus-visible { outline: 2px solid #2271b1; outline-offset: 2px; }
+#az-home-admin .az-home-partners-empty { margin: 0; padding: 28px 16px; border: 1px dashed #ccd0d4; border-radius: 8px; color: #646970; text-align: center; }
+#az-home-admin .az-home-partners-gallery-footer { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 12px; color: #646970; font-size: 12px; }
+#az-home-admin [data-home-partners-admin] [hidden] { display: none !important; }
+@media (max-width: 600px) { #az-home-admin .az-home-partners-toolbar { align-items: flex-start; flex-direction: column; } }
+@media (prefers-reduced-motion: reduce) { #az-home-admin .az-home-partners-toggle__track, #az-home-admin .az-home-partners-toggle__track::after { transition: none; } }

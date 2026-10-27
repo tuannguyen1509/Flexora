@@ -1,1 +1,13 @@
-/themes
+/local/.env
+/local/.env.*
+!/local/.env.example
+/local/runtime/
+/local/results/
+/local/node_modules/
+/dist/*.zip
+**/node_modules/
+**/wp-content/uploads/
+**/wp-content/cache/
+**/debug.log
+**/*.log
+.DS_Store

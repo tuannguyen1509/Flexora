@@ -1,0 +1,56 @@
+/* Only shared theme tokens: Advanced > Colors / Layout. */
+/* A disabled shared banner leaves a plain content heading, never a second hero. */
+.az-shared-banner-scope .pp-hero,.az-shared-banner-scope .ct-hero,.az-shared-banner-scope .az-neutral-hero,.az-shared-banner-scope .gcg-hero,.az-shared-banner-scope .az-blog-archive__hero,.az-shared-banner-scope .az-shop-titlebar{background:var(--az-color-page)!important;color:var(--az-color-text);min-height:0;padding-block:24px}
+.az-shared-banner-scope .pp-hero-overlay,.az-shared-banner-scope .gcg-hero-bg,.az-shared-banner-scope .gcg-hero-overlay,.az-shared-banner-scope .ct-hero:before,.az-shared-banner-scope .az-blog-archive__hero:before{display:none}
+.az-shared-banner-scope .pp-hero h1,.az-shared-banner-scope .ct-hero h1,.az-shared-banner-scope .az-neutral-hero h1,.az-shared-banner-scope .gcg-hero h1,.az-shared-banner-scope .az-blog-archive__hero h1,.az-shared-banner-scope .az-shop-titlebar h1{color:var(--az-color-heading)!important}
+.az-shared-banner-scope .az-shop-title-desc,.az-shared-banner-scope .gcg-hero-desc p,.az-shared-banner-scope .pp-hero-meta{color:var(--az-color-text)!important}
+.az-shared-category-description{padding-block:24px;color:var(--az-color-text)}
+.az-shared-container{box-sizing:border-box;width:min(100% - var(--az-gutter),var(--az-container));max-width:var(--az-container);margin-inline:auto}
+.az-shared-trail{background:var(--az-color-surface);border-bottom:1px solid var(--az-color-border)}
+.az-shared-breadcrumb{padding-block:16px;font-size:13px;line-height:1.7;color:var(--az-color-muted)}
+.az-shared-breadcrumb ol{display:flex;flex-wrap:wrap;gap:6px 10px;list-style:none;margin:0;padding:0}
+.az-shared-breadcrumb li{display:flex;align-items:baseline;gap:10px;overflow-wrap:anywhere}
+.az-shared-breadcrumb li+li:before{content:'/';opacity:.5}
+.az-shared-breadcrumb a{color:var(--az-color-primary);text-decoration:none}
+.az-shared-breadcrumb a:hover{text-decoration:underline}
+.az-shared-banner{position:relative;isolation:isolate;background:var(--az-color-primary);color:var(--az-color-heading)}
+.az-shared-banner__media{position:absolute;inset:0;z-index:-1;overflow:hidden}
+.az-shared-banner__media:after{content:'';position:absolute;inset:0;background:var(--az-color-heading);opacity:var(--az-banner-overlay)}
+.az-shared-banner__slide{width:100%;height:100%;object-fit:cover;object-position:center}
+.az-shared-banner__content{min-height:var(--az-banner-height);padding-block:32px;display:flex;flex-direction:column;justify-content:center;gap:20px}
+.az-shared-banner .az-shared-breadcrumb{padding:0;color:var(--az-color-heading)}
+.az-shared-banner .az-shared-breadcrumb a{color:var(--az-color-primary)}
+.az-shared-banner__copy,.az-shared-banner>.az-shared-container>.az-shared-breadcrumb{background:var(--az-color-surface);border-radius:var(--az-radius-md);padding:24px;width:fit-content;max-width:100%}
+.az-shared-banner>.az-shared-container>.az-shared-breadcrumb{padding:10px 16px}
+.az-shared-banner h1,.az-shared-banner h2{font-family:var(--az-font-heading,inherit);color:var(--az-color-heading);font-size:clamp(26px,3.6vw,52px);line-height:1.18;font-weight: 600;letter-spacing:-.025em;margin:0;overflow-wrap:anywhere}
+.az-shared-banner__subtitle{max-width:65ch;color:var(--az-color-text);font-size:clamp(15px,1.4vw,18px);line-height:1.7;margin:16px 0 0}
+.az-shared-banner__cta{display:inline-flex;margin-top:24px;padding:12px 22px;border-radius:var(--az-radius-sm);background:var(--az-color-primary);color:var(--az-color-surface);font-weight:600;text-decoration:none}
+.az-shared-banner__cta:hover{background:var(--az-color-primary-dark);color:var(--az-color-surface)}
+.az-shared-banner--center .az-shared-banner__content,.az-shared-banner--slider .az-shared-banner__content{align-items:center;text-align:center}
+.az-shared-banner--split .az-shared-banner__copy{display:grid;grid-template-columns:1fr 1fr;gap:40px;width:100%;align-items:center}
+.az-shared-banner__statement{font-size:clamp(30px,4.5vw,64px);line-height:1.1;font-weight: 600;color:var(--az-color-primary);margin:0;overflow-wrap:anywhere}
+.az-shared-banner--image{background:var(--az-color-page)}
+.az-shared-banner--image .az-shared-banner__media{position:relative;height:var(--az-banner-height);z-index:0}
+.az-shared-banner--image .az-shared-banner__content{min-height:0}
+.az-shared-banner__controls{display:flex;gap:10px;align-items:center;padding:8px;border-radius:var(--az-radius-md);background:var(--az-color-surface);width:fit-content;color:var(--az-color-text)}
+.az-shared-banner__controls[hidden]{display:none}
+.az-shared-banner__controls button{border:1px solid var(--az-color-border);border-radius:var(--az-radius-sm);background:var(--az-color-surface);color:var(--az-color-primary);min-width:44px;min-height:44px;padding:8px 12px;cursor:pointer}
+.az-shared-banner :focus-visible{outline:3px solid var(--az-color-accent);outline-offset:4px}
+@media(min-width:1025px){
+ .az-banner-overlay-ready .az-site-header{position:relative;z-index:20;background:transparent}
+ .az-banner-overlay-ready .az-site-header .az-mainbar,.az-banner-overlay-ready .az-site-header .az-navrow{background:color-mix(in srgb,var(--az-color-surface) 92%,transparent)}
+ .az-banner-overlay-ready .az-site-header.is-sticky{position:sticky;top:0}
+ .admin-bar.az-banner-overlay-ready .az-site-header.is-sticky{top:32px}
+ .az-banner-overlay-ready .az-shared-banner{margin-top:calc(-1 * var(--az-banner-header-height))}
+ .az-banner-overlay-ready .az-shared-banner__content{padding-top:calc(var(--az-banner-header-height) + 32px);min-height:calc(var(--az-banner-height) + var(--az-banner-header-height))}
+ .az-banner-overlay-ready .az-shared-banner--image .az-shared-banner__media{height:calc(var(--az-banner-height) + var(--az-banner-header-height))}
+ .az-banner-overlay-ready .az-shared-banner--image .az-shared-banner__content{padding-top:32px;min-height:0}
+}
+@media(max-width:960px){.az-shared-container{max-width:var(--az-container-tablet)}}
+@media(max-width:767px){
+ .az-shared-container{width:min(100% - var(--az-mobile-gutter) * 2,var(--az-container-tablet))}
+ .az-shared-banner__content{min-height:var(--az-banner-mobile-height);padding-block:24px;gap:12px}
+ .az-shared-banner__copy{padding:20px}
+ .az-shared-banner--split .az-shared-banner__copy{grid-template-columns:1fr;gap:20px}
+ .az-shared-banner--image .az-shared-banner__media{height:var(--az-banner-mobile-height)}
+}

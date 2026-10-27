@@ -1,0 +1,3 @@
+.az-skip-link{position:fixed;top:8px;left:8px;z-index:1000000;padding:12px 18px;background:#fff;color:#111;border:2px solid #111;border-radius:4px;transform:translateY(-200%);font:600 16px/1.4 sans-serif}
+.az-skip-link:focus{transform:translateY(0);outline:3px solid #1565c0;outline-offset:2px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}

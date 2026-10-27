@@ -1,0 +1,64 @@
+/*
+ * Blog container normalization.
+ *
+ * Blog templates must follow the same container values configured in
+ * Advanced > Layout as the WooCommerce archive and product templates.
+ */
+.az-site .az-blog-archive__grid:not(.az-blog-archive__grid--list) {
+  display: grid;
+  grid-template-columns: repeat(var(--az-blog-columns-desktop, 3), minmax(0, 1fr));
+}
+@media (max-width: 960px) {
+  .az-site .az-blog-archive__grid:not(.az-blog-archive__grid--list) {
+    grid-template-columns: repeat(var(--az-blog-columns-tablet, 2), minmax(0, 1fr));
+  }
+}
+@media (max-width: 640px) {
+  .az-site .az-blog-archive__grid:not(.az-blog-archive__grid--list) {
+    grid-template-columns: repeat(var(--az-blog-columns-mobile, 1), minmax(0, 1fr));
+  }
+}
+.az-blog-archive__hero-inner,
+.az-blog-archive__container,
+.az-single-post__hero-inner,
+.az-single-post__layout,
+.az-blog-page .arc-container,
+.az-single-post .single-header-inner,
+.az-single-post .single-layout {
+  width: calc(100% - var(--az-gutter, 24px)) !important;
+  max-width: var(--az-container, 1110px) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  box-sizing: border-box;
+}
+
+.az-single-post__layout.no-sidebar,
+.az-single-post .single-layout.no-sidebar {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+@media (max-width: 960px) {
+  .az-blog-archive__hero-inner,
+  .az-blog-archive__container,
+  .az-single-post__hero-inner,
+  .az-single-post__layout,
+  .az-blog-page .arc-container,
+  .az-single-post .single-header-inner,
+  .az-single-post .single-layout {
+    width: calc(100% - var(--az-gutter, 24px)) !important;
+    max-width: var(--az-container-tablet, 960px) !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .az-blog-archive__hero-inner,
+  .az-blog-archive__container,
+  .az-single-post__hero-inner,
+  .az-single-post__layout,
+  .az-blog-page .arc-container,
+  .az-single-post .single-header-inner,
+  .az-single-post .single-layout {
+    width: calc(100% - (var(--az-mobile-gutter, 24px) * 2)) !important;
+    max-width: var(--az-container, 1110px) !important;
+  }
+}

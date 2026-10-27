@@ -1,0 +1,20 @@
+﻿PASS PHP lint: 40 files
+PASS foundation native: 64 assertions
+PASS component preflight native: 32 assertions
+PASS foundation reentry: 64 assertions
+PASS component preflight reentry: 32 assertions
+PASS registration: 10 assertions
+PASS assets: 12 assertions
+PASS compatibility: 13 assertions
+PASS scope admin: 5 assertions
+PASS scope ajax: 5 assertions
+PASS scope rest: 5 assertions
+PASS scope cron: 5 assertions
+PASS scope cli: 5 assertions
+PASS accessibility enabled: 14 assertions
+PASS accessibility disabled: 8 assertions
+PASS accessibility admin: 8 assertions
+PASS accessibility component: 16 assertions
+PASS naming/CSS source contracts: 21 assertions
+PASS source integrity: 435 expected / 435 actual; 0 changed, 0 missing, 0 added.
+SKIP local Node runner: supply -Node to run JS fixture; separate V8 result documented in tests/phase-04-js.txt.

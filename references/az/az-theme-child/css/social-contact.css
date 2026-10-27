@@ -1,0 +1,61 @@
+/* Style 2: a compact launcher with all configured contact channels above it. */
+.az-contact.az-contact--social-expand { width: 132px; }
+.az-contact.az-contact--social-expand .az-contact__links {
+  display: grid;
+  grid-template-columns: repeat(2, 48px);
+  gap: 10px;
+  width: max-content;
+  max-height: calc(100vh - 112px - env(safe-area-inset-bottom, 0px));
+  max-height: calc(100dvh - 112px - env(safe-area-inset-bottom, 0px));
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 12px;
+  margin: 0 0 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 8px 30px #0f172a26;
+  scrollbar-width: thin;
+}
+.az-contact.az-contact--social-expand .az-contact__links[hidden] { display: none; }
+.az-contact.az-contact--social-expand .az-contact__link {
+  --az-social-color: #087be8;
+  --az-steel-tint: var(--az-social-color);
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  min-height: 48px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: var(--az-social-color);
+  color: #fff;
+  box-shadow: none;
+  text-decoration: none;
+  transition: transform .18s, filter .18s;
+}
+.az-contact--social-expand .az-contact__link svg { display: block; width: 24px; height: 24px; }
+.az-contact.az-contact--social-expand .az-contact-social__facebook { --az-social-color: #1877f2; }
+.az-contact.az-contact--social-expand .az-contact-social__youtube { --az-social-color: #e62117; }
+.az-contact.az-contact--social-expand .az-contact-social__tiktok,
+.az-contact.az-contact--social-expand .az-contact-social__x { --az-social-color: #171717; }
+.az-contact.az-contact--social-expand .az-contact-social__instagram { --az-social-color: #c13584; }
+.az-contact.az-contact--social-expand .az-contact-social__linkedin { --az-social-color: #0a66c2; }
+.az-contact.az-contact--social-expand .az-contact-social__pinterest { --az-social-color: #bd081c; }
+.az-contact.az-contact--social-expand .az-contact-social__zalo { --az-social-color: #0068ff; }
+.az-contact.az-contact--social-expand .az-contact-social__messenger { --az-social-color: #087be8; }
+.az-contact.az-contact--social-expand .az-contact-social__whatsapp { --az-social-color: #128c7e; }
+.az-contact.az-contact--social-expand .az-contact-social__phone { --az-social-color: #b91c1c; }
+.az-contact.az-contact--social-expand .az-contact__link:hover { transform: translateY(-1px); filter: brightness(.92); color: #fff; box-shadow: none; }
+.az-contact.az-contact--social-expand .az-contact__link:focus-visible { outline: 2px solid #154c85; outline-offset: 3px; }
+.az-contact.az-contact--social-expand .az-contact__toggle { width: 56px; height: 56px; background: #087be8; color: #fff; box-shadow: 0 5px 18px #087be83d; }
+.az-contact.az-contact--social-expand .az-contact__toggle > .az-social-contact-open { position: static; display: grid; place-items: center; width: auto; height: auto; overflow: visible; clip-path: none; }
+.az-contact--social-expand .az-contact__toggle svg { display: block; width: 26px; height: 26px; }
+.az-contact--social-expand .az-contact__toggle .az-social-contact-close,
+.az-contact.az-contact--social-expand .az-contact__toggle[aria-expanded="true"] .az-social-contact-open { display: none; }
+.az-contact--social-expand .az-contact__toggle[aria-expanded="true"] .az-social-contact-close { display: block; }
+@media (prefers-reduced-motion: reduce) {
+  .az-contact.az-contact--social-expand .az-contact__link { transition: none; }
+  .az-contact.az-contact--social-expand .az-contact__link:hover { transform: none; }
+}

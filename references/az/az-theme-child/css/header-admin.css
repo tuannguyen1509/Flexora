@@ -1,0 +1,31 @@
+/* Keep Header main switch labels and their help text in separate rows. */
+.az-theme-admin [data-az-panel="header"] .az-settings-card--header_main .az-advanced__field.az-field--switch {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-content: start;
+    align-items: center;
+    gap: 8px 16px;
+}
+
+.az-theme-admin [data-az-panel="header"] .az-settings-card--header_main .az-field--switch > .az-advanced__field-label {
+    grid-column: 1;
+    grid-row: 1;
+    white-space: nowrap;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.az-theme-admin [data-az-panel="header"] .az-settings-card--header_main .az-field--switch > .az-advanced__switch {
+    grid-column: 2;
+    grid-row: 1;
+    margin: 0;
+}
+
+.az-theme-admin [data-az-panel="header"] .az-settings-card--header_main .az-field--switch > .az-advanced__help {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    min-width: 0;
+    margin: 0;
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
