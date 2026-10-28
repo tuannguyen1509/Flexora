@@ -1,0 +1,203 @@
+/*
+Theme Name: AZ Theme Child
+Theme URI: https://tndigi.com
+Description: Giao diện riêng của website, kế thừa framework dùng chung từ AZ Theme.
+Author: TN Digi Solution
+Author URI: https://tndigi.com
+Template: az-theme
+Version: 1.0.0
+Requires at least: 5.8
+Requires PHP: 7.4
+Text Domain: az-theme-child
+*/
+
+/* Chỉ thêm CSS riêng của website tại theme child này. */
+
+/* Match the news archive's latest-post heading to the single-post sidebar. */
+.az-site .az-blog-archive__sidebar .az-blog-sidebar-widget > h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 16px;
+  color: var(--az-color-heading, #222);
+  font-size: 20px;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+.az-site .az-blog-archive__sidebar .az-blog-sidebar-widget > h2::before {
+  content: "";
+  width: 4px;
+  height: 24px;
+  flex: 0 0 4px;
+  border-radius: 4px;
+  background: var(--az-color-primary, #d21f3c);
+}
+
+/* Easy Table of Contents: override the toggle's inline white SVG color. */
+.az-site :is(#ez-toc-container, .ez-toc-split-section) .ez-toc-title-toggle,
+.az-site :is(#ez-toc-container, .ez-toc-split-section) .ez-toc-title-toggle .ez-toc-icon-toggle-span,
+.az-site :is(#ez-toc-container, .ez-toc-split-section) .ez-toc-title-toggle .ez-toc-glyphicon {
+  color: #000 !important;
+}
+.az-site :is(#ez-toc-container, .ez-toc-split-section) .ez-toc-title-toggle svg,
+.az-site :is(#ez-toc-container, .ez-toc-split-section) .ez-toc-title-toggle svg :is(path, use) {
+  color: #000 !important;
+  fill: #000 !important;
+}
+
+/* Product tab sanitization removes inline SVGs; draw the same toggle with CSS. */
+.single-product .az-product-tab-body .ez-toc-icon-toggle-span {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  color: #000 !important;
+}
+.single-product .az-product-tab-body .ez-toc-icon-toggle-span svg { display: none; }
+.single-product .az-product-tab-body .ez-toc-icon-toggle-span::before,
+.single-product .az-product-tab-body .ez-toc-icon-toggle-span::after {
+  content: "";
+  display: block;
+  flex-shrink: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.single-product .az-product-tab-body .ez-toc-icon-toggle-span::before {
+  width: 20px;
+  height: 20px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M6 6H4v2h2V6zm14 0H8v2h12V6zM4 11h2v2H4v-2zm16 0H8v2h12v-2zM4 16h2v2H4v-2zm16 0H8v2h12v-2z'/%3E%3C/svg%3E");
+}
+.single-product .az-product-tab-body .ez-toc-icon-toggle-span::after {
+  width: 10px;
+  height: 10px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='m5 9 7-7 7 7Zm0 6 7 7 7-7Z'/%3E%3C/svg%3E");
+}
+
+/* Compact product-page heading area; thumbnails remain the gallery controls. */
+body.single-product .az-site .az-main.az-product-detail {
+  padding-top: 0;
+}
+body.single-product .az-site .az-product-breadcrumb {
+  padding-top: 12px;
+  padding-bottom: 14px;
+}
+body.single-product .az-site .az-product-gallery-nav,
+body.single-product .az-site .az-product-gallery-zoom {
+  display: none;
+}
+@media (max-width: 640px) {
+  body.single-product .az-site .az-product-breadcrumb {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+
+/* Compact catalogue heading/controls; avoid gaps for absent grid sections. */
+.az-site .az-shop-page { padding-top: 0; margin-top: 0; }
+.az-site .az-shop-page .az-shop-notices:has(> .woocommerce-notices-wrapper:empty) { display: none; }
+.az-site .az-shop-layout { padding-top: 8px; row-gap: 12px; }
+.az-site .az-shop-catalog-toolbar { min-height: 40px; padding: 0; gap: 12px; }
+.az-site .az-shop-catalog-toolbar select { min-height: 36px; font-size: 14px; }
+.az-site .az-shop-layout--category .az-shop-top-filters { grid-row: var(--az-shop-filter-row, 3); }
+.az-site .az-shop-layout--category > .az-shop-sidebar,
+.az-site .az-shop-layout--category .az-shop-grid,
+.az-site .az-shop-layout--category .az-shop-empty { grid-row: var(--az-shop-product-row, 4); }
+/* On the shop index, put the toolbar in its own row above both columns. */
+.az-site .az-shop-layout:not(.az-shop-layout--category) .az-shop-results { display: contents; }
+.az-site .az-shop-layout:not(.az-shop-layout--category) > .az-shop-sidebar,
+.az-site .az-shop-layout:not(.az-shop-layout--category) .az-shop-grid,
+.az-site .az-shop-layout:not(.az-shop-layout--category) .az-shop-empty { grid-row: var(--az-shop-product-row, 2); }
+.az-site .az-shop-layout:not(.az-shop-layout--category) .az-shop-top-filters { grid-row: var(--az-shop-filter-row, 2); }
+.az-site .az-shop-layout .woocommerce-pagination { grid-column: 1 / -1; }
+@media (max-width: 720px) {
+  .az-site .az-shop-layout .az-shop-grid,
+  .az-site .az-shop-layout .az-shop-empty { grid-row: calc(var(--az-shop-product-row, 2) + 1); }
+  .az-site .az-shop-layout { padding-top: 6px; row-gap: 10px; }
+  .az-site .az-shop-catalog-toolbar { flex-direction: row; flex-wrap: wrap; align-items: center; justify-content: space-between; }
+  .az-site .az-shop-catalog-toolbar .woocommerce-ordering { max-width: 100%; }
+  .az-site .az-shop-catalog-toolbar select { max-width: 100%; }
+}
+
+/* Allow article grid items to shrink below the intrinsic width of large images. */
+.az-site .az-single-post__main,
+.az-site .az-single-post__content {
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.az-site .az-single-post__featured img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.az-site .az-single-post__content .az-post-content {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.az-site .az-post-content img,
+.az-site .az-post-content video,
+.az-site .az-post-content iframe {
+  max-width: 100%;
+}
+
+.az-site .az-post-content img {
+  height: auto;
+}
+
+.az-site .az-post-content figure,
+.az-site .az-post-content .wp-caption {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 900px) {
+  .az-site .az-single-post__layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Compact product contact actions, overriding parent WooCommerce styles. */
+body.single-product #page .az-product-contact-box {
+  padding: 14px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background: #f8fafc;
+  box-shadow: none;
+}
+body.single-product #page .az-product-contact-box h2 { margin: 0 0 6px; font-size: 16px; line-height: 1.4; }
+body.single-product #page .az-product-contact-box p { margin: 0 0 12px; font-size: 14px; line-height: 1.5; }
+body.single-product #page .az-product-contact-name { color: #334155; }
+body.single-product #page .az-product-contact-list { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+body.single-product #page .az-product-contact-list > a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-sizing: border-box;
+  min-height: 44px;
+  max-width: 100%;
+  padding: 10px 16px;
+  border: 1px solid #087be8;
+  border-radius: 8px;
+  background: #fff;
+  color: #087be8;
+  font: 600 14px/1.4 var(--az-font-main, Arial, sans-serif);
+  letter-spacing: normal;
+  text-decoration: none;
+  transition: background-color .2s, border-color .2s, box-shadow .2s;
+}
+body.single-product #page .az-product-contact-list > a svg { display: block; flex: 0 0 18px; width: 18px; height: 18px; }
+body.single-product #page .az-product-contact-list > a span { min-width: 0; overflow-wrap: anywhere; }
+body.single-product #page .az-product-contact-list > .az-product-phone:hover { background: #eff6ff; color: #0866bf; border-color: #0866bf; }
+body.single-product #page .az-product-contact-list > .az-product-zalo { background: #087be8; color: #fff; }
+body.single-product #page .az-product-contact-list > .az-product-zalo:hover { background: #0866bf; border-color: #0866bf; color: #fff; }
+body.single-product #page .az-product-contact-list > a:focus-visible { outline: 2px solid #087be8; outline-offset: 3px; }
+@media (max-width: 480px) {
+  body.single-product #page .az-product-contact-list > a { flex: 1 1 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  body.single-product #page .az-product-contact-list > a { transition: none; }
+}

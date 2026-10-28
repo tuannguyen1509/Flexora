@@ -1,0 +1,7 @@
+.az-theme-admin .notice{box-sizing:border-box;width:100%;min-height:54px;display:flex;align-items:center;margin:0 0 20px;padding:11px 18px;border:1px solid #86efac;border-left:5px solid #16a34a;border-radius:9px;background:#f0fdf4;box-shadow:0 5px 16px rgba(22,101,52,.1)}
+.az-theme-admin .notice p{margin:0!important;color:#166534!important;font-size:14px;font-weight:650;line-height:1.5;opacity:1!important}
+.az-theme-admin .notice.notice-success{border-color:#86efac;border-left-color:#16a34a;background:#f0fdf4;color:#166534}
+.az-theme-admin .notice.notice-success p{color:#166534!important;text-shadow:none!important}
+.az-theme-admin .notice.notice-warning{border-color:#fbbf24;border-left-color:#d97706;background:#fffbeb}
+.az-theme-admin .notice.notice-warning p{color:#92400e!important}
+.az-theme-admin .az-admin-header .notice{margin:16px 0 0;background:#f0fdf4!important}

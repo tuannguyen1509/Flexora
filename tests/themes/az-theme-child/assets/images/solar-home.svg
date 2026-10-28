@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="690" viewBox="0 0 1920 690">
+<defs>
+<linearGradient id="sky" x2="1" y2="1"><stop stop-color="#f5ffba"/><stop offset=".5" stop-color="#c7ed9d"/><stop offset="1" stop-color="#5bcbb0"/></linearGradient>
+<linearGradient id="grass" x2="0" y2="1"><stop stop-color="#67ac47"/><stop offset="1" stop-color="#256b44"/></linearGradient>
+<linearGradient id="roof" x2="0" y2="1"><stop stop-color="#ed9f64"/><stop offset="1" stop-color="#ba5931"/></linearGradient>
+<linearGradient id="panel" x2="1" y2="1"><stop stop-color="#3974a7"/><stop offset=".5" stop-color="#143e70"/><stop offset="1" stop-color="#266895"/></linearGradient>
+<radialGradient id="sun"><stop stop-color="#fff"/><stop offset=".22" stop-color="#fffce7" stop-opacity=".9"/><stop offset="1" stop-color="#fffce7" stop-opacity="0"/></radialGradient>
+<pattern id="cells" width="54" height="39" patternUnits="userSpaceOnUse"><rect width="54" height="39" fill="url(#panel)" stroke="#b1d2e5" stroke-width="1.5"/><path d="M27 0v39" stroke="#709ebc" stroke-width=".6"/></pattern>
+</defs>
+<path fill="url(#sky)" d="M0 0h1920v690H0z"/><circle cx="360" cy="210" r="190" fill="url(#sun)"/><path d="M0 450Q300 250 650 465T1300 410T1920 380V690H0Z" fill="#94c984" opacity=".5"/><path d="M0 555Q290 395 580 560T1120 500T1920 510V690H0Z" fill="url(#grass)"/>
+<g transform="translate(1040 110)"><path d="M0 285h690v268H0Z" fill="#f7ecd6"/><path d="m690 285 105-93v355l-105 6Z" fill="#d9dac2"/><path d="m-73 303 216-291h571L699 303Z" fill="url(#roof)" stroke="#894929" stroke-width="10"/><path d="m150 38 535 2-42 224H-12Z" fill="url(#cells)" stroke="#d8e8ec" stroke-width="9"/><path d="m714 12 81 180-96 111Z" fill="#a64929"/><path d="M439 373h137v180H439Z" fill="#659389"/><path d="M38 363h187v139H38Zm222 0h133v139H260Z" fill="#96c5cc" stroke="#fff" stroke-width="10"/><path d="M131 363v139m-93-70h187M326 363v139m-66-70h133" stroke="#fff" stroke-width="7"/><path d="M-30 553h776v25H-30Z" fill="#cad6b7"/><circle cx="530" cy="96" r="126" fill="url(#sun)"/></g>
+<g fill="#3c874c"><ellipse cx="1780" cy="642" rx="100" ry="40"/><ellipse cx="1600" cy="665" rx="155" ry="36"/><ellipse cx="1120" cy="665" rx="120" ry="36"/></g>
+<g transform="translate(90 420)"><path d="M52 220V85" stroke="#8f8258" stroke-width="14"/><path d="M0 100Q-40 5 54-25q116 20 67 125Z" fill="#459460"/><circle cx="44" cy="42" r="57" fill="#71b979"/><path d="M77 155q-42-50-78-12 7 53 77 51" fill="#71b979"/></g>
+</svg>

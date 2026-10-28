@@ -1,0 +1,295 @@
+/* Shared editor content for product details and single blog posts. */
+.az-content {
+  color: var(--az-color-text, #424242);
+  font-size: 15px;
+  line-height: 1.75;
+  overflow-wrap: break-word;
+}
+
+.az-content::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.az-content > :first-child {
+  margin-top: 0;
+}
+
+.az-content > :last-child {
+  margin-bottom: 0;
+}
+
+.az-content p {
+  margin: 0 0 16px;
+  line-height: inherit;
+}
+
+.az-content :is(h1, h2, h3, h4, h5, h6) {
+  margin: 28px 0 13px;
+  color: var(--az-color-secondary, var(--az-color-heading, #222));
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.az-content h1 {
+  font-size: clamp(28px, 4vw, 36px);
+}
+
+.az-content h2 {
+  font-size: clamp(23px, 3vw, 29px);
+}
+
+.az-content h3 {
+  font-size: clamp(20px, 2.5vw, 24px);
+}
+
+.az-content :is(h4, h5, h6) {
+  font-size: 18px;
+}
+
+.az-content :is(ul, ol) {
+  display: block;
+  margin: 0 0 18px 22px;
+  padding-left: 18px;
+}
+
+.az-content ul {
+  list-style: disc outside;
+}
+
+.az-content ol {
+  list-style: decimal outside;
+}
+
+.az-content :is(ul, ol) :is(ul, ol) {
+  margin-top: 8px;
+  margin-bottom: 0;
+}
+
+.az-content li {
+  display: list-item;
+  margin: 0 0 8px;
+  padding-left: 3px;
+  line-height: 1.65;
+}
+
+.az-content li > p {
+  margin: 0;
+}
+
+.az-content li > i:first-child + div {
+  display: inline;
+  margin-left: 5px;
+}
+
+.az-content a {
+  color: var(--az-color-primary, #d21f3c);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+.az-content a:hover {
+  color: var(--az-color-primary-dark, var(--az-color-primary, #d21f3c));
+}
+
+.az-content :is(strong, b) {
+  color: inherit;
+  font-weight: 600;
+}
+
+.az-content :is(img, svg, video) {
+  max-width: 100%;
+  height: auto;
+}
+
+.az-content :is(figure, .wp-caption) {
+  max-width: 100%;
+  margin-top: 22px;
+  margin-bottom: 22px;
+}
+
+.az-content :is(p > img, figure img, .wp-block-image img) {
+  border-radius: 12px;
+}
+
+.az-content :is(.aligncenter, img.aligncenter) {
+  display: block;
+  margin: 22px auto;
+}
+
+.az-content .alignleft {
+  float: left;
+  margin: 6px 22px 16px 0;
+}
+
+.az-content .alignright {
+  float: right;
+  margin: 6px 0 16px 22px;
+}
+
+.az-content :is(figcaption, .wp-caption-text) {
+  margin-top: 8px;
+  color: var(--az-color-muted, #777);
+  font-size: 13px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.az-content blockquote {
+  margin: 24px 0;
+  padding: 14px 18px;
+  border-left: 4px solid var(--az-color-primary, #d21f3c);
+  background: var(--az-color-page, #f4f6f8);
+  color: var(--az-color-secondary, var(--az-color-text, #424242));
+}
+
+.az-content blockquote > :last-child {
+  margin-bottom: 0;
+}
+
+.az-content table {
+  width: 100%;
+  max-width: 100%;
+  margin: 22px 0;
+  border-collapse: collapse;
+  border-spacing: 0;
+  background: var(--az-color-surface, #fff);
+}
+
+.az-content :is(th, td) {
+  padding: 13px 15px;
+  border: 1px solid var(--az-color-border, #e5e5e5);
+  color: var(--az-color-text, #424242);
+  line-height: 1.5;
+  text-align: left;
+  vertical-align: top;
+}
+
+.az-content th {
+  background: var(--az-color-page, #f4f6f8);
+  color: var(--az-color-secondary, var(--az-color-heading, #222));
+  font-weight: 600;
+}
+
+.az-content .az-product-additional-table th {
+  width: 34%;
+}
+
+.az-content hr {
+  margin: 28px 0;
+  border: 0;
+  border-top: 1px solid var(--az-color-border, #e5e5e5);
+}
+
+.az-content :is(pre, code) {
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+}
+
+.az-content code {
+  padding: 2px 5px;
+  border-radius: 4px;
+  background: var(--az-color-page, #f4f6f8);
+  font-size: 0.9em;
+}
+
+.az-content pre {
+  max-width: 100%;
+  margin: 22px 0;
+  padding: 16px;
+  overflow-x: auto;
+  border: 1px solid var(--az-color-border, #e5e5e5);
+  border-radius: 8px;
+  background: var(--az-color-page, #f4f6f8);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.az-content pre code {
+  padding: 0;
+  background: transparent;
+  font-size: inherit;
+}
+
+.az-content :is(iframe, embed, object) {
+  max-width: 100%;
+}
+
+.az-content .wp-block-embed__wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.az-content .wp-block-embed__wrapper iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+}
+
+.az-content :is(.gallery, .wp-block-gallery, .blocks-gallery-grid) {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 22px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.az-content :is(.gallery, .wp-block-gallery, .blocks-gallery-grid) > * {
+  min-width: 0;
+  margin: 0;
+}
+
+.az-content :is(.gallery, .wp-block-gallery, .blocks-gallery-grid) img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.az-content :is(.has-text-align-center, .text-center) {
+  text-align: center;
+}
+
+.az-content :is(.has-text-align-right, .text-right) {
+  text-align: right;
+}
+
+@media (max-width: 640px) {
+  .az-content {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .az-content :is(ul, ol) {
+    margin-left: 14px;
+    padding-left: 16px;
+  }
+
+  .az-content :is(.alignleft, .alignright) {
+    float: none;
+    display: block;
+    margin: 20px auto;
+  }
+
+  .az-content table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .az-content :is(th, td) {
+    min-width: 130px;
+    padding: 10px 12px;
+  }
+
+  .az-content :is(.gallery, .wp-block-gallery, .blocks-gallery-grid) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

@@ -1,0 +1,47 @@
+.az-theme-admin .az-admin-header,
+.az-theme-admin .az-admin-dashboard__header {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border: 1px solid rgba(147, 197, 253, .24);
+  background:
+    radial-gradient(circle at 88% 5%, rgba(96, 165, 250, .34) 0, rgba(96, 165, 250, 0) 32%),
+    radial-gradient(circle at 8% 120%, rgba(14, 165, 233, .2) 0, rgba(14, 165, 233, 0) 38%),
+    linear-gradient(125deg, #0a2147 0%, #123d72 52%, #1d5d9f 100%);
+  box-shadow: 0 18px 42px rgba(15, 43, 84, .2), inset 0 1px 0 rgba(255, 255, 255, .08);
+}
+
+.az-theme-admin .az-admin-header::before,
+.az-theme-admin .az-admin-dashboard__header::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, .035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, .035) 1px, transparent 1px);
+  background-size: 32px 32px;
+  content: "";
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 42%, #000);
+  mask-image: linear-gradient(90deg, transparent, #000 42%, #000);
+  pointer-events: none;
+}
+
+.az-theme-admin .az-admin-header::after,
+.az-theme-admin .az-admin-dashboard__header::after {
+  position: absolute;
+  z-index: -1;
+  top: -95px;
+  right: 7%;
+  width: 240px;
+  height: 240px;
+  border: 42px solid rgba(255, 255, 255, .055);
+  border-radius: 50%;
+  content: "";
+  pointer-events: none;
+}
+
+.az-theme-admin .az-admin-header > *,
+.az-theme-admin .az-admin-dashboard__header > * {
+  position: relative;
+  z-index: 1;
+}

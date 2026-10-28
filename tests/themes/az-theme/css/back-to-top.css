@@ -1,0 +1,74 @@
+/* Independent component: works with parent style.css disabled or cached. */
+a.az-back-to-top {
+    position: fixed;
+    z-index: 990;
+    right: 24px;
+    bottom: calc(24px + env(safe-area-inset-bottom, 0px));
+    display: grid;
+    box-sizing: border-box;
+    width: 46px;
+    height: 46px;
+    place-items: center;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: var(--az-color-primary, #cc2338);
+    box-shadow: 0 10px 24px rgba(15, 23, 42, .2);
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    transition: opacity .2s ease, transform .2s ease, visibility .2s ease;
+}
+a.az-back-to-top.is-enhanced:not(.is-visible) {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(10px);
+}
+a.az-back-to-top.az-back-to-top--left {
+    left: 24px;
+    right: auto;
+}
+a.az-back-to-top:hover {
+    background: var(--az-color-primary-hover, #a91b2e);
+    color: #fff;
+    text-decoration: none;
+    transform: translateY(-2px);
+}
+a.az-back-to-top svg {
+    display: block;
+    width: 22px;
+    height: 22px;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 2;
+}
+a.az-back-to-top:focus-visible {
+    outline: 3px solid var(--az-color-primary, #cc2338);
+    outline-offset: 3px;
+}
+@media (max-width: 640px) {
+    a.az-back-to-top {
+        right: 16px;
+        bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+        width: 42px;
+        height: 42px;
+    }
+    a.az-back-to-top.az-back-to-top--left {
+        left: 16px;
+    }
+    .az-has-contact-dock a.az-back-to-top {
+        bottom: calc(80px + env(safe-area-inset-bottom, 0px));
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    a.az-back-to-top {
+        transition: none;
+    }
+}

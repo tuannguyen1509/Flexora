@@ -1,0 +1,3 @@
+.az-theme-admin .az-admin-header__actions .button-primary:hover,.az-theme-admin .az-admin-header__actions .button-primary:focus{border-color:#dbeafe;background:#dbeafe;color:#123b70;box-shadow:0 5px 14px rgba(15,67,125,.25)}
+.az-theme-admin .az-admin-header__actions .az-admin-button-danger:hover,.az-theme-admin .az-admin-header__actions .az-admin-button-danger:focus{border-color:#fff;background:#fff;color:#123b70;box-shadow:0 5px 14px rgba(15,67,125,.2)}
+.az-theme-admin .az-admin-header__actions .button:focus-visible{outline:3px solid rgba(255,255,255,.75);outline-offset:2px}

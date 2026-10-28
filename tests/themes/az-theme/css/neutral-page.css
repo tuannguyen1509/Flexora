@@ -1,0 +1,68 @@
+/* Neutral Pages use the shared container and article typography from AZ Theme. */
+.az-site .az-neutral-page {
+  padding: 32px 0 64px;
+  background: var(--az-color-surface, #fff);
+  color: var(--az-color-text, #424242);
+}
+.az-neutral-page__article {
+  min-width: 0;
+  border: 1px solid var(--az-color-border, #e5e5e5);
+  border-radius: var(--az-radius-lg, 14px);
+  background: var(--az-color-surface, #fff);
+  box-shadow: var(--az-shadow-soft, 0 6px 20px rgb(16 35 63 / 5%));
+  overflow: hidden;
+}
+.az-neutral-page__featured { margin: 0; }
+.az-neutral-page__featured img { display: block; width: 100%; max-width: 100%; height: auto; }
+.az-neutral-page__body { padding: clamp(24px, 3vw, 40px); }
+.az-neutral-page .az-neutral-page__content {
+  font-family: var(--az-font-main, Arial, sans-serif);
+  font-size: var(--az-body-size, 16px);
+  font-weight: var(--az-font-weight, 400);
+  line-height: 1.85;
+  overflow-wrap: anywhere;
+}
+.az-neutral-page__content a { color: var(--az-color-primary, #f7941d); }
+.az-neutral-page__content a:focus-visible { outline: 2px solid var(--az-color-primary); outline-offset: 3px; }
+.az-neutral-page__content .alignfull,
+.az-neutral-page__content .alignwide { width: 100%; max-width: 100%; margin-inline: 0; }
+.az-neutral-page__content :is(.wp-block-table, .wp-block-code) { max-width: 100%; overflow-x: auto; }
+.az-neutral-page__content table { display: block; max-width: 100%; overflow-x: auto; }
+.az-neutral-page__pagination { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; padding-top: 24px; margin-top: 24px; border-top: 1px solid var(--az-color-border); }
+.az-neutral-page__pagination a,
+.az-neutral-page__pagination > .post-page-numbers { display: inline-flex; justify-content: center; min-width: 36px; padding: 6px 10px; border: 1px solid var(--az-color-border); border-radius: var(--az-radius-sm, 4px); color: var(--az-color-text); text-decoration: none; }
+.az-neutral-page__pagination > .current { background: var(--az-color-primary); border-color: transparent; color: #fff; }
+.az-neutral-page__comments { margin-top: 32px; }
+@media (max-width: 640px) {
+  .az-site .az-neutral-page { padding-block: 24px 40px; }
+  .az-neutral-page__body { padding: 22px 18px; }
+  .az-neutral-page .az-neutral-page__content { font-size: var(--az-body-size-mobile, 16px); line-height: 1.75; }
+}
+
+/* Pasted chat HTML can bring dark backgrounds and narrow flex wrappers.
+   Normalize only this wrapper signature; keep normal
+   WordPress blocks, authored callouts and the stored content unchanged. */
+.az-neutral-page__content div.group[class*="dark:bg-"]:has(.markdown.prose),
+.az-neutral-page__content div.group[class*="dark:bg-"] div:has(.markdown.prose),
+.az-neutral-page__content div.group[class*="dark:bg-"] .markdown.prose {
+  display: block;
+  width: 100%;
+  max-width: none;
+  min-width: 0;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  white-space: normal;
+}
+.az-neutral-page__content div.group[class*="dark:bg-"] .markdown.prose :is(p, ul, ol, li, strong, b, em) {
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}

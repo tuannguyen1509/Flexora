@@ -1,0 +1,4 @@
+.az-theme-admin .az-advanced__media-remove{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;margin:0;padding:0;border:1px solid #fecaca;border-radius:7px;background:#fff;color:#dc2626;text-decoration:none;box-shadow:0 1px 2px rgba(16,42,86,.05);transition:background-color .15s,border-color .15s,color .15s,transform .15s}
+.az-theme-admin .az-advanced__media-remove:hover{border-color:#dc2626;background:#fef2f2;color:#b91c1c;transform:translateY(-1px)}
+.az-theme-admin .az-advanced__media-remove:focus-visible{outline:3px solid rgba(37,99,235,.2);outline-offset:2px}
+.az-theme-admin .az-advanced__media-remove .dashicons{width:18px;height:18px;font-size:18px;line-height:18px}

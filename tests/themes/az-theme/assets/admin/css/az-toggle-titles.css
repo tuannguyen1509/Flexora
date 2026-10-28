@@ -1,0 +1,102 @@
+/* Place text and help in separate rows; do not squeeze labels in a flex row. */
+.az-theme-admin [data-az-panel="google"] .az-advanced__field.az-field--switch,
+.az-theme-admin [data-az-panel="user"] .az-advanced__field.az-field--switch,
+.az-theme-admin [data-az-panel="blog"] .az-advanced__field.az-field--switch,
+.az-theme-admin [data-az-panel="social"] .az-settings-card--contact .az-advanced__field.az-field--switch,
+.az-theme-admin [data-az-panel="header"] .az-settings-card--header_bottom .az-advanced__field.az-field--switch,
+.az-theme-admin [data-az-panel="header"] .az-settings-card--sticky .az-advanced__field.az-field--switch,
+.az-theme-admin [data-az-panel="general"] .az-settings-card--editor .az-advanced__field.az-field--switch,
+.az-theme-admin [data-az-panel="general"] .az-settings-card--admin_menu .az-advanced__field.az-field--switch,
+.az-theme-admin [data-az-panel="general"] .az-settings-card--media .az-advanced__field.az-field--switch,
+.az-theme-admin [data-az-panel="general"] .az-settings-card--security .az-advanced__field.az-field--switch,
+.az-theme-admin [data-az-panel="footer"] .az-settings-card--back_to_top .az-advanced__field.az-field--switch,
+.az-theme-admin [data-az-panel="performance"] .az-advanced__field.az-field--switch {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-rows: auto;
+    align-content: start;
+    align-items: center;
+    gap: 8px 16px;
+    min-width: 0;
+}
+.az-theme-admin [data-az-panel="blog"] .az-field--switch > .az-advanced__field-label,
+.az-theme-admin [data-az-panel="user"] .az-field--switch > .az-advanced__field-label,
+.az-theme-admin [data-az-panel="google"] .az-field--switch > .az-advanced__field-label,
+.az-theme-admin [data-az-panel="social"] .az-settings-card--contact .az-field--switch > .az-advanced__field-label,
+.az-theme-admin [data-az-panel="header"] .az-settings-card--header_bottom .az-field--switch > .az-advanced__field-label,
+.az-theme-admin [data-az-panel="header"] .az-settings-card--sticky .az-field--switch > .az-advanced__field-label,
+.az-theme-admin [data-az-panel="general"] .az-settings-card--editor .az-field--switch > .az-advanced__field-label,
+.az-theme-admin [data-az-panel="general"] .az-settings-card--admin_menu .az-field--switch > .az-advanced__field-label,
+.az-theme-admin [data-az-panel="general"] .az-settings-card--media .az-field--switch > .az-advanced__field-label,
+.az-theme-admin [data-az-panel="general"] .az-settings-card--security .az-field--switch > .az-advanced__field-label,
+.az-theme-admin [data-az-panel="footer"] .az-settings-card--back_to_top .az-field--switch > .az-advanced__field-label,
+.az-theme-admin [data-az-panel="performance"] .az-field--switch > .az-advanced__field-label {
+    grid-column: 1;
+    grid-row: 1;
+    align-self: center;
+    white-space: nowrap;
+    margin: 0;
+    line-height: 1.4;
+}
+.az-theme-admin [data-az-panel="blog"] .az-field--switch > .az-advanced__switch,
+.az-theme-admin [data-az-panel="user"] .az-field--switch > .az-advanced__switch,
+.az-theme-admin [data-az-panel="google"] .az-field--switch > .az-advanced__switch,
+.az-theme-admin [data-az-panel="social"] .az-settings-card--contact .az-field--switch > .az-advanced__switch,
+.az-theme-admin [data-az-panel="header"] .az-settings-card--header_bottom .az-field--switch > .az-advanced__switch,
+.az-theme-admin [data-az-panel="header"] .az-settings-card--sticky .az-field--switch > .az-advanced__switch,
+.az-theme-admin [data-az-panel="general"] .az-settings-card--editor .az-field--switch > .az-advanced__switch,
+.az-theme-admin [data-az-panel="general"] .az-settings-card--admin_menu .az-field--switch > .az-advanced__switch,
+.az-theme-admin [data-az-panel="general"] .az-settings-card--media .az-field--switch > .az-advanced__switch,
+.az-theme-admin [data-az-panel="general"] .az-settings-card--security .az-field--switch > .az-advanced__switch,
+.az-theme-admin [data-az-panel="footer"] .az-settings-card--back_to_top .az-field--switch > .az-advanced__switch,
+.az-theme-admin [data-az-panel="performance"] .az-field--switch > .az-advanced__switch {
+    grid-column: 2;
+    grid-row: 1;
+    margin: 0;
+}
+.az-theme-admin [data-az-panel="blog"] .az-field--switch > .az-advanced__help,
+.az-theme-admin [data-az-panel="user"] .az-field--switch > .az-advanced__help,
+.az-theme-admin [data-az-panel="google"] .az-field--switch > .az-advanced__help,
+.az-theme-admin [data-az-panel="social"] .az-settings-card--contact .az-field--switch > .az-advanced__help,
+.az-theme-admin [data-az-panel="header"] .az-settings-card--header_bottom .az-field--switch > .az-advanced__help,
+.az-theme-admin [data-az-panel="header"] .az-settings-card--sticky .az-field--switch > .az-advanced__help,
+.az-theme-admin [data-az-panel="general"] .az-settings-card--editor .az-field--switch > .az-advanced__help,
+.az-theme-admin [data-az-panel="general"] .az-settings-card--admin_menu .az-field--switch > .az-advanced__help,
+.az-theme-admin [data-az-panel="general"] .az-settings-card--media .az-field--switch > .az-advanced__help,
+.az-theme-admin [data-az-panel="general"] .az-settings-card--security .az-field--switch > .az-advanced__help,
+.az-theme-admin [data-az-panel="footer"] .az-settings-card--back_to_top .az-field--switch > .az-advanced__help,
+.az-theme-admin [data-az-panel="performance"] .az-field--switch > .az-advanced__help {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    min-width: 0;
+    margin: 0;
+    overflow-wrap: anywhere;
+}
+@media (max-width: 1200px) {
+    .az-theme-admin [data-az-panel="user"] .az-settings-grid,
+    .az-theme-admin [data-az-panel="general"] .az-settings-card--security .az-settings-grid,
+    .az-theme-admin [data-az-panel="footer"] .az-settings-card--back_to_top .az-settings-grid,
+    .az-theme-admin [data-az-panel="performance"] .az-settings-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+@media (max-width: 600px) {
+    .az-theme-admin [data-az-panel="footer"] .az-settings-card--back_to_top .az-advanced__field.az-field--switch {
+        gap: 8px 12px;
+    }
+    .az-theme-admin [data-az-panel="footer"] .az-settings-card--back_to_top .az-field--switch > .az-advanced__field-label {
+        font-size: 12px;
+    }
+}
+@media (max-width: 600px) {
+    .az-theme-admin [data-az-panel="google"] .az-field--switch > .az-advanced__field-label,
+    .az-theme-admin [data-az-panel="user"] .az-field--switch > .az-advanced__field-label,
+    .az-theme-admin [data-az-panel="blog"] .az-field--switch > .az-advanced__field-label,
+    .az-theme-admin [data-az-panel="general"] .az-settings-card--admin_menu .az-field--switch > .az-advanced__field-label,
+    .az-theme-admin [data-az-panel="general"] .az-settings-card--media .az-field--switch > .az-advanced__field-label,
+    .az-theme-admin [data-az-panel="general"] .az-settings-card--security .az-field--switch > .az-advanced__field-label,
+    .az-theme-admin [data-az-panel="performance"] .az-field--switch > .az-advanced__field-label {
+        white-space: normal;
+        overflow-wrap: anywhere;
+    }
+}

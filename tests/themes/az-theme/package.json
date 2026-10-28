@@ -1,0 +1,6 @@
+{
+  "name": "az-theme-assets",
+  "private": true,
+  "scripts": { "build:css": "tailwindcss -c tailwind.config.cjs -i assets/src/utilities.css -o css/utilities.min.css --minify" },
+  "devDependencies": { "tailwindcss": "3.4.17", "@tailwindcss/forms": "0.5.10", "@tailwindcss/container-queries": "0.1.1", "@fortawesome/fontawesome-free": "6.4.0" }
+}
