@@ -1,0 +1,20 @@
+# Current FLX coding rules
+
+These implementation rules reflect the user's Phase04–06 decisions. Architecture/audit history remains frozen; historical AZ compatibility proposals are not authorization to add a native runtime bridge.
+
+1. Read the current architecture and relevant implementation contracts before changing code. Canonical runtime is only `flexora/`; one Child is one site. History/references are not runtime dependencies.
+2. Use product Flexora, prefix `flx_*`, namespace `FLX\*`, hooks `flx/*`, handles `flx-*`, logical IDs `flx.*`, CSS/data attributes `flx-*`, JS events `flx:*`. No old runtime aliases or site branding in Parent.
+3. Search Parent APIs, Asset Registry and Component Registry before adding functionality/dependencies. Reuse Parent; reusable candidates need review, site-only implementation stays Child. Do not copy an engine to change markup.
+4. Components own their dependency graph. Consumer preflights component IDs, not internal asset IDs. Registering a feature is distinct from using an existing feature. Child must not access containers/internal application classes.
+5. Choose short text → `text`; long plain text → `textarea`; formatted long content → `editor`; boolean → `toggle`; few options → `radio`; many options → `select`; image → `media`; multiple images → `gallery`; repeated structure → `repeater`.
+6. Generic rich content uses WordPress `wp_editor`, including repeater children. Never fall back to text/textarea for an unsupported rich editor lifecycle. Use actual WordPress media and color APIs; no duplicate vendor bundle.
+7. Field IDs are stable, independent of labels and layout. Repeater item identity is `_id`: duplicate gets a new ID, reorder preserves it. Never rename IDs/types/storage meaning without an explicit future migration plan.
+8. Field Engine stays storage-neutral. Render/read must not seed defaults. Only the settings adapter persists `flx_settings`; future meta adapters reuse the same engine, not a copied renderer.
+9. Distinguish absent/null/false/zero/empty string/empty list. Missing is a no-op; unknown stored branches survive; unexpected submitted keys are rejected. Failed validation is atomic, not a partial write of valid siblings.
+10. Save requires capability + nonce + schema + normalization + validation + sanitization + revision check. Nonce is not authorization. Rich HTML must pass `wp_kses_post`; media must be a readable image attachment. Never log secrets/nonces/raw request data.
+11. Admin assets load only on their own screens/sections; existing WordPress handles are references, not re-bundled dependencies. CSS and script registries are separate in WordPress even when their physical handle strings match.
+12. Test on primary localhost:8090 with Child Starter. Do not clone/test/migrate real sites in the current framework development workflow. Do not reset the database or recreate a healthy stack for convenience.
+13. Preserve baseline tests and add meaningful field/storage/security/browser coverage. Dynamic editor add/duplicate/move/remove/save/reload, real Media Library, keyboard and mobile layout are release gates. Do not claim integration from mocks.
+14. For a future Template Map phase, editable dynamic template changes and the corresponding Map must be reviewed in the same task. Phase06 does not authorize implementing Map/runtime/template detection.
+15. No hard-coded localhost/domain/uploads URL in runtime values; store attachment IDs. Never ship credentials, uploads, SQL, logs, tests or reference source inside the Parent ZIP.
+16. Check Git status/diffs/staging first; stage only task files, preserve unrelated work. Commit a working Phase only after gates pass. Stop at the requested phase boundary.

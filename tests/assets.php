@@ -16,6 +16,8 @@ add_action( 'flx/register', function ( $r ) {
 	$r->asset( asset_spec( 'late-style' ) );
 	$r->asset( asset_spec( 'duplicate-handle-a', array( 'handle' => 'collision' ) ) );
 	$r->asset( asset_spec( 'duplicate-handle-b', array( 'handle' => 'collision' ) ) );
+	$r->asset( asset_spec( 'shared-style', array( 'handle' => 'shared-wp-handle' ) ) );
+	$r->asset( asset_spec( 'shared-script', array( 'type' => 'script', 'source' => 'shared.js', 'handle' => 'shared-wp-handle' ) ) );
 } );
 wp_register_style( 'core-fixture', 'core.css', array(), '2.0.0' );
 do_action( 'after_setup_theme' );
@@ -30,6 +32,9 @@ do_action( 'wp_enqueue_scripts' );
 check( 'core.css' === $GLOBALS['fx_assets']['style']['core-fixture']['src'] && '2.0.0' === $GLOBALS['fx_assets']['style']['core-fixture']['version'], 'core reference does not re-register its source/version' );
 check( true === $GLOBALS['fx_assets']['script']['script']['footer'], 'script uses backward-compatible WP footer argument' );
 check( 1 === $GLOBALS['fx_enqueue_calls']['script:script'] && 1 === $GLOBALS['fx_enqueue_calls']['style:core-fixture'], 'needed handles enqueue exactly once' );
+check( flx_asset( 'shared-style' )->accepted && flx_asset( 'shared-script' )->accepted, 'equal handle names across style/script registries accepted' );
+do_action( 'wp_enqueue_scripts' );
+check( 1 === $GLOBALS['fx_enqueue_calls']['script:shared-wp-handle'] && 1 === $GLOBALS['fx_enqueue_calls']['style:shared-wp-handle'], 'both physical types independently enqueue once' );
 do_action( 'wp_head' );
 check( ! flx_asset( 'late-style' )->accepted, 'unexpected late CSS rejected visibly via diagnostic' );
 check( in_array( 'late_style_usage', array_column( flx()->diagnostics(), 'code' ), true ), 'late CSS diagnostic present' );

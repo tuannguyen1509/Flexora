@@ -1,5 +1,9 @@
 <?php
 /** Preview subset of target Public API v1; runtime access stays inside this boundary. */
+/** Register during flx/settings/register. Field IDs are stable storage identities. */
+function flx_register_settings_section( $id, array $section ) {
+	FLX\Admin\Advanced::instance()->register_section( $id, $section );
+}
 function flx() {
 	return FLX\Core\Runtime::kernel()->facade();
 }

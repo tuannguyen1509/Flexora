@@ -132,15 +132,16 @@ final class Definitions {
 			return;
 		}
 		$this->state = 'sealed';
-		// Duplicate physical handles are blocked, not silently reassigned.
+		// WordPress has separate style/script registries (core color picker uses both).
 		$handles = array();
 		foreach ( $this->all( 'asset' ) as $id => $spec ) {
-			if ( isset( $handles[ $spec->handle ] ) ) {
+			$physical = $spec->type . ':' . $spec->handle;
+			if ( isset( $handles[ $physical ] ) ) {
 				$this->valid[ 'asset:' . $id ] = false;
-				$this->valid[ 'asset:' . $handles[ $spec->handle ] ] = false;
+				$this->valid[ 'asset:' . $handles[ $physical ] ] = false;
 				$this->diagnostics->add( 'asset_handle_conflict', 'asset', $id );
 			}
-			$handles[ $spec->handle ] = $id;
+			$handles[ $physical ] = $id;
 		}
 		foreach ( $this->items as $key => $spec ) {
 			list( $kind, $id ) = explode( ':', $key, 2 );
