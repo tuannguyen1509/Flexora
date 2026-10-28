@@ -13,3 +13,5 @@ for scope in admin ajax rest cron cli; do php -n tests/scope.php "$scope"; done
 for mode in enabled disabled admin component; do php -n tests/accessibility.php "$mode"; done
 php -n tests/naming-css.php
 php -n tests/template-maps.php
+
+php -n tests/header.php

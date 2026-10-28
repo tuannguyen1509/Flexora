@@ -11,7 +11,7 @@ use FLX\Support\VersionRange;
 
 /** Lifecycle coordinator. Feature implementations do not live in this class. */
 final class Kernel {
-	const VERSION = '0.3.0';
+	const VERSION = '0.4.0';
 	// Runtime subset version; Contracts/V1 describes the future target, not completeness.
 	const API_VERSION = '0.1.0';
 	private $profile;

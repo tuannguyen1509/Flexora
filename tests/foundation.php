@@ -14,7 +14,7 @@ check( 30 === has_action( 'after_setup_theme', array( FLX\Core\Runtime::kernel()
 check( 40 === has_action( 'after_setup_theme', array( FLX\Core\Runtime::kernel(), 'seal' ) ), 'seal priority 40' );
 check( array() === $GLOBALS['fx_queue']['style'], 'initialization does not enqueue' );
 check( array() === $GLOBALS['fx_assets']['style'], 'initialization does not WP-register unused styles' );
-check( '0.1.0' === flx()->api_version() && '0.3.0' === flx()->parent_version(), 'runtime preview and foundation versions' );
+check( '0.1.0' === flx()->api_version() && '0.4.0' === flx()->parent_version(), 'runtime preview and foundation versions' );
 $facade_methods = get_class_methods( flx() );
 sort( $facade_methods );
 check( array( '__construct', 'api_version', 'diagnostics', 'parent_version', 'supports' ) === $facade_methods, 'facade exposes only read-only methods' );

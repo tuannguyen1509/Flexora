@@ -18,7 +18,7 @@ final class ThemeSetup {
 		add_theme_support( 'custom-logo' );
 		add_theme_support( 'automatic-feed-links' );
 		add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption', 'style', 'script' ) );
-		register_nav_menus( array( 'flx-primary' => __( 'Primary navigation', 'flexora' ) ) );
+		register_nav_menus( array( 'primary' => __( 'Primary navigation', 'flexora' ) ) );
 	}
 	public static function register_assets( $registrar ) {
 		$registrar->asset( new SpecV1( array(
