@@ -14,7 +14,7 @@ foreach ($profile in @('native','reentry')) {
     & $Php -n (Join-Path $root 'tests/component-preflight.php') $profile
     if ($LASTEXITCODE -ne 0) { throw "Component preflight failed: $profile" }
 }
-foreach ($test in @('registration','assets','compatibility','head-enqueue','fields')) {
+foreach ($test in @('registration','assets','compatibility','head-enqueue','template-maps')) {
     & $Php -n (Join-Path $root "tests/$test.php")
     if ($LASTEXITCODE -ne 0) { throw "Test failed: $test" }
 }

@@ -7,6 +7,12 @@ function flx_register_settings_section( $id, array $section ) {
 function flx() {
 	return FLX\Core\Runtime::kernel()->facade();
 }
+function flx_register_template_map( array $map ) { FLX\Templates\Runtime::registry()->register( $map ); }
+function flx_data( $path, $fallback = null, array $context = array() ) { return FLX\Templates\Runtime::resolver()->data( $path, $fallback, $context ); }
+function flx_template( array $context = array() ) {
+	$resolver = FLX\Templates\Runtime::resolver(); $map = $resolver->map( $resolver->post_id( $context ) );
+	return $map ? new FLX\Contracts\V1\SpecV1( $map ) : null;
+}
 function flx_supports( $feature, $version_range = '*' ) {
 	return flx()->supports( $feature, $version_range );
 }

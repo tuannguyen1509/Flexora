@@ -1,0 +1,36 @@
+.flx-advanced, .flx-template-content {
+    --flx-admin-primary: #3157d5; --flx-admin-bg: #f2f5fa; --flx-admin-surface: #fff;
+    --flx-admin-border: #dce2ec; --flx-admin-text: #19253a; --flx-admin-muted: #56657b;
+    --flx-admin-radius: 12px; --flx-admin-shadow: 0 3px 18px #19253a08;
+    color: var(--flx-admin-text);
+}
+.flx-template-content { padding: 12px; }
+.flx-settings-group { padding: 26px 30px; margin: 20px 0; background: var(--flx-admin-surface); border: 1px solid var(--flx-admin-border); border-radius: var(--flx-admin-radius); box-shadow: var(--flx-admin-shadow); }
+.flx-settings-group h3 { margin: 0 0 10px; font-size: 17px; }
+.flx-field { margin-top: 24px; min-width: 0; }
+.flx-field-label { display: block; font-weight: 600; margin-bottom: 9px; }
+.flx-field input:not([type=checkbox]):not([type=radio]):not([type=hidden]), .flx-field textarea, .flx-field select { max-width: 100%; width: 100%; border-color: var(--flx-admin-border); border-radius: 6px; min-height: 40px; }
+.flx-field .wp-editor-area { border-radius: 0; }
+.flx-field .wp-picker-container input { width: auto !important; }
+.flx-field .wp-picker-container button { min-height: 32px; }
+.flx-field .wp-editor-wrap { max-width: 100%; }
+.flx-radio { display: inline-flex; align-items: center; margin-right: 24px; min-height: 36px; gap: 6px; }
+.flx-toggle[type=checkbox] { appearance: none; -webkit-appearance: none; width: 46px; height: 26px; border-radius: 20px; background: #78859a; border: 0; position: relative; margin: 0; box-shadow: none; }
+.flx-toggle[type=checkbox]::before { content: ''; width: 18px; height: 18px; border-radius: 50%; background: #fff; position: absolute; left: 4px; top: 4px; margin: 0; }
+.flx-toggle[type=checkbox]:checked { background: var(--flx-admin-primary); }
+.flx-toggle[type=checkbox]:checked::before { transform: translateX(20px); }
+:is(.flx-advanced,.flx-template-content) :is(a,button,input,textarea,select):focus-visible { outline: 3px solid var(--flx-admin-primary); outline-offset: 3px; }
+.flx-field-error { color: #a51c30; font-weight: 600; }
+.flx-field [aria-invalid=true] { border-color: #a51c30 !important; }
+.flx-media-preview img { width: 120px; height: 100px; object-fit: cover; border-radius: 8px; display: block; margin-bottom: 12px; }
+.flx-gallery-items { display: flex; flex-wrap: wrap; gap: 14px; margin: 12px 0; }
+.flx-gallery-item { border: 1px solid var(--flx-admin-border); border-radius: 8px; padding: 8px; background: var(--flx-admin-bg); cursor: grab; }
+.flx-gallery-item img { width: 112px; height: 90px; object-fit: cover; display: block; margin-bottom: 8px; }
+.flx-gallery-item .button { padding: 0 8px; margin-right: 3px; }
+.flx-repeater-row { border: 1px solid var(--flx-admin-border); border-radius: 8px; margin-bottom: 16px; overflow: hidden; }
+.flx-row-toolbar { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; padding: 12px; background: var(--flx-admin-bg); }
+.flx-drag-handle { cursor: grab; font-size: 24px; }
+.flx-row-actions { margin-left: auto; display: flex; flex-wrap: wrap; gap: 5px; }
+.flx-row-fields { padding: 0 20px 24px; }
+.flx-row-fields[hidden] { display: none; }
+@media(max-width:782px){.flx-row-fields{padding:0 12px 18px}.flx-row-actions{width:100%;margin-left:0}.flx-row-toolbar button{font-size:12px;min-height:34px}.flx-gallery-item img{width:95px}.flx-settings-group{padding:20px 16px}}

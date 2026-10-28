@@ -1,0 +1,4 @@
+.flx-example-features { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 24px; }
+.flx-example-feature { padding: 20px; border: 1px solid #dce2ec; border-radius: 10px; }
+.flx-example img { max-width: 100%; height: auto; }
+.flx-example-button { display: inline-block; padding: 12px 20px; margin: 16px 0; }

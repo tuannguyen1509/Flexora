@@ -6,6 +6,8 @@ $checks = 0;
 $check = function ( $ok, $message ) use ( &$checks ) { if ( ! $ok ) { throw new RuntimeException( $message ); } $checks++; };
 $types = new FLX\Fields\TypeRegistry(); FLX\Fields\BuiltinTypes::register( $types ); $engine = new FLX\Fields\Engine( $types );
 $fields = array( 'rich' => array( 'type' => 'editor' ), 'image' => array( 'type' => 'media' ), 'gallery' => array( 'type' => 'gallery' ), 'toggle' => array( 'type' => 'toggle' ) );
+$url = $engine->patch( array( 'url' => array( 'type' => 'url' ) ), array(), array( 'url' => 'https://example.org/details' ) );
+$check( 'https://example.org/details' === $url['values']['url'], 'native URL sanitizer does not receive schema as protocols' );
 $r = $engine->patch( $fields, array(), array( 'rich' => '<p><strong>Rich</strong> <a href="https://example.org">link</a></p><ul><li>List</li></ul><script>alert(1)</script><img src=x onerror="alert(2)">' ) );
 $check( array() === $r['errors'], 'editor validates' );
 foreach ( array( '<strong>Rich</strong>', '<ul>', '<a href="https://example.org">' ) as $html ) { $check( false !== strpos( $r['values']['rich'], $html ), 'real KSES retains formatting' ); }

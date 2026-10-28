@@ -1,5 +1,7 @@
 # FLX Child API — canonical Parent preview
 
+Phase07 adds `flx_register_template_map()`, `flx_data()` and `flx_template()` for mapped Page content. See the four-step [Template Map quickstart](TEMPLATE-MAP-QUICKSTART.md). Runtime API stays preview; not all target v1 APIs are implemented.
+
 `flexora/` is the only runtime source. `flexora-child-starter` uses `Template: flexora`, inheriting the minimal shell and Skip Link automatically. Do not require history/reference files or copy Parent engine/assets into Child.
 
 Parent 0.2.0 adds **Flexora → Advanced** and a storage-neutral Field Engine. Existing components still use the same preflight API. For site-specific settings, declare `flx_register_settings_section()` during `flx/settings/register`; see [Field Engine contract](FIELD-ENGINE.md). Do not instantiate internal admin classes. Runtime API remains preview 0.1.0, with target v1 incomplete.

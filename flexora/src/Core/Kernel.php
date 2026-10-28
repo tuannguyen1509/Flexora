@@ -11,7 +11,7 @@ use FLX\Support\VersionRange;
 
 /** Lifecycle coordinator. Feature implementations do not live in this class. */
 final class Kernel {
-	const VERSION = '0.2.0';
+	const VERSION = '0.3.0';
 	// Runtime subset version; Contracts/V1 describes the future target, not completeness.
 	const API_VERSION = '0.1.0';
 	private $profile;
@@ -138,7 +138,7 @@ final class Kernel {
 		return $status;
 	}
 	public function facade() { return $this->facade; }
-	public function diagnostics() { return $this->diagnostics->all(); }
+	public function diagnostics() { return array_merge( $this->diagnostics->all(), \FLX\Templates\Runtime::diagnostics() ); }
 	public function profile() { return $this->profile; }
 	public function api_version() { return self::API_VERSION; }
 	public function parent_version() { return self::VERSION; }

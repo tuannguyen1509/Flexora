@@ -9,7 +9,7 @@ final class BuiltinTypes {
 			'editor' => 'wp_kses_post', 'url' => 'esc_url_raw', 'email' => 'sanitize_email', 'color' => 'sanitize_hex_color',
 		);
 		foreach ( $strings as $type => $sanitizer ) {
-			self::add( $registry, $type, '', function ( $value ) { return is_scalar( $value ) && ! is_bool( $value ) ? (string) $value : $value; }, $sanitizer,
+			self::add( $registry, $type, '', function ( $value ) { return is_scalar( $value ) && ! is_bool( $value ) ? (string) $value : $value; }, function ( $value ) use ( $sanitizer ) { return call_user_func( $sanitizer, $value ); },
 				function ( $value, $field ) use ( $type ) {
 					if ( ! is_string( $value ) ) { return 'Cần nhập nội dung dạng văn bản.'; }
 					$length = function_exists( 'mb_strlen' ) ? mb_strlen( $value ) : strlen( $value );

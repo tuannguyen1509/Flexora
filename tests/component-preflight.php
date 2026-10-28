@@ -22,9 +22,11 @@ add_action( 'flx/register', function ( $r ) {
 } );
 check( '0.1.0' === flx()->api_version(), 'runtime exposes implementation preview version' );
 check( ! flx_supports( 'api', '^1.0' ) && flx_supports( 'api', '^0.1' ), 'target v1 cannot be negotiated prematurely' );
-foreach ( array( 'flx_option', 'flx_data', 'flx_map', 'flx_template', 'flx_icon' ) as $function ) {
+foreach ( array( 'flx_option', 'flx_map', 'flx_icon' ) as $function ) {
 	check( ! function_exists( $function ), 'no fake ' . $function );
 }
+check( function_exists( 'flx_data' ) && class_exists( 'FLX\Templates\Resolver' ), 'real Template Map data API declared' );
+check( function_exists( 'flx_template' ) && class_exists( 'FLX\Templates\MapRegistry' ), 'real template descriptor API declared' );
 do_action( 'after_setup_theme' );
 $card = flx_use_component( 'card' );
 check( $card->accepted && array( 'card-css' ) === $card->assets, 'component-only call resolves its internal stylesheet' );

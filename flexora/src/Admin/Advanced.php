@@ -1,9 +1,6 @@
 <?php
 namespace FLX\Admin;
 
-use FLX\Fields\TypeRegistry;
-use FLX\Fields\BuiltinTypes;
-use FLX\Fields\Engine;
 use FLX\Fields\Renderer;
 use FLX\Data\SettingsStore;
 
@@ -17,19 +14,7 @@ final class Advanced {
 	private $attempt = null;
 	private $screen;
 	public static function attach() {
-		add_action( 'flx/register', array( self::class, 'register_assets' ), 10 );
 		add_action( 'after_setup_theme', array( self::class, 'initialize' ), 35 );
-	}
-	public static function register_assets( $registrar ) {
-		if ( ! is_admin() ) { return; }
-		$base = get_template_directory_uri() . '/assets/admin/';
-		$own = array( 'advanced' => array( 'style', array() ), 'fields' => array( 'script', array() ), 'editor' => array( 'script', array( 'flx.admin.fields', 'flx.wp.editor' ) ), 'media' => array( 'script', array( 'flx.admin.fields', 'flx.wp.media' ) ), 'color' => array( 'script', array( 'flx.admin.fields', 'flx.wp.color.script' ) ), 'repeater' => array( 'script', array( 'flx.admin.fields' ) ) );
-		foreach ( $own as $name => $definition ) {
-			$registrar->asset( new \FLX\Contracts\V1\SpecV1( array( 'id' => 'flx.admin.' . $name, 'owner' => 'parent', 'version' => \FLX\Core\Kernel::VERSION, 'type' => $definition[0], 'handle' => 'flx-' . $name, 'source' => $base . $name . ( 'style' === $definition[0] ? '.css' : '.js' ), 'dependencies' => $definition[1], 'context' => array( 'admin' ) ) ) );
-		}
-		foreach ( array( 'editor' => array( 'script', 'editor' ), 'media' => array( 'script', 'media-views' ), 'color.script' => array( 'script', 'wp-color-picker' ), 'color.style' => array( 'style', 'wp-color-picker' ) ) as $id => $definition ) {
-			$registrar->asset( new \FLX\Contracts\V1\SpecV1( array( 'id' => 'flx.wp.' . $id, 'owner' => 'wordpress', 'version' => \FLX\Core\Kernel::VERSION, 'type' => $definition[0], 'handle' => $definition[1], 'source' => 'wordpress:' . $definition[1], 'override_policy' => 'reference', 'dependencies' => array(), 'context' => array( 'admin' ) ) ) );
-		}
 	}
 	public static function instance() {
 		if ( ! self::$instance ) { throw new \LogicException( 'Settings registration has not opened.' ); }
@@ -38,9 +23,7 @@ final class Advanced {
 	public static function initialize() {
 		if ( self::$instance ) { return; }
 		$self = new self(); self::$instance = $self;
-		$types = new TypeRegistry(); BuiltinTypes::register( $types );
-		do_action( 'flx/fields/register', $types ); $types->seal();
-		$self->engine = new Engine( $types ); $self->sections = new SectionRegistry( $self->engine ); $self->store = new SettingsStore();
+		$self->engine = \FLX\Fields\Runtime::engine(); $self->sections = new SectionRegistry( $self->engine ); $self->store = new SettingsStore();
 		DefaultSections::register( $self->sections, self::development() );
 		do_action( 'flx/settings/register' ); $self->sections->seal();
 		if ( is_admin() ) {
@@ -77,14 +60,8 @@ final class Advanced {
 	public function assets( $hook ) {
 		if ( ! in_array( $hook, array( 'toplevel_page_flx-advanced', $this->screen ), true ) ) { return; }
 		$section = $this->sections->get( $this->current_id() ); if ( ! $section ) { return; }
-		$types = array(); $collect = function ( $fields ) use ( &$collect, &$types ) {
-			foreach ( $fields as $field ) { $types[] = $field['type']; if ( 'repeater' === $field['type'] ) { $collect( $field['fields'] ); } }
-		}; $collect( $section['fields'] );
-		flx_asset( 'flx.admin.advanced' ); flx_asset( 'flx.admin.fields' );
-		if ( in_array( 'editor', $types, true ) ) { wp_enqueue_editor(); flx_asset( 'flx.admin.editor' ); }
-		if ( array_intersect( array( 'media', 'gallery' ), $types ) && current_user_can( 'upload_files' ) ) { wp_enqueue_media(); flx_asset( 'flx.admin.media' ); }
-		if ( in_array( 'color', $types, true ) ) { flx_asset( 'flx.wp.color.style' ); flx_asset( 'flx.admin.color' ); }
-		if ( in_array( 'repeater', $types, true ) ) { flx_asset( 'flx.admin.repeater' ); }
+		flx_asset( 'flx.admin.advanced' );
+		\FLX\Fields\AdminAssets::enqueue( $section['fields'] );
 	}
 	public function render() {
 		if ( ! current_user_can( 'manage_options' ) ) { wp_die( 'Bạn không có quyền xem cấu hình.', '', array( 'response' => 403 ) ); }
